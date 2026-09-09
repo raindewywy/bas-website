@@ -63,6 +63,275 @@
   --ease:cubic-bezier(.2,.6,.25,1);
 }
 
+/* =========================================================
+   Academic Programme Cards
+   Tailwind CSS handles layout/utilities.
+   This file contains the reusable component interaction.
+   ========================================================= */
+
+.programme-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 420px;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  color: #fff;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.10);
+
+  transform: translateY(0);
+  transition:
+    transform 300ms cubic-bezier(.22, 1, .36, 1),
+    box-shadow 300ms ease;
+}
+
+.programme-card:hover,
+.programme-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Decorative background circle */
+.programme-decoration {
+  position: absolute;
+  z-index: -1;
+  top: -4rem;
+  right: -4rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.055);
+  transition: transform 500ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.programme-card:hover .programme-decoration,
+.programme-card:focus-within .programme-decoration {
+  transform: scale(1.3);
+}
+
+/* Icon */
+.programme-icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 6rem;
+  height: 6rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 300ms cubic-bezier(.22, 1, .36, 1),
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.programme-icon svg {
+  width: 2.75rem;
+  height: 2.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.programme-card:hover .programme-icon,
+.programme-card:focus-within .programme-icon {
+  transform: scale(1.08) rotate(6deg);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.10),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Content */
+.programme-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+.programme-content h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+
+  transition:
+    transform 300ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.programme-card:hover .programme-content h2,
+.programme-card:focus-within .programme-content h2 {
+  transform: translateY(-3px);
+}
+
+.programme-en {
+  margin: 0.5rem 0 0;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.015em;
+}
+
+.programme-description {
+  max-width: 290px;
+  margin: 1.25rem 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+/* Solid CTA */
+.programme-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+
+  margin-top: auto;
+  padding: 0.75rem 1.35rem;
+
+  border-radius: 9999px;
+  background: #fff;
+  color: #005a66;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+
+  transition:
+    transform 300ms cubic-bezier(.22, 1, .36, 1),
+    background-color 200ms ease,
+    box-shadow 300ms ease;
+}
+
+.programme-button:hover {
+  transform: translateX(8px);
+  background: #e9f8fa;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.programme-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 4px;
+}
+
+.programme-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: transform 300ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.programme-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* Bottom hover accent */
+.programme-accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  margin-left: auto;
+  background: #fff;
+
+  transition:
+    width 500ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.programme-card:hover .programme-accent,
+.programme-card:focus-within .programme-accent {
+  width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .programme-card {
+    min-height: 400px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  .programme-card {
+    min-height: 390px;
+    padding: 1.75rem;
+    border-radius: 1.125rem;
+  }
+
+  .programme-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .programme-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .programme-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .programme-description {
+    font-size: 0.94rem;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .programme-card,
+  .programme-icon,
+  .programme-decoration,
+  .programme-content h2,
+  .programme-button,
+  .programme-button svg,
+  .programme-accent {
+    transition: none !important;
+  }
+
+  .programme-card:hover,
+  .programme-card:focus-within,
+  .programme-card:hover .programme-icon,
+  .programme-card:focus-within .programme-icon,
+  .programme-card:hover .programme-content h2,
+  .programme-card:focus-within .programme-content h2,
+  .programme-button:hover {
+    transform: none;
+  }
+}
+
+
+
 *,*::before,*::after{box-sizing:border-box;}
 [hidden]{display:none !important;}
 html{scroll-behavior:smooth;}
