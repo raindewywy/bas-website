@@ -8,7 +8,7 @@
 :root{
   /* ---- Brand color system — SYSTEMS direction ------------------------- */
   --brand:#06d0eb;         /* primary brand (BAS) — fills, rules, icons. Never body text on light. */
-  --brand-ink:#006775;     /* readable brand ink on light surfaces — passes AA for text/links */
+  --brand-ink:#06D0EB;     /* brand ink — brightened per faculty request (was #006775) */
   --brand-deep:#00505C;    /* high-contrast brand — inverted panels, active states */
   --brand-tint:#E8F7FA;    /* brand wash for surfaces */
   --brand-tint-2:#CDEDF3;  /* brand wash, stronger */
@@ -34,7 +34,7 @@
   /* ---- Status ---------------------------------------------------------- */
   --success:#1E6E4B; --warning:#8A5A00; --error:#A32020; --info:var(--brand-ink);
 
-  --focus:#006775;
+  --focus:#00505C;
 
   /* ---- Type ------------------------------------------------------------
      One family across Thai + Latin: IBM Plex Sans Thai.
@@ -128,12 +128,14 @@
 
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.12);
+  color: #fff;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 
   transition:
     transform 300ms cubic-bezier(.22, 1, .36, 1),
     background-color 300ms ease,
+    color 300ms ease,
     box-shadow 300ms ease;
 }
 
@@ -147,8 +149,10 @@
 }
 
 .programme-card:hover .programme-icon,
-.programme-card:focus-within .programme-icon {
+.programme-card:focus-within .programme-icon,
+.programme-card:active .programme-icon {
   transform: scale(1.08) rotate(6deg);
+  color: #fff;
   background: rgba(255, 255, 255, 0.18);
   box-shadow:
     0 10px 24px rgba(0, 0, 0, 0.10),
@@ -397,9 +401,9 @@ p{margin:0;}
   min-height:44px;
 }
 .btn:active{transform:translateY(1px);}
-.btn-primary{background:var(--teal-700); color:#fff;}   /* พื้นทีลเข้มอ่านง่าย + ตัวอักษรขาว = 9.1:1 ผ่าน AA */
-.btn-primary:hover{background:#003A42;}
-.btn-primary:focus-visible{background:#003A42;}
+.btn-primary{background:#06D0EB; color:#fff;}
+.btn-primary:hover{background:var(--brand-deep); color:#fff;}
+.btn-primary:focus-visible{background:var(--brand-deep); color:#fff;}
 .btn-secondary{background:var(--surface); color:var(--ink); border-color:var(--line-strong);}
 .btn-secondary:hover{border-color:var(--ink); background:var(--surface);}
 .btn-crimson{background:var(--crimson-700); color:#fff;}
@@ -732,7 +736,7 @@ p{margin:0;}
 @media (max-width:560px){ .facility-grid{grid-template-columns:1fr;} }
 
 /* ---- Footer ------------------------------------------------------------------------- */
-.site-footer{background:var(--ink); color:rgba(255,255,255,.82); margin-top:var(--space-8);}
+.site-footer{background:#00505C; color:rgba(255,255,255,.86); margin-top:var(--space-8);}
 .footer-top{display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:var(--space-6); padding:var(--space-8) 0 var(--space-6);}
 .footer-logo{height:44px; width:auto; object-fit:contain; margin-bottom:var(--space-3);}
 .footer-brand .th{color:#fff; font-size:1.1rem; font-weight:600;}
@@ -867,7 +871,7 @@ p{margin:0;}
   font-size:.78rem; font-weight:700; border:1.5px solid rgba(255,255,255,.55);
   transition:transform var(--dur), background var(--dur), box-shadow var(--dur);}
 .dean-direct:hover, .dean-direct:focus-visible, .dean-direct:active{
-  background:var(--brand-ink); color:#fff; transform:translateY(-2px);
+  background:var(--brand-deep); color:#fff; transform:translateY(-2px);
   box-shadow:0 10px 22px rgba(0,88,102,.4);}
 .dean-direct:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
 .dean-direct svg{width:14px; height:14px; flex:none;}
@@ -892,7 +896,7 @@ p{margin:0;}
 .stat-tile-v2{display:flex; flex-direction:column; gap:.55rem; padding-left:0;}
 .stat-tile-v2 .stat-ico{
   width:52px; height:52px; border-radius:50%; flex:none;
-  background:var(--brand-tint); color:var(--brand-ink);
+  background:#06D0EB; color:#fff;
   display:flex; align-items:center; justify-content:center;
 }
 .stat-tile-v2 .stat-ico svg{width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.6;}
@@ -909,7 +913,7 @@ p{margin:0;}
 .cat-chip{border:1px solid var(--line-strong); background:var(--surface); border-radius:99px; padding:.45em 1.05em; font-size:.85rem; font-weight:600; color:var(--ink-soft); transition:all var(--dur);}
 .cat-chip:hover{border-color:var(--teal-600); color:var(--teal-600);}
 .cat-chip[aria-pressed="true"]{background:var(--teal-700); border-color:var(--teal-700); color:#fff;}
-.card-tag.cat{background:rgba(0,179,201,.14); color:var(--teal-700);}
+.card-tag.cat{background:#06D0EB; color:#fff;}
 
 /* =========================================================================
    การ์ดคลิกได้ทั้งใบ (หลักสูตร / ข่าว) + ลิงก์ออกนอกเว็บ
@@ -950,7 +954,7 @@ p{margin:0;}
    ทุกค่าอ้าง token เดิมของเว็บ ไม่มีสีลอย
    ===================================================================== */
 :root{
-  --deep-900:#04262C;   /* พื้นเข้มสายเดียวกับ #00B3C9 — ตัวอักษรขาวได้ 15.6:1 */
+  --deep-900:#00505C;   /* แถบเข้ม (hero / CTA) — สว่างขึ้น ตัวอักษรขาวยังผ่าน AA */
   --deep-800:#063C45;
   --brand-300:#7FE0EC;  /* eyebrow/ไอคอนบนพื้นเข้ม — 11.4:1 */
 }
@@ -1171,7 +1175,7 @@ p{margin:0;}
   transition:transform var(--dur), box-shadow var(--dur), border-color var(--dur);
 }
 .id-card:hover, .id-card:focus-within{
-  transform:translateY(-4px); box-shadow:var(--shadow-m); border-color:var(--brand-ink);
+  transform:translateY(-4px); box-shadow:var(--shadow-m); border-color:#06D0EB;
 }
 .id-letter{
   position:absolute; left:-36px; top:50%; transform:translateY(-50%);
@@ -1310,7 +1314,7 @@ pre, code{overflow-x:auto;}
   border-radius:0 0 var(--radius-m) var(--radius-m);
 }
 .mega a{display:block; padding:.55rem .65rem; border-left:2px solid transparent;}
-.mega a:hover, .mega a:focus-visible{background:var(--brand-tint); color:var(--brand-ink); border-left-color:var(--brand);}
+.mega a:hover, .mega a:focus-visible{background:#06D0EB; color:#fff; border-left-color:#06D0EB;}
 .mega a .en{display:block; font-size:.76rem; color:var(--muted); margin-top:.1em;}
 
 /* group heading inside a mega menu (e.g. Graduate Studies) */
@@ -1341,7 +1345,7 @@ a[target="_blank"] .ext-ico{opacity:.9;}
 .drawer-item > button, .drawer-item > a{min-height:48px;}
 .drawer-sub a{min-height:44px; display:block; padding-top:.65rem; padding-bottom:.65rem; color:var(--ink-soft); line-height:1.4;}
 .drawer-sub a > span{display:block; font-size:.8rem; line-height:1.35; margin-top:.1rem;}
-.drawer-sub a:hover, .drawer-sub a:focus-visible{background:var(--brand-tint); color:var(--brand-ink);}
+.drawer-sub a:hover, .drawer-sub a:focus-visible{background:#06D0EB; color:#fff;}
 .drawer-sub-head{
   margin:.6rem 0 .1rem; padding:.5rem var(--space-4) .2rem;
   font-family:var(--font-mono); font-size:.68rem; font-weight:600;
@@ -1398,7 +1402,7 @@ a[target="_blank"] .ext-ico{opacity:.9;}
 .card:hover{transform:none; box-shadow:var(--shadow-m); border-color:var(--line-strong);}
 .card:focus-within{border-color:var(--brand-ink); box-shadow:var(--shadow-m);}
 .card-title{font-size:clamp(1.02rem, .98rem + .35vw, 1.16rem); letter-spacing:-.005em;}
-.card-tag{background:var(--brand-tint); color:var(--brand-ink); border-radius:2px;}
+.card-tag{background:#06D0EB; color:#fff; border-radius:2px;}
 .card-tag.crimson{border-radius:2px;}
 .program-card .level-badge{border:1px solid var(--line); border-radius:2px; color:var(--ink-soft);}
 .grid-3{gap:clamp(1rem, .6rem + 1.4vw, 2rem);}
@@ -1425,8 +1429,14 @@ footer a, .footer a{min-height:32px; display:inline-flex; align-items:center;}
 
 /* ---- 10. Contrast repairs — never #00B3C9 as text on light ---------------- */
 a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
-.eyebrow, .link-arrow, .tab-btn[aria-selected="true"], .card-tag,
-.mega a:hover, .nav-item.current > .nav-link{color:var(--brand-ink);}
+.eyebrow, .link-arrow, .tab-btn[aria-selected="true"],
+.nav-item.current > .nav-link{color:var(--brand-ink);}
+/* กล่องที่พื้นหลังเป็น #06D0EB ต้องใช้ตัวอักษรสีขาวเสมอ
+   ใช้ !important เฉพาะจุดนี้ เพราะกฎรวม a:not(...):hover ด้านบนมี specificity (0,4,1)
+   ซึ่งสูงกว่า .mega a:hover (0,2,1) จะทับให้กลายเป็นฟ้าบนฟ้า */
+.card-tag, .card-tag.cat{color:#fff;}
+.mega a:hover, .mega a:focus-visible,
+.drawer-sub a:hover, .drawer-sub a:focus-visible{color:#fff !important;}
 .on-dark .eyebrow, .home-hero .eyebrow, .page-hero .eyebrow{color:#7FE0EC;}
 
 /* ---- 11. Skip link + focus ------------------------------------------------ */
@@ -1927,8 +1937,21 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
   border-color:#06D0EB; box-shadow:0 4px 14px rgba(0,88,102,.22);
 }
 .dean-mail-btn:hover, .dean-mail-btn:focus-visible, .dean-mail-btn:active{
-  background:var(--brand-ink); border-color:var(--brand-ink); color:#fff;
+  background:var(--brand-deep); border-color:var(--brand-deep); color:#fff;
   box-shadow:0 6px 18px rgba(0,88,102,.32);
 }
 .dean-mail-btn:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
 .dean-mail-btn i{font-size:15px;}
+
+/* == v8 real images ======================================================
+   รูปจริงจาก bas.swu.ac.th / bas2.swu.ac.th แทนกล่อง placeholder
+   ====================================================================== */
+.media-img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:block; border-radius:inherit;
+}
+.card-media, .act-media, .story-media, .split-media, .news-thumb{position:relative; overflow:hidden;}
+.act-media .act-badge{position:absolute;}
+.card:hover .media-img, a:hover .media-img{transform:scale(1.04);}
+.media-img{transition:transform 420ms cubic-bezier(.22,.61,.36,1);}
+@media (prefers-reduced-motion: reduce){ .media-img{transition:none;} .card:hover .media-img{transform:none;} }
