@@ -105,15 +105,19 @@
     var btn = document.querySelector(".search-toggle");
     var panel = document.querySelector(".search-panel");
     if(!btn || !panel) return;
+    var form = panel.querySelector("form");
+    var input = panel.querySelector("input");
     btn.addEventListener("click", function(){
       panel.classList.toggle("open");
-      if(panel.classList.contains("open")){ panel.querySelector("input").focus(); }
+      if(panel.classList.contains("open") && input){ input.focus(); }
     });
-    panel.querySelector("form").addEventListener("submit", function(e){
-      e.preventDefault();
-      var q = panel.querySelector("input").value.trim();
-      if(q){ window.location.href = "programs.html?search=" + encodeURIComponent(q); }
-    });
+    if(form){
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        var q = input ? input.value.trim() : "";
+        if(q){ window.location.href = "programs.html?search=" + encodeURIComponent(q); }
+      });
+    }
   }
 
   function initMarqueeClone(){
@@ -445,7 +449,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
   var cat = new URLSearchParams(window.location.search).get("cat");
   if(cat){
-    var chip = bar.querySelector('[data-filter-value="' + cat.replace(/[^a-z]/g, "") + '"]');
+    // อนุญาตตัวเลข/ยัติภังค์ด้วย — slug หมวดหมู่ในอนาคตอาจมี เช่น "study-abroad"
+    var chip = bar.querySelector('[data-filter-value="' + cat.toLowerCase().replace(/[^a-z0-9-]/g, "") + '"]');
     if(chip){ chip.click(); }
   }
   syncEmpty();
@@ -474,7 +479,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function step() {
       var r = items[0].getBoundingClientRect();
-      var gap = parseFloat(getComputedStyle(vp.firstElementChild).columnGap || 16);
+      // getComputedStyle().columnGap can come back as the keyword "normal"
+      // (not a length) when no gap is set -- parseFloat("normal") is NaN,
+      // so the px fallback has to wrap the parse, not the input string.
+      var gap = parseFloat(getComputedStyle(vp.firstElementChild).columnGap) || 16;
       return r.width + gap;
     }
     function perPage() {

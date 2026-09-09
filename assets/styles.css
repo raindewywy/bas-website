@@ -409,7 +409,7 @@ p{margin:0;}
 .link-arrow{display:inline-flex; align-items:center; gap:.4em; font-weight:600; color:var(--teal-600); border-bottom:1.5px solid transparent; transition:border-color var(--dur), gap var(--dur);}
 .link-arrow:hover{border-color:var(--teal-600); gap:.6em;}
 .link-arrow svg{width:14px; height:14px;}
-
+.link-arrow i{font-size:14px;}
 /* ---- Header / Navigation ------------------------------------------------ */
 .site-header{
   position:sticky; top:0; z-index:200; background:rgba(251,252,253,.92);
@@ -451,6 +451,7 @@ p{margin:0;}
 .icon-btn{width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:var(--radius-s); border:1px solid transparent; color:var(--ink-soft); transition:background var(--dur), border-color var(--dur);}
 .icon-btn:hover{background:var(--paper-dim); border-color:var(--line);}
 .icon-btn svg{width:19px; height:19px;}
+.icon-btn i{font-size:19px;}
 .menu-toggle{display:none;}
 .admin-toggle.is-active{color:var(--teal-600); background:var(--paper-dim); border-color:var(--line);}
 
@@ -479,6 +480,7 @@ p{margin:0;}
 .admin-modal-close{position:absolute; top:var(--space-3); right:var(--space-3);}
 .admin-modal-icon{width:52px; height:52px; margin:0 auto var(--space-3); border-radius:50%; background:var(--paper-dim); color:var(--teal-600); display:flex; align-items:center; justify-content:center;}
 .admin-modal-icon svg{width:26px; height:26px;}
+.admin-modal-icon i{font-size:26px;}
 .admin-modal-panel h2{font-size:1.3rem;}
 .admin-modal-lede{color:var(--muted); font-size:.92rem; margin-top:.5rem;}
 .admin-modal-panel form{display:grid; gap:var(--space-3); margin-top:var(--space-5); text-align:left;}
@@ -494,6 +496,7 @@ p{margin:0;}
 .admin-bar-inner{display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap; padding:.6rem 0; font-size:.85rem;}
 .admin-bar-badge{display:inline-flex; align-items:center; gap:.4em; font-weight:700; color:#fff;}
 .admin-bar-badge svg{width:16px; height:16px; color:var(--teal-400);}
+.admin-bar-badge i{font-size:16px; color:var(--teal-400);}
 .admin-bar-note{color:rgba(255,255,255,.65); flex:1; min-width:200px;}
 
 /* mobile drawer */
@@ -549,6 +552,7 @@ p{margin:0;}
 .play-btn{width:76px; height:76px; border-radius:50%; background:rgba(255,255,255,.14); border:1.5px solid rgba(255,255,255,.6); display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur);}
 .play-btn:hover{background:rgba(255,255,255,.24); transform:scale(1.05);}
 .play-btn svg{width:22px; height:22px; margin-left:3px; fill:#fff;}
+.play-btn i{font-size:22px; margin-left:3px; color:#fff;}
 .hero-media-caption{position:absolute; left:var(--space-3); bottom:var(--space-3); right:var(--space-3); color:#fff; font-size:.85rem;}
 .hero-media-caption strong{display:block; font-family:var(--font-display); font-size:1.05rem;}
 @media (max-width:980px){ .hero-grid{grid-template-columns:1fr; padding:var(--space-7) 0;} .hero-media{aspect-ratio:16/10;} }
@@ -646,6 +650,7 @@ p{margin:0;}
 /* ---- Facebook sync card ---------------------------------------------------------- */
 .fb-sync-card{border:1px dashed var(--line-strong); border-radius:var(--radius-m); padding:var(--space-4); display:flex; gap:var(--space-3); align-items:flex-start; background:var(--paper-dim);}
 .fb-sync-card svg{width:28px; height:28px; flex:none; color:#1877F2;}
+.fb-sync-card i{font-size:28px; flex:none; color:#1877F2;}
 .fb-sync-card h4{font-size:1rem; margin-bottom:.3rem;}
 .fb-sync-card p{color:var(--muted); font-size:.88rem;}
 .status-pill{display:inline-flex; align-items:center; gap:.4em; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:.3em .7em; border-radius:99px; background:#FFF1D6; color:#8A5A00; margin-top:.5rem;}
@@ -711,7 +716,7 @@ p{margin:0;}
 /* ---- Notice / need-content flag -------------------------------------------------------- */
 .notice{border:0; background:none; color:var(--muted); border-radius:0; padding:0; font-size:.88rem; display:flex; gap:.6rem; align-items:flex-start;}
 .notice svg{width:18px; height:18px; flex:none; margin-top:.15rem; color:var(--line-strong);}
-
+.notice i{font-size:18px; flex:none; margin-top:.15rem; color:var(--line-strong);}
 /* ---- Facilities grid ------------------------------------------------------------------ */
 .facility-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-4);}
 .facility-item{border:1px solid var(--line); border-radius:var(--radius-m); padding:var(--space-4); background:var(--surface);}
@@ -731,6 +736,7 @@ p{margin:0;}
 .footer-social a{width:36px; height:36px; border:1px solid rgba(255,255,255,.25); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background var(--dur);}
 .footer-social a:hover{background:rgba(255,255,255,.12);}
 .footer-social svg{width:16px; height:16px;}
+.footer-social i{font-size:16px;}
 .footer-col h5{color:#fff; font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--space-3);}
 .footer-col ul{display:grid; gap:.65rem;}
 .footer-col a{font-size:.9rem; color:rgba(255,255,255,.7); transition:color var(--dur);}
@@ -833,6 +839,7 @@ p{margin:0;}
 .hero-toggle{width:44px; height:44px; border-radius:50%; background:rgba(6,38,44,.55); border:1.5px solid var(--teal-400); color:#fff; display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur); backdrop-filter:blur(3px);}
 .hero-toggle:hover{background:rgba(0,179,201,.35); transform:scale(1.06);}
 .hero-toggle svg{width:16px; height:16px; fill:#fff;}
+.hero-toggle i{font-size:16px; color:#fff;}
 .hero-toggle .ico-pause{display:block;} .hero-toggle .ico-play{display:none;}
 .hero-toggle[aria-pressed="true"] .ico-pause{display:none;}
 .hero-toggle[aria-pressed="true"] .ico-play{display:block;}
@@ -854,10 +861,12 @@ p{margin:0;}
   transition:transform var(--dur), background var(--dur);}
 .dean-direct:hover{background:var(--crimson-600); transform:translateY(-2px); color:#fff;}
 .dean-direct svg{width:14px; height:14px; flex:none;}
+.dean-direct i{font-size:14px; flex:none;}
 .dean-direct-close{position:absolute; top:-8px; right:-8px; width:22px; height:22px; border-radius:50%;
   background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12px; line-height:1;
   border:2px solid var(--paper);}
 .dean-direct-close svg{width:10px; height:10px;}
+.dean-direct-close i{font-size:10px;}
 @media (max-width:640px){
   .dean-direct{right:14px; bottom:14px; width:52px; height:52px; padding:0; justify-content:center; border-radius:50%;}
   .dean-direct .label{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
@@ -877,6 +886,7 @@ p{margin:0;}
   display:flex; align-items:center; justify-content:center;
 }
 .stat-tile-v2 .stat-ico svg{width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.6;}
+.stat-tile-v2 .stat-ico i{font-size:26px;}
 .stat-tile-v2 .value{font-family:var(--font-mono); font-weight:700; font-size:clamp(2.9rem,2.1rem+3vw,4.6rem); line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:-.02em;}
 .stat-tile-v2 .label{font-weight:600; font-size:1rem;}
 .stat-tile-v2 .label .en{display:block; color:var(--muted); font-weight:400; font-size:.8rem; margin-top:.1rem;}
@@ -984,6 +994,7 @@ p{margin:0;}
 .cta-actions{display:grid; gap:.7rem; margin-top:0; justify-content:stretch;}
 .cta-actions .btn{width:100%; justify-content:center; text-align:center; gap:.5em; padding-inline:1.1rem;}
 .cta-actions .btn svg{width:16px; height:16px; flex:none;}
+.cta-actions .btn i{font-size:16px; flex:none;}
 @media (max-width:900px){
   .cta-band{grid-template-columns:1fr;}
   .cta-actions{margin-top:var(--space-4);}
@@ -1020,8 +1031,9 @@ p{margin:0;}
   font-weight:600; font-size:.92rem; color:var(--teal-600);
 }
 .card-cue svg{width:14px; height:14px; transition:transform var(--dur) cubic-bezier(.16,1,.3,1);}
+.card-cue i{font-size:14px; transition:transform var(--dur) cubic-bezier(.16,1,.3,1);}
 .card:hover .card-cue svg{transform:translateX(4px);}
-
+.card:hover .card-cue i{transform:translateX(4px);}
 /* ---- 4. ข่าวหน้าแรก: เรื่องเด่น 1 + รายการ 4 --------------------------- */
 .cat-chip.is-all{background:var(--ink); border-color:var(--ink); color:#fff;}
 .cat-chip.is-all:hover{background:var(--deep-900); border-color:var(--deep-900); color:#fff;}
@@ -1105,6 +1117,7 @@ p{margin:0;}
 .atile:hover .atile-ico{transform:scale(1.06); background:rgba(255,255,255,.26);}
 .atile--brand:hover .atile-ico{background:rgba(255,255,255,.26);}
 .atile-ico svg{width:32px; height:32px;}
+.atile-ico i{font-size:32px;}
 .atile-title{font-family:var(--font-display); font-size:1.22rem; font-weight:600; line-height:1.3;}
 .atile-en{font-size:.8rem; font-weight:600; opacity:.82;}
 .atile-desc{font-size:.86rem; opacity:.88; max-width:24ch; margin:.15rem 0 var(--space-4);}
@@ -1115,6 +1128,7 @@ p{margin:0;}
   transition:transform var(--dur);
 }
 .atile-go svg{width:17px; height:17px;}
+.atile-go i{font-size:17px;}
 .atile:hover .atile-go{transform:translateX(4px);}
 @media (max-width:1024px){ .atiles{grid-template-columns:repeat(2,minmax(0,1fr));} }
 @media (max-width:560px){
@@ -1176,6 +1190,7 @@ p{margin:0;}
   transition:background var(--dur), color var(--dur), border-color var(--dur), opacity var(--dur);
 }
 .rail-btn svg{width:20px; height:20px;}
+.rail-btn i{font-size:20px;}
 .rail-btn:hover{background:var(--teal-700); border-color:var(--teal-700); color:#fff;}
 .rail-btn[disabled]{opacity:.32; pointer-events:none;}
 .rail-prev{left:-22px;}
@@ -1220,6 +1235,7 @@ p{margin:0;}
   transition:transform var(--dur), background var(--dur);
 }
 .circle-arrow svg{width:16px; height:16px;}
+.circle-arrow i{font-size:16px;}
 .act-card:hover .circle-arrow{transform:translateX(3px); background:var(--teal-600); color:#fff;}
 
 @media (prefers-reduced-motion: reduce){
@@ -1739,7 +1755,7 @@ a:not(.btn):not(.nav-link):hover{color:var(--brand-ink);}
   width:40px;
   height:40px;
 }
-
+.academic-section .atile-ico i{font-size:40px;}
 .academic-section .atile:hover .atile-ico,
 .academic-section .atile:focus-visible .atile-ico,
 .academic-section .atile:focus-within .atile-ico{
@@ -1806,7 +1822,7 @@ a:not(.btn):not(.nav-link):hover{color:var(--brand-ink);}
   width:20px;
   height:20px;
 }
-
+.academic-section .atile-go i{font-size:20px;}
 .academic-section .atile:hover .atile-go,
 .academic-section .atile:focus-visible .atile-go,
 .academic-section .atile:focus-within .atile-go{
@@ -1848,6 +1864,7 @@ a:not(.btn):not(.nav-link):hover{color:var(--brand-ink);}
     width:36px;
     height:36px;
   }
+  .academic-section .atile-ico i{font-size:36px;}
 }
 
 /* Reduced motion */

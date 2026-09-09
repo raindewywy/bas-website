@@ -60,7 +60,9 @@ def breadcrumb(trail):
     parts = []
     for label, href in trail:
         if href:
-            parts.append('<a href="%s">%s</a>' % (href, html.escape(label)))
+            parts.append(
+                '<a href="%s">%s</a>' % (html.escape(href, quote=True), html.escape(label))
+            )
         else:
             parts.append('<span aria-current="page">%s</span>' % html.escape(label))
     return (
