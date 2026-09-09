@@ -158,6 +158,13 @@
           });
         });
       });
+
+      // deep link: programs.html?cat=<data-filter-value> จากการ์ดหน้าแรก
+      var cat = new URLSearchParams(window.location.search).get("cat");
+      if(cat){
+        var preset = group.querySelector('.filter-chip[data-filter-value="' + cat.replace(/[^a-z]/g, "") + '"]');
+        if(preset){ preset.click(); }
+      }
     });
   }
 
