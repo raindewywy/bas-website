@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
@@ -31,15 +32,14 @@
         <span>รหัสผ่าน</span>
         <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
       </label>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">เข้าสู่ระบบ (โหมดสาธิต)</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">เข้าสู่ระบบ</button>
     </form>
-    <p class="admin-modal-note">* ต้นแบบนี้จำลองหน้าจอเข้าสู่ระบบเพื่อสาธิตเท่านั้น ไม่ได้เชื่อมต่อฐานข้อมูลผู้ใช้จริง กรอกข้อมูลใดก็ได้เพื่อทดลองใช้งานโหมดผู้ดูแลระบบ</p>
+
   </div>
 </div>
 <div class="admin-bar" id="admin-bar" hidden>
   <div class="wrap admin-bar-inner">
     <span class="admin-bar-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l2 2 3.5-4"/></svg> โหมดผู้ดูแลระบบ</span>
-    <span class="admin-bar-note">แสดงไอคอน “แก้ไข” บนเนื้อหาหลักของเว็บไซต์ (ต้นแบบสาธิต)</span>
     <button class="btn btn-sm btn-secondary" id="admin-logout" style="background:transparent;border-color:rgba(255,255,255,.5);color:#fff;">ออกจากระบบ</button>
   </div>
 </div>
@@ -124,13 +124,7 @@
       </div>
     </div>
   </div>
-  <div class="hero-controls">
-    <span class="hero-caption-chip th-body">วิดีโอแนะนำคณะ — รอไฟล์จริง (แสดงภาพนิ่งแทน)</span>
-    <button type="button" class="hero-toggle" id="hero-toggle" aria-pressed="false" aria-label="หยุดวิดีโอพื้นหลัง">
-      <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-      <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l12 7-12 7z"/></svg>
-    </button>
-  </div>
+  
 </section>
 
 <section class="section academic-section" aria-labelledby="academic-h">
