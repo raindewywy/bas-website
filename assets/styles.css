@@ -6,16 +6,17 @@
    ========================================================================= */
 
 :root{
-  /* ---- Brand scale — anchored on #00B3C9 (v9) ------------------------- */
-  --brand-50 :#EAF8FB;   /* wash อ่อนสุด */
-  --brand-100:#CDEEF6;   /* wash */
-  --brand-300:#7CDDF0;   /* eyebrow / ไอคอนบนพื้นเข้ม */
-  --brand-400:#00CBEB;   /* accent สว่าง / hover / underline */
-  --brand-500:#00B3C9;   /* PRIMARY — fill, rule, ไอคอนขนาดใหญ่ */
-  --brand-600:#0091AD;   /* border, icon เล็ก (AA non-text) */
-  --brand-700:#00718C;   /* TEXT/LINK บนพื้นขาว (AA) */
-  --brand-800:#0A4E6B;   /* พื้นเข้มรอง */
-  --brand-900:#0B3A57;   /* พื้นเข้มหลัก: page-hero, cta-band */
+  /* ---- Brand scale — anchored on #37CBCB (v9) ------------------------- */
+  --brand-50 :#EFFBFB;   /* wash อ่อนสุด */
+  --brand-100:#CDF3F3;   /* wash */
+  --brand-300:#86EAEA;   /* eyebrow / ไอคอนบนพื้นเข้ม */
+  --brand-400:#58E4E4;   /* accent สว่าง / hover / underline */
+  --brand-500:#37CBCB;   /* PRIMARY — fill, rule, ไอคอนขนาดใหญ่ */
+  --brand-600:#13939C;   /* border, icon เล็ก (AA non-text) */
+  --brand-650:#0F8198;   /* ขั้นกลาง 600/700 — ตัวอักษรขาวเล็กผ่าน AA (4.55:1) */
+  --brand-700:#087090;   /* TEXT/LINK บนพื้นขาว (AA) */
+  --brand-800:#0B4E6B;   /* พื้นเข้มรอง */
+  --brand-900:#0E3A54;   /* พื้นเข้มหลัก: page-hero, cta-band */
 
   /* ---- Aliases เดิม — ให้ rule เก่าทำงานต่อโดยไม่ต้องไล่แก้ ---- */
   --brand:      var(--brand-500);
@@ -99,6 +100,14 @@
     transform 300ms cubic-bezier(.22, 1, .36, 1),
     box-shadow 300ms ease;
 }
+
+
+/* ---- REQ-C3 (v9): ไล่เฉดฟ้า 4 ระดับของการ์ด Academic --------------------
+   เข้ม -> สว่าง ตามลำดับการ์ดซ้ายไปขวา ตัวอักษรขาวผ่าน AA ทุกใบ           */
+.programme-card--tone-1{ background:var(--brand-900); }  /* 11.95:1 */
+.programme-card--tone-2{ background:var(--brand-800); }  /*  9.07:1 */
+.programme-card--tone-3{ background:var(--brand-700); }  /*  5.61:1 */
+.programme-card--tone-4{ background:var(--brand-650); }  /*  4.55:1 */
 
 .programme-card:hover,
 .programme-card:focus-within {
@@ -277,7 +286,7 @@
   width: 0;
   height: 4px;
   margin-left: auto;
-  background: #fff;
+  background: var(--brand-400);
 
   transition:
     width 500ms cubic-bezier(.22, 1, .36, 1);
@@ -370,7 +379,7 @@ button{font:inherit; cursor:pointer; background:none; border:0; padding:0; -webk
 a{-webkit-tap-highlight-color:transparent;}
 h1,h2,h3,h4{font-family:var(--font-display); margin:0; font-weight:600; letter-spacing:-.012em; line-height:1.22; color:var(--ink); text-wrap:balance;}
 p{margin:0;}
-:focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:2px; box-shadow:0 0 0 5px rgba(0,179,201,.25);}
+:focus-visible{outline:3px solid var(--focus); outline-offset:2px; border-radius:2px; box-shadow:0 0 0 5px rgba(55,203,203,.25);}
 
 .th{font-family:var(--font-display);}
 .th-body{font-family:var(--font-body);}
@@ -555,7 +564,7 @@ p{margin:0;}
 
 /* ---- Home hero ------------------------------------------------------------ */
 .home-hero{position:relative; background:linear-gradient(160deg,var(--brand-800) 0%, var(--brand-700) 58%, #00B3C9 100%); color:#fff; overflow:hidden;}
-.home-hero::after{content:""; position:absolute; inset:0; background:radial-gradient(circle at 82% 20%, rgba(0,179,201,.35), transparent 55%); pointer-events:none;}
+.home-hero::after{content:""; position:absolute; inset:0; background:radial-gradient(circle at 82% 20%, rgba(55,203,203,.35), transparent 55%); pointer-events:none;}
 .hero-grid{position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:var(--space-7); align-items:center; padding:var(--space-8) 0;}
 .hero-copy .eyebrow{color:var(--brand-100);}
 .hero-copy .eyebrow::before{background:#fff;}
@@ -624,7 +633,7 @@ p{margin:0;}
 .card:hover{box-shadow:var(--shadow-m); transform:translateY(-3px); border-color:var(--line-strong);}
 .card-media{aspect-ratio:16/10; position:relative;}
 .card-body{padding:var(--space-4); display:flex; flex-direction:column; gap:.5rem; flex:1;}
-.card-tag{display:inline-flex; align-self:flex-start; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color:var(--teal-600); background:rgba(0,179,201,.13); padding:.3em .7em; border-radius:99px;}
+.card-tag{display:inline-flex; align-self:flex-start; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color:var(--teal-600); background:rgba(55,203,203,.13); padding:.3em .7em; border-radius:99px;}
 .card-tag.crimson{color:var(--crimson-700); background:rgba(143,29,44,.09);}
 .card-title{font-size:1.15rem; font-weight:600; font-family:var(--font-display); line-height:1.3;}
 .card-meta{font-size:.82rem; color:var(--muted);}
@@ -650,8 +659,8 @@ p{margin:0;}
 .story-row:last-child{border-bottom:none;}
 .story-row:nth-child(even){grid-template-columns:1.15fr .85fr;}
 .story-row:nth-child(even) .story-media{order:2;}
-.story-row .link-arrow{position:relative; z-index:1;}
-.story-row .link-arrow::after{content:""; position:absolute; inset:0;}
+.story-row .link-arrow{position:static;}
+.story-row .link-arrow::after{content:""; position:absolute; inset:0; z-index:3;}
 .story-row:hover h3{color:var(--teal-600);}
 .story-row:focus-within{outline:2px solid var(--focus); outline-offset:2px;}
 .story-row .link-arrow:focus-visible{outline:none;}
@@ -856,9 +865,9 @@ p{margin:0;}
 
 /* แถบควบคุมวิดีโอ — WCAG 2.2.2 สื่อที่เล่นเองต้องหยุดได้ */
 .hero-controls{position:absolute; right:var(--space-4); bottom:var(--space-4); display:flex; align-items:center; gap:.6rem; z-index:2;}
-.hero-caption-chip{font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.85); background:rgba(11,58,87,.55); border:1px solid rgba(255,255,255,.25); padding:.4em .8em; border-radius:99px; backdrop-filter:blur(3px);}
-.hero-toggle{width:44px; height:44px; border-radius:50%; background:rgba(11,58,87,.55); border:1.5px solid var(--teal-400); color:#fff; display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur); backdrop-filter:blur(3px);}
-.hero-toggle:hover{background:rgba(0,179,201,.35); transform:scale(1.06);}
+.hero-caption-chip{font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.85); background:rgba(14,58,84,.55); border:1px solid rgba(255,255,255,.25); padding:.4em .8em; border-radius:99px; backdrop-filter:blur(3px);}
+.hero-toggle{width:44px; height:44px; border-radius:50%; background:rgba(14,58,84,.55); border:1.5px solid var(--teal-400); color:#fff; display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur); backdrop-filter:blur(3px);}
+.hero-toggle:hover{background:rgba(55,203,203,.35); transform:scale(1.06);}
 .hero-toggle svg{width:16px; height:16px; fill:#fff;}
 .hero-toggle i{font-size:16px; color:#fff;}
 .hero-toggle .ico-pause{display:block;} .hero-toggle .ico-play{display:none;}
@@ -877,8 +886,8 @@ p{margin:0;}
    สายตรงคณบดี — ปุ่มลอยมุมล่างขวา ปิดได้ ไม่ทับ CTA บนมือถือ
    ========================================================================= */
 .dean-direct{position:fixed; right:16px; bottom:16px; z-index:60; display:flex; align-items:center; gap:.4rem;
-  background:var(--brand-700); color:#fff; text-shadow:0 1px 2px rgba(11,58,87,.45); border-radius:99px;
-  padding:.5rem .85rem .5rem .65rem; box-shadow:0 6px 18px rgba(11,58,87,.35); text-decoration:none;
+  background:var(--brand-700); color:#fff; text-shadow:0 1px 2px rgba(14,58,84,.45); border-radius:99px;
+  padding:.5rem .85rem .5rem .65rem; box-shadow:0 6px 18px rgba(14,58,84,.35); text-decoration:none;
   font-size:.78rem; font-weight:700; border:1.5px solid rgba(255,255,255,.55);
   transition:transform var(--dur), background var(--dur), box-shadow var(--dur);}
 .dean-direct:hover, .dean-direct:focus-visible, .dean-direct:active{
@@ -978,7 +987,7 @@ p{margin:0;}
 .page-hero::after{
   content:""; position:absolute; right:-6%; top:-42%;
   width:46%; aspect-ratio:1; border-radius:50%; pointer-events:none;
-  background:radial-gradient(circle at 34% 34%, rgba(0,179,201,.42), rgba(0,179,201,0) 68%);
+  background:radial-gradient(circle at 34% 34%, rgba(55,203,203,.42), rgba(55,203,203,0) 68%);
 }
 .page-hero > .wrap, .page-hero > .wrap-narrow{position:relative; z-index:1;}
 .page-hero h1{color:#fff; max-width:18ch;}
@@ -1009,7 +1018,7 @@ p{margin:0;}
 .cta-band::after{
   content:""; position:absolute; left:-10%; bottom:-70%;
   width:44%; aspect-ratio:1; border-radius:50%; pointer-events:none;
-  background:radial-gradient(circle at 50% 50%, rgba(0,179,201,.34), rgba(0,179,201,0) 70%);
+  background:radial-gradient(circle at 50% 50%, rgba(55,203,203,.34), rgba(55,203,203,0) 70%);
 }
 .cta-band > *{position:relative; z-index:1;}
 .cta-band .eyebrow{color:var(--brand-300);}
@@ -1940,12 +1949,12 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 
 /* == v6 dean-direct email button ========================================= */
 .dean-mail-btn{
-  background:var(--brand-700); color:#fff; text-shadow:0 1px 2px rgba(11,58,87,.45);
-  border-color:var(--brand-700); box-shadow:0 4px 14px rgba(11,58,87,.22);
+  background:var(--brand-700); color:#fff; text-shadow:0 1px 2px rgba(14,58,84,.45);
+  border-color:var(--brand-700); box-shadow:0 4px 14px rgba(14,58,84,.22);
 }
 .dean-mail-btn:hover, .dean-mail-btn:focus-visible, .dean-mail-btn:active{
   background:var(--brand-deep); border-color:var(--brand-deep); color:#fff;
-  box-shadow:0 6px 18px rgba(11,58,87,.28);
+  box-shadow:0 6px 18px rgba(14,58,84,.28);
 }
 .dean-mail-btn:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
 .dean-mail-btn i{font-size:15px;}
@@ -1987,10 +1996,75 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .page-hero--image::before{               /* scrim ให้ตัวอักษรอ่านออก */
   content:""; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(90deg,
-    rgba(11,58,87,.92) 0%, rgba(11,58,87,.78) 45%, rgba(11,58,87,.42) 100%);
+    rgba(14,58,84,.92) 0%, rgba(14,58,84,.78) 45%, rgba(14,58,84,.42) 100%);
 }
 .page-hero--image::after{ display:none; }  /* ปิดวงกลม radial เดิม */
 @media (max-width:760px){
-  .page-hero--image::before{ background:rgba(11,58,87,.86); }
+  .page-hero--image::before{ background:rgba(14,58,84,.86); }
   .page-hero--image > .hero-bg{ object-position:50% 35%; }
 }
+
+
+/* == v9 phase 6 == REQ-A2 · REQ-C-DEAN1 =================================
+   กล่องทั้งใบคลิกได้ — ใช้ stretched-link เดิมของโปรเจกต์ ไม่สร้างกลไกใหม่
+   ===================================================================== */
+
+/* ---- REQ-A2: คลิกที่รูปของ .story-row ได้จริง ------------------------ */
+.story-row{ isolation:isolate; cursor:pointer; }
+.story-row .story-media .media-img{ transition:transform var(--dur) var(--ease); }
+.story-row:hover .story-media .media-img{ transform:scale(1.03); }
+@media (prefers-reduced-motion:reduce){
+  .story-row:hover .story-media .media-img{ transform:none; }
+}
+
+/* ---- REQ-C-DEAN1: กล่องคณบดีคลิกได้ทั้งกล่อง ------------------------- */
+.leader-dean{ position:relative; isolation:isolate; }
+.leader-dean .dean-link{ color:inherit; text-decoration:none; }
+.leader-dean .dean-link::after{ content:""; position:absolute; inset:0; z-index:1; }
+.leader-dean:hover .dean-link{ color:var(--brand-700); }
+.leader-dean:focus-within{ outline:2px solid var(--focus); outline-offset:3px; }
+.leader-dean .dean-link:focus-visible{ outline:none; }
+/* ปุ่มรองในกล่องต้องยังกดแยกได้ ไม่ถูก overlay กิน */
+.leader-dean .btn,
+.leader-dean a[href^="mailto:"]{ position:relative; z-index:2; }
+
+
+/* == v9 partners == REQ-A4 =============================================
+   โลโก้พันธมิตรจริงแทนกล่องข้อความ placeholder
+   ===================================================================== */
+.marquee-item{
+  padding:0 var(--space-4); border:0; background:none; opacity:1;
+  height:auto; white-space:normal;
+}
+.partner-logo{
+  height:44px; width:auto; max-width:160px; object-fit:contain;
+  filter:grayscale(1); opacity:.62;
+  transition:filter var(--dur), opacity var(--dur);
+}
+.marquee-item:hover .partner-logo{ filter:none; opacity:1; }
+@media (max-width:600px){ .partner-logo{ height:34px; max-width:120px; } }
+@media (prefers-reduced-motion:reduce){
+  .marquee-track{ gap:var(--space-5) var(--space-6); row-gap:var(--space-4); }
+}
+
+
+/* == v9 media clean == REQ-M1/M2 ========================================
+   ปิดลายน้ำ/โทนฟ้าที่ยังทับรูปจริงใน .news-thumb
+   ===================================================================== */
+.news-row .news-thumb{ background:#EDEFF1; }
+.news-row .news-thumb:has(> .media-img)::after,
+.news-row .news-thumb:has(> picture)::after,
+.news-thumb:has(> .media-img)::after,
+.news-thumb:has(> picture)::after{ display:none; }
+
+/* กันพลาดสำหรับกรอบรูปอื่น ๆ ที่อาจมีลายตกแต่งเพิ่มภายหลัง */
+.act-media:has(> .media-img)::after,
+.split-media:has(> .media-img)::after,
+.staff-photo:has(> .media-img)::after{ display:none; }
+
+
+/* == v9 tweaks ==========================================================
+   ลบเส้น interact ท้ายการ์ด Academic ตามที่ผู้ใช้สั่ง
+   ซ่อนเฉพาะเส้นนี้ ไม่กระทบ hover/focus อื่นของ .programme-card
+   ===================================================================== */
+.programme-accent{ display:none; }

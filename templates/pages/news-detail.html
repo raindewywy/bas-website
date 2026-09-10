@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="breadcrumb wrap" aria-label="เส้นทางหน้าเว็บ"><a href="index.html">หน้าแรก</a><span class="sep">/</span><a href="news.html">ข่าวและกิจกรรม</a><span class="sep">/</span><span aria-current="page" data-n-breadcrumb>บทความ</span></nav>
+<article data-news-detail>
+<section class="page-hero">
+  <div class="wrap wrap-narrow">
+    <p class="eyebrow th-body"><span data-n-category>ข่าว</span> · <span data-n-date>วันที่</span></p>
+    <h1 class="th-body" data-n-title>หัวข้อข่าว</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap wrap-narrow">
+    <div class="split-media reveal" style="aspect-ratio:16/9;margin-bottom:var(--space-6);"><img class="media-img" src="assets/media/banner-news.jpg" alt="ภาพประกอบข่าว" loading="lazy" decoding="async"></div>
+    <p class="th-body" data-n-summary style="font-size:1.15rem;color:var(--ink-soft);">สรุปข่าว</p>
+    
+  </div>
+</section>
+</article>
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">ข่าวอื่น ๆ</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">ข่าวอื่น ๆ</span><span class="bi-en">More News &amp; Events</span></h2>
+        
+      </div>
+      
+    </div>
+    <div class="grid-3 mt-5" data-n-related></div>
+  </div>
+</section>
+
+{% endblock %}

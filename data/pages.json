@@ -1,0 +1,132 @@
+{
+  "about.html": {
+    "title": "About — BAS SWU",
+    "description": "Vision, mission, history, leadership and departments of BAS SWU.",
+    "nav": "about"
+  },
+  "admissions.html": {
+    "title": "Admissions — BAS SWU",
+    "description": "How to apply to BAS SWU -- TCAS, direct admission and graduate admission.",
+    "nav": ""
+  },
+  "contact.html": {
+    "title": "Contact — BAS SWU",
+    "description": "Contact BAS SWU -- address, phone, email, ITA and work manual.",
+    "nav": "about"
+  },
+  "departments.html": {
+    "title": "Departments — BAS SWU",
+    "description": "The three academic departments of BAS SWU.",
+    "nav": "about"
+  },
+  "faculty.html": {
+    "title": "Faculty & Staff — BAS SWU",
+    "description": "BAS SWU leadership, department heads and faculty directory.",
+    "nav": "about"
+  },
+  "green-award.html": {
+    "title": "Green Award — BAS SWU",
+    "description": "รางวัลและการดำเนินงานด้านความยั่งยืนของคณะบริหารธุรกิจเพื่อสังคม มศว",
+    "nav": "about"
+  },
+  "honours.html": {
+    "title": "Hall of Fame — BAS SWU",
+    "description": "รางวัล ผลงาน และความสำเร็จของคณะ นิสิต และศิษย์เก่า คณะบริหารธุรกิจเพื่อสังคม มศว",
+    "nav": "about"
+  },
+  "index.html": {
+    "title": "Home — BAS SWU",
+    "description": "Faculty of Business Administration for Society, Srinakharinwirot University.",
+    "nav": "home"
+  },
+  "international.html": {
+    "title": "นานาชาติ — BAS SWU",
+    "description": "โอกาสแลกเปลี่ยน Exchange 3+1 และความร่วมมือระหว่างประเทศของคณะบริหารธุรกิจเพื่อสังคม มศว",
+    "nav": "international"
+  },
+  "leader-jarin-jarusen.html": {
+    "title": "ผู้ช่วยศาสตราจารย์ ดร.จรินทร์ จารุเสน — ผู้บริหาร BAS SWU",
+    "description": "ผู้ช่วยศาสตราจารย์ ดร.จรินทร์ จารุเสน รองคณบดีฝ่ายบริหาร คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-jirachai-muenlit.html": {
+    "title": "ดร.จิรชัย หมื่นฤทธิ์ — ผู้บริหาร BAS SWU",
+    "description": "ดร.จิรชัย หมื่นฤทธิ์ ผู้ช่วยคณบดีฝ่ายพันธกิจสัมพันธ์เพื่อสังคม คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-kangwan-yodwisitsak.html": {
+    "title": "ผู้ช่วยศาสตราจารย์ ดร.กังวาน ยอดวิศิษฎ์ศักดิ์ — ผู้บริหาร BAS SWU",
+    "description": "ผู้ช่วยศาสตราจารย์ ดร.กังวาน ยอดวิศิษฎ์ศักดิ์ หัวหน้าภาควิชาการตลาดและการจัดการ คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-kanyakit-keeratiangkoon.html": {
+    "title": "ผู้ช่วยศาสตราจารย์ ดร.กัลยกิตติ์ กีรติอังกูร — ผู้บริหาร BAS SWU",
+    "description": "ผู้ช่วยศาสตราจารย์ ดร.กัลยกิตติ์ กีรติอังกูร รองคณบดีฝ่ายแผนและพัฒนาองค์กร คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-khomkrit-nantharojphong.html": {
+    "title": "ผู้ช่วยศาสตราจารย์ ดร.คมกริช นันทะโรจพงศ์ — ผู้บริหาร BAS SWU",
+    "description": "ผู้ช่วยศาสตราจารย์ ดร.คมกริช นันทะโรจพงศ์ ผู้ช่วยคณบดีฝ่ายวิจัย คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-natinee-thanajaro.html": {
+    "title": "ดร.ณัฐินี ฐานะจาโร — ผู้บริหาร BAS SWU",
+    "description": "ดร.ณัฐินี ฐานะจาโร คณบดี คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-phetcharat-jinnupong.html": {
+    "title": "ผู้ช่วยศาสตราจารย์ ดร.เพชรรัตน์ จินต์นุพงศ์ — ผู้บริหาร BAS SWU",
+    "description": "ผู้ช่วยศาสตราจารย์ ดร.เพชรรัตน์ จินต์นุพงศ์ รองคณบดีฝ่ายกิจการนิสิตและศิษย์เก่าสัมพันธ์ คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-phutip-meethavornkul.html": {
+    "title": "ผู้ช่วยศาสตราจารย์ ดร.ภูธิป มีถาวรกุล — ผู้บริหาร BAS SWU",
+    "description": "ผู้ช่วยศาสตราจารย์ ดร.ภูธิป มีถาวรกุล รองคณบดีฝ่ายวิชาการ คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-rasita-sangboonnak.html": {
+    "title": "ดร.รสิตา สังข์บุญนาค — ผู้บริหาร BAS SWU",
+    "description": "ดร.รสิตา สังข์บุญนาค หัวหน้าภาควิชาบัญชีและการเงิน คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-siam-prasertkul.html": {
+    "title": "ดร.สยาม ประเสริฐกุล — ผู้บริหาร BAS SWU",
+    "description": "ดร.สยาม ประเสริฐกุล ผู้ช่วยคณบดีฝ่ายวิเทศสัมพันธ์และสื่อสารองค์กร คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leader-wasan-sakulkijkarn.html": {
+    "title": "รองศาสตราจารย์ ดร.วสันต์ สกุลกิจกาญจน์ — ผู้บริหาร BAS SWU",
+    "description": "รองศาสตราจารย์ ดร.วสันต์ สกุลกิจกาญจน์ หัวหน้าภาควิชาบริหารธุรกิจ คณะบริหารธุรกิจเพื่อสังคม มศว — ประวัติการศึกษา ความเชี่ยวชาญ และ CV",
+    "nav": "about"
+  },
+  "leadership.html": {
+    "title": "ผู้บริหารคณะ — BAS SWU",
+    "description": "คณบดี รองคณบดี ผู้ช่วยคณบดี และหัวหน้าภาควิชา คณะบริหารธุรกิจเพื่อสังคม มศว พร้อมประวัติและ CV",
+    "nav": "about"
+  },
+  "news-detail.html": {
+    "title": "News — BAS SWU",
+    "description": "News and event detail.",
+    "nav": ""
+  },
+  "news.html": {
+    "title": "News & Events — BAS SWU",
+    "description": "Latest news, announcements and events from BAS SWU.",
+    "nav": ""
+  },
+  "program-detail.html": {
+    "title": "Program — BAS SWU",
+    "description": "Program details for BAS SWU.",
+    "nav": "programs"
+  },
+  "programs.html": {
+    "title": "Programs — BAS SWU",
+    "description": "All 9 BAS SWU degree programs, undergraduate through doctoral.",
+    "nav": "programs"
+  },
+  "student-life.html": {
+    "title": "Student Life — BAS SWU",
+    "description": "Student life, activities, facilities and exchange opportunities at BAS SWU.",
+    "nav": "student-life"
+  }
+}

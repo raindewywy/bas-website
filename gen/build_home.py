@@ -103,7 +103,7 @@ s = s[:i] + cat_bar + "\n    " + s[i:]
 # ----------------------------------------------------- 4. สายตรงคณบดี ----
 DEAN = """
 <div class="dean-direct-wrap">
-  <a class="dean-direct" id="dean-direct" href="contact.html#dean-direct">
+  <a class="dean-direct" id="dean-direct" href="leadership.html#dean-direct">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
     <span class="label th-body">สายตรงคณบดี</span>
     <button type="button" class="dean-direct-close" id="dean-direct-close" aria-label="ปิดปุ่มสายตรงคณบดี">

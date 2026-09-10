@@ -88,6 +88,27 @@ def build_index():
         '— ภาพถ่ายผู้บริหารยังรอไฟล์จากคณะ</p>'
     )
     body.append("</div></section>")
+    # ---- REQ-C-DEAN2 (v9): สายตรงคณบดี ย้ายมาจาก contact.html ----
+    body.append(
+        '<section class="section" id="dean-direct" style="background:var(--paper-dim);">'
+        '<div class="wrap">'
+        '<div class="section-head reveal"><div>'
+        '<p class="eyebrow">สายตรงคณบดี</p>'
+        '<h2 class="bi-heading"><span class="bi-th th-body">สายตรงคณบดี</span>'
+        '<span class="bi-en">Direct Line to the Dean</span></h2>'
+        '<p class="lede th-body">ช่องทางส่งข้อเสนอแนะ ข้อร้องเรียน '
+        'หรือเรื่องที่ต้องการให้คณบดีรับทราบโดยตรง</p>'
+        '</div></div>'
+        '<div class="split mt-5"><div class="split-copy reveal">'
+        '<p class="th-body"><strong>%s</strong> · %s</p>'
+        '<p class="mt-3"><a class="btn dean-mail-btn" href="mailto:%s">'
+        '<i class="fa-solid fa-envelope" aria-hidden="true"></i>'
+        '<span>ส่งอีเมลถึงคณบดีโดยตรง</span></a></p>'
+        '<p class="th-body mt-3"><a class="link-arrow" href="leader-%s.html">ดูประวัติคณบดี</a></p>'
+        '</div><div class="split-copy reveal"></div></div>'
+        '</div></section>'
+        % (E(dean["name_th"]), E(dean["role_th"]), dean["email"], dean["slug"])
+    )
     return common.page(
         "leadership.html",
         "ผู้บริหารคณะ — BAS SWU",

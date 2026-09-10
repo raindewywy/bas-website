@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="breadcrumb wrap" aria-label="เส้นทางหน้าเว็บ"><a href="index.html">หน้าแรก</a><span class="sep">/</span><a href="programs.html">หลักสูตร</a><span class="sep">/</span><span aria-current="page" data-p-breadcrumb>หลักสูตร</span></nav>
+<section class="page-hero" data-program-detail>
+  <div class="wrap">
+    <p class="eyebrow th-body" data-p-level>ปริญญาตรี</p>
+    <h1 class="bi-heading"><span class="bi-th th-body" data-p-name-th>ชื่อหลักสูตร</span><span class="bi-en" data-p-name-en>Program name (English)</span></h1>
+    <p class="lede th-body" data-p-summary>คำอธิบายหลักสูตร</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="admissions.html">ข้อมูลการรับสมัคร</a>
+      <a class="btn btn-secondary" href="#curriculum">ดูโครงสร้างหลักสูตร</a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="split" id="curriculum">
+      <div class="split-media reveal"><img class="media-img" src="assets/media/banner-program.jpg" alt="ภาพประกอบหลักสูตร" loading="lazy" decoding="async"></div>
+      <div class="split-copy reveal">
+        <p class="eyebrow th-body">หลักสูตร</p>
+        <h2 class="th-body">ประเภทหลักสูตร</h2>
+        <p class="th-body" data-p-curriculum>—</p>
+        <p class="th-body"><strong>ภาควิชา:</strong> <span data-p-dept>—</span> <span style="color:var(--muted);" data-p-dept-th></span></p>
+        
+      </div>
+    </div>
+    <div class="mt-6">
+      <h3 class="th-body">โอกาสในการประกอบอาชีพ</h3>
+      <div class="career-list mt-3 th-body" data-p-careers style="gap:.6rem;"></div>
+    </div>
+  </div>
+</section>
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">สำรวจเพิ่มเติม</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">หลักสูตรที่เกี่ยวข้อง</span><span class="bi-en">Related Programs</span></h2>
+        
+      </div>
+      
+    </div>
+    <div class="grid-3 mt-5" data-p-related></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal"><div class="cta-copy"><p class="eyebrow th-body">การรับสมัคร</p><h2 class="th-body">มีคำถามเกี่ยวกับหลักสูตรนี้?</h2><p class="th-body">พูดคุยกับอาจารย์ประจำหลักสูตร หรือดูขั้นตอนการสมัครแบบละเอียดก่อนตัดสินใจ</p></div><div class="cta-actions"><a class="btn btn-on-deep" href="admissions.html">คู่มือการรับสมัคร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost-invert" href="programs.html#advisors">ปรึกษาอาจารย์ประจำหลักสูตร</a><a class="btn btn-ghost-invert" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">สมัครเรียนออนไลน์</a></div></div></div>
+</section>
+
+{% endblock %}

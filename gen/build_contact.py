@@ -35,7 +35,6 @@ rows = "".join(
     for th, en, slug, extra in TOPICS
 )
 
-dean = by["natinee-thanajaro"]
 
 BLOCK = """
 <section class="section" id="topics">
@@ -52,28 +51,12 @@ BLOCK = """
   </div>
 </section>
 
-<section class="section" id="dean-direct" style="background:var(--paper-dim);">
+<section class="section" id="dean-direct" style="background:var(--paper-dim);padding-top:var(--space-5);padding-bottom:var(--space-5);">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">สายตรงคณบดี</p>
-        <h2 class="bi-heading"><span class="bi-th th-body">สายตรงคณบดี</span><span class="bi-en">Direct Line to the Dean</span></h2>
-        <p class="lede th-body">ช่องทางส่งข้อเสนอแนะ ข้อร้องเรียน หรือเรื่องที่ต้องการให้คณบดีรับทราบโดยตรง</p>
-      </div>
-    </div>
-    <div class="split mt-5">
-      <div class="split-copy reveal">
-        <p class="th-body"><strong>%s</strong> · %s</p>
-        <p class="th-body mt-2"><a href="mailto:%s">%s</a></p>
-        <p class="th-body mt-3"><a class="link-arrow" href="leader-%s.html">ดูประวัติคณบดี</a></p>
-      </div>
-      <div class="split-copy reveal">
-        <div class="notice th-body"><span><strong>สิ่งที่ต้องทำก่อนขึ้นจริง:</strong> ช่องทางนี้ควรเป็น<strong>แบบฟอร์มที่ส่งเข้าระบบของสำนักงานคณบดี</strong> ไม่ใช่อีเมลส่วนบุคคล เพราะเรื่องร้องเรียนต้องมีเลขรับเรื่อง ผู้ติดตาม และการเก็บข้อมูลตาม PDPA ต้นแบบนี้จึงแสดงเป็นช่องทางติดต่อไว้ก่อน และรอให้คณะยืนยันว่าจะใช้ฟอร์มหรือระบบใด</span></div>
-      </div>
-    </div>
+    <p class="th-body">ต้องการติดต่อคณบดีโดยตรง — <a class="link-arrow" href="leadership.html#dean-direct">ไปที่ &ldquo;สายตรงคณบดี&rdquo; ในหน้าผู้บริหารคณะ</a></p>
   </div>
 </section>
-""" % (rows, dean["name_th"], dean["role_th"], dean["email"], dean["email"], dean["slug"])
+""" % (rows,)
 
 if 'id="topics"' not in s:
     i = s.index('<section class="section" style="background:var(--paper-dim);" id="ita">')

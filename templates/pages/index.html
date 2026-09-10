@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% block main %}
+
+<section class="home-hero hero-full" id="hero">
+  <div class="hero-video">
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/media/hero-banner-mobile.jpg">
+      <img class="hero-fallback" src="assets/media/hero-banner.jpg" alt="" aria-hidden="true" width="1920" height="1080" fetchpriority="high" decoding="async">
+    </picture>
+    <video id="hero-video" autoplay muted loop playsinline preload="none"
+          poster="assets/media/hero-banner.jpg"
+          data-poster-desktop="assets/media/hero-banner.jpg"
+          data-poster-mobile="assets/media/hero-banner-mobile.jpg"
+          data-src-desktop=""
+          data-src-mobile=""></video>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow th-body">
+          คณะบริหารธุรกิจเพื่อสังคม
+        </p>
+
+        <h1 class="bi-heading">
+          <span class="bi-th th-body">
+            มหาวิทยาลัยศรีนครินทรวิโรฒ
+          </span>
+        </h1>
+
+        <p class="lede th-body">
+          องค์กรชั้นนำแห่งการเรียนรู้ธุรกิจที่มีคุณค่าเพื่อความยั่งยืนของสังคม
+        </p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+  <section class="section-tight identity-section" aria-labelledby="identity-h">
+    <div class="wrap id-layout">
+      <div class="id-intro reveal">
+        <p class="eyebrow">อัตลักษณ์คณะ</p>
+        <h2 id="identity-h" class="bi-heading"><span class="bi-th th-body">B · A · S</span><span class="bi-en">Business Administration for Society</span></h2>
+        <p class="id-lead th-body">กรอบแนวคิดสามด้านที่กำหนดวิธีการเรียนการสอน การทำงาน และการวัดความสำเร็จของคณะ</p>
+      </div>
+      <div class="id-grid"><article class="id-card reveal"><span class="id-letter" aria-hidden="true">B</span><span class="id-body"><span class="id-en">Business</span><span class="id-th th-body">ธุรกิจที่เข้าใจจริง</span><span class="id-desc th-body">องค์ความรู้ด้านบัญชี การเงิน การตลาด การจัดการ และธุรกิจระหว่างประเทศ ที่สอนผ่านโจทย์จริงของภาคธุรกิจ</span></span></article><article class="id-card reveal"><span class="id-letter" aria-hidden="true">A</span><span class="id-body"><span class="id-en">Administration</span><span class="id-th th-body">บริหารอย่างมืออาชีพ</span><span class="id-desc th-body">ทักษะการตัดสินใจ การวางแผน และการนำองค์กร ที่นิสิตได้ฝึกจริงผ่านโครงงาน และการแข่งขันเคส</span></span></article><article class="id-card reveal"><span class="id-letter" aria-hidden="true">S</span><span class="id-body"><span class="id-en">Society</span><span class="id-th th-body">เพื่อสังคมที่ดีกว่า</span><span class="id-desc th-body">ทุกหลักสูตรวัดความสำเร็จ ทั้งผลประกอบการและผลกระทบที่เกิดกับผู้คนและชุมชน</span></span></article></div>
+    </div>
+  </section>
+  <section class="section academic-section" aria-labelledby="academic-h">
+    <div class="wrap">
+      <div class="academic-head reveal">
+        <h2 id="academic-h" class="academic-title">Academic</h2>
+        <p class="th-body">ค้นหาเส้นทางการศึกษาที่เหมาะกับคุณ ที่คณะบริหารธุรกิจเพื่อสังคม มศว</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <!-- Admission -->
+          <a class="programme-card group programme-card--tone-1" href="admissions.html">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-file-lines fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2>การรับสมัคร</h2>
+              <p class="programme-en">Admission</p>
+              <p class="programme-description">
+                ข้อมูลการสมัครเข้าศึกษา คุณสมบัติ และขั้นตอนการสมัคร
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+          <!-- Undergraduate -->
+          <a class="programme-card group programme-card--tone-2" href="programs.html?level=undergraduate">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-graduation-cap fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2>ปริญญาตรี</h2>
+              <p class="programme-en">Undergraduate Programme</p>
+              <p class="programme-description">
+                หลักสูตรระดับปริญญาตรีทั้งภาษาไทยและภาษาอังกฤษ
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+          <!-- Graduate -->
+          <a class="programme-card group programme-card--tone-3" href="programs.html#graduate-entry">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-book-open fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2>บัณฑิตศึกษา</h2>
+              <p class="programme-en">Graduate Programme</p>
+              <p class="programme-description">
+                หลักสูตรปริญญาโทและปริญญาเอก เพื่อความเชี่ยวชาญเฉพาะทาง
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+          <!-- International -->
+          <a class="programme-card group programme-card--tone-4" href="international.html">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-globe fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2>โอกาสระดับนานาชาติ</h2>
+              <p class="programme-en">International Opportunities</p>
+              <p class="programme-description">
+                หลักสูตรนานาชาติ โครงการแลกเปลี่ยน และปริญญาคู่ 3+1
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+      </div>
+    </div>
+  </section>
+
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="split-media reveal"><img class="media-img" src="assets/media/campus-life.jpg" alt="บรรยากาศคณะบริหารธุรกิจเพื่อสังคม มศว" loading="lazy" decoding="async"></div>
+      <div class="split-copy reveal">
+        <p class="eyebrow th-body">รู้จักเรา</p>
+        <h2 class="th-body">รู้จักคณะบริหารธุรกิจเพื่อสังคม</h2>
+        <p class="th-body">ก่อตั้งขึ้นเป็นคณะอิสระของมหาวิทยาลัยศรีนครินทรวิโรฒ คณะบริหารธุรกิจเพื่อสังคมรวมสามภาควิชาเข้าด้วยกัน ได้แก่ ภาควิชาการบัญชีและการเงิน ภาควิชาการตลาดและการจัดการ และภาควิชาบริหารธุรกิจ ภายใต้แนวคิดเดียวกันคือ การศึกษาด้านบริหารธุรกิจที่วัดความสำเร็จจากผลกระทบต่อสังคม ไม่ใช่แค่ตัวเลขในงบการเงิน</p>
+        <p class="th-body">ปัจจุบันคณะมีนิสิต 3,776 คนในทุกระดับตั้งแต่ปริญญาตรีถึงปริญญาเอก มีอาจารย์ประจำ 38 คน นำโดยคณบดี ดร.ณัฐินี ฐานะจาโร</p>
+        <a class="link-arrow" href="about.html">อ่านเพิ่มเติมเกี่ยวกับ BAS SWU <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="mt-6">
+      <div class="stat-band-v2 reveal"><div class="stat-grid-v2"><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><div class="value" data-count-to="3,776">3,776</div><div class="label th-body">นิสิตทั้งหมด<span class="en">Total students</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><div class="value" data-count-to="3,420">3,420</div><div class="label th-body">ระดับปริญญาตรี<span class="en">Bachelor's degree</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span><div class="value" data-count-to="339">339</div><div class="label th-body">ระดับปริญญาโท<span class="en">Master's degree</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-award" aria-hidden="true"></i></span><div class="value" data-count-to="17">17</div><div class="label th-body">ระดับปริญญาเอก<span class="en">Doctoral</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span><div class="value" data-count-to="38">38</div><div class="label th-body">อาจารย์ประจำ<span class="en">Faculty members</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-book" aria-hidden="true"></i></span><div class="value" data-count-to="9">9</div><div class="label th-body">หลักสูตร<span class="en">Degree programs</span></div></div></div><p class="stat-source th-body"></p></div></div></div></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">จุดเด่น</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">ทำไมต้อง BAS SWU</span><span class="bi-en">Why BAS SWU</span></h2>
+        
+      </div>
+      
+    </div>
+    <div class="grid-3 mt-5">
+      <div class="value-tile reveal"><div class="word th-body" style="font-size:1.1rem;">3 ภาควิชา 9 เส้นทางอาชีพ</div><p class="th-body">การบัญชีและการเงิน การตลาดและการจัดการ และบริหารธุรกิจ — ตั้งแต่ปริญญาตรีถึงปริญญาเอก ภายใต้คณะเดียวที่สร้างธุรกิจควบคู่จิตสำนึกต่อสังคม</p></div>
+      <div class="value-tile reveal"><div class="word th-body" style="font-size:1.1rem;">เส้นทางสู่สากลอย่างแท้จริง</div><p class="th-body">หลักสูตรการจัดการธุรกิจโลกสอนเป็นภาษาอังกฤษทั้งหมด มีพันธมิตรแลกเปลี่ยนที่เยอรมนีและฟิลิปปินส์ พร้อมทางเลือกปริญญาคู่ 3+1</p></div>
+      <div class="value-tile reveal"><div class="word th-body" style="font-size:1.1rem;">คณาจารย์ที่เข้าถึงได้จริง</div><p class="th-body">อาจารย์ประจำ 38 คนใน 3 ภาควิชา พร้อมรายชื่อหัวหน้าภาควิชา รองคณบดี และผู้ช่วยคณบดี ที่เปิดเผยและติดต่อได้ทางอีเมล</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">ชีวิตนิสิต</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">ชีวิตนิสิต</span><span class="bi-en">Student Life</span></h2>
+        <p class="lede">เรียนรู้ เชื่อมโยง และเติบโต — ชีวิตนิสิต BAS SWU นอกห้องเรียน</p>
+      </div>
+      
+    </div>
+    <div class="mt-3"><div class="story-row reveal"><div class="story-media"><span class="story-theme">เรียนรู้</span><img class="media-img" src="assets/media/activity-workshop.jpg" alt="นิสิตทำงานกลุ่มในกิจกรรมของคณะ" loading="lazy" decoding="async"></div>
+        <div class="story-copy"><h3>เรียนรู้จากการลงมือทำ ไม่ใช่แค่ฟังบรรยาย</h3>
+        <p>การแข่งขันเคส โปรเจกต์กับลูกค้าจริง และแล็บประจำภาควิชา ทำให้ทฤษฎีถูกนำมาใช้จริงตั้งแต่ปีหนึ่ง ครบทั้งสามภาควิชา</p>
+        <a class="link-arrow" href="student-life.html">สำรวจชีวิตนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div><div class="story-row reveal"><div class="story-media"><span class="story-theme">เชื่อมโยง</span><img class="media-img" src="assets/media/activity-community.jpg" alt="นิสิตร่วมกิจกรรมของคณะ" loading="lazy" decoding="async"></div>
+        <div class="story-copy"><h3>แคมปัสที่สร้างขึ้นจากความเป็นชุมชน</h3>
+        <p>ชมรม สโมสรนิสิต และกิจกรรมข้ามภาควิชา เปิดพื้นที่ให้นิสิตทุกคนได้เป็นผู้นำ ไม่ใช่แค่ผู้เข้าร่วม</p>
+        <a class="link-arrow" href="student-life.html#activities">ดูกิจกรรมนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div><div class="story-row reveal"><div class="story-media"><span class="story-theme">เติบโต</span><img class="media-img" src="assets/media/activity-graduation.jpg" alt="บัณฑิตในพิธีรับปริญญา" loading="lazy" decoding="async"></div>
+        <div class="story-copy"><h3>โลกที่กว้างกว่าห้องเรียน</h3>
+        <p>พันธมิตรแลกเปลี่ยนที่เยอรมนีและฟิลิปปินส์ พร้อมเส้นทางปริญญาคู่ 3+1 สำหรับนิสิตหลักสูตรการจัดการธุรกิจโลก</p>
+        <a class="link-arrow" href="student-life.html#exchange">โอกาสแลกเปลี่ยน &amp; ต่างประเทศ <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div>
+  </div>
+</section>
+
+<section class="section rail-section" aria-labelledby="rail-h">
+  <div class="wrap">
+    <div class="section-head reveal"><div>
+      <p class="eyebrow">กิจกรรม</p>
+      <h2 id="rail-h" class="bi-heading"><span class="bi-th th-body">กิจกรรมและชีวิตนิสิต</span><span class="bi-en">Activities &amp; Student Life</span></h2>
+    </div>
+    <a class="link-arrow" href="student-life.html">ดูทั้งหมด <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="rail reveal" data-rail role="group" aria-roledescription="คารูเซล" aria-label="กิจกรรมและชีวิตนิสิต">
+      <button class="rail-btn rail-prev" type="button" data-rail-prev aria-label="เลื่อนไปรายการก่อนหน้า"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <div class="rail-viewport" data-rail-viewport tabindex="0" role="region" aria-label="รายการกิจกรรม เลื่อนด้วยปุ่มลูกศรซ้ายขวา">
+        <div class="rail-track"><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/activity-workshop.jpg" alt="กิจกรรมนิสิต BAS SWU" loading="lazy" decoding="async"><span class="act-badge th-body">กิจกรรมนิสิต</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#activities">การแข่งขันเคสและโปรเจกต์ประยุกต์</a></h3><p class="act-desc th-body">นิสิตจากทั้งสามภาควิชานำทฤษฎีไปใช้กับโจทย์ธุรกิจจริง การแข่งขันแผนธุรกิจ และแล็บประจำภาควิชา</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/activity-community.jpg" alt="กิจกรรมนิสิต BAS SWU" loading="lazy" decoding="async"><span class="act-badge th-body">กิจกรรมนิสิต</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#activities">ชมรมและสโมสรนิสิต</a></h3><p class="act-desc th-body">องค์กรที่บริหารโดยนิสิตเปิดพื้นที่ให้ทุกคนได้เป็นผู้นำ — ตั้งแต่การจัดงานอีเวนต์ไปจนถึงการเป็นพี่เลี้ยงรุ่นน้อง</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-student-support.jpg" alt="กิจกรรมนิสิต BAS SWU" loading="lazy" decoding="async"><span class="act-badge th-body">กิจกรรมนิสิต</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#activities">ปฐมนิเทศและสัปดาห์ต้อนรับ</a></h3><p class="act-desc th-body">ปฐมนิเทศนิสิตใหม่ ครอบคลุมทุกภาควิชา ก่อนเปิดภาคการศึกษาต้น</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/campus-life.jpg" alt="บรรยากาศในและรอบแคมปัส" loading="lazy" decoding="async"><span class="act-badge th-body">สิ่งอำนวยความสะดวก</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#facilities">ชีวิตในและรอบแคมปัส</a></h3><p class="act-desc th-body">จากพื้นที่ทำงานร่วมกันในอาคารนวัตกรรม ไปจนถึงย่านสุขุมวิทโดยรอบ ชีวิตแคมปัสขยายไกลกว่าประตูห้องเรียน</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โครงการแลกเปลี่ยนนานาชาติ" loading="lazy" decoding="async"><span class="act-badge th-body">แลกเปลี่ยน &amp; นานาชาติ</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#exchange">โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี</a></h3><p class="act-desc th-body">พันธมิตรแลกเปลี่ยนที่สนับสนุนการศึกษาหนึ่งภาคการศึกษาในประเทศเยอรมนี</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โครงการแลกเปลี่ยนนานาชาติ" loading="lazy" decoding="async"><span class="act-badge th-body">แลกเปลี่ยน &amp; นานาชาติ</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#exchange">Frankfurt School of Finance &amp; Management</a></h3><p class="act-desc th-body">โครงการแลกเปลี่ยนเฉพาะกับ Frankfurt School of Finance &amp; Management ประเทศเยอรมนี</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-mou.jpg" alt="พิธีลงนามความร่วมมือ" loading="lazy" decoding="async"><span class="act-badge th-body">ความร่วมมือ</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#exchange">Brokenshire College ประเทศฟิลิปปินส์</a></h3><p class="act-desc th-body">บันทึกข้อตกลงความร่วมมือระหว่าง มศว และ Brokenshire College สนับสนุนความร่วมมือและการแลกเปลี่ยน</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article></div>
+      </div>
+      <button class="rail-btn rail-next" type="button" data-rail-next aria-label="เลื่อนไปรายการถัดไป"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+    <div class="rail-dots" role="group" aria-label="เลือกชุดรายการ"><button class="rail-dot" type="button" data-rail-dot="0" aria-label="ไปยังชุดที่ 1" aria-current="true"></button><button class="rail-dot" type="button" data-rail-dot="1" aria-label="ไปยังชุดที่ 2"></button><button class="rail-dot" type="button" data-rail-dot="2" aria-label="ไปยังชุดที่ 3"></button><button class="rail-dot" type="button" data-rail-dot="3" aria-label="ไปยังชุดที่ 4"></button><button class="rail-dot" type="button" data-rail-dot="4" aria-label="ไปยังชุดที่ 5"></button><button class="rail-dot" type="button" data-rail-dot="5" aria-label="ไปยังชุดที่ 6"></button><button class="rail-dot" type="button" data-rail-dot="6" aria-label="ไปยังชุดที่ 7"></button></div>
+    <p class="sr-only" aria-live="polite" data-rail-status></p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">ข่าวและกิจกรรม</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">ข่าวและกิจกรรม</span><span class="bi-en">News &amp; Events</span></h2>
+        
+      </div>
+      <a class="link-arrow" href="news.html">ข่าวและกิจกรรมทั้งหมด <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="cat-bar"><a class="cat-chip is-all th-body" href="news.html">ทั้งหมด</a><a class="cat-chip th-body" href="news.html?cat=pr">ข่าวประชาสัมพันธ์</a><a class="cat-chip th-body" href="news.html?cat=campus">รอบรั้ว BAS</a><a class="cat-chip th-body" href="news.html?cat=academic">วิชาการและวิจัย</a><a class="cat-chip th-body" href="news.html?cat=inter">ความร่วมมือและนานาชาติ</a><a class="cat-chip th-body" href="news.html?cat=scholarship">ทุนการศึกษา</a><a class="cat-chip th-body" href="news.html?cat=job">รับสมัครงาน / จัดซื้อจัดจ้าง</a></div>
+    <div class="news-lead"><a class="news-feature reveal" href="news-detail.html?n=york-university-visit"><div class="card-media"><img class="media-img" src="assets/media/banner-news.jpg" alt="ข่าวความร่วมมือทางวิชาการ" loading="lazy" decoding="async"></div><div class="card-body"><span class="card-tag cat">ข่าวเด่น</span><h3 class="card-title">ความร่วมมือทางวิชาการและเยี่ยมชมคณะ: ต้อนรับมหาวิทยาลัยยอร์ก</h3><p class="card-desc">BAS SWU ต้อนรับคณะผู้แทนจากมหาวิทยาลัยยอร์ก (University of York) เพื่อหารือความร่วมมือทางวิชาการและเยี่ยมชมคณะ</p><span class="card-meta">6 กุมภาพันธ์ 2569</span></div></a><div class="news-rows"><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/academic-research.jpg" alt="บรรยายพิเศษทางวิชาการ" loading="lazy" decoding="async"></span><div><span class="card-tag cat">วิชาการและวิจัย</span><h3><a href="news-detail.html?n=cross-cultural-branding-lecture">บรรยายพิเศษ Cross-Cultural Branding</a></h3><span class="card-meta">4 กุมภาพันธ์ 2569</span></div></article><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/banner-mou.jpg" alt="พิธีลงนาม MOU" loading="lazy" decoding="async"></span><div><span class="card-tag cat">ความร่วมมือและนานาชาติ</span><h3><a href="news-detail.html?n=mou-brokenshire-college">พิธีลงนาม MOU กับ Brokenshire College ประเทศฟิลิปปินส์</a></h3><span class="card-meta">รอยืนยันวันที่</span></div></article><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี" loading="lazy" decoding="async"></span><div><span class="card-tag cat">ความร่วมมือและนานาชาติ</span><h3><a href="news-detail.html?n=germany-exchange-opportunity">โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี</a></h3><span class="card-meta">รอยืนยันวันที่</span></div></article><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โครงการแลกเปลี่ยน Frankfurt School" loading="lazy" decoding="async"></span><div><span class="card-tag cat">ความร่วมมือและนานาชาติ</span><h3><a href="news-detail.html?n=frankfurt-school-exchange">โครงการแลกเปลี่ยน Frankfurt School of Finance &amp; Management</a></h3><span class="card-meta">รอยืนยันวันที่</span></div></article></div></div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal"><div class="cta-copy"><p class="eyebrow th-body">ก้าวต่อไปของคุณ</p><h2 class="th-body">พร้อมเริ่มต้นที่ BAS SWU แล้วหรือยัง</h2><p class="th-body">ดูหลักสูตร เกณฑ์การรับสมัคร และช่องทางติดต่ออาจารย์ที่ปรึกษาของแต่ละหลักสูตรได้ในที่เดียว</p></div><div class="cta-actions"><a class="btn btn-on-deep" href="admissions.html">ขั้นตอนและปฏิทินการรับสมัคร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost-invert" href="programs.html#advisors">ปรึกษาอาจารย์ประจำหลักสูตร</a><a class="btn btn-ghost-invert" href="contact.html">ติดต่อสำนักงานคณะ</a></div></div></div>
+</section>
+
+
+<section class="section-tight">
+  <div class="wrap reveal">
+    <p class="eyebrow">เครือข่ายความร่วมมือ</p>
+    <h3 class="th-body" style="margin-top:.5rem;font-size:1.1rem;color:var(--muted);font-weight:500;">หน่วยงาน สถาบันการศึกษา และองค์กรพันธมิตรที่คณะลงนามความร่วมมือ (MOU) รวมถึงองค์กรที่บัณฑิตของเราทำงานด้วย</h3>
+    
+    <div class="marquee-wrap mt-4">
+      <div class="marquee-track"><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/skku.png" alt="Sungkyunkwan University (SKKU)" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/meiji-university.png" alt="Meiji University" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/kmitl.png" alt="สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/swu-social-sciences.png" alt="คณะสังคมศาสตร์ มหาวิทยาลัยศรีนครินทรวิโรฒ" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/rajinibon-school.png" alt="โรงเรียนราชินีบน" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/sarasas-witaed-nakhonpathom.png" alt="โรงเรียนสารสาสน์วิเทศนครปฐม" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/ocsc.png" alt="สำนักงาน ก.พ." loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/nrct.png" alt="สำนักงานการวิจัยแห่งชาติ (วช.)" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/nia.png" alt="สำนักงานนวัตกรรมแห่งชาติ (NIA)" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/etda.png" alt="สำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ (ETDA)" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/set.png" alt="ตลาดหลักทรัพย์แห่งประเทศไทย (SET)" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/gsb.png" alt="ธนาคารออมสิน" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/finansia.png" alt="Finansia" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/tax-auditor-association.png" alt="สมาคมผู้สอบบัญชีภาษีอากรแห่งประเทศไทย" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/flowaccount.png" alt="FlowAccount" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/big-c-retail.png" alt="Big C Retail" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/staybridge-suites.png" alt="Staybridge Suites" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/soho-hospitality.png" alt="SOHO Hospitality" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/the-blacksmith.png" alt="The Blacksmith" loading="lazy" decoding="async"></span><span class="marquee-item"><img class="partner-logo" src="assets/media/partners/nise.png" alt="NISE" loading="lazy" decoding="async"></span></div>
+    </div>
+  </div>
+</section>
+
+
+<div class="dean-direct-wrap">
+  <a class="dean-direct" id="dean-direct" href="leadership.html#dean-direct">
+    <i class="fa-solid fa-comment" aria-hidden="true"></i>
+    <span class="label th-body">สายตรงคณบดี</span>
+    <button type="button" class="dean-direct-close" id="dean-direct-close" aria-label="ปิดปุ่มสายตรงคณบดี">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+  </a>
+</div>
+{% endblock %}

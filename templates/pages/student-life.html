@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block main %}
+<nav class="breadcrumb wrap" aria-label="เส้นทางหน้าเว็บ"><a href="index.html">หน้าแรก</a><span class="sep">/</span><span aria-current="page">ชีวิตนิสิต</span></nav>
+<section class="page-hero page-hero--image"><img class="hero-bg" src="assets/media/campus-life.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high">
+  <div class="wrap">
+    <p class="eyebrow th-body">นอกห้องเรียน</p>
+    <h1 class="bi-heading"><span class="bi-th th-body">ชีวิตนิสิต</span><span class="bi-en">Student Life</span></h1>
+    <p class="lede th-body">เรียนรู้ เชื่อมโยง และเติบโต — ประสบการณ์ของนิสิต BAS SWU นอกห้องบรรยาย</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="story-row reveal"><div class="story-media"><span class="story-theme">เรียนรู้</span><img class="media-img" src="assets/media/activity-workshop.jpg" alt="นิสิตทำงานกลุ่มในกิจกรรมของคณะ" loading="lazy" decoding="async"></div>
+      <div class="story-copy"><h3 class="th-body">การแข่งขันเคสและโปรเจกต์ประยุกต์</h3><p class="th-body">นิสิตจากทั้งสามภาควิชานำทฤษฎีไปใช้กับโจทย์ธุรกิจจริง การแข่งขันแผนธุรกิจ และแล็บประจำภาควิชา</p><a class="link-arrow" href="student-life.html#activities">ดูกิจกรรมนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div>
+    <div class="story-row reveal"><div class="story-media"><span class="story-theme">เชื่อมโยง</span><img class="media-img" src="assets/media/activity-community.jpg" alt="นิสิตร่วมกิจกรรมของคณะ" loading="lazy" decoding="async"></div>
+      <div class="story-copy"><h3 class="th-body">ชมรมและสโมสรนิสิต</h3><p class="th-body">องค์กรที่บริหารโดยนิสิตเปิดพื้นที่ให้ทุกคนได้เป็นผู้นำ — ตั้งแต่การจัดงานอีเวนต์ไปจนถึงการเป็นพี่เลี้ยงรุ่นน้อง</p><a class="link-arrow" href="student-life.html#activities">ดูกิจกรรมนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div>
+    <div class="story-row reveal"><div class="story-media"><span class="story-theme">สัมผัสประสบการณ์</span><img class="media-img" src="assets/media/campus-life.jpg" alt="บรรยากาศชีวิตในแคมปัส" loading="lazy" decoding="async"></div>
+      <div class="story-copy"><h3 class="th-body">ชีวิตในและรอบแคมปัส</h3><p class="th-body">จากพื้นที่ทำงานร่วมกันในอาคารนวัตกรรม ไปจนถึงย่านสุขุมวิทโดยรอบ ชีวิตแคมปัสขยายออกไปไกลกว่าประตูห้องเรียน</p><a class="link-arrow" href="student-life.html#facilities">ดูสิ่งอำนวยความสะดวก <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-dim);" id="activities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">กิจกรรมนิสิต</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">กิจกรรมนิสิต</span><span class="bi-en">Student Activities</span></h2>
+        <p class="lede">ไฮไลต์จากชมรมนิสิต องค์กรนิสิต และกิจกรรมระดับคณะตลอดทั้งปี</p>
+      </div>
+      
+    </div>
+    
+    <div class="grid-3 mt-5">
+      <a class="card card-linked reveal" href="news.html?cat=campus"><div class="card-media"><img class="media-img" src="assets/media/banner-student-support.jpg" alt="ปฐมนิเทศนิสิตใหม่" loading="lazy" decoding="async"></div><div class="card-body"><span class="card-tag th-body">กิจกรรม</span><h3 class="card-title th-body">ปฐมนิเทศและสัปดาห์ต้อนรับ</h3><p class="card-desc th-body">ปฐมนิเทศนิสิตใหม่ ครอบคลุมทุกภาควิชา</p></div></a>
+      <a class="card card-linked reveal" href="news.html?cat=academic"><div class="card-media"><img class="media-img" src="assets/media/activity-workshop.jpg" alt="การแข่งขันเคสธุรกิจ" loading="lazy" decoding="async"></div><div class="card-body"><span class="card-tag th-body">กิจกรรม</span><h3 class="card-title th-body">การแข่งขันเคสธุรกิจ</h3><p class="card-desc th-body">ทีมข้ามภาควิชาแข่งขันแก้โจทย์ธุรกิจจริง</p></div></a>
+      <a class="card card-linked reveal" href="news.html?cat=campus"><div class="card-media"><img class="media-img" src="assets/media/activity-community.jpg" alt="งานชมรมและกิจกรรมนิสิต" loading="lazy" decoding="async"></div><div class="card-body"><span class="card-tag th-body">กิจกรรม</span><h3 class="card-title th-body">งานชมรมและสมัครสมาชิก</h3><p class="card-desc th-body">ชมรมที่บริหารโดยนิสิตเปิดรับสมาชิกทุกภาคการศึกษา</p></div></a>
+    </div>
+    <a class="btn btn-secondary mt-5" href="news.html">ดูกิจกรรมเพิ่มเติมในข่าวและกิจกรรม</a>
+  </div>
+</section>
+
+<section class="section" id="facilities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">สิ่งอำนวยความสะดวก</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">สิ่งอำนวยความสะดวก</span><span class="bi-en">Campus Facilities</span></h2>
+        
+      </div>
+      
+    </div>
+    <div class="facility-grid mt-5"><div class="facility-item reveal"><h4 class="th-body">พื้นที่ Co-working Space</h4><p class="th-body">ที่นั่งสบาย อินเทอร์เน็ตความเร็วสูง และโซนเฉพาะสำหรับทำงานเดี่ยวหรือเป็นกลุ่ม</p></div><div class="facility-item reveal"><h4 class="th-body">หอสมุดกลาง</h4><p class="th-body">โซนอ่านหนังสือเงียบ และห้องกลุ่มปรับอากาศพร้อมอินเทอร์เน็ตไร้สาย</p></div><div class="facility-item reveal"><h4 class="th-body">โซนบอร์ดเกม</h4><p class="th-body">พื้นที่พบปะสังสรรค์ในหอสมุด สำหรับเล่นเกมและพักผ่อนระหว่างคาบเรียน</p></div><div class="facility-item reveal"><h4 class="th-body">โรงอาหาร</h4><p class="th-body">อาหารไทยราคาย่อมเยา ทั้งข้าว ก๋วยเตี๋ยว ของว่างและเครื่องดื่ม เปิดให้บริการช่วงเช้าถึงบ่ายวันจันทร์-ศุกร์</p></div></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-dim);" id="exchange">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">สู่สากล</p>
+        <h2 class="bi-heading"><span class="bi-th th-body">โครงการแลกเปลี่ยน</span><span class="bi-en">Exchange &amp; Global Opportunities</span></h2>
+        
+      </div>
+      
+    </div>
+    <div class="grid-3 mt-5">
+      <a class="card card-linked reveal" href="international.html"><div class="card-body"><span class="card-tag th-body">แลกเปลี่ยน</span><h3 class="card-title th-body">โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี</h3><p class="card-desc th-body">พันธมิตรแลกเปลี่ยนที่สนับสนุนการศึกษาหนึ่งภาคการศึกษาในเยอรมนี</p></div></a>
+      <a class="card card-linked reveal" href="international.html"><div class="card-body"><span class="card-tag th-body">แลกเปลี่ยน</span><h3 class="card-title th-body">Frankfurt School of Finance &amp; Management</h3><p class="card-desc th-body">โครงการแลกเปลี่ยนเฉพาะกับ Frankfurt School ประเทศเยอรมนี</p></div></a>
+      <a class="card card-linked reveal" href="international.html"><div class="card-body"><span class="card-tag th-body">พันธมิตร</span><h3 class="card-title th-body">Brokenshire College ประเทศฟิลิปปินส์</h3><p class="card-desc th-body">บันทึกข้อตกลงความร่วมมือระหว่าง มศว และ Brokenshire College สนับสนุนความร่วมมือและการแลกเปลี่ยน</p></div></a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
