@@ -6,17 +6,28 @@
    ========================================================================= */
 
 :root{
-  /* ---- Brand color system — SYSTEMS direction ------------------------- */
-  --brand:#06d0eb;         /* primary brand (BAS) — fills, rules, icons. Never body text on light. */
-  --brand-ink:#06D0EB;     /* brand ink — brightened per faculty request (was #006775) */
-  --brand-deep:#00505C;    /* high-contrast brand — inverted panels, active states */
-  --brand-tint:#E8F7FA;    /* brand wash for surfaces */
-  --brand-tint-2:#CDEDF3;  /* brand wash, stronger */
+  /* ---- Brand scale — anchored on #00B3C9 (v9) ------------------------- */
+  --brand-50 :#EAF8FB;   /* wash อ่อนสุด */
+  --brand-100:#CDEEF6;   /* wash */
+  --brand-300:#7CDDF0;   /* eyebrow / ไอคอนบนพื้นเข้ม */
+  --brand-400:#00CBEB;   /* accent สว่าง / hover / underline */
+  --brand-500:#00B3C9;   /* PRIMARY — fill, rule, ไอคอนขนาดใหญ่ */
+  --brand-600:#0091AD;   /* border, icon เล็ก (AA non-text) */
+  --brand-700:#00718C;   /* TEXT/LINK บนพื้นขาว (AA) */
+  --brand-800:#0A4E6B;   /* พื้นเข้มรอง */
+  --brand-900:#0B3A57;   /* พื้นเข้มหลัก: page-hero, cta-band */
 
-  /* legacy aliases — existing rules keep working, single source of truth above */
-  --teal-400:var(--brand);
-  --teal-600:var(--brand-ink);
-  --teal-700:var(--brand-deep);
+  /* ---- Aliases เดิม — ให้ rule เก่าทำงานต่อโดยไม่ต้องไล่แก้ ---- */
+  --brand:      var(--brand-500);
+  --brand-ink:  var(--brand-700);   /* แก้บั๊ก contrast 1.87:1 -> 5.6:1 */
+  --brand-deep: var(--brand-900);
+  --brand-tint: var(--brand-50);
+  --brand-tint-2:var(--brand-100);
+  --teal-400:   var(--brand-500);
+  --teal-600:   var(--brand-700);
+  --teal-700:   var(--brand-900);
+  --deep-900:   var(--brand-900);
+  --deep-800:   var(--brand-800);
   --crimson-700:#8F1D2C;   /* secondary accent, from the university seal */
   --crimson-600:#A5273A;
 
@@ -34,7 +45,7 @@
   /* ---- Status ---------------------------------------------------------- */
   --success:#1E6E4B; --warning:#8A5A00; --error:#A32020; --info:var(--brand-ink);
 
-  --focus:#00505C;
+  --focus:var(--brand-700);
 
   /* ---- Type ------------------------------------------------------------
      One family across Thai + Latin: IBM Plex Sans Thai.
@@ -218,7 +229,7 @@
 
   border-radius: 9999px;
   background: #fff;
-  color: #005a66;
+  color: var(--brand-900);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 700;
@@ -233,7 +244,7 @@
 
 .programme-button:hover {
   transform: translateX(8px);
-  background: #e9f8fa;
+  background: var(--brand-50);
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
@@ -401,7 +412,7 @@ p{margin:0;}
   min-height:44px;
 }
 .btn:active{transform:translateY(1px);}
-.btn-primary{background:#06D0EB; color:#fff;}
+.btn-primary{background:var(--brand-700); color:#fff;}
 .btn-primary:hover{background:var(--brand-deep); color:#fff;}
 .btn-primary:focus-visible{background:var(--brand-deep); color:#fff;}
 .btn-secondary{background:var(--surface); color:var(--ink); border-color:var(--line-strong);}
@@ -543,15 +554,15 @@ p{margin:0;}
 .page-hero .lede{max-width:60ch; color:var(--muted); margin-top:var(--space-3); font-size:1.1rem;}
 
 /* ---- Home hero ------------------------------------------------------------ */
-.home-hero{position:relative; background:linear-gradient(160deg,#062A31 0%, #007685 58%, #00B3C9 100%); color:#fff; overflow:hidden;}
+.home-hero{position:relative; background:linear-gradient(160deg,var(--brand-800) 0%, var(--brand-700) 58%, #00B3C9 100%); color:#fff; overflow:hidden;}
 .home-hero::after{content:""; position:absolute; inset:0; background:radial-gradient(circle at 82% 20%, rgba(0,179,201,.35), transparent 55%); pointer-events:none;}
 .hero-grid{position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:var(--space-7); align-items:center; padding:var(--space-8) 0;}
-.hero-copy .eyebrow{color:#BFEFF2;}
+.hero-copy .eyebrow{color:var(--brand-100);}
 .hero-copy .eyebrow::before{background:#fff;}
 .hero-copy h1{color:#fff; font-size:var(--step-display); line-height:1.05; margin-top:var(--space-3);}
 .hero-copy .lede{color:rgba(255,255,255,.86); max-width:46ch; margin-top:var(--space-4); font-size:1.15rem;}
 .hero-actions{display:flex; gap:.9rem; margin-top:var(--space-5); flex-wrap:wrap;}
-.hero-media{position:relative; aspect-ratio:4/5; border-radius:var(--radius-l); overflow:hidden; background:linear-gradient(135deg,#0A4650,#123B44); border:1px solid rgba(255,255,255,.18); box-shadow:var(--shadow-m);}
+.hero-media{position:relative; aspect-ratio:4/5; border-radius:var(--radius-l); overflow:hidden; background:linear-gradient(135deg,var(--brand-800),var(--brand-900)); border:1px solid rgba(255,255,255,.18); box-shadow:var(--shadow-m);}
 .hero-media .ph-caption{position:absolute; top:var(--space-3); left:var(--space-3); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.7); background:rgba(0,0,0,.25); padding:.35em .7em; border-radius:99px;}
 .hero-play{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;}
 .play-btn{width:76px; height:76px; border-radius:50%; background:rgba(255,255,255,.14); border:1.5px solid rgba(255,255,255,.6); display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur);}
@@ -611,7 +622,7 @@ p{margin:0;}
 
 .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; transition:box-shadow var(--dur), transform var(--dur), border-color var(--dur); display:flex; flex-direction:column;}
 .card:hover{box-shadow:var(--shadow-m); transform:translateY(-3px); border-color:var(--line-strong);}
-.card-media{aspect-ratio:16/10; position:relative; background:linear-gradient(135deg,var(--paper-dim),var(--line));}
+.card-media{aspect-ratio:16/10; position:relative;}
 .card-body{padding:var(--space-4); display:flex; flex-direction:column; gap:.5rem; flex:1;}
 .card-tag{display:inline-flex; align-self:flex-start; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color:var(--teal-600); background:rgba(0,179,201,.13); padding:.3em .7em; border-radius:99px;}
 .card-tag.crimson{color:var(--crimson-700); background:rgba(143,29,44,.09);}
@@ -644,7 +655,7 @@ p{margin:0;}
 .story-row:hover h3{color:var(--teal-600);}
 .story-row:focus-within{outline:2px solid var(--focus); outline-offset:2px;}
 .story-row .link-arrow:focus-visible{outline:none;}
-.story-media{aspect-ratio:4/3; border-radius:var(--radius-l); overflow:hidden; background:linear-gradient(135deg,var(--paper-dim),var(--line)); position:relative;}
+.story-media{aspect-ratio:4/3; border-radius:var(--radius-l); overflow:hidden; position:relative;}
 .story-theme{position:absolute; top:.8rem; left:.8rem; background:rgba(27,31,34,.72); color:#fff; font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; padding:.4em .8em; border-radius:99px;}
 .story-copy h3{font-size:var(--step-h3); margin-bottom:.6rem;}
 .story-copy p{color:var(--muted);}
@@ -736,7 +747,7 @@ p{margin:0;}
 @media (max-width:560px){ .facility-grid{grid-template-columns:1fr;} }
 
 /* ---- Footer ------------------------------------------------------------------------- */
-.site-footer{background:#00505C; color:rgba(255,255,255,.86); margin-top:var(--space-8);}
+.site-footer{background:var(--brand-900); color:rgba(255,255,255,.86); margin-top:var(--space-8);}
 .footer-top{display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:var(--space-6); padding:var(--space-8) 0 var(--space-6);}
 .footer-logo{height:44px; width:auto; object-fit:contain; margin-bottom:var(--space-3);}
 .footer-brand .th{color:#fff; font-size:1.1rem; font-weight:600;}
@@ -826,7 +837,7 @@ p{margin:0;}
    HERO เต็มแบนเนอร์ (วิดีโอเป็นพื้นหลังเต็มพื้นที่)  — 5 ก.ย. 2026
    อ้างอิงแนวทางจาก swu.ac.th (แบนเนอร์เต็มความกว้าง) ตีความใหม่เป็นวิดีโอ
    ========================================================================= */
-.hero-full{position:relative; min-height:clamp(520px, 78vh, 760px); display:flex; align-items:flex-end; color:#fff; isolation:isolate; background:#0A2C32;}
+.hero-full{position:relative; min-height:clamp(520px, 78vh, 760px); display:flex; align-items:flex-end; color:#fff; isolation:isolate; background:var(--brand-800);}
 .hero-full::after{content:none;}
 .hero-video{position:absolute; inset:0; z-index:-2; overflow:hidden;}
 .hero-video video, .hero-video .hero-fallback{width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block;}
@@ -836,7 +847,7 @@ p{margin:0;}
     linear-gradient(180deg, rgba(6,38,44,.45) 0%, rgba(6,38,44,0) 32%, rgba(6,38,44,.62) 100%);}
 .hero-full .wrap{position:relative; width:100%; padding-top:var(--space-9); padding-bottom:var(--space-7);}
 .hero-inner{max-width:60ch;}
-.hero-full .eyebrow{color:#BFEFF2;}
+.hero-full .eyebrow{color:var(--brand-100);}
 .hero-full .eyebrow::before{background:var(--teal-400);}
 .hero-full h1{color:#fff; font-size:var(--step-display); line-height:1.05; margin-top:var(--space-3); text-wrap:balance;}
 .hero-full h1 .bi-en{color:rgba(255,255,255,.85);}
@@ -845,8 +856,8 @@ p{margin:0;}
 
 /* แถบควบคุมวิดีโอ — WCAG 2.2.2 สื่อที่เล่นเองต้องหยุดได้ */
 .hero-controls{position:absolute; right:var(--space-4); bottom:var(--space-4); display:flex; align-items:center; gap:.6rem; z-index:2;}
-.hero-caption-chip{font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.85); background:rgba(6,38,44,.55); border:1px solid rgba(255,255,255,.25); padding:.4em .8em; border-radius:99px; backdrop-filter:blur(3px);}
-.hero-toggle{width:44px; height:44px; border-radius:50%; background:rgba(6,38,44,.55); border:1.5px solid var(--teal-400); color:#fff; display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur); backdrop-filter:blur(3px);}
+.hero-caption-chip{font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.85); background:rgba(11,58,87,.55); border:1px solid rgba(255,255,255,.25); padding:.4em .8em; border-radius:99px; backdrop-filter:blur(3px);}
+.hero-toggle{width:44px; height:44px; border-radius:50%; background:rgba(11,58,87,.55); border:1.5px solid var(--teal-400); color:#fff; display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur); backdrop-filter:blur(3px);}
 .hero-toggle:hover{background:rgba(0,179,201,.35); transform:scale(1.06);}
 .hero-toggle svg{width:16px; height:16px; fill:#fff;}
 .hero-toggle i{font-size:16px; color:#fff;}
@@ -866,8 +877,8 @@ p{margin:0;}
    สายตรงคณบดี — ปุ่มลอยมุมล่างขวา ปิดได้ ไม่ทับ CTA บนมือถือ
    ========================================================================= */
 .dean-direct{position:fixed; right:16px; bottom:16px; z-index:60; display:flex; align-items:center; gap:.4rem;
-  background:#06D0EB; color:#fff; text-shadow:0 1px 2px rgba(0,44,51,.45); border-radius:99px;
-  padding:.5rem .85rem .5rem .65rem; box-shadow:0 6px 18px rgba(0,88,102,.35); text-decoration:none;
+  background:var(--brand-700); color:#fff; text-shadow:0 1px 2px rgba(11,58,87,.45); border-radius:99px;
+  padding:.5rem .85rem .5rem .65rem; box-shadow:0 6px 18px rgba(11,58,87,.35); text-decoration:none;
   font-size:.78rem; font-weight:700; border:1.5px solid rgba(255,255,255,.55);
   transition:transform var(--dur), background var(--dur), box-shadow var(--dur);}
 .dean-direct:hover, .dean-direct:focus-visible, .dean-direct:active{
@@ -896,7 +907,7 @@ p{margin:0;}
 .stat-tile-v2{display:flex; flex-direction:column; gap:.55rem; padding-left:0;}
 .stat-tile-v2 .stat-ico{
   width:52px; height:52px; border-radius:50%; flex:none;
-  background:#06D0EB; color:#fff;
+  background:var(--brand-600); color:#fff;
   display:flex; align-items:center; justify-content:center;
 }
 .stat-tile-v2 .stat-ico svg{width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.6;}
@@ -913,7 +924,7 @@ p{margin:0;}
 .cat-chip{border:1px solid var(--line-strong); background:var(--surface); border-radius:99px; padding:.45em 1.05em; font-size:.85rem; font-weight:600; color:var(--ink-soft); transition:all var(--dur);}
 .cat-chip:hover{border-color:var(--teal-600); color:var(--teal-600);}
 .cat-chip[aria-pressed="true"]{background:var(--teal-700); border-color:var(--teal-700); color:#fff;}
-.card-tag.cat{background:#06D0EB; color:#fff;}
+.card-tag.cat{background:var(--brand-700); color:#fff;}
 
 /* =========================================================================
    การ์ดคลิกได้ทั้งใบ (หลักสูตร / ข่าว) + ลิงก์ออกนอกเว็บ
@@ -947,17 +958,13 @@ p{margin:0;}
 .honour-card p{color:var(--muted); font-size:.92rem; margin:0;}
 
 .btn-on-deep{background:#fff; color:var(--deep-900); border-color:#fff;}
-.btn-on-deep:hover{background:#D7F3F7; border-color:#D7F3F7; color:var(--deep-900);}
+.btn-on-deep:hover{background:var(--brand-100); border-color:var(--brand-100); color:var(--deep-900);}
 
 /* == v3 sections ========================================================
    page-hero เข้ม · CTA band แบบ split · การ์ดหลักสูตร · แถวข่าวหน้าแรก
    ทุกค่าอ้าง token เดิมของเว็บ ไม่มีสีลอย
    ===================================================================== */
-:root{
-  --deep-900:#00505C;   /* แถบเข้ม (hero / CTA) — สว่างขึ้น ตัวอักษรขาวยังผ่าน AA */
-  --deep-800:#063C45;
-  --brand-300:#7FE0EC;  /* eyebrow/ไอคอนบนพื้นเข้ม — 11.4:1 */
-}
+/* :root ชุดที่สองถูกยุบเข้าชุดหลักด้านบนแล้ว (REQ-C1 v9) */
 
 /* ---- 1. Page hero: พื้นเขียวเข้มแบรนด์ -------------------------------- */
 .page-hero{
@@ -1021,7 +1028,7 @@ p{margin:0;}
 /* ---- 3. การ์ดหลักสูตร ------------------------------------------------- */
 .card-ph{
   position:absolute; inset:0; display:block;
-  background:linear-gradient(135deg,#00525E 0%,#0098AC 48%,#43C9DA 100%);
+  background:linear-gradient(135deg,var(--brand-900) 0%,var(--brand-600) 48%,var(--brand-300) 100%);
   transition:transform 420ms cubic-bezier(.22,.61,.36,1);
 }
 .card-ph::after{
@@ -1068,7 +1075,7 @@ p{margin:0;}
 .news-row:first-child{border-top:0; padding-top:0;}
 .news-row .news-thumb{
   aspect-ratio:1; border-radius:var(--radius-s); overflow:hidden; position:relative;
-  background:linear-gradient(135deg,#0B3B43 0%,#0E6D7B 55%,#5CC3D0 100%);
+  background:linear-gradient(135deg,var(--brand-800) 0%,var(--brand-700) 55%,var(--brand-300) 100%);
 }
 .news-row .news-thumb::after{
   content:""; position:absolute; inset:0;
@@ -1175,7 +1182,7 @@ p{margin:0;}
   transition:transform var(--dur), box-shadow var(--dur), border-color var(--dur);
 }
 .id-card:hover, .id-card:focus-within{
-  transform:translateY(-4px); box-shadow:var(--shadow-m); border-color:#06D0EB;
+  transform:translateY(-4px); box-shadow:var(--shadow-m); border-color:var(--brand-500);
 }
 .id-letter{
   position:absolute; left:-36px; top:50%; transform:translateY(-50%);
@@ -1314,7 +1321,7 @@ pre, code{overflow-x:auto;}
   border-radius:0 0 var(--radius-m) var(--radius-m);
 }
 .mega a{display:block; padding:.55rem .65rem; border-left:2px solid transparent;}
-.mega a:hover, .mega a:focus-visible{background:#06D0EB; color:#fff; border-left-color:#06D0EB;}
+.mega a:hover, .mega a:focus-visible{background:var(--brand-700); color:#fff; border-left-color:var(--brand-700);}
 .mega a .en{display:block; font-size:.76rem; color:var(--muted); margin-top:.1em;}
 
 /* group heading inside a mega menu (e.g. Graduate Studies) */
@@ -1345,7 +1352,7 @@ a[target="_blank"] .ext-ico{opacity:.9;}
 .drawer-item > button, .drawer-item > a{min-height:48px;}
 .drawer-sub a{min-height:44px; display:block; padding-top:.65rem; padding-bottom:.65rem; color:var(--ink-soft); line-height:1.4;}
 .drawer-sub a > span{display:block; font-size:.8rem; line-height:1.35; margin-top:.1rem;}
-.drawer-sub a:hover, .drawer-sub a:focus-visible{background:#06D0EB; color:#fff;}
+.drawer-sub a:hover, .drawer-sub a:focus-visible{background:var(--brand-700); color:#fff;}
 .drawer-sub-head{
   margin:.6rem 0 .1rem; padding:.5rem var(--space-4) .2rem;
   font-family:var(--font-mono); font-size:.68rem; font-weight:600;
@@ -1402,7 +1409,7 @@ a[target="_blank"] .ext-ico{opacity:.9;}
 .card:hover{transform:none; box-shadow:var(--shadow-m); border-color:var(--line-strong);}
 .card:focus-within{border-color:var(--brand-ink); box-shadow:var(--shadow-m);}
 .card-title{font-size:clamp(1.02rem, .98rem + .35vw, 1.16rem); letter-spacing:-.005em;}
-.card-tag{background:#06D0EB; color:#fff; border-radius:2px;}
+.card-tag{background:var(--brand-700); color:#fff; border-radius:2px;}
 .card-tag.crimson{border-radius:2px;}
 .program-card .level-badge{border:1px solid var(--line); border-radius:2px; color:var(--ink-soft);}
 .grid-3{gap:clamp(1rem, .6rem + 1.4vw, 2rem);}
@@ -1431,13 +1438,13 @@ footer a, .footer a{min-height:32px; display:inline-flex; align-items:center;}
 a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .eyebrow, .link-arrow, .tab-btn[aria-selected="true"],
 .nav-item.current > .nav-link{color:var(--brand-ink);}
-/* กล่องที่พื้นหลังเป็น #06D0EB ต้องใช้ตัวอักษรสีขาวเสมอ
+/* กล่องที่พื้นหลังเป็น var(--brand-500) ต้องใช้ตัวอักษรสีขาวเสมอ
    ใช้ !important เฉพาะจุดนี้ เพราะกฎรวม a:not(...):hover ด้านบนมี specificity (0,4,1)
    ซึ่งสูงกว่า .mega a:hover (0,2,1) จะทับให้กลายเป็นฟ้าบนฟ้า */
 .card-tag, .card-tag.cat{color:#fff;}
 .mega a:hover, .mega a:focus-visible,
 .drawer-sub a:hover, .drawer-sub a:focus-visible{color:#fff !important;}
-.on-dark .eyebrow, .home-hero .eyebrow, .page-hero .eyebrow{color:#7FE0EC;}
+.on-dark .eyebrow, .home-hero .eyebrow, .page-hero .eyebrow{color:var(--brand-300);}
 
 /* ---- 11. Skip link + focus ------------------------------------------------ */
 .skip-link{
@@ -1523,14 +1530,14 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .hero-video .hero-fallback{position:absolute; inset:0;}
 .hero-video video{position:absolute; inset:0;}
 .hero-full .hero-inner{position:relative;}
-.hero-full .eyebrow{color:#7FE0EC;}
+.hero-full .eyebrow{color:var(--brand-300);}
 .hero-full h1{letter-spacing:-.02em;}
 
 /* ---- 19. SYSTEMS card plate ---------------------------------------------
    Programme / news cards are structural, not photographic: a measured plate
    with a brand hairline. Photography stays reserved for the FIELD NOTES
    sections (hero · about/dean · sustainability · hall of fame · alumni). */
-.card-media{background:var(--surface-2); border-bottom:1px solid var(--line);}
+.card-media{background:#EDEFF1; border-bottom:1px solid var(--line);}
 .program-card .card-media{aspect-ratio:21/9;}
 @media (max-width:600px){ .program-card .card-media{aspect-ratio:3/1;} }
 .card-ph{
@@ -1557,7 +1564,7 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 }
 .story-media{
   border-radius:var(--radius-s); border:1px solid var(--line);
-  background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  background:#EDEFF1;
 }
 .story-media::after{
   content:""; position:absolute; inset:0; z-index:0;
@@ -1866,14 +1873,14 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .academic-section .atile:focus-visible .atile-go,
 .academic-section .atile:focus-within .atile-go{
   transform:translateX(8px);
-  background:#e8f7fa;
+  background:var(--brand-50);
   box-shadow:0 10px 22px rgba(0,0,0,.18);
 }
 
 /* Card colours */
-.academic-section .atile--deep{background:#00505c;}
-.academic-section .atile--brand{background:#087783;}
-.academic-section .atile--ink{background:#18242a;}
+.academic-section .atile--deep{background:var(--brand-900);}
+.academic-section .atile--brand{background:var(--brand-700);}
+.academic-section .atile--ink{background:var(--brand-800);}
 .academic-section .atile--slate{background:#53616a;}
 
 /* Responsive */
@@ -1933,12 +1940,12 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 
 /* == v6 dean-direct email button ========================================= */
 .dean-mail-btn{
-  background:#06D0EB; color:#fff; text-shadow:0 1px 2px rgba(0,44,51,.45);
-  border-color:#06D0EB; box-shadow:0 4px 14px rgba(0,88,102,.22);
+  background:var(--brand-700); color:#fff; text-shadow:0 1px 2px rgba(11,58,87,.45);
+  border-color:var(--brand-700); box-shadow:0 4px 14px rgba(11,58,87,.22);
 }
 .dean-mail-btn:hover, .dean-mail-btn:focus-visible, .dean-mail-btn:active{
   background:var(--brand-deep); border-color:var(--brand-deep); color:#fff;
-  box-shadow:0 6px 18px rgba(0,88,102,.32);
+  box-shadow:0 6px 18px rgba(11,58,87,.28);
 }
 .dean-mail-btn:focus-visible{outline:2px solid var(--focus); outline-offset:3px;}
 .dean-mail-btn i{font-size:15px;}
@@ -1955,3 +1962,35 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .card:hover .media-img, a:hover .media-img{transform:scale(1.04);}
 .media-img{transition:transform 420ms cubic-bezier(.22,.61,.36,1);}
 @media (prefers-reduced-motion: reduce){ .media-img{transition:none;} .card:hover .media-img{transform:none;} }
+
+
+/* == v9 phase 1 == REQ-M1 · REQ-H1 ======================================
+   พื้นหลังกรอบรูปเป็นกลาง (ไม่มี hue) + page-hero ที่มีรูป banner
+   ===================================================================== */
+
+/* ---- REQ-M1: neutral placeholder ระหว่างรูปโหลด ---------------------- */
+.story-media, .card-media, .act-media, .split-media, .news-thumb, .staff-photo{
+  background:#EDEFF1;
+}
+/* ปิดลายตารางตกแต่งเมื่อมีรูปจริงแล้ว */
+.story-media:has(> .media-img)::after,
+.card-media:has(> .media-img)::after,
+.story-media:has(> picture)::after,
+.card-media:has(> picture)::after{ display:none; }
+
+/* ---- REQ-H1: page-hero variant ที่มีรูป banner ----------------------- */
+.page-hero--image{ position:relative; isolation:isolate; }
+.page-hero--image > .hero-bg{
+  position:absolute; inset:0; z-index:-2;
+  width:100%; height:100%; object-fit:cover; object-position:center;
+}
+.page-hero--image::before{               /* scrim ให้ตัวอักษรอ่านออก */
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(90deg,
+    rgba(11,58,87,.92) 0%, rgba(11,58,87,.78) 45%, rgba(11,58,87,.42) 100%);
+}
+.page-hero--image::after{ display:none; }  /* ปิดวงกลม radial เดิม */
+@media (max-width:760px){
+  .page-hero--image::before{ background:rgba(11,58,87,.86); }
+  .page-hero--image > .hero-bg{ object-position:50% 35%; }
+}
