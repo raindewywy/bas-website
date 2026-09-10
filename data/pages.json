@@ -128,5 +128,40 @@
     "title": "Student Life — BAS SWU",
     "description": "Student life, activities, facilities and exchange opportunities at BAS SWU.",
     "nav": "student-life"
+  },
+  "academic.html": {
+    "title": "Academic & Research — BAS SWU",
+    "description": "Academic standards, quality assurance, UKPSF recognition and collaboration at BAS SWU.",
+    "nav": "academic"
+  },
+  "qa.html": {
+    "title": "Quality Assurance — BAS SWU",
+    "description": "TQF, EdPEx and AUN-QA quality assurance frameworks used by BAS SWU.",
+    "nav": "academic"
+  },
+  "mou.html": {
+    "title": "Academic Collaboration (MOU) — BAS SWU",
+    "description": "Partner institutions, government agencies and companies with signed MOUs with BAS SWU.",
+    "nav": "academic"
+  },
+  "academic-calendar.html": {
+    "title": "Academic Calendar — BAS SWU",
+    "description": "Undergraduate and graduate academic calendars for BAS SWU.",
+    "nav": "academic"
+  },
+  "sustainability.html": {
+    "title": "Sustainability — BAS SWU",
+    "description": "Environmental, social and governance work at BAS SWU.",
+    "nav": "about"
+  },
+  "student-services.html": {
+    "title": "Student Services — BAS SWU",
+    "description": "Support systems and services for BAS SWU students.",
+    "nav": "student-life"
+  },
+  "staff-deans-office.html": {
+    "title": "Dean's Office Staff — BAS SWU",
+    "description": "Support staff of the BAS SWU Dean's Office with direct contact details.",
+    "nav": "about"
   }
 }

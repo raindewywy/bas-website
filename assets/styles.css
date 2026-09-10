@@ -2068,3 +2068,85 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
    ซ่อนเฉพาะเส้นนี้ ไม่กระทบ hover/focus อื่นของ .programme-card
    ===================================================================== */
 .programme-accent{ display:none; }
+
+
+/* == v11 cyan surfaces ==================================================
+   #37CBCB เป็นสีพื้นหลัก · ปรับได้ ±1 ระดับ (#13939C … #58E4E4)
+   ตัวอักษรบนพื้นเหล่านี้ = ขาว ตามที่กำหนด
+   ===================================================================== */
+
+/* ---- page-hero (ทุกหน้า) -------------------------------------------- */
+.page-hero{ background:#37CBCB; background-image:linear-gradient(115deg, #13939C 0%, #2FC0C0 55%, #58E4E4 100%); color:#fff; }
+.page-hero h1{ color:#fff; }
+.page-hero .eyebrow{ color:#fff; }
+.page-hero .eyebrow::before{ background:#fff; }
+.page-hero .bi-en{ color:rgba(255,255,255,.78); }
+.page-hero .lede{ color:rgba(255,255,255,.88); }
+.page-hero::after{
+  background:radial-gradient(circle at 34% 34%, rgba(255,255,255,.22), rgba(255,255,255,0) 68%);
+}
+/* hero ที่มีรูป banner — scrim เปลี่ยนเป็นฟ้าโปร่งให้เข้าชุดกัน */
+.page-hero--image::before{
+  background:linear-gradient(90deg,
+    rgba(55,203,203,.94) 0%, rgba(55,203,203,.82) 45%, rgba(55,203,203,.46) 100%);
+}
+@media (max-width:760px){
+  .page-hero--image::before{ background:rgba(55,203,203,.90); }
+}
+
+/* ---- cta-band -------------------------------------------------------- */
+.cta-band{ background:#37CBCB; background-image:linear-gradient(120deg, #13939C 0%, #37CBCB 58%, #58E4E4 100%); color:#fff; }
+.cta-band .eyebrow{ color:#fff; }
+.cta-band .eyebrow::before{ background:#fff; }
+.cta-band h2{ color:#fff; }
+.cta-band p{ color:rgba(255,255,255,.88); }
+
+/* ---- footer ---------------------------------------------------------- */
+.site-footer{ background:#37CBCB; background-image:linear-gradient(165deg, #37CBCB 0%, #13939C 100%); color:rgba(255,255,255,.88); }
+.site-footer a{ color:#fff; }
+.site-footer h3{ color:#fff; }
+.site-footer .footer-brand p{ color:rgba(255,255,255,.88); }
+.site-footer .footer-bottom{ color:rgba(255,255,255,.78); border-top-color:rgba(255,255,255,.28); }
+
+/* ---- วงกลม B · A · S (อัตลักษณ์คณะ) ---------------------------------- */
+.id-letter{ background:#37CBCB; background-image:linear-gradient(140deg, #49D9D9 0%, #13939C 100%); box-shadow:0 4px 14px rgba(55,203,203,.38); }
+.id-card:hover .id-letter,
+.id-card:focus-within .id-letter{ background-image:linear-gradient(140deg, #37CBCB 0%, #0F7F88 100%); }
+
+/* ---- ปุ่มลอย "สายตรงคณบดี" ------------------------------------------- */
+.dean-direct{ background:#37CBCB; background-image:linear-gradient(135deg, #49D9D9 0%, #13939C 100%); box-shadow:0 6px 18px rgba(55,203,203,.45); }
+.dean-direct:hover,
+.dean-direct:focus-visible,
+.dean-direct:active{ background-image:linear-gradient(135deg, #37CBCB 0%, #0F7F88 100%); box-shadow:0 10px 22px rgba(19,147,156,.5); }
+
+/* ---- ปุ่มหลัก (สมัครเรียน · เข้าสู่ระบบ) ------------------------------
+   ปุ่มขนาดเล็ก = สีเรียบ ไม่ไล่สี (ไล่สีสงวนไว้ให้พื้นผิวใหญ่)          */
+.btn-primary{ background:#37CBCB; background-image:none; color:#fff; border-color:transparent; }
+.btn-primary:hover,
+.btn-primary:focus-visible{ background:#13939C; background-image:none; color:#fff; }
+
+/* ---- เมนู mega ตอน hover: พื้นฟ้า · ตัวอักษรขาวทั้งไทยและอังกฤษ ------- */
+.mega a:hover,
+.mega a:focus-visible{ background:#37CBCB; border-left-color:#37CBCB; color:#fff; }
+.mega a:hover .th-body, .mega a:focus-visible .th-body,
+.mega a:hover .en,      .mega a:focus-visible .en,
+.mega a:hover .ext-ico, .mega a:focus-visible .ext-ico{ color:#fff; }
+.mega a.is-sub:hover,
+.mega a.is-sub:focus-visible{ border-left-color:#37CBCB; }
+
+/* ---- drawer (มือถือ) ตอน hover: เหมือนกัน ---------------------------- */
+.drawer-sub a:hover,
+.drawer-sub a:focus-visible{ background:#37CBCB; color:#fff; }
+.drawer-sub a:hover > span,   .drawer-sub a:focus-visible > span,
+.drawer-sub a:hover .ext-ico, .drawer-sub a:focus-visible .ext-ico{ color:#fff; }
+
+/* ---- ไอคอนใน modal เข้าสู่ระบบ ---------------------------------------
+   ไอคอน "ค้นหา" กับ "ผู้ดูแลระบบ" บนหัวเว็บคงเป็นสีเทาตามเดิม
+   (ไม่ override .icon-btn) — เปลี่ยนเฉพาะไอคอนโล่ในหน้าต่างเข้าสู่ระบบ */
+.admin-modal-icon{ color:#13939C; }
+
+/* ---- การ์ด Academic 4 ใบ — แบรนด์เข้ม · แบรนด์ปกติ · เทาเข้ม · เทาอ่อน -- */
+.programme-card--tone-1{ background:#13939C; background-image:linear-gradient(160deg, #1AA5AF 0%, #13939C 100%); }
+.programme-card--tone-2{ background:#37CBCB; background-image:linear-gradient(160deg, #49D9D9 0%, #2FC0C0 100%); }
+.programme-card--tone-3{ background:#1F2A30; background-image:linear-gradient(160deg, #2A3942 0%, #1B252B 100%); }
+.programme-card--tone-4{ background:#66757C; background-image:linear-gradient(160deg, #78868E 0%, #5D6C73 100%); }
