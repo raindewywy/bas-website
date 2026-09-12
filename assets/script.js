@@ -14,7 +14,87 @@
     initProgramDetail();
     initNewsDetail();
     initAdmin();
+    initGlobalMap();
   });
+
+
+  /* ---- Global Partnerships: world map + partner list ---------------------- */
+  function initGlobalMap(){
+    var map = document.getElementById("gp-map");
+    var detail = document.getElementById("gp-detail");
+    var data = window.BAS_PARTNERS;
+    if (map && detail && data){
+      var pins = Array.prototype.slice.call(map.querySelectorAll(".gp-pin"));
+      var byId = {};
+      data.nodes.forEach(function(n){ byId[n.id] = n; });
+
+      function render(node){
+        var items = node.partners.map(function(p){
+          return '<li>' + esc(p.name) + '<span class="gp-detail-type">' + esc(p.type) + '</span></li>';
+        }).join("");
+        detail.innerHTML =
+          '<p class="gp-detail-country">' + esc(node.country) + '</p>' +
+          '<p class="gp-detail-meta"><span>' + esc(node.region) + '</span><span aria-hidden="true">&middot;</span><span>' +
+          node.count + (node.count === 1 ? ' partner' : ' partners') + '</span></p>' +
+          '<ul class="gp-detail-list">' + items + '</ul>';
+      }
+
+      function select(id){
+        var node = byId[id];
+        if (!node) return;
+        pins.forEach(function(b){
+          var on = b.getAttribute("data-id") === id;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+        render(node);
+      }
+
+      pins.forEach(function(b){
+        var id = b.getAttribute("data-id");
+        b.setAttribute("aria-pressed", "false");
+        b.addEventListener("click", function(){ select(id); });
+        b.addEventListener("mouseenter", function(){ var n = byId[id]; if (n) render(n); });
+        b.addEventListener("focus", function(){ select(id); });
+      });
+      map.addEventListener("mouseleave", function(){
+        var active = map.querySelector(".gp-pin.is-active");
+        var n = active ? byId[active.getAttribute("data-id")] : null;
+        if (n) render(n);
+      });
+
+      // largest partner base first, so the panel is never empty on load
+      var first = data.nodes.slice().sort(function(a,b){ return b.count - a.count; })[0];
+      if (first){
+        select(first.id);
+        // on narrow screens the map scrolls inside its own box — start on the busiest region
+        var col = map.closest(".gp-map-scroll") || map.parentElement;
+        var pin = map.querySelector('.gp-pin[data-id="' + first.id + '"]');
+        if (col && pin && col.scrollWidth > col.clientWidth){
+          col.scrollLeft = pin.offsetLeft - col.clientWidth / 2;
+        }
+      }
+    }
+
+    var more = document.getElementById("gp-plist-more");
+    var list = document.getElementById("gp-plist");
+    if (more && list){
+      more.addEventListener("click", function(){
+        var open = more.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(list.children, function(li, i){
+          if (i >= 6) li.hidden = open;
+        });
+        more.setAttribute("aria-expanded", String(!open));
+        more.textContent = open ? "View all partners" : "Show fewer partners";
+      });
+    }
+
+    function esc(v){
+      return String(v).replace(/[&<>"]/g, function(c){
+        return ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" })[c];
+      });
+    }
+  }
 
   function initHeaderScroll(){
     var header = document.querySelector(".site-header");

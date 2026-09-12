@@ -12,7 +12,7 @@
   "contact.html": {
     "title": "Contact — BAS SWU",
     "description": "Contact BAS SWU -- address, phone, email, ITA and work manual.",
-    "nav": "about"
+    "nav": "contact"
   },
   "departments.html": {
     "title": "Departments — BAS SWU",
@@ -25,9 +25,9 @@
     "nav": "about"
   },
   "green-award.html": {
-    "title": "Green Award — BAS SWU",
-    "description": "รางวัลและการดำเนินงานด้านความยั่งยืนของคณะบริหารธุรกิจเพื่อสังคม มศว",
-    "nav": "about"
+    "title": "Green Office — BAS SWU",
+    "description": "Green Office practice and sustainability awards at BAS SWU.",
+    "nav": "sustainability"
   },
   "honours.html": {
     "title": "Hall of Fame — BAS SWU",
@@ -40,9 +40,9 @@
     "nav": "home"
   },
   "international.html": {
-    "title": "นานาชาติ — BAS SWU",
+    "title": "International — BAS SWU",
     "description": "โอกาสแลกเปลี่ยน Exchange 3+1 และความร่วมมือระหว่างประเทศของคณะบริหารธุรกิจเพื่อสังคม มศว",
-    "nav": "international"
+    "nav": "global"
   },
   "leader-jarin-jarusen.html": {
     "title": "ผู้ช่วยศาสตราจารย์ ดร.จรินทร์ จารุเสน — ผู้บริหาร BAS SWU",
@@ -107,22 +107,22 @@
   "news-detail.html": {
     "title": "News — BAS SWU",
     "description": "News and event detail.",
-    "nav": ""
+    "nav": "news"
   },
   "news.html": {
     "title": "News & Events — BAS SWU",
     "description": "Latest news, announcements and events from BAS SWU.",
-    "nav": ""
+    "nav": "news"
   },
   "program-detail.html": {
     "title": "Program — BAS SWU",
     "description": "Program details for BAS SWU.",
-    "nav": "programs"
+    "nav": "academic"
   },
   "programs.html": {
     "title": "Programs — BAS SWU",
     "description": "All 9 BAS SWU degree programs, undergraduate through doctoral.",
-    "nav": "programs"
+    "nav": "academic"
   },
   "student-life.html": {
     "title": "Student Life — BAS SWU",
@@ -140,9 +140,9 @@
     "nav": "academic"
   },
   "mou.html": {
-    "title": "Academic Collaboration (MOU) — BAS SWU",
-    "description": "Partner institutions, government agencies and companies with signed MOUs with BAS SWU.",
-    "nav": "academic"
+    "title": "Global Partnerships — BAS SWU",
+    "description": "Where BAS SWU partners are in the world — partner universities, government agencies and companies with signed MOUs, shown on an interactive world map.",
+    "nav": "global"
   },
   "academic-calendar.html": {
     "title": "Academic Calendar — BAS SWU",
@@ -152,7 +152,7 @@
   "sustainability.html": {
     "title": "Sustainability — BAS SWU",
     "description": "Environmental, social and governance work at BAS SWU.",
-    "nav": "about"
+    "nav": "sustainability"
   },
   "student-services.html": {
     "title": "Student Services — BAS SWU",
