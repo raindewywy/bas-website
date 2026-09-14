@@ -10,11 +10,11 @@ fix_v9_greenoffice.py — REQUIREMENTS v9 · เฟส 8 (REQ-E1 / REQ-E2)
             4) ชื่อเกณฑ์ประเมิน 6 หมวด ให้ตรงต้นฉบับ (ของเดิมเรียบเรียงใหม่ ไม่ตรงชื่อทางการ)
           reuse .split / .notice / .edu-list / .honour-card ที่มีอยู่ ไม่สร้าง component ใหม่
 
-  REQ-E1  ใส่ hero banner — ทำอัตโนมัติ "ถ้ามีไฟล์" assets/media/banner-greenoffice.jpg
+  REQ-E1  ใส่ hero banner — ทำอัตโนมัติ "ถ้ามีไฟล์" public/assets/media/banner-greenoffice.jpg
           (ยังดาวน์โหลดจาก bas2 ไม่ได้จากเครื่องนี้ ดูหมายเหตุท้ายไฟล์)
 
   แกลเลอรีรูปกิจกรรม: แสดงเป็น .grid-3 การ์ดรูป (reuse .card + .card-media)
-  เปิดอัตโนมัติเมื่อมีไฟล์ assets/media/greenoffice-*.jpg|png ตั้งแต่ 3 รูปขึ้นไป
+  เปิดอัตโนมัติเมื่อมีไฟล์ public/assets/media/greenoffice-*.jpg|png ตั้งแต่ 3 รูปขึ้นไป
   ถ้ายังไม่มีรูปจะไม่ใส่กล่อง placeholder ตามกติกา REQ-A4
 
 รันซ้ำได้ (idempotent)
@@ -24,13 +24,13 @@ from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parent.parent
-BANNER = ROOT / "assets" / "media" / "banner-greenoffice.jpg"
+BANNER = ROOT / "public" / "assets" / "media" / "banner-greenoffice.jpg"
 
 
 def page_path(name):
-    """หลังย้ายมาใช้ template แล้ว ต้องแก้ที่ templates/pages/ ไม่ใช่ .html ที่ root
-    (root ถูก build.py เขียนทับ) — ถ้ายังไม่มี templates/ ก็แก้ที่ root เหมือนเดิม"""
-    tpl = ROOT / "templates" / "pages" / name
+    """หลังย้ายมาใช้ template แล้ว ต้องแก้ที่ app/views/pages/ ไม่ใช่ .html ที่ root
+    (root ถูก build.py เขียนทับ) — ถ้ายังไม่มี app/views/ ก็แก้ที่ root เหมือนเดิม"""
+    tpl = ROOT / "app" / "views" / "pages" / name
     return tpl if tpl.exists() else ROOT / name
 
 PAGE = None  # กำหนดใน __main__
@@ -133,7 +133,7 @@ if __name__ == "__main__":
         print("  green-award.html: เปลี่ยนหัวข้อ section ที่ 2 เป็น 'เกณฑ์ประเมิน 6 หมวด' (เดิมซ้ำกับด้านบน)")
 
     # --- REQ-E2 (5) แกลเลอรีรูปกิจกรรม ---
-    have = [f for f in GALLERY_CANDIDATES if (ROOT / "assets" / "media" / f).exists()]
+    have = [f for f in GALLERY_CANDIDATES if (ROOT / "public" / "assets" / "media" / f).exists()]
     if GALLERY_MARK in s:
         print("  green-award.html: มีแกลเลอรีแล้ว — ข้าม")
     elif len(have) < 3:
@@ -158,17 +158,17 @@ if __name__ == "__main__":
     if "page-hero--image" in s:
         print("  green-award.html: hero มีรูปแล้ว — ข้าม")
     elif not BANNER.exists():
-        print("  ** ข้าม REQ-E1: ยังไม่มี assets/media/banner-greenoffice.jpg")
-        print("     บันทึกไฟล์นี้ลง assets/media/ แล้วรันสคริปต์นี้ซ้ำ hero จะขึ้นเอง")
+        print("  ** ข้าม REQ-E1: ยังไม่มี public/assets/media/banner-greenoffice.jpg")
+        print("     บันทึกไฟล์นี้ลง public/assets/media/ แล้วรันสคริปต์นี้ซ้ำ hero จะขึ้นเอง")
     elif HERO_OLD not in s:
         print("  !! หา page-hero ของ green-award.html ไม่เจอ")
     else:
         s = s.replace(HERO_OLD, HERO_NEW, 1)
-        print("  green-award.html: REQ-E1 hero -> assets/media/banner-greenoffice.jpg")
+        print("  green-award.html: REQ-E1 hero -> public/assets/media/banner-greenoffice.jpg")
 
     PAGE.write_text(s, encoding="utf-8")
 
-# หมายเหตุรูปที่ยังต้องเตรียม (ดาวน์โหลดเองจาก bas2 แล้ววางใน assets/media/):
+# หมายเหตุรูปที่ยังต้องเตรียม (ดาวน์โหลดเองจาก bas2 แล้ววางใน public/assets/media/):
 #   banner-greenoffice.jpg  <- Portals/64/BlockBuilderImages/23855/GreenOffice1600x6003.jpg
 #   greenoffice-logo.png    <- Portals/64/BlockBuilderImages/23856/logo-150x150.png
 #   greenoffice-01.jpg …    <- Portals/64/BlockBuilderImages/23856/02-9.jpg ฯลฯ

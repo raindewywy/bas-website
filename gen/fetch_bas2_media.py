@@ -4,11 +4,11 @@
 fetch_bas2_media.py — ดึงรูปจาก bas2.swu.ac.th มาเก็บในเครื่อง (รันบนเครื่องคุณ)
 
 ทำ 3 อย่าง:
-  1) REQ §9.3  ดาวน์โหลดรูปผู้บริหารที่ยัง hotlink อยู่ -> assets/media/leaders/
-                แล้วแก้ src ใน templates/pages/*.html ให้ชี้ path ในเครื่อง
-                (แก้ที่ template แล้วรัน build.py ไม่ใช่แก้ .html ที่ root)
-  2) REQ-E1    ดาวน์โหลด banner Green Office -> assets/media/banner-greenoffice.jpg
-  3) REQ-E2    ดาวน์โหลดรูปแกลเลอรี Green Office -> assets/media/greenoffice-*.jpg
+  1) REQ §9.3  ดาวน์โหลดรูปผู้บริหารที่ยัง hotlink อยู่ -> public/assets/media/leaders/
+                แล้วแก้ src ใน app/views/pages/*.html ให้ชี้ path ในเครื่อง
+                (แก้ที่ app/views/pages แล้วรัน build.py ไม่ใช่แก้ .html ที่ root)
+  2) REQ-E1    ดาวน์โหลด banner Green Office -> public/assets/media/banner-greenoffice.jpg
+  3) REQ-E2    ดาวน์โหลดรูปแกลเลอรี Green Office -> public/assets/media/greenoffice-*.jpg
 
 ทุกไฟล์ถูกย่อ/บีบตามข้อกำหนด §6 (กว้างสุด 1600px, JPEG q82) และตั้งชื่อ ASCII ตัวพิมพ์เล็ก
 
@@ -31,7 +31,7 @@ except ImportError:
     sys.exit("!! ต้องติดตั้งก่อน:  pip install pillow requests")
 
 ROOT = Path(__file__).resolve().parent.parent
-MEDIA = ROOT / "assets" / "media"
+MEDIA = ROOT / "public" / "assets" / "media"
 LEADERS_DIR = MEDIA / "leaders"
 
 BASE = "https://bas2.swu.ac.th/Portals/64/BlockBuilderImages"
@@ -76,7 +76,7 @@ def get(url):
 
 def fetch_leaders(dry):
     urls = set()
-    tpl = ROOT / "templates" / "pages"
+    tpl = ROOT / "app" / "views" / "pages"
     pages = sorted(tpl.glob("*.html")) if tpl.is_dir() else sorted(ROOT.glob("*.html"))
     for p in pages:
         urls |= set(re.findall(r'src="(https://bas2\.swu\.ac\.th/[^"]+)"', p.read_text(encoding="utf-8")))
@@ -119,7 +119,7 @@ def fetch_leaders(dry):
             s = s.replace(' referrerpolicy="no-referrer"', "")
             p.write_text(s, encoding="utf-8")
             n += 1
-    where = "templates/pages" if (ROOT / "templates" / "pages").is_dir() else "root"
+    where = "app/views/pages" if (ROOT / "app" / "views" / "pages").is_dir() else "root"
     print(f"  แก้ src ใน {where} {n} ไฟล์ -> path ในเครื่อง")
 
 

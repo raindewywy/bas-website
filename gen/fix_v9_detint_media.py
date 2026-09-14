@@ -3,14 +3,14 @@
 """
 fix_v9_detint_media.py — REQUIREMENTS v9 · REQ-M2 (ระดับไฟล์รูป)
 
-ปัญหา: ไฟล์ banner-*.jpg ใน assets/media/ ถูก "อาบสีฟ้า" มาตั้งแต่ไฟล์ต้นฉบับ
+ปัญหา: ไฟล์ banner-*.jpg ใน public/assets/media/ ถูก "อาบสีฟ้า" มาตั้งแต่ไฟล์ต้นฉบับ
        (ค่าเฉลี่ย R~55 / G~178 / B~192) ไม่ใช่ overlay ของ CSS
        จึงลบด้วย CSS ไม่ได้ ต้องแก้ที่ตัวไฟล์
 
 วิธี: per-channel levels stretch — ยืดแต่ละ channel กลับเต็มช่วง 0-255
       คืนภาพถ่ายเดิมได้ดีมากเพราะ overlay เป็นสีทึบชั้นเดียว
 
-ปลอดภัย: - สำรองไฟล์เดิมไว้ที่ assets/media/_original-tinted/ ก่อนเขียนทับ
+ปลอดภัย: - สำรองไฟล์เดิมไว้ที่ public/assets/media/_original-tinted/ ก่อนเขียนทับ
          - ข้ามไฟล์ที่ค่า cast ต่ำอยู่แล้ว (รันซ้ำได้ ไม่ทำให้ภาพเพี้ยนซ้ำ)
 
     python gen/fix_v9_detint_media.py            # ทำจริง
@@ -27,7 +27,7 @@ except ImportError:
     sys.exit("!! ต้องติดตั้งก่อน:  pip install pillow numpy")
 
 ROOT = Path(__file__).resolve().parent.parent
-MEDIA = ROOT / "assets" / "media"
+MEDIA = ROOT / "public" / "assets" / "media"
 BACKUP = MEDIA / "_original-tinted"
 
 CAST_THRESHOLD = 60      # (G+B)/2 - R เกินเท่านี้ถือว่าอาบสีฟ้า
@@ -85,4 +85,4 @@ if __name__ == "__main__":
               f"{bak.stat().st_size//1024} KB -> {p.stat().st_size//1024} KB")
 
     if not dry:
-        print(f"\n  สำรองไฟล์เดิมไว้ที่ assets/media/_original-tinted/ ({len(targets)} ไฟล์)")
+        print(f"\n  สำรองไฟล์เดิมไว้ที่ public/assets/media/_original-tinted/ ({len(targets)} ไฟล์)")
