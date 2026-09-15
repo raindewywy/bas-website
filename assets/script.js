@@ -3,18 +3,105 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function(){
-    initHeaderScroll();
-    initMegaMenuKeyboard();
-    initMobileDrawer();
-    initSearchPanel();
     initMarqueeClone();
     initScrollReveal();
     initFilters();
     initStaffToggle();
     initProgramDetail();
     initNewsDetail();
-    initAdmin();
+    initGlobalMap();
   });
+
+  // header/drawer/search/admin ต้องรอ nav+footer ถูก inject โดย assets/include.js ก่อน
+  // (nav/footer มาจาก fetch() แบบ async — มาไม่ทันตอน DOMContentLoaded ยิง)
+  // include.js เรียก window.BASSite.initNav() เองหลัง inject เสร็จ
+  window.BASSite = window.BASSite || {};
+  window.BASSite.initNav = function(){
+    initHeaderScroll();
+    initMegaMenuKeyboard();
+    initMobileDrawer();
+    initSearchPanel();
+    initAdmin();
+  };
+
+
+  /* ---- Global Partnerships: world map + partner list ---------------------- */
+  function initGlobalMap(){
+    var map = document.getElementById("gp-map");
+    var detail = document.getElementById("gp-detail");
+    var data = window.BAS_PARTNERS;
+    if (map && detail && data){
+      var pins = Array.prototype.slice.call(map.querySelectorAll(".gp-pin"));
+      var byId = {};
+      data.nodes.forEach(function(n){ byId[n.id] = n; });
+
+      function render(node){
+        var items = node.partners.map(function(p){
+          return '<li>' + esc(p.name) + '<span class="gp-detail-type">' + esc(p.type) + '</span></li>';
+        }).join("");
+        detail.innerHTML =
+          '<p class="gp-detail-country">' + esc(node.country) + '</p>' +
+          '<p class="gp-detail-meta"><span>' + esc(node.region) + '</span><span aria-hidden="true">&middot;</span><span>' +
+          node.count + (node.count === 1 ? ' partner' : ' partners') + '</span></p>' +
+          '<ul class="gp-detail-list">' + items + '</ul>';
+      }
+
+      function select(id){
+        var node = byId[id];
+        if (!node) return;
+        pins.forEach(function(b){
+          var on = b.getAttribute("data-id") === id;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+        render(node);
+      }
+
+      pins.forEach(function(b){
+        var id = b.getAttribute("data-id");
+        b.setAttribute("aria-pressed", "false");
+        b.addEventListener("click", function(){ select(id); });
+        b.addEventListener("mouseenter", function(){ var n = byId[id]; if (n) render(n); });
+        b.addEventListener("focus", function(){ select(id); });
+      });
+      map.addEventListener("mouseleave", function(){
+        var active = map.querySelector(".gp-pin.is-active");
+        var n = active ? byId[active.getAttribute("data-id")] : null;
+        if (n) render(n);
+      });
+
+      // largest partner base first, so the panel is never empty on load
+      var first = data.nodes.slice().sort(function(a,b){ return b.count - a.count; })[0];
+      if (first){
+        select(first.id);
+        // on narrow screens the map scrolls inside its own box — start on the busiest region
+        var col = map.closest(".gp-map-scroll") || map.parentElement;
+        var pin = map.querySelector('.gp-pin[data-id="' + first.id + '"]');
+        if (col && pin && col.scrollWidth > col.clientWidth){
+          col.scrollLeft = pin.offsetLeft - col.clientWidth / 2;
+        }
+      }
+    }
+
+    var more = document.getElementById("gp-plist-more");
+    var list = document.getElementById("gp-plist");
+    if (more && list){
+      more.addEventListener("click", function(){
+        var open = more.getAttribute("aria-expanded") === "true";
+        Array.prototype.forEach.call(list.children, function(li, i){
+          if (i >= 6) li.hidden = open;
+        });
+        more.setAttribute("aria-expanded", String(!open));
+        more.textContent = open ? "View all partners" : "Show fewer partners";
+      });
+    }
+
+    function esc(v){
+      return String(v).replace(/[&<>"]/g, function(c){
+        return ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" })[c];
+      });
+    }
+  }
 
   function initHeaderScroll(){
     var header = document.querySelector(".site-header");
@@ -194,14 +281,14 @@
     var program = BAS_PROGRAMS.find(function(p){ return p.slug === slug; }) || BAS_PROGRAMS[0];
     var dept = (typeof BAS_DEPARTMENTS !== "undefined") ? BAS_DEPARTMENTS.find(function(d){ return d.slug === program.dept; }) : null;
 
-    document.title = program.name_th + " — BAS SWU";
+    document.title = program.name_en + " — BAS SWU";
     setText("[data-p-name-en]", program.name_en);
     setText("[data-p-name-th]", program.name_th);
     setText("[data-p-summary]", program.summary);
     setText("[data-p-curriculum]", program.curriculum);
-    setText("[data-p-level]", program.level === "graduate" ? "ปริญญาโท-เอก" : "ปริญญาตรี");
-    setText("[data-p-dept]", dept ? (dept.name_th) : "—");
-    setText("[data-p-dept-th]", dept ? (dept.name_en) : "");
+    setText("[data-p-level]", program.level === "graduate" ? "Graduate" : "Undergraduate");
+    setText("[data-p-dept]", dept ? (dept.name_en) : "—");
+    setText("[data-p-dept-th]", dept ? (dept.name_th) : "");
 
     var careerList = document.querySelector("[data-p-careers]");
     if(careerList){
@@ -214,7 +301,7 @@
     }
 
     var breadcrumbCur = document.querySelector("[data-p-breadcrumb]");
-    if(breadcrumbCur) breadcrumbCur.textContent = program.name_th;
+    if(breadcrumbCur) breadcrumbCur.textContent = program.name_en;
 
     // related programs (same department, excluding current)
     var related = BAS_PROGRAMS.filter(function(p){ return p.dept === program.dept && p.slug !== program.slug; }).slice(0,3);
@@ -223,9 +310,9 @@
       if(!related.length){ relatedWrap.closest("section").hidden = true; }
       relatedWrap.innerHTML = related.map(function(p){
         return '<a class="card program-card" href="program-detail.html?p='+p.slug+'">'+
-          '<div class="card-media"><span class="level-badge">'+(p.level==="graduate"?"ปริญญาโท-เอก":"ปริญญาตรี")+'</span><span class="ph-label">ภาพประกอบหลักสูตร (ตัวอย่าง)</span></div>'+
-          '<div class="card-body"><span class="card-tag">'+p.curriculum+'</span>'+
-          '<h3 class="card-title bi-heading"><span class="bi-th">'+p.name_th+'</span><span class="bi-en">'+p.name_en+'</span></h3>'+
+          '<div class="card-media"><span class="level-badge">'+(p.level==="graduate"?"Graduate":"Undergraduate")+'</span><span class="ph-label">ภาพประกอบหลักสูตร (ตัวอย่าง)</span></div>'+
+          '<div class="card-body"><span class="card-tag">'+(p.curriculum_en||p.curriculum)+'</span>'+
+          '<h3 class="card-title bi-heading"><span class="bi-en">'+p.name_en+'</span><span class="bi-th th-body">'+p.name_th+'</span></h3>'+
           '<p class="card-desc">'+p.summary+'</p></div></a>';
       }).join("");
     }
@@ -237,13 +324,14 @@
     var slug = qs("n");
     var item = BAS_NEWS.find(function(n){ return n.slug === slug; }) || BAS_NEWS[0];
 
-    document.title = item.title + " — BAS SWU News";
-    setText("[data-n-title]", item.title);
-    setText("[data-n-date]", item.date);
-    setText("[data-n-category]", item.category);
+    document.title = (item.title_en || item.title) + " — BAS SWU News";
+    setText("[data-n-title]", item.title_en || item.title);
+    setText("[data-n-title-th]", item.title_en ? item.title : "");
+    setText("[data-n-date]", item.date_en || item.date);
+    setText("[data-n-category]", item.category_en || item.category);
     setText("[data-n-summary]", item.summary);
     var breadcrumbCur = document.querySelector("[data-n-breadcrumb]");
-    if(breadcrumbCur) breadcrumbCur.textContent = item.title;
+    if(breadcrumbCur) breadcrumbCur.textContent = item.title_en || item.title;
 
     var related = BAS_NEWS.filter(function(n){ return n.slug !== item.slug; }).slice(0,3);
     var relatedWrap = document.querySelector("[data-n-related]");
@@ -251,9 +339,9 @@
       relatedWrap.innerHTML = related.map(function(n){
         return '<a class="card" href="news-detail.html?n='+n.slug+'">'+
           '<div class="card-media"><span class="ph-label">ภาพข่าว (ตัวอย่าง)</span></div>'+
-          '<div class="card-body"><span class="card-tag'+(n.category_en==="News"?"":" crimson")+'">'+n.category+'</span>'+
-          '<span class="card-meta">'+n.date+'</span>'+
-          '<h3 class="card-title">'+n.title+'</h3></div></a>';
+          '<div class="card-body"><span class="card-tag'+(n.category_en==="News"?"":" crimson")+'">'+(n.category_en||n.category)+'</span>'+
+          '<span class="card-meta">'+(n.date_en||n.date)+'</span>'+
+          '<h3 class="card-title bi-heading"><span class="bi-en">'+(n.title_en||n.title)+'</span><span class="bi-th th-body">'+n.title+'</span></h3></div></a>';
       }).join("");
     }
   }

@@ -9,12 +9,12 @@
   /* ---- Brand scale — anchored on #37CBCB (v9) ------------------------- */
   --brand-50 :#EFFBFB;   /* wash อ่อนสุด */
   --brand-100:#CDF3F3;   /* wash */
-  --brand-300:#86EAEA;   /* eyebrow / ไอคอนบนพื้นเข้ม */
-  --brand-400:#58E4E4;   /* accent สว่าง / hover / underline */
-  --brand-500:#37CBCB;   /* PRIMARY — fill, rule, ไอคอนขนาดใหญ่ */
-  --brand-600:#13939C;   /* border, icon เล็ก (AA non-text) */
-  --brand-650:#0F8198;   /* ขั้นกลาง 600/700 — ตัวอักษรขาวเล็กผ่าน AA (4.55:1) */
-  --brand-700:#087090;   /* TEXT/LINK บนพื้นขาว (AA) */
+  --brand-300:#2ec4f1;   /* eyebrow / ไอคอนบนพื้นเข้ม */
+  --brand-400:#22b7e4;   /* accent สว่าง / hover / underline */
+  --brand-500:#1badda;   /* PRIMARY — fill, rule, ไอคอนขนาดใหญ่ */
+  --brand-600:#1ca1ca;   /* border, icon เล็ก (AA non-text) */
+  --brand-650:#138fb4;   /* ขั้นกลาง 600/700 — ตัวอักษรขาวเล็กผ่าน AA (4.55:1) */
+  --brand-700:#117fa0;   /* TEXT/LINK บนพื้นขาว (AA) */
   --brand-800:#0B4E6B;   /* พื้นเข้มรอง */
   --brand-900:#0E3A54;   /* พื้นเข้มหลัก: page-hero, cta-band */
 
@@ -102,8 +102,6 @@
 }
 
 
-/* ---- REQ-C3 (v9): ไล่เฉดฟ้า 4 ระดับของการ์ด Academic --------------------
-   เข้ม -> สว่าง ตามลำดับการ์ดซ้ายไปขวา ตัวอักษรขาวผ่าน AA ทุกใบ           */
 .programme-card--tone-1{ background:var(--brand-900); }  /* 11.95:1 */
 .programme-card--tone-2{ background:var(--brand-800); }  /*  9.07:1 */
 .programme-card--tone-3{ background:var(--brand-700); }  /*  5.61:1 */
@@ -208,19 +206,19 @@
   transform: translateY(-3px);
 }
 
-.programme-en {
-  margin: 0.5rem 0 0;
+/* Thai translation under the English card heading — white like the rest of the card,
+   separated by size/weight rather than colour (the global .bi-th grey is unreadable here) */
+.programme-content h2 .bi-th {
   color: #fff;
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.015em;
+  font-size: 0.62em;
+  font-weight: 600;
+  margin-top: 0.4em;
 }
 
 .programme-description {
   max-width: 290px;
   margin: 1.25rem 0 0;
-  color: rgba(255, 255, 255, 0.92);
+  color: #fff;
   font-size: 0.98rem;
   line-height: 1.8;
 }
@@ -384,12 +382,23 @@ p{margin:0;}
 .th{font-family:var(--font-display);}
 .th-body{font-family:var(--font-body);}
 
-/* bilingual heading pattern: Thai title on top, English subtitle beneath */
-.bi-heading .bi-th{display:block; font-family:var(--font-display);}
-.bi-heading .bi-en{display:block; font-family:var(--font-body); font-weight:500; color:var(--muted); font-size:.55em; margin-top:.35em; letter-spacing:.01em;}
-.bi-label .bi-th{font-family:var(--font-body);}
-.bi-label .bi-en{display:block; font-size:.82em; color:var(--muted); margin-top:.15em;}
-.bi-inline .bi-en{color:var(--muted); font-weight:400;}
+/* bilingual heading pattern: English title on top, Thai translation beneath.
+   markup order is English-first (.bi-en then .bi-th) so reading order,
+   screen readers and crawlers all get the primary heading first. */
+.bi-heading .bi-en{display:block; font-family:var(--font-display);}
+.bi-heading .bi-th{display:block; font-family:var(--font-body); font-weight:500; color:var(--muted); font-size:.55em; margin-top:.35em; letter-spacing:.01em; line-height:1.45;}
+.bi-label .bi-en{font-family:var(--font-body);}
+.bi-label .bi-th{display:block; font-size:.82em; color:var(--muted); margin-top:.15em;}
+.bi-inline .bi-th{color:var(--muted); font-weight:400;}
+
+/* standalone Thai translation line under an English heading
+   (same role as .bi-th, for headings that aren't wrapped in .bi-heading) */
+.thai-translation{
+  font-family:var(--font-body); font-weight:500; color:var(--muted);
+  font-size:.62em; margin-top:.3em; margin-bottom:0; line-height:1.45; letter-spacing:.01em;
+}
+h1 + .thai-translation, h2 + .thai-translation, h3 + .thai-translation{font-size:1rem;}
+@media (max-width:640px){ .thai-translation{font-size:.95rem;} }
 
 .wrap{max-width:var(--container); margin:0 auto; padding:0 var(--space-5);}
 .wrap-narrow{max-width:var(--container-narrow); margin:0 auto; padding:0 var(--space-5);}
@@ -859,7 +868,8 @@ p{margin:0;}
 .hero-full .eyebrow{color:var(--brand-100);}
 .hero-full .eyebrow::before{background:var(--teal-400);}
 .hero-full h1{color:#fff; font-size:var(--step-display); line-height:1.05; margin-top:var(--space-3); text-wrap:balance;}
-.hero-full h1 .bi-en{color:rgba(255,255,255,.85);}
+.hero-full h1 .bi-en{color:#fff;}
+.hero-full h1 .bi-th{color:rgba(255,255,255,.82);}
 .hero-full .lede{color:rgba(255,255,255,.9); max-width:52ch; margin-top:var(--space-4); font-size:1.12rem;}
 .hero-full .hero-actions{margin-top:var(--space-5);}
 
@@ -867,7 +877,7 @@ p{margin:0;}
 .hero-controls{position:absolute; right:var(--space-4); bottom:var(--space-4); display:flex; align-items:center; gap:.6rem; z-index:2;}
 .hero-caption-chip{font-size:.72rem; letter-spacing:.06em; color:rgba(255,255,255,.85); background:rgba(14,58,84,.55); border:1px solid rgba(255,255,255,.25); padding:.4em .8em; border-radius:99px; backdrop-filter:blur(3px);}
 .hero-toggle{width:44px; height:44px; border-radius:50%; background:rgba(14,58,84,.55); border:1.5px solid var(--teal-400); color:#fff; display:flex; align-items:center; justify-content:center; transition:background var(--dur), transform var(--dur); backdrop-filter:blur(3px);}
-.hero-toggle:hover{background:rgba(55,203,203,.35); transform:scale(1.06);}
+.hero-toggle:hover{background:rgba(22, 162, 226, 0.35); transform:scale(1.06);}
 .hero-toggle svg{width:16px; height:16px; fill:#fff;}
 .hero-toggle i{font-size:16px; color:#fff;}
 .hero-toggle .ico-pause{display:block;} .hero-toggle .ico-play{display:none;}
@@ -991,7 +1001,8 @@ p{margin:0;}
 }
 .page-hero > .wrap, .page-hero > .wrap-narrow{position:relative; z-index:1;}
 .page-hero h1{color:#fff; max-width:18ch;}
-.page-hero .bi-en{color:rgba(255,255,255,.60);}
+.page-hero .bi-th{color:rgba(255,255,255,.72);}
+.page-hero .thai-translation{color:rgba(255,255,255,.72);}
 .page-hero .eyebrow{color:var(--brand-300);}
 .page-hero .eyebrow::before{background:var(--brand-300);}
 .page-hero .lede{color:rgba(255,255,255,.82); max-width:56ch;}
@@ -999,7 +1010,7 @@ p{margin:0;}
 .page-hero--light{background:var(--paper-dim); color:var(--ink); border-bottom:1px solid var(--line);}
 .page-hero--light::after{display:none;}
 .page-hero--light h1{color:var(--ink);}
-.page-hero--light .bi-en, .page-hero--light .lede{color:var(--muted);}
+.page-hero--light .bi-th, .page-hero--light .lede{color:var(--muted);}
 .page-hero--light .eyebrow{color:var(--teal-600);}
 .page-hero--light .eyebrow::before{background:var(--teal-600);}
 @media (max-width:760px){ .page-hero h1{max-width:none;} }
@@ -1654,13 +1665,23 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
   line-height: 1.15;
 }
 
-/* Thai */
-.home-hero .hero-inner .bi-th {
+/* English — primary heading */
+.home-hero .hero-inner .bi-en {
   color: #fff;
 }
 
-/* English */
-.home-hero .hero-inner .bi-en {
+/* Thai — translation beneath, lighter than the English above it */
+.home-hero .hero-inner .bi-th {
+  color: rgba(255, 255, 255, .82);
+}
+
+/* hero title: two Thai lines at the same size, both solid white */
+.home-hero .hero-inner .hero-title {
+  font-weight: 700;
+}
+
+.home-hero .hero-inner .hero-line {
+  display: block;
   color: #fff;
 }
 
@@ -2076,11 +2097,12 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
    ===================================================================== */
 
 /* ---- page-hero (ทุกหน้า) -------------------------------------------- */
-.page-hero{ background:#37CBCB; background-image:linear-gradient(115deg, #13939C 0%, #2FC0C0 55%, #58E4E4 100%); color:#fff; }
+.page-hero{ background:#22b7e4; background-image:linear-gradient(115deg, #1183a5 0%, #1e90b3 55%, #22b7e4 100%); color:#fff; }
 .page-hero h1{ color:#fff; }
 .page-hero .eyebrow{ color:#fff; }
 .page-hero .eyebrow::before{ background:#fff; }
-.page-hero .bi-en{ color:rgba(255,255,255,.78); }
+.page-hero .bi-th{ color:rgba(255,255,255,.80); }
+.page-hero .thai-translation{ color:rgba(255,255,255,.80); }
 .page-hero .lede{ color:rgba(255,255,255,.88); }
 .page-hero::after{
   background:radial-gradient(circle at 34% 34%, rgba(255,255,255,.22), rgba(255,255,255,0) 68%);
@@ -2088,65 +2110,212 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 /* hero ที่มีรูป banner — scrim เปลี่ยนเป็นฟ้าโปร่งให้เข้าชุดกัน */
 .page-hero--image::before{
   background:linear-gradient(90deg,
-    rgba(55,203,203,.94) 0%, rgba(55,203,203,.82) 45%, rgba(55,203,203,.46) 100%);
+    #22b7e4 0%, #137e9e 45%, rgba(15, 113, 143, 0.46) 100%);
 }
 @media (max-width:760px){
-  .page-hero--image::before{ background:rgba(55,203,203,.90); }
+  .page-hero--image::before{ background:#1690b6; }
 }
 
 /* ---- cta-band -------------------------------------------------------- */
-.cta-band{ background:#37CBCB; background-image:linear-gradient(120deg, #13939C 0%, #37CBCB 58%, #58E4E4 100%); color:#fff; }
+.cta-band{ background:#22b7e4; background-image:linear-gradient(120deg, #19a0c9 0%, #22b7e4 58%, #22b7e4 100%); color:#fff; }
 .cta-band .eyebrow{ color:#fff; }
 .cta-band .eyebrow::before{ background:#fff; }
 .cta-band h2{ color:#fff; }
 .cta-band p{ color:rgba(255,255,255,.88); }
 
 /* ---- footer ---------------------------------------------------------- */
-.site-footer{ background:#37CBCB; background-image:linear-gradient(165deg, #37CBCB 0%, #13939C 100%); color:rgba(255,255,255,.88); }
+.site-footer{ background:#22b7e4; background-image:linear-gradient(165deg, #22b7e4 0%, #1486a8 100%); color:rgba(255,255,255,.88); }
 .site-footer a{ color:#fff; }
 .site-footer h3{ color:#fff; }
 .site-footer .footer-brand p{ color:rgba(255,255,255,.88); }
 .site-footer .footer-bottom{ color:rgba(255,255,255,.78); border-top-color:rgba(255,255,255,.28); }
 
 /* ---- วงกลม B · A · S (อัตลักษณ์คณะ) ---------------------------------- */
-.id-letter{ background:#37CBCB; background-image:linear-gradient(140deg, #49D9D9 0%, #13939C 100%); box-shadow:0 4px 14px rgba(55,203,203,.38); }
+.id-letter{ background:#37CBCB; background-image:linear-gradient(140deg, #22b7e4 0%, #0e647e 100%); box-shadow:0 4px 14px rgba(55,203,203,.38); }
 .id-card:hover .id-letter,
-.id-card:focus-within .id-letter{ background-image:linear-gradient(140deg, #37CBCB 0%, #0F7F88 100%); }
+.id-card:focus-within .id-letter{ background-image:linear-gradient(140deg, #1994b9 0%, #0e6d8a 100%); }
 
 /* ---- ปุ่มลอย "สายตรงคณบดี" ------------------------------------------- */
-.dean-direct{ background:#37CBCB; background-image:linear-gradient(135deg, #49D9D9 0%, #13939C 100%); box-shadow:0 6px 18px rgba(55,203,203,.45); }
+.dean-direct{ background:#37CBCB; background-image:linear-gradient(135deg, #22b7e4 0%, #1288ac 100%); box-shadow:0 6px 18px rgba(55,203,203,.45); }
 .dean-direct:hover,
 .dean-direct:focus-visible,
-.dean-direct:active{ background-image:linear-gradient(135deg, #37CBCB 0%, #0F7F88 100%); box-shadow:0 10px 22px rgba(19,147,156,.5); }
+.dean-direct:active{ background-image:linear-gradient(135deg, #22b7e4 0%, #1a86a7 100%); box-shadow:0 10px 22px rgba(19,147,156,.5); }
 
 /* ---- ปุ่มหลัก (สมัครเรียน · เข้าสู่ระบบ) ------------------------------
    ปุ่มขนาดเล็ก = สีเรียบ ไม่ไล่สี (ไล่สีสงวนไว้ให้พื้นผิวใหญ่)          */
-.btn-primary{ background:#37CBCB; background-image:none; color:#fff; border-color:transparent; }
+.btn-primary{ background:#22b7e4; background-image:none; color:#fff; border-color:transparent; }
 .btn-primary:hover,
-.btn-primary:focus-visible{ background:#13939C; background-image:none; color:#fff; }
+.btn-primary:focus-visible{ background:#1781a1; background-image:none; color:#fff; }
 
 /* ---- เมนู mega ตอน hover: พื้นฟ้า · ตัวอักษรขาวทั้งไทยและอังกฤษ ------- */
 .mega a:hover,
-.mega a:focus-visible{ background:#37CBCB; border-left-color:#37CBCB; color:#fff; }
+.mega a:focus-visible{ background:#22b7e4; border-left-color:#1891b6; color:#fff; }
 .mega a:hover .th-body, .mega a:focus-visible .th-body,
 .mega a:hover .en,      .mega a:focus-visible .en,
 .mega a:hover .ext-ico, .mega a:focus-visible .ext-ico{ color:#fff; }
 .mega a.is-sub:hover,
-.mega a.is-sub:focus-visible{ border-left-color:#37CBCB; }
+.mega a.is-sub:focus-visible{ border-left-color:#22b7e4; }
 
 /* ---- drawer (มือถือ) ตอน hover: เหมือนกัน ---------------------------- */
 .drawer-sub a:hover,
-.drawer-sub a:focus-visible{ background:#37CBCB; color:#fff; }
+.drawer-sub a:focus-visible{ background:#22b7e4; color:#fff; }
 .drawer-sub a:hover > span,   .drawer-sub a:focus-visible > span,
 .drawer-sub a:hover .ext-ico, .drawer-sub a:focus-visible .ext-ico{ color:#fff; }
 
 /* ---- ไอคอนใน modal เข้าสู่ระบบ ---------------------------------------
    ไอคอน "ค้นหา" กับ "ผู้ดูแลระบบ" บนหัวเว็บคงเป็นสีเทาตามเดิม
    (ไม่ override .icon-btn) — เปลี่ยนเฉพาะไอคอนโล่ในหน้าต่างเข้าสู่ระบบ */
-.admin-modal-icon{ color:#13939C; }
+.admin-modal-icon{ color:#1484a7; }
 
 /* ---- การ์ด Academic 4 ใบ — แบรนด์เข้ม · แบรนด์ปกติ · เทาเข้ม · เทาอ่อน -- */
-.programme-card--tone-1{ background:#13939C; background-image:linear-gradient(160deg, #1AA5AF 0%, #13939C 100%); }
-.programme-card--tone-2{ background:#37CBCB; background-image:linear-gradient(160deg, #49D9D9 0%, #2FC0C0 100%); }
+.programme-card--tone-1{ background:#1284a7; background-image:linear-gradient(160deg, #117ea0 0%, #107696 100%); }
+.programme-card--tone-2{ background:#22b7e4; background-image:linear-gradient(160deg, #22b7e4 0%, #22b7e4 100%); }
 .programme-card--tone-3{ background:#1F2A30; background-image:linear-gradient(160deg, #2A3942 0%, #1B252B 100%); }
 .programme-card--tone-4{ background:#66757C; background-image:linear-gradient(160deg, #78868E 0%, #5D6C73 100%); }
+
+/* =========================================================================
+   v10 — English primary navigation (8 top-level items)
+   The label set is wider than the previous Thai one, so the desktop bar
+   tightens before it hands over to the drawer.
+   ========================================================================= */
+@media (max-width:1199px){
+  .primary-nav .nav-list,
+  .header-actions .icon-btn.search-only,
+  .header-actions .header-apply{display:none;}
+  .menu-toggle{display:flex;}
+}
+@media (min-width:1200px){
+  .header-inner{gap:var(--space-2);}
+  .nav-link{padding:0 .45rem; font-size:.8rem;}
+  .header-apply{padding-left:.75rem; padding-right:.75rem;}
+  /* eight English labels need the room: the brand keeps the Thai line only */
+  .brand-text .en{display:none;}
+  .brand-text .th{font-size:.92rem; max-width:190px;}
+}
+@media (min-width:1600px){
+  .header-inner{gap:var(--space-3);}
+  .nav-link{padding:0 .55rem; font-size:.84rem;}
+  .brand-text .th{max-width:230px;}
+}
+/* labels are single-line: the nav bar never shrinks, the brand ellipsises */
+.nav-list, .nav-item{flex:none;}
+.nav-link{white-space:nowrap; overflow-wrap:normal; word-break:normal;}
+.header-apply{white-space:nowrap;}
+
+/* long single-column mega panels stay inside the viewport */
+.mega{max-height:calc(100vh - 96px); overflow-y:auto; overscroll-behavior:contain;}
+.mega--wide{min-width:370px;}
+
+/* =========================================================================
+   v10 — Global Partnerships: world map, regional statistics, partner list
+   ========================================================================= */
+/* the same block on the Home page, as the closing section */
+.gp-section--home{background:var(--paper-dim); border-top:1px solid var(--line);}
+.gp-section--home .gp-plist{background:var(--surface);}
+
+.gp-regions{
+  display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:var(--space-2);
+  list-style:none; margin:var(--space-5) 0 0; padding:0;
+}
+.gp-region{
+  display:flex; flex-direction:column; gap:.15rem;
+  padding:var(--space-3); background:var(--surface);
+  border:1px solid var(--line); border-top:3px solid var(--brand-500); border-radius:var(--radius-m);
+}
+.gp-region.is-empty{border-top-color:var(--line-strong); background:var(--paper-dim);}
+.gp-region-name{font-size:.82rem; font-weight:600; color:var(--ink-soft); line-height:1.3;}
+.gp-region-num{
+  font-family:var(--font-mono); font-size:1.9rem; font-weight:600; line-height:1.1;
+  letter-spacing:-.02em; color:var(--brand-700); font-feature-settings:"tnum" 1;
+}
+.gp-region.is-empty .gp-region-num{color:var(--muted);}
+.gp-region-sub{font-size:.74rem; color:var(--muted); line-height:1.35;}
+@media (max-width:1024px){ /* the same block on the Home page, as the closing section */
+.gp-section--home{background:var(--paper-dim); border-top:1px solid var(--line);}
+.gp-section--home .gp-plist{background:var(--surface);}
+
+.gp-regions{grid-template-columns:repeat(3,minmax(0,1fr));} }
+@media (max-width:560px){ /* the same block on the Home page, as the closing section */
+.gp-section--home{background:var(--paper-dim); border-top:1px solid var(--line);}
+.gp-section--home .gp-plist{background:var(--surface);}
+
+.gp-regions{grid-template-columns:repeat(2,minmax(0,1fr));} .gp-region-num{font-size:1.5rem;} }
+
+ /* the map runs the full content width — it is the page's visual focus */
+.gp-layout{display:grid; grid-template-columns:minmax(0,1fr); gap:var(--space-5);}
+.gp-map-col{min-width:0;}
+
+.gp-map{
+  position:relative; width:100%; aspect-ratio:2000 / 772;
+  background:var(--brand-50); border:1px solid var(--line); border-radius:var(--radius-m);
+}
+.gp-map-svg{display:block; width:100%; height:100%;}
+.gp-land{fill:#C7D6DC;}
+.gp-map-note{margin-top:var(--space-3); font-size:.8rem; color:var(--muted);}
+/* below tablet the map keeps a legible minimum width and scrolls inside its own box */
+@media (max-width:720px){
+  .gp-map-scroll{overflow-x:auto; overscroll-behavior-x:contain; padding-bottom:.4rem;}
+  .gp-map{min-width:620px;}
+}
+
+.gp-pin{
+  position:absolute; left:var(--x); top:var(--y); transform:translate(-50%,-50%);
+  width:clamp(24px,2.4vw,34px); height:clamp(24px,2.4vw,34px);
+  padding:0; border:0; background:none; cursor:pointer; z-index:2; border-radius:50%;
+}
+.gp-pin-dot{
+  display:flex; align-items:center; justify-content:center; width:100%; height:100%;
+  border-radius:50%; background:var(--brand-700); color:#fff;
+  box-shadow:0 0 0 3px rgba(8, 122, 167, 0.45), var(--shadow-s);
+  transition:background var(--dur), box-shadow var(--dur), transform var(--dur);
+}
+.gp-pin-num{
+  font-family:var(--font-mono); font-size:clamp(.6rem,.95vw,.78rem); font-weight:600;
+  line-height:1; font-feature-settings:"tnum" 1;
+}
+.gp-pin::before{
+  content:""; position:absolute; inset:-6px; border-radius:50%;
+  border:1.5px solid var(--brand-500); opacity:0; transition:opacity var(--dur), transform var(--dur);
+  transform:scale(.8);
+}
+.gp-pin:hover .gp-pin-dot, .gp-pin:focus-visible .gp-pin-dot, .gp-pin.is-active .gp-pin-dot{
+  background:var(--brand-900); transform:scale(1.12);
+  box-shadow:0 0 0 4px rgba(24, 142, 179, 0.6), var(--shadow-m);
+}
+.gp-pin:hover::before, .gp-pin:focus-visible::before, .gp-pin.is-active::before{opacity:1; transform:scale(1);}
+.gp-pin:focus-visible{outline:3px solid var(--focus); outline-offset:4px;}
+.gp-pin-label{
+  position:absolute; left:50%; bottom:calc(100% + 9px); transform:translateX(-50%);
+  padding:.28rem .55rem; border-radius:var(--radius-s); white-space:nowrap;
+  background:var(--brand-900); color:#fff; font-size:.74rem; font-weight:600; line-height:1.2;
+  opacity:0; visibility:hidden; transition:opacity var(--dur), visibility var(--dur); pointer-events:none;
+}
+.gp-pin:hover .gp-pin-label, .gp-pin:focus-visible .gp-pin-label{opacity:1; visibility:visible;}
+
+.gp-side{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--space-4); align-items:start;}
+@media (max-width:760px){ .gp-side{grid-template-columns:minmax(0,1fr);} }
+.gp-detail{
+  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--brand-500);
+  border-radius:var(--radius-m); padding:var(--space-4);
+}
+.gp-detail-country{font-size:1.15rem; font-weight:600; line-height:1.25; color:var(--ink);}
+.gp-detail-meta{
+  display:flex; flex-wrap:wrap; gap:.35rem .6rem; margin-top:.35rem;
+  font-size:.78rem; color:var(--muted); font-family:var(--font-mono);
+}
+.gp-detail-list{list-style:none; margin:var(--space-3) 0 0; padding:0; display:grid; gap:.5rem; max-height:19rem; overflow-y:auto; overscroll-behavior:contain;}
+.gp-detail-list li{border-top:1px solid var(--line); padding-top:.5rem; font-size:.88rem; line-height:1.4;}
+.gp-detail-list .gp-detail-type{display:block; font-size:.74rem; color:var(--muted); margin-top:.1rem;}
+.gp-detail-empty{font-size:.88rem; color:var(--muted);}
+
+.gp-plist{background:var(--paper-dim); border:1px solid var(--line); border-radius:var(--radius-m); padding:var(--space-4);}
+.gp-plist-head{font-size:.95rem; font-weight:600; color:var(--ink);}
+.gp-plist-list{list-style:none; margin:var(--space-3) 0 0; padding:0; display:grid; gap:.55rem;}
+.gp-plist-item{border-top:1px solid var(--line); padding-top:.55rem;}
+.gp-plist-name{display:block; font-size:.88rem; font-weight:600; line-height:1.35; color:var(--ink-soft);}
+.gp-plist-meta{display:block; font-size:.76rem; color:var(--muted); margin-top:.1rem;}
+.gp-plist-more{margin-top:var(--space-3);}
+
+@media (prefers-reduced-motion:reduce){
+  .gp-pin-dot, .gp-pin::before, .gp-pin-label{transition:none;}
+}
