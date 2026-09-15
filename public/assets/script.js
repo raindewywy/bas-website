@@ -3,19 +3,26 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function(){
-    initHeaderScroll();
-    initMegaMenuKeyboard();
-    initMobileDrawer();
-    initSearchPanel();
     initMarqueeClone();
     initScrollReveal();
     initFilters();
     initStaffToggle();
     initProgramDetail();
     initNewsDetail();
-    initAdmin();
     initGlobalMap();
   });
+
+  // header/drawer/search/admin ต้องรอ nav+footer ถูก inject โดย assets/include.js ก่อน
+  // (nav/footer มาจาก fetch() แบบ async — มาไม่ทันตอน DOMContentLoaded ยิง)
+  // include.js เรียก window.BASSite.initNav() เองหลัง inject เสร็จ
+  window.BASSite = window.BASSite || {};
+  window.BASSite.initNav = function(){
+    initHeaderScroll();
+    initMegaMenuKeyboard();
+    initMobileDrawer();
+    initSearchPanel();
+    initAdmin();
+  };
 
 
   /* ---- Global Partnerships: world map + partner list ---------------------- */

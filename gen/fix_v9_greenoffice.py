@@ -28,10 +28,8 @@ BANNER = ROOT / "public" / "assets" / "media" / "banner-greenoffice.jpg"
 
 
 def page_path(name):
-    """หลังย้ายมาใช้ template แล้ว ต้องแก้ที่ app/views/pages/ ไม่ใช่ .html ที่ root
-    (root ถูก build.py เขียนทับ) — ถ้ายังไม่มี app/views/ ก็แก้ที่ root เหมือนเดิม"""
-    tpl = ROOT / "app" / "views" / "pages" / name
-    return tpl if tpl.exists() else ROOT / name
+    """public/*.html คือไฟล์ live ตัวเดียว ไม่มี template/build step แยกแล้ว"""
+    return ROOT / "public" / name
 
 PAGE = None  # กำหนดใน __main__
 

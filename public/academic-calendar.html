@@ -13,161 +13,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body>
+<body data-nav="academic">
 
-<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
-
-<div class="admin-modal" id="admin-modal" aria-hidden="true">
-  <div class="admin-modal-scrim" data-admin-close></div>
-  <div class="admin-modal-panel" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
-    <button class="icon-btn admin-modal-close" data-admin-close aria-label="ปิดหน้าต่างเข้าสู่ระบบ"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-    <div class="admin-modal-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-    <h2 id="admin-modal-title">เข้าสู่ระบบผู้ดูแลระบบ</h2>
-    <p class="admin-modal-lede">สำหรับเจ้าหน้าที่คณะ ใช้จัดการเนื้อหาเว็บไซต์</p>
-    <form id="admin-login-form">
-      <label class="admin-field">
-        <span>ชื่อผู้ใช้</span>
-        <input type="text" name="username" placeholder="เช่น admin@bas.swu.ac.th" autocomplete="username" required>
-      </label>
-      <label class="admin-field">
-        <span>รหัสผ่าน</span>
-        <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
-      </label>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">เข้าสู่ระบบ (โหมดสาธิต)</button>
-    </form>
-    <p class="admin-modal-note">* ต้นแบบนี้จำลองหน้าจอเข้าสู่ระบบเพื่อสาธิตเท่านั้น ไม่ได้เชื่อมต่อฐานข้อมูลผู้ใช้จริง กรอกข้อมูลใดก็ได้เพื่อทดลองใช้งานโหมดผู้ดูแลระบบ</p>
-  </div>
-</div>
-<div class="admin-bar" id="admin-bar" hidden>
-  <div class="wrap admin-bar-inner">
-    <span class="admin-bar-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> โหมดผู้ดูแลระบบ</span>
-    <span class="admin-bar-note">แสดงไอคอน “แก้ไข” บนเนื้อหาหลักของเว็บไซต์ (ต้นแบบสาธิต)</span>
-    <button class="btn btn-sm btn-secondary" id="admin-logout" style="background:transparent;border-color:rgba(255,255,255,.5);color:#fff;">ออกจากระบบ</button>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="กลับหน้าแรก BAS SWU">
-      <img class="brand-mark" src="assets/media/brand-mark.png" alt="" width="44" height="44">
-      <span class="brand-text">
-        <span class="th th-body">คณะบริหารธุรกิจเพื่อสังคม</span>
-        <span class="en">Faculty of Business Administration for Society</span>
-      </span>
-    </a>
-    <nav class="primary-nav" aria-label="เมนูหลัก">
-      <ul class="nav-list">
-<li class="nav-item" data-key="home"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item" data-key="about"><a class="nav-link" href="about.html" aria-haspopup="true">About Us<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
-<li class="nav-item current" data-key="academic"><a class="nav-link" href="academic.html" aria-haspopup="true">Academics<span class="chev" aria-hidden="true"></span></a><div class="mega mega--wide"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="mega-head" role="presentation">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management<span class="en">English-taught</span></a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
-<li class="nav-item" data-key="student-life"><a class="nav-link" href="student-life.html" aria-haspopup="true">Student Life<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
-<li class="nav-item" data-key="global"><a class="nav-link" href="mou.html" aria-haspopup="true">Global Partnerships<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
-<li class="nav-item" data-key="sustainability"><a class="nav-link" href="sustainability.html" aria-haspopup="true">Sustainability<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
-<li class="nav-item" data-key="news"><a class="nav-link" href="news.html">News &amp; Events</a></li>
-<li class="nav-item" data-key="contact"><a class="nav-link" href="contact.html">Contact</a></li>
-</ul>
-    </nav>
-    <div class="header-actions">
-      <a href="admissions.html" class="btn btn-primary btn-sm header-apply">Apply Now</a>
-      <button class="icon-btn search-toggle search-only" aria-label="ค้นหาในเว็บไซต์" aria-haspopup="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
-      <button class="icon-btn admin-toggle" id="admin-open" aria-label="เข้าสู่ระบบผู้ดูแลระบบ" title="ผู้ดูแลระบบ"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></button>
-      <button class="icon-btn menu-toggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-    </div>
-  </div>
-  <div class="search-panel" role="search">
-    <div class="wrap">
-      <form>
-        <label class="visually-hidden" for="site-search">ค้นหาหลักสูตร ข่าวสาร และหน้าเว็บไซต์</label>
-        <input id="site-search" type="search" placeholder="ค้นหา เช่น “MBA”, “การรับสมัคร”, ชื่ออาจารย์…" autocomplete="off">
-        <button class="btn btn-primary" type="submit">ค้นหา</button>
-      </form>
-      <p class="search-hint">ลองค้นหา “MBA”, “การรับสมัคร”, “การจัดการธุรกิจโลก” หรือชื่อคณาจารย์</p>
-    </div>
-  </div>
-</header>
-<div class="mobile-drawer" aria-hidden="true">
-  <div class="drawer-scrim"></div>
-  <div class="drawer-panel">
-    <div class="drawer-head">
-      <span class="th th-body" style="font-weight:600;">Menu</span>
-      <button class="icon-btn drawer-close" aria-label="ปิดเมนู"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-    </div>
-    <ul class="drawer-body">
-<li class="drawer-item"><a href="index.html">Home</a></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">About Us<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Academics<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="drawer-sub-head">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management</a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Student Life<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Global Partnerships<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Sustainability<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
-<li class="drawer-item"><a href="news.html">News &amp; Events</a></li>
-<li class="drawer-item"><a href="contact.html">Contact</a></li>
-</ul>
-    <div class="drawer-foot">
-      <a class="btn btn-primary" style="flex:1;justify-content:center" href="admissions.html">Apply Now</a>
-      <a class="btn btn-secondary" style="flex:1;justify-content:center" href="contact.html">Contact Us</a>
-    </div>
-  </div>
-</div>
+<div data-include="partials/nav.html"></div>
 
 <main id="main">
 <nav class="breadcrumb wrap" aria-label="เส้นทางหน้าเว็บ"><a href="index.html">หน้าแรก</a><span class="sep" aria-hidden="true">/</span><a href="academic.html">วิชาการและวิจัย</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">ปฏิทินการศึกษา</span></nav><section class="page-hero page-hero--image"><img class="hero-bg" src="assets/media/banner-program.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high"><div class="wrap"><p class="eyebrow th-body">วิชาการและวิจัย</p><h1 class="bi-heading"><span class="bi-th th-body">ปฏิทินการศึกษา</span><span class="bi-en">Academic Calendar</span></h1><p class="lede th-body">กำหนดการเปิด-ปิดภาคเรียน การลงทะเบียน และการสอบของแต่ละระดับการศึกษา</p></div></section><section class="section"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow">เอกสาร</p><h2 class="bi-heading"><span class="bi-th th-body">ปฏิทินที่เผยแพร่</span><span class="bi-en">Published Calendars</span></h2><p class="lede th-body">ปฏิทินการศึกษาเป็นเอกสารกลางของมหาวิทยาลัย เปิดจากเว็บไซต์ต้นทางเพื่อให้ได้ฉบับล่าสุดเสมอ</p></div></div><div class="grid-3 mt-5"><div class="card card-linked reveal"><div class="card-body"><span class="card-tag th-body">ปีการศึกษา 2569</span><h3 class="card-title th-body">ปฏิทินการศึกษา ระดับปริญญาตรี</h3><p class="card-meta th-body">Undergraduate Academic Calendar</p><p class="card-desc th-body mt-2">วันเปิดและปิดภาคเรียน ช่วงเวลาการลงทะเบียนเรียน วันสอบ และกำหนดการทางวิชาการที่เกี่ยวข้อง</p><p class="mt-3"><a class="link-arrow" href="https://academic.swu.ac.th/Portals/62/files/%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%97%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2/%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%97%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2%202569.pdf" target="_blank" rel="noopener noreferrer">เปิดไฟล์ PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (เปิดเว็บไซต์ภายนอกในแท็บใหม่)</span></a></p></div></div><div class="card card-linked reveal"><div class="card-body"><span class="card-tag th-body">บัณฑิตวิทยาลัย มศว</span><h3 class="card-title th-body">ปฏิทินการศึกษา ระดับบัณฑิตศึกษา</h3><p class="card-meta th-body">Graduate Academic Calendar</p><p class="card-desc th-body mt-2">กำหนดการสำคัญของบัณฑิตวิทยาลัยสำหรับนิสิตระดับปริญญาโทและปริญญาเอก</p><p class="mt-3"><a class="link-arrow" href="http://grad.swu.ac.th/SWU.BACKEND/fileupload/BANNER/00615/027be228-a0bc-435a-afd9-9c897c676767.pdf" target="_blank" rel="noopener noreferrer">เปิดไฟล์ PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (เปิดเว็บไซต์ภายนอกในแท็บใหม่)</span></a></p></div></div><div class="card card-linked reveal"><div class="card-body"><span class="card-tag th-body">Academic Year 2025</span><h3 class="card-title th-body">SWU Academic Calendar</h3><p class="card-meta th-body">English Version</p><p class="card-desc th-body mt-2">ปฏิทินการศึกษาฉบับภาษาอังกฤษสำหรับหลักสูตรระดับปริญญาตรี เผยแพร่โดยส่วนวิเทศสัมพันธ์ฯ</p><p class="mt-3"><a class="link-arrow" href="https://irco.op.swu.ac.th/Portals/29/Documents/Calendar/Academic%20Calendar%202025%20for%20Bachelor%20Degree.pdf" target="_blank" rel="noopener noreferrer">เปิดไฟล์ PDF <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (เปิดเว็บไซต์ภายนอกในแท็บใหม่)</span></a></p></div></div></div><div class="notice th-body mt-5"><span>ไฟล์ทั้งหมดโฮสต์อยู่บนเว็บไซต์ของมหาวิทยาลัย หากลิงก์ใดเปิดไม่ได้แปลว่ามีการเผยแพร่ฉบับใหม่ทับ — แจ้งงานบริการการศึกษาเพื่ออัปเดตลิงก์</span></div></div></section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="footer-logo" src="assets/media/footer-logo.png" alt="ตราสัญลักษณ์คณะบริหารธุรกิจเพื่อสังคม" width="168" height="44">
-        <div class="th th-body">คณะบริหารธุรกิจเพื่อสังคม</div>
-        <div class="en">Faculty of Business Administration for Society</div>
-        <p>มหาวิทยาลัยศรีนครินทรวิโรฒ — บริหารธุรกิจ เพื่อสังคมที่ดีกว่า</p>
-        <div class="footer-social"><a href="https://www.facebook.com/swubas.pr" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a><a href="https://www.instagram.com/bas_swu/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a><a href="https://www.youtube.com/channel/UCPC2ojxF7Oe7ljFR_FtOj6g" aria-label="YouTube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a><a href="https://www.tiktok.com/search?q=PR_Swubas" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a><a href="https://x.com/swubas" aria-label="X (Twitter)" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a><a href="https://line.me/R/ti/p/@974wiqne" aria-label="LINE" target="_blank" rel="noopener"><i class="fa-brands fa-line" aria-hidden="true"></i></a></div>
-      </div>
-      <div class="footer-col">
-        <h5>เกี่ยวกับคณะ</h5>
-        <ul>
-          <li><a href="about.html#vision">วิสัยทัศน์และพันธกิจ</a></li>
-          <li><a href="about.html#history">ประวัติคณะ</a></li>
-          <li><a href="leadership.html">ผู้บริหาร</a></li>
-          <li><a href="departments.html">ภาควิชา</a></li>
-          <li><a href="faculty.html">คณาจารย์และบุคลากร</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>วิชาการ</h5>
-        <ul>
-          <li><a href="programs.html">หลักสูตรทั้งหมด</a></li>
-          <li><a href="programs.html?level=undergraduate">ปริญญาตรี</a></li>
-          <li><a href="programs.html?level=graduate">ปริญญาโท-เอก (MBA / PhD)</a></li>
-          <li><a href="admissions.html">การรับสมัคร</a><a href="academic.html">วิชาการและวิจัย</a><a href="mou.html">Global Partnerships</a><a href="academic-calendar.html">ปฏิทินการศึกษา</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>ชีวิตนิสิต</h5>
-        <ul>
-          <li><a href="student-life.html">ภาพรวม</a></li>
-          <li><a href="student-life.html#activities">กิจกรรมนิสิต</a></li>
-          <li><a href="student-life.html#facilities">สิ่งอำนวยความสะดวก</a></li>
-          <li><a href="news.html">ข่าวและกิจกรรม</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>แหล่งข้อมูล</h5>
-        <ul>
-          <li><a href="contact.html#ita">ITA / คู่มือการปฏิบัติงาน</a></li>
-          <li><a href="contact.html">ติดต่อและแผนที่</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">สมัครเรียน</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2569 (2026) คณะบริหารธุรกิจเพื่อสังคม มหาวิทยาลัยศรีนครินทรวิโรฒ</span>
-      <span>อ้างอิงแนวทางออกแบบ: มาตรฐานบรรณาธิการเชิงสถาบันของเว็บไซต์มหาวิทยาลัยไทยยุคใหม่</span>
-    </div>
-  </div>
-</footer>
+<div data-include="partials/footer.html"></div>
+
 
 <script src="assets/data.js"></script>
 <script src="assets/script.js"></script>
+<script src="assets/include.js"></script>
 </body>
 </html>

@@ -5,8 +5,7 @@ fetch_bas2_media.py — ดึงรูปจาก bas2.swu.ac.th มาเก�
 
 ทำ 3 อย่าง:
   1) REQ §9.3  ดาวน์โหลดรูปผู้บริหารที่ยัง hotlink อยู่ -> public/assets/media/leaders/
-                แล้วแก้ src ใน app/views/pages/*.html ให้ชี้ path ในเครื่อง
-                (แก้ที่ app/views/pages แล้วรัน build.py ไม่ใช่แก้ .html ที่ root)
+                แล้วแก้ src ใน public/*.html ให้ชี้ path ในเครื่อง (แก้ไฟล์ live ตรง ๆ ไม่มี build step แล้ว)
   2) REQ-E1    ดาวน์โหลด banner Green Office -> public/assets/media/banner-greenoffice.jpg
   3) REQ-E2    ดาวน์โหลดรูปแกลเลอรี Green Office -> public/assets/media/greenoffice-*.jpg
 
@@ -76,8 +75,7 @@ def get(url):
 
 def fetch_leaders(dry):
     urls = set()
-    tpl = ROOT / "app" / "views" / "pages"
-    pages = sorted(tpl.glob("*.html")) if tpl.is_dir() else sorted(ROOT.glob("*.html"))
+    pages = sorted((ROOT / "public").glob("*.html"))
     for p in pages:
         urls |= set(re.findall(r'src="(https://bas2\.swu\.ac\.th/[^"]+)"', p.read_text(encoding="utf-8")))
     if not urls:
@@ -119,8 +117,7 @@ def fetch_leaders(dry):
             s = s.replace(' referrerpolicy="no-referrer"', "")
             p.write_text(s, encoding="utf-8")
             n += 1
-    where = "app/views/pages" if (ROOT / "app" / "views" / "pages").is_dir() else "root"
-    print(f"  แก้ src ใน {where} {n} ไฟล์ -> path ในเครื่อง")
+    print(f"  แก้ src ใน public/ {n} ไฟล์ -> path ในเครื่อง")
 
 
 def fetch_green(dry):
@@ -151,5 +148,4 @@ if __name__ == "__main__":
         fetch_leaders(dry)
     if not dry:
         print("\nเสร็จแล้ว — ขั้นต่อไป:")
-        print("  1) python gen/fix_v9_greenoffice.py   (เปิด hero + แกลเลอรี Green Office)")
-        print("  2) python build.py                    (สร้าง .html ใหม่จาก template)")
+        print("  python gen/fix_v9_greenoffice.py   (เปิด hero + แกลเลอรี Green Office ใน public/)")
