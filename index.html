@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — BAS SWU</title>
+<meta name="description" content="Faculty of Business Administration for Society, Srinakharinwirot University.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-nav="home">
+
+<<<<<<< HEAD:public/index.html
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+
+<div class="admin-modal" id="admin-modal" aria-hidden="true">
+  <div class="admin-modal-scrim" data-admin-close></div>
+  <div class="admin-modal-panel" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <button class="icon-btn admin-modal-close" data-admin-close aria-label="ปิดหน้าต่างเข้าสู่ระบบ"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <div class="admin-modal-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+    <h2 id="admin-modal-title">เข้าสู่ระบบผู้ดูแลระบบ</h2>
+    <p class="admin-modal-lede">สำหรับเจ้าหน้าที่คณะ ใช้จัดการเนื้อหาเว็บไซต์</p>
+    <form id="admin-login-form">
+      <label class="admin-field">
+        <span>ชื่อผู้ใช้</span>
+        <input type="text" name="username" placeholder="เช่น admin@bas.swu.ac.th" autocomplete="username" required>
+      </label>
+      <label class="admin-field">
+        <span>รหัสผ่าน</span>
+        <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+      </label>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">เข้าสู่ระบบ (โหมดสาธิต)</button>
+    </form>
+    <p class="admin-modal-note">* ต้นแบบนี้จำลองหน้าจอเข้าสู่ระบบเพื่อสาธิตเท่านั้น ไม่ได้เชื่อมต่อฐานข้อมูลผู้ใช้จริง กรอกข้อมูลใดก็ได้เพื่อทดลองใช้งานโหมดผู้ดูแลระบบ</p>
+  </div>
+</div>
+<div class="admin-bar" id="admin-bar" hidden>
+  <div class="wrap admin-bar-inner">
+    <span class="admin-bar-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> โหมดผู้ดูแลระบบ</span>
+    <span class="admin-bar-note">แสดงไอคอน “แก้ไข” บนเนื้อหาหลักของเว็บไซต์ (ต้นแบบสาธิต)</span>
+    <button class="btn btn-sm btn-secondary" id="admin-logout" style="background:transparent;border-color:rgba(255,255,255,.5);color:#fff;">ออกจากระบบ</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="กลับหน้าแรก BAS SWU">
+      <img class="brand-logo" src="assets/media/footer-logo.png" alt="" width="169" height="44">
+    </a>
+    <nav class="primary-nav" aria-label="เมนูหลัก">
+      <ul class="nav-list">
+<li class="nav-item current" data-key="home"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item" data-key="about"><a class="nav-link" href="about.html" aria-haspopup="true">About Us<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
+<li class="nav-item" data-key="academic"><a class="nav-link" href="academic.html" aria-haspopup="true">Academics<span class="chev" aria-hidden="true"></span></a><div class="mega mega--wide"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="mega-head" role="presentation">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management<span class="en">English-taught</span></a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
+<li class="nav-item" data-key="student-life"><a class="nav-link" href="student-life.html" aria-haspopup="true">Student Life<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
+<li class="nav-item" data-key="global"><a class="nav-link" href="mou.html" aria-haspopup="true">Global Partnerships<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
+<li class="nav-item" data-key="sustainability"><a class="nav-link" href="sustainability.html" aria-haspopup="true">Sustainability<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
+<li class="nav-item" data-key="news"><a class="nav-link" href="news.html">News &amp; Events</a></li>
+<li class="nav-item" data-key="contact"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+    </nav>
+    <div class="header-actions">
+      <a href="admissions.html" class="btn btn-primary btn-sm header-apply">Apply Now</a>
+      <button class="icon-btn search-toggle search-only" aria-label="ค้นหาในเว็บไซต์" aria-haspopup="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+      <button class="icon-btn admin-toggle" id="admin-open" aria-label="เข้าสู่ระบบผู้ดูแลระบบ" title="ผู้ดูแลระบบ"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></button>
+      <button class="icon-btn menu-toggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="search-panel" role="search">
+    <div class="wrap">
+      <form>
+        <label class="visually-hidden" for="site-search">ค้นหาหลักสูตร ข่าวสาร และหน้าเว็บไซต์</label>
+        <input id="site-search" type="search" placeholder="ค้นหา เช่น “MBA”, “การรับสมัคร”, ชื่ออาจารย์…" autocomplete="off">
+        <button class="btn btn-primary" type="submit">ค้นหา</button>
+      </form>
+      <p class="search-hint">ลองค้นหา “MBA”, “การรับสมัคร”, “การจัดการธุรกิจโลก” หรือชื่อคณาจารย์</p>
+    </div>
+  </div>
+</header>
+<div class="mobile-drawer" aria-hidden="true">
+  <div class="drawer-scrim"></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <span class="th th-body" style="font-weight:600;">Menu</span>
+      <button class="icon-btn drawer-close" aria-label="ปิดเมนู"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <ul class="drawer-body">
+<li class="drawer-item"><a href="index.html">Home</a></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">About Us<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Academics<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="drawer-sub-head">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management</a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Student Life<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Global Partnerships<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Sustainability<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
+<li class="drawer-item"><a href="news.html">News &amp; Events</a></li>
+<li class="drawer-item"><a href="contact.html">Contact</a></li>
+</ul>
+    <div class="drawer-foot">
+      <a class="btn btn-primary" style="flex:1;justify-content:center" href="admissions.html">Apply Now</a>
+      <a class="btn btn-secondary" style="flex:1;justify-content:center" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</div>
+=======
+<div data-include="partials/nav.html"></div>
+>>>>>>> fe224e0cf1c60ab34612c9a492c21bc41276785a:index.html
+
+<main id="main">
+
+<section class="home-hero hero-full" id="hero">
+  <div class="hero-video">
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/media/hero-banner-mobile.jpg">
+      <img class="hero-fallback" src="assets/media/hero-banner.jpg" alt="" aria-hidden="true" width="1920" height="1080" fetchpriority="high" decoding="async">
+    </picture>
+    <video id="hero-video" autoplay muted loop playsinline preload="none"
+          poster="assets/media/hero-banner.jpg"
+          data-poster-desktop="assets/media/hero-banner.jpg"
+          data-poster-mobile="assets/media/hero-banner-mobile.jpg"
+          data-src-desktop=""
+          data-src-mobile=""></video>
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title th-body">
+            <span class="hero-line">คณะบริหารธุรกิจเพื่อสังคม</span>
+            <span class="hero-line">มหาวิทยาลัยศรีนครินทรวิโรฒ</span>
+          </h1>
+          <p class="lede th-body">องค์กรชั้นนำแห่งการเรียนรู้ด้านบริหารธุรกิจเพื่อความยั่งยืนของสังคม</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+  <section class="section-tight identity-section" aria-labelledby="identity-h">
+    <div class="wrap id-layout">
+      <div class="id-intro reveal">
+        <p class="eyebrow">Faculty Identity</p>
+        <h2 id="identity-h" class="bi-heading"><span class="bi-en">B · A · S</span><span class="bi-th th-body">อัตลักษณ์คณะ</span></h2>
+        <p class="id-lead th-body">กรอบแนวคิดสามด้านที่กำหนดวิธีการเรียนการสอน การทำงาน และการวัดความสำเร็จของคณะ</p>
+      </div>
+      <div class="id-grid"><article class="id-card reveal"><span class="id-letter" aria-hidden="true">B</span><span class="id-body"><span class="id-en">Business</span><span class="id-th th-body">ธุรกิจที่เข้าใจจริง</span><span class="id-desc th-body">องค์ความรู้ด้านบัญชี การเงิน การตลาด การจัดการ และธุรกิจระหว่างประเทศ ที่สอนผ่านโจทย์จริงของภาคธุรกิจ</span></span></article><article class="id-card reveal"><span class="id-letter" aria-hidden="true">A</span><span class="id-body"><span class="id-en">Administration</span><span class="id-th th-body">บริหารอย่างมืออาชีพ</span><span class="id-desc th-body">ทักษะการตัดสินใจ การวางแผน และการนำองค์กร ที่นิสิตได้ฝึกจริงผ่านโครงงาน และการแข่งขันเคส</span></span></article><article class="id-card reveal"><span class="id-letter" aria-hidden="true">S</span><span class="id-body"><span class="id-en">Society</span><span class="id-th th-body">เพื่อสังคมที่ดีกว่า</span><span class="id-desc th-body">ทุกหลักสูตรวัดความสำเร็จ ทั้งผลประกอบการและผลกระทบที่เกิดกับผู้คนและชุมชน</span></span></article></div>
+    </div>
+  </section>
+  <section class="section academic-section" aria-labelledby="academic-h">
+    <div class="wrap">
+      <div class="academic-head reveal">
+        <h2 id="academic-h" class="academic-title">Academic</h2>
+        <p class="th-body">ค้นหาเส้นทางการศึกษาที่เหมาะกับคุณ ที่คณะบริหารธุรกิจเพื่อสังคม มศว</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <!-- Admission -->
+          <a class="programme-card group programme-card--tone-1" href="admissions.html">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-file-lines fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2 class="bi-heading"><span class="bi-en">Admissions</span><span class="bi-th th-body">การรับสมัคร</span></h2>
+              <p class="programme-description">
+                ข้อมูลการสมัครเข้าศึกษา คุณสมบัติ และขั้นตอนการสมัคร
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+          <!-- Undergraduate -->
+          <a class="programme-card group programme-card--tone-2" href="programs.html?level=undergraduate">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-graduation-cap fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2 class="bi-heading"><span class="bi-en">Undergraduate</span><span class="bi-th th-body">ปริญญาตรี</span></h2>
+              <p class="programme-description">
+                หลักสูตรระดับปริญญาตรีทั้งภาษาไทยและภาษาอังกฤษ
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+          <!-- Graduate -->
+          <a class="programme-card group programme-card--tone-3" href="programs.html#graduate-entry">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-book-open fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2 class="bi-heading"><span class="bi-en">Graduate Studies</span><span class="bi-th th-body">บัณฑิตศึกษา</span></h2>
+              <p class="programme-description">
+                หลักสูตรปริญญาโทและปริญญาเอก เพื่อความเชี่ยวชาญเฉพาะทาง
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+          <!-- International -->
+          <a class="programme-card group programme-card--tone-4" href="international.html">
+            <div class="programme-decoration"></div>
+
+            <div class="programme-icon">
+              <i class="fa-solid fa-globe fa-2xl" aria-hidden="true"></i>
+            </div>
+
+            <div class="programme-content">
+              <h2 class="bi-heading"><span class="bi-en">International Opportunities</span><span class="bi-th th-body">โอกาสระดับนานาชาติ</span></h2>
+              <p class="programme-description">
+                หลักสูตรนานาชาติ โครงการแลกเปลี่ยน และปริญญาคู่ 3+1
+              </p>
+
+              <span class="programme-button" aria-hidden="true">
+                <span>รายละเอียด</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </span>
+            </div>
+
+            <span class="programme-accent"></span>
+          </a>
+
+      </div>
+    </div>
+  </section>
+
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="split-media reveal"><img class="media-img" src="assets/media/campus-life.jpg" alt="บรรยากาศคณะบริหารธุรกิจเพื่อสังคม มศว" loading="lazy" decoding="async"></div>
+      <div class="split-copy reveal">
+        <p class="eyebrow th-body">Get to Know Us</p>
+        <h2 class="th-body bi-heading"><span class="bi-en">Get to Know the Faculty of Business Administration for Society</span><span class="bi-th th-body">รู้จักคณะบริหารธุรกิจเพื่อสังคม</span></h2>
+        <p class="th-body">ก่อตั้งขึ้นเป็นคณะอิสระของมหาวิทยาลัยศรีนครินทรวิโรฒ คณะบริหารธุรกิจเพื่อสังคมรวมสามภาควิชาเข้าด้วยกัน ได้แก่ ภาควิชาการบัญชีและการเงิน ภาควิชาการตลาดและการจัดการ และภาควิชาบริหารธุรกิจ ภายใต้แนวคิดเดียวกันคือ การศึกษาด้านบริหารธุรกิจที่วัดความสำเร็จจากผลกระทบต่อสังคม ไม่ใช่แค่ตัวเลขในงบการเงิน</p>
+        <p class="th-body">ปัจจุบันคณะมีนิสิต 3,776 คนในทุกระดับตั้งแต่ปริญญาตรีถึงปริญญาเอก มีอาจารย์ประจำ 38 คน นำโดยคณบดี ดร.ณัฐินี ฐานะจาโร</p>
+        <a class="link-arrow" href="about.html">อ่านเพิ่มเติมเกี่ยวกับ BAS SWU <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <div class="mt-6">
+      <div class="stat-band-v2 reveal"><div class="stat-grid-v2"><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><div class="value" data-count-to="3,776">3,776</div><div class="label th-body">นิสิตทั้งหมด<span class="en">Total students</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><div class="value" data-count-to="3,420">3,420</div><div class="label th-body">ระดับปริญญาตรี<span class="en">Bachelor's degree</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span><div class="value" data-count-to="339">339</div><div class="label th-body">ระดับปริญญาโท<span class="en">Master's degree</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-award" aria-hidden="true"></i></span><div class="value" data-count-to="17">17</div><div class="label th-body">ระดับปริญญาเอก<span class="en">Doctoral</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span><div class="value" data-count-to="38">38</div><div class="label th-body">อาจารย์ประจำ<span class="en">Faculty members</span></div></div><div class="stat-tile-v2 reveal"><span class="stat-ico" aria-hidden="true"><i class="fa-solid fa-book" aria-hidden="true"></i></span><div class="value" data-count-to="9">9</div><div class="label th-body">หลักสูตร<span class="en">Degree programs</span></div></div></div><p class="stat-source th-body"></p></div></div></div></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Highlights</p>
+        <h2 class="bi-heading"><span class="bi-en">Why BAS SWU</span><span class="bi-th th-body">ทำไมต้อง BAS SWU</span></h2>
+        
+      </div>
+      
+    </div>
+    <div class="grid-3 mt-5">
+      <div class="value-tile reveal"><div class="word th-body" style="font-size:1.1rem;">3 ภาควิชา 9 เส้นทางอาชีพ</div><p class="th-body">การบัญชีและการเงิน การตลาดและการจัดการ และบริหารธุรกิจ — ตั้งแต่ปริญญาตรีถึงปริญญาเอก ภายใต้คณะเดียวที่สร้างธุรกิจควบคู่จิตสำนึกต่อสังคม</p></div>
+      <div class="value-tile reveal"><div class="word th-body" style="font-size:1.1rem;">เส้นทางสู่สากลอย่างแท้จริง</div><p class="th-body">หลักสูตรการจัดการธุรกิจโลกสอนเป็นภาษาอังกฤษทั้งหมด มีพันธมิตรแลกเปลี่ยนที่เยอรมนีและฟิลิปปินส์ พร้อมทางเลือกปริญญาคู่ 3+1</p></div>
+      <div class="value-tile reveal"><div class="word th-body" style="font-size:1.1rem;">คณาจารย์ที่เข้าถึงได้จริง</div><p class="th-body">อาจารย์ประจำ 38 คนใน 3 ภาควิชา พร้อมรายชื่อหัวหน้าภาควิชา รองคณบดี และผู้ช่วยคณบดี ที่เปิดเผยและติดต่อได้ทางอีเมล</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Student Life</p>
+        <h2 class="bi-heading"><span class="bi-en">Student Life</span><span class="bi-th th-body">ชีวิตนิสิต</span></h2>
+        <p class="lede">เรียนรู้ เชื่อมโยง และเติบโต — ชีวิตนิสิต BAS SWU นอกห้องเรียน</p>
+      </div>
+      
+    </div>
+    <div class="mt-3"><div class="story-row reveal"><div class="story-media"><span class="story-theme">เรียนรู้</span><img class="media-img" src="assets/media/activity-workshop.jpg" alt="นิสิตทำงานกลุ่มในกิจกรรมของคณะ" loading="lazy" decoding="async"></div>
+        <div class="story-copy"><h3 class="bi-heading"><span class="bi-en">Learning by Doing, Not Just Listening</span><span class="bi-th th-body">เรียนรู้จากการลงมือทำ ไม่ใช่แค่ฟังบรรยาย</span></h3>
+        <p>การแข่งขันเคส โปรเจกต์กับลูกค้าจริง และแล็บประจำภาควิชา ทำให้ทฤษฎีถูกนำมาใช้จริงตั้งแต่ปีหนึ่ง ครบทั้งสามภาควิชา</p>
+        <a class="link-arrow" href="student-life.html">สำรวจชีวิตนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div><div class="story-row reveal"><div class="story-media"><span class="story-theme">เชื่อมโยง</span><img class="media-img" src="assets/media/activity-community.jpg" alt="นิสิตร่วมกิจกรรมของคณะ" loading="lazy" decoding="async"></div>
+        <div class="story-copy"><h3 class="bi-heading"><span class="bi-en">A Campus Built on Community</span><span class="bi-th th-body">แคมปัสที่สร้างขึ้นจากความเป็นชุมชน</span></h3>
+        <p>ชมรม สโมสรนิสิต และกิจกรรมข้ามภาควิชา เปิดพื้นที่ให้นิสิตทุกคนได้เป็นผู้นำ ไม่ใช่แค่ผู้เข้าร่วม</p>
+        <a class="link-arrow" href="student-life.html#activities">ดูกิจกรรมนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div><div class="story-row reveal"><div class="story-media"><span class="story-theme">เติบโต</span><img class="media-img" src="assets/media/activity-graduation.jpg" alt="บัณฑิตในพิธีรับปริญญา" loading="lazy" decoding="async"></div>
+        <div class="story-copy"><h3 class="bi-heading"><span class="bi-en">A World Wider Than the Classroom</span><span class="bi-th th-body">โลกที่กว้างกว่าห้องเรียน</span></h3>
+        <p>พันธมิตรแลกเปลี่ยนที่เยอรมนีและฟิลิปปินส์ พร้อมเส้นทางปริญญาคู่ 3+1 สำหรับนิสิตหลักสูตรการจัดการธุรกิจโลก</p>
+        <a class="link-arrow" href="student-life.html#exchange">โอกาสแลกเปลี่ยน &amp; ต่างประเทศ <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div></div></div>
+  </div>
+</section>
+
+<section class="section rail-section" aria-labelledby="rail-h">
+  <div class="wrap">
+    <div class="section-head reveal"><div>
+      <p class="eyebrow">Events</p>
+      <h2 id="rail-h" class="bi-heading"><span class="bi-en">Activities &amp; Student Life</span><span class="bi-th th-body">กิจกรรมและชีวิตนิสิต</span></h2>
+    </div>
+    <a class="link-arrow" href="student-life.html">ดูทั้งหมด <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="rail reveal" data-rail role="group" aria-roledescription="คารูเซล" aria-label="กิจกรรมและชีวิตนิสิต">
+      <button class="rail-btn rail-prev" type="button" data-rail-prev aria-label="เลื่อนไปรายการก่อนหน้า"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+      <div class="rail-viewport" data-rail-viewport tabindex="0" role="region" aria-label="รายการกิจกรรม เลื่อนด้วยปุ่มลูกศรซ้ายขวา">
+        <div class="rail-track"><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/activity-workshop.jpg" alt="กิจกรรมนิสิต BAS SWU" loading="lazy" decoding="async"><span class="act-badge th-body">กิจกรรมนิสิต</span></span><div class="act-body"><h3 class="act-title th-body bi-heading"><span class="bi-en">Case Competitions &amp; Applied Projects</span><span class="bi-th th-body"><a href="student-life.html#activities">การแข่งขันเคสและโปรเจกต์ประยุกต์</a></span></h3><p class="act-desc th-body">นิสิตจากทั้งสามภาควิชานำทฤษฎีไปใช้กับโจทย์ธุรกิจจริง การแข่งขันแผนธุรกิจ และแล็บประจำภาควิชา</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/activity-community.jpg" alt="กิจกรรมนิสิต BAS SWU" loading="lazy" decoding="async"><span class="act-badge th-body">กิจกรรมนิสิต</span></span><div class="act-body"><h3 class="act-title th-body bi-heading"><span class="bi-en">Clubs &amp; Student Societies</span><span class="bi-th th-body"><a href="student-life.html#activities">ชมรมและสโมสรนิสิต</a></span></h3><p class="act-desc th-body">องค์กรที่บริหารโดยนิสิตเปิดพื้นที่ให้ทุกคนได้เป็นผู้นำ — ตั้งแต่การจัดงานอีเวนต์ไปจนถึงการเป็นพี่เลี้ยงรุ่นน้อง</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-student-support.jpg" alt="กิจกรรมนิสิต BAS SWU" loading="lazy" decoding="async"><span class="act-badge th-body">กิจกรรมนิสิต</span></span><div class="act-body"><h3 class="act-title th-body bi-heading"><span class="bi-en">Orientation &amp; Welcome Week</span><span class="bi-th th-body"><a href="student-life.html#activities">ปฐมนิเทศและสัปดาห์ต้อนรับ</a></span></h3><p class="act-desc th-body">ปฐมนิเทศนิสิตใหม่ ครอบคลุมทุกภาควิชา ก่อนเปิดภาคการศึกษาต้น</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/campus-life.jpg" alt="บรรยากาศในและรอบแคมปัส" loading="lazy" decoding="async"><span class="act-badge th-body">สิ่งอำนวยความสะดวก</span></span><div class="act-body"><h3 class="act-title th-body bi-heading"><span class="bi-en">Life On and Around Campus</span><span class="bi-th th-body"><a href="student-life.html#facilities">ชีวิตในและรอบแคมปัส</a></span></h3><p class="act-desc th-body">จากพื้นที่ทำงานร่วมกันในอาคารนวัตกรรม ไปจนถึงย่านสุขุมวิทโดยรอบ ชีวิตแคมปัสขยายไกลกว่าประตูห้องเรียน</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โครงการแลกเปลี่ยนนานาชาติ" loading="lazy" decoding="async"><span class="act-badge th-body">แลกเปลี่ยน &amp; นานาชาติ</span></span><div class="act-body"><h3 class="act-title th-body bi-heading"><span class="bi-en">Exchange Opportunity in Germany</span><span class="bi-th th-body"><a href="student-life.html#exchange">โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี</a></span></h3><p class="act-desc th-body">พันธมิตรแลกเปลี่ยนที่สนับสนุนการศึกษาหนึ่งภาคการศึกษาในประเทศเยอรมนี</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โครงการแลกเปลี่ยนนานาชาติ" loading="lazy" decoding="async"><span class="act-badge th-body">แลกเปลี่ยน &amp; นานาชาติ</span></span><div class="act-body"><h3 class="act-title th-body"><a href="student-life.html#exchange">Frankfurt School of Finance &amp; Management</a></h3><p class="act-desc th-body">โครงการแลกเปลี่ยนเฉพาะกับ Frankfurt School of Finance &amp; Management ประเทศเยอรมนี</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article><article class="rail-item act-card"><span class="act-media"><img class="media-img" src="assets/media/banner-mou.jpg" alt="พิธีลงนามความร่วมมือ" loading="lazy" decoding="async"><span class="act-badge th-body">ความร่วมมือ</span></span><div class="act-body"><h3 class="act-title th-body bi-heading"><a href="student-life.html#exchange"><span class="bi-en">Brokenshire College, the Philippines</span><span class="bi-th th-body">Brokenshire College ประเทศฟิลิปปินส์</span></a></h3><p class="act-desc th-body">บันทึกข้อตกลงความร่วมมือระหว่าง มศว และ Brokenshire College สนับสนุนความร่วมมือและการแลกเปลี่ยน</p><span class="act-more th-body">อ่านเพิ่มเติม <span class="circle-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></span></div></article></div>
+      </div>
+      <button class="rail-btn rail-next" type="button" data-rail-next aria-label="เลื่อนไปรายการถัดไป"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+    <div class="rail-dots" role="group" aria-label="เลือกชุดรายการ"><button class="rail-dot" type="button" data-rail-dot="0" aria-label="ไปยังชุดที่ 1" aria-current="true"></button><button class="rail-dot" type="button" data-rail-dot="1" aria-label="ไปยังชุดที่ 2"></button><button class="rail-dot" type="button" data-rail-dot="2" aria-label="ไปยังชุดที่ 3"></button><button class="rail-dot" type="button" data-rail-dot="3" aria-label="ไปยังชุดที่ 4"></button><button class="rail-dot" type="button" data-rail-dot="4" aria-label="ไปยังชุดที่ 5"></button><button class="rail-dot" type="button" data-rail-dot="5" aria-label="ไปยังชุดที่ 6"></button><button class="rail-dot" type="button" data-rail-dot="6" aria-label="ไปยังชุดที่ 7"></button></div>
+    <p class="sr-only" aria-live="polite" data-rail-status></p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">News &amp; Events</p>
+        <h2 class="bi-heading"><span class="bi-en">News &amp; Events</span><span class="bi-th th-body">ข่าวและกิจกรรม</span></h2>
+        
+      </div>
+      <a class="link-arrow" href="news.html">ข่าวและกิจกรรมทั้งหมด <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="cat-bar"><a class="cat-chip is-all th-body" href="news.html">All</a><a class="cat-chip th-body" href="news.html?cat=pr">ข่าวประชาสัมพันธ์</a><a class="cat-chip th-body" href="news.html?cat=campus">Around BAS</a><a class="cat-chip th-body" href="news.html?cat=academic">Academics &amp; Research</a><a class="cat-chip th-body" href="news.html?cat=inter">ความร่วมมือและนานาชาติ</a><a class="cat-chip th-body" href="news.html?cat=scholarship">Scholarships</a><a class="cat-chip th-body" href="news.html?cat=job">Jobs &amp; Procurement</a></div>
+    <div class="news-lead"><a class="news-feature reveal" href="news-detail.html?n=york-university-visit"><div class="card-media"><img class="media-img" src="assets/media/banner-news.jpg" alt="ข่าวความร่วมมือทางวิชาการ" loading="lazy" decoding="async"></div><div class="card-body"><span class="card-tag cat">ข่าวเด่น</span><h3 class="card-title bi-heading"><span class="bi-en">Academic Collaboration &amp; Faculty Visit: Welcoming the University of York</span><span class="bi-th th-body">ความร่วมมือทางวิชาการและเยี่ยมชมคณะ: ต้อนรับมหาวิทยาลัยยอร์ก</span></h3><p class="card-desc">BAS SWU ต้อนรับคณะผู้แทนจากมหาวิทยาลัยยอร์ก (University of York) เพื่อหารือความร่วมมือทางวิชาการและเยี่ยมชมคณะ</p><span class="card-meta">6 กุมภาพันธ์ 2569</span></div></a><div class="news-rows"><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/academic-research.jpg" alt="บรรยายพิเศษทางวิชาการ" loading="lazy" decoding="async"></span><div><span class="card-tag cat">Academics &amp; Research</span><h3 class="bi-heading"><a href="news-detail.html?n=cross-cultural-branding-lecture"><span class="bi-en">Special Lecture: Cross-Cultural Branding</span><span class="bi-th th-body">บรรยายพิเศษ Cross-Cultural Branding</span></a></h3><span class="card-meta">4 กุมภาพันธ์ 2569</span></div></article><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/banner-mou.jpg" alt="พิธีลงนาม MOU" loading="lazy" decoding="async"></span><div><span class="card-tag cat">ความร่วมมือและนานาชาติ</span><h3 class="bi-heading"><a href="news-detail.html?n=mou-brokenshire-college"><span class="bi-en">MOU Signing with Brokenshire College, the Philippines</span><span class="bi-th th-body">พิธีลงนาม MOU กับ Brokenshire College ประเทศฟิลิปปินส์</span></a></h3><span class="card-meta">รอยืนยันวันที่</span></div></article><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี" loading="lazy" decoding="async"></span><div><span class="card-tag cat">ความร่วมมือและนานาชาติ</span><h3 class="bi-heading"><span class="bi-en">Exchange Opportunity in Germany</span><span class="bi-th th-body"><a href="news-detail.html?n=germany-exchange-opportunity">โอกาสแลกเปลี่ยนที่ประเทศเยอรมนี</a></span></h3><span class="card-meta">รอยืนยันวันที่</span></div></article><article class="news-row reveal"><span class="news-thumb"><img class="media-img" src="assets/media/banner-exchange.jpg" alt="โครงการแลกเปลี่ยน Frankfurt School" loading="lazy" decoding="async"></span><div><span class="card-tag cat">ความร่วมมือและนานาชาติ</span><h3 class="bi-heading"><a href="news-detail.html?n=frankfurt-school-exchange"><span class="bi-en">Exchange Programme: Frankfurt School of Finance &amp; Management</span><span class="bi-th th-body">โครงการแลกเปลี่ยน Frankfurt School of Finance &amp; Management</span></a></h3><span class="card-meta">รอยืนยันวันที่</span></div></article></div></div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cta-band reveal"><div class="cta-copy"><p class="eyebrow th-body">Your Next Step</p><h2 class="th-body bi-heading"><span class="bi-en">Ready to Start at BAS SWU?</span></h2><p class="th-body">ดูหลักสูตร เกณฑ์การรับสมัคร และช่องทางติดต่ออาจารย์ที่ปรึกษาของแต่ละหลักสูตรได้ในที่เดียว</p></div><div class="cta-actions"><a class="btn btn-on-deep" href="admissions.html">ขั้นตอนและปฏิทินการรับสมัคร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost-invert" href="programs.html#advisors">Talk to a Programme Advisor</a><a class="btn btn-ghost-invert" href="contact.html">Contact the Faculty Office</a></div></div></div>
+</section>
+
+
+
+
+<section class="section gp-section gp-section--home" id="global-partnerships"><div class="wrap">
+  
+  <div class="section-head reveal"><div><p class="eyebrow">Global Partnerships</p><h2 class="bi-heading"><span class="bi-en">Partners Around the World</span><span class="bi-th th-body">เครือข่ายพันธมิตรทั่วโลก</span></h2><p class="lede th-body">ความร่วมมือทางวิชาการและเครือข่ายพันธมิตรของคณะ รวม 23 องค์กร ใน 6 ประเทศ 2 ภูมิภาค</p></div><a class="btn btn-secondary" href="mou.html">View All Partnerships</a></div>
+  
+
+
+  <ul class="gp-regions reveal"><li class="gp-region is-empty"><span class="gp-region-name">North America</span><span class="gp-region-num">0</span><span class="gp-region-sub">no partnership on record</span></li><li class="gp-region is-empty"><span class="gp-region-name">South America</span><span class="gp-region-num">0</span><span class="gp-region-sub">no partnership on record</span></li><li class="gp-region"><span class="gp-region-name">Europe</span><span class="gp-region-num">2</span><span class="gp-region-sub">2 countries</span></li><li class="gp-region"><span class="gp-region-name">Asia</span><span class="gp-region-num">21</span><span class="gp-region-sub">4 countries</span></li><li class="gp-region is-empty"><span class="gp-region-name">Australia &amp; New Zealand</span><span class="gp-region-num">0</span><span class="gp-region-sub">no partnership on record</span></li><li class="gp-region is-empty"><span class="gp-region-name">Africa</span><span class="gp-region-num">0</span><span class="gp-region-sub">no partnership on record</span></li></ul>
+
+  <div class="gp-layout mt-5">
+    <div class="gp-map-col reveal">
+      <div class="gp-map-scroll">
+        <div class="gp-map" id="gp-map">
+        <svg class="gp-map-svg" viewBox="0 42 2000 772" role="img" aria-label="World map showing the countries where BAS SWU has partner organisations"><path class="gp-land" d="M2000 139l-7,2 -7,0 5,3 3,5 3,3 -12,1 -15,4 -5,0 -9,4 -8,4 -10 -2 -14,5 -8,0 -7 -1 -2,4 -7,5 7,4 -1,8 -5,0 -3,5 -7,5 -2,6 -8,2 -2,5 -8,6 -2 -4 -2 -8 -3 -13 2 -7 5 -4 9 -4 10 -7 9 -5 10 -5 5 -8 -7,1 -3,5 -14,6 -5 -7 -14,2 -14,9 4,3 -12,2 -9,0 1 -4 -9,0 -7,2 -17 -1 -18,2 -18,11 -21,13 8,1 3,3 6,1 3 -2 6,0 8,6 0,5 -4,5 0,7 -3,9 -8,8 -2,4 -8,6 -7,7 -4,3 -7,3 -7 -2 -8,4 -5,3 -1,6 -4,2 -6,3 -3,4 5,3 5,7 1,10 -7,4 -4,2 -5,1 0 -7 -2 -6 4 -1 -4 -5 -5,1 -2 -5 3 -5 -7 -3 -7,2 -4,2 -6,2 1 -5 5 -4 -3 -2 -5,1 -6,4 -4,4 -5,0 0,7 4,0 5,5 6 -4 5,2 5,3 -8,1 -8,6 -3,4 6,3 2,6 3,5 4,4 0,4 -2,5 2,6 -1,4 -7,7 -5,7 -5,7 -7,5 -8,4 -6,1 -4,3 -5,0 -8,3 -6,1 -1,6 -5 -4 -6 -4 -10,6 -5,5 -1,4 4,6 5,7 5,4 4,4 2,10 0,10 -5,4 -6,3 -5,5 -7,5 -2 -3 2 -4 -4 -3 -5 -1 -5 -9 -5 -2 -5,0 1 -5 -5,1 0,6 -3,8 -2,5 0,4 6,5 1,5 3,3 6,3 5,4 2,4 0,6 1,5 4,7 -4,2 -5 -4 -7 -4 -4 -7 0 -4 -2 -8 -3 -4 -4 -6 -5 -2 3 -9 -1 -4 2 -5 -2 -9 -4 -9 -1 -7 -2 -5 -4,3 -6,4 -7 -2 2 -7 -1 -5 -4 -7 -7 -7 -2 -6 -3 -5 -5 -1 -1,6 -5 -1 -7,1 -7,2 1,4 -3,3 -8,4 -7,6 -4,4 -5,3 -3,4 -5,2 -4,5 1,7 0,5 -2,5 0,9 -6,5 -3,3 -2,4 -7 -3 -3 -8 -2 -6 -5 -8 -1 -7 -6 -11 -3 -11 -1 -7 0 -6 -2 -6 -8,4 -11 -8 1 -4 -6 -5 -4 -1 -2 -4 -4 -4 -11,1 -9,0 -7,1 -11 -2 -6 -1 -6 -1 -2 -7 -7,0 -6,3 -7 -2 -5 -4 -6 -2 -3 -5 -5 -7 -6 -1 -5,1 2,8 2,5 4,3 4,3 -1,4 3,3 2 -3 4,4 0,5 5,1 5,0 7 -4 4 -3 4 -4 1,7 3,3 7,3 6,4 3,3 -2,4 -3,4 -2,4 -5,3 1,5 -7,2 -1,4 -6,1 -3,4 -6,1 -7,2 -1,4 -6,3 -9,2 -5,4 -4,0 -6,4 -5,0 -4,2 -6,2 -5 -3 -1 -5 -1 -4 -1 -5 0 -6 -2 -4 -6 -7 -2 -4 -3 -4 -7 -6 0 -7 -3 -7 -6 -3 -1 -4 -3 -4 -3 -5 -3 -4 -3 -4 -1 -5 -3,4 -3,3 -4 -4 -4 -8 2,7 3,5 4,9 4,6 5,6 -1,5 7,5 3,6 -1,7 2,7 5,3 4,6 1,6 3,2 8,5 3,4 3,3 4,3 1,4 2,4 3,5 8 -1 6 -1 5 -2 5 -1 5 -1 5 -1 5 -2 0,5 -2,5 -1,6 -3,6 -3,7 -5,8 -5,7 -6,7 -6,5 -8,5 -5,4 -6,7 -3,4 -4,3 -3,2 -3,6 -3,6 -3,7 4,5 -1,5 0,4 4,9 3,4 0,5 0,5 1,9 -1,7 -2,3 -4,4 -5,2 -6,3 -6,6 -6,5 -3,5 2,4 2,5 0,5 0,6 -7,4 -7,3 -2,4 0,8 -1,4 -5,6 -3,3 -5,7 -6,6 -4,3 -4,3 -6,2 -7,1 -9,0 -6,0 -5,2 -5,1 -3,2 -5 -2 -5 -2 -1 -4 -1 -4 1 -5 -3 -5 -3 -5 -4 -7 -4 -4 -2 -4 -2 -6 -1 -4 -2 -8 0 -7 -3 -5 -3 -5 -3 -7 -5 -9 -1 -4 0 -8 2 -5 2 -8 5 -6 2 -6 -2 -5 -2 -7 0 -9 -4 -7 -2 -7 -4 -6 -6 -6 -4 -4 -3 -6 3 -7 1 -5 1 -7 0 -4 -2 -4 -3 -3 -8 -1 -4,1 -4,0 -3 -3 -2 -4 -4 -4 -4,0 -5,0 -5,1 -4,1 -9,3 -8,4 -5 -2 -6 -1 -10,1 -4,2 -6,2 -8 -3 -5 -4 -5 -3 -4 -4 -5 -2 -3 -3 -2 -6 -2 -4 -4 -3 -2 -3 -5 -5 -4 -2 -3 -7 -1 -7 2 -7 1 -6 2 -8 0 -5 0 -6 -5 -5 1 -5 4 -4 1 -6 3 -3 4 -4 2 -7 3 -2 4 -6 8 -2 4 -4 8 -6 -2 -7 3 -5 4 -7 5 -2 5 -3 3 -5 6 -4 3,3 6 -1 6,2 7 -3 6 -1 4 -3 5 -1 10 -1 9 -1 8 -1 6,0 6,1 6 -3 4,4 4 -2 -2,4 2,4 -1,4 -4,3 4,3 4,4 6,2 7,0 8,3 2,5 5,1 8,2 6,3 5 -4 -1 -4 6 -6 11,1 4,2 7,2 9,2 6,1 5,2 7 -1 7 -2 4,0 7,3 5,0 4 -3 2 -7 3 -6 3 -4 -1 -5 0 -5 -6 -2 -4,3 -8,0 -5 -3 -6,0 -5,3 -5 -3 -6,0 -4 -5 -4 -3 3 -5 -4 -2 7 -6 8,0 2 -4 11,1 7 -4 6 -1 9 -1 10,4 8,3 7 -1 4,0 7 -3 -1 -6 -6 -3 -9 -6 -6 -2 -5 -3 4 -1 4 -5 5 -4 -5 -1 -4,1 -4,2 -5,0 -5,2 3,5 6 -1 -7,3 -8,4 -2 -4 -6 -2 7 -3 -11 -2 -5 -2 -7,7 -4,2 -1,7 -5,6 2,6 5,2 -8,1 -7,5 -1 -4 -7,0 -6,1 4,3 -6,1 -3 -3 0,5 4,6 3,5 -6 -2 1,9 -9 -3 -2 -4 -3 -6 -3 -4 -4 -5 0 -6 -3 -5 -8 -3 -8 -4 -5 -4 -1 -4 -5,1 -2 -4 -8,1 0,4 7,6 3,4 6,5 4,0 5,4 4,2 5,3 -8 -1 -3,4 4,2 -3,3 -3,5 -1 -4 -1 -5 -4 -3 -5 -4 -6 -2 -5 -3 -5 -3 -4 -4 -1 -5 -8 -2 -5,3 -8,3 -11 -1 -8,2 0,6 -5,4 -7,1 -4,5 -3,5 -1,5 -5,5 -4,4 -7,0 -5,0 -6,4 -5 -2 -6 -4 -6,1 -2 -4 -3 -4 0 -6 2 -4 1 -6 -1 -4 -2 -6 8 -4 6,1 8,0 6,1 4,0 9,0 3 -4 1 -11 -5 -5 -4 -3 -9 -2 -1 -4 8 -2 9,2 -2 -7 6,3 12 -4 2 -5 5 -1 4 -1 8 -10 8 -2 4,0 6 -2 5 -1 -2 -5 -2 -9 2 -3 5 -1 7 -3 -2,5 4,2 -7,6 1,5 6,1 5,1 10,1 6,0 9 -3 7 -2 5,1 6,2 9 -5 -1 -4 0 -4 3 -4 5 -2 5,4 4,0 1 -4 -5 -5 7 -4 7 -1 6,1 5,0 7 -3 -6 -3 -10,0 -10,2 -9,2 -3 -4 -6 -1 2 -6 -3 -5 3 -3 5 -4 12 -6 4 -3 -8 -3 -10,2 -5,4 -8,8 -11,4 -4,8 4,4 5,3 -5,6 -6,2 -2,9 -3,5 -7,0 -3,4 -6,0 -2 -5 -5 -6 -4 -8 -3 -3 -11,6 -8,1 -8 -2 -2 -6 -1 -13 5 -4 15 -5 10 -5 11 -8 13 -11 9 -4 16 -7 12 -2 9,0 8 -5 10,1 10 -1 18,4 -7,1 6,4 6 -2 9,3 15,1 21,7 4,2 -6,7 -9,1 -25 -4 -4,1 9,4 1,8 7,2 5,1 -3 -5 4 -2 13,4 5 -2 -4 -4 13 -5 5,0 5,2 3 -4 -4 -3 2 -4 -4 -3 16,2 3,3 -7,1 4,5 9 -2 13 -6 19 -5 5,1 -6,3 7,1 4 -2 10,0 9 -3 6,4 6 -4 -6 -3 20,0 7,1 21,7 3 -3 -5 -3 -7 -2 -1 -7 10 -7 3 -5 5 -1 14,2 -4,7 5,6 -1,8 6,3 -2,4 -11,8 6,0 9 -3 6 -5 -3 -4 2 -3 -6 -1 3 -8 -7 -5 10 -4 -1 -4 5,3 -2,6 6,1 -2 -4 9 -2 12 -1 10,3 -5 -4 -1 -6 10 -1 13,0 12 -1 -4 -3 6 -3 7,0 10 -3 15 -1 17 -2 4,1 13 -3 10,0 7 -4 13 -3 9,2 -7,2 12,0 7,2 16,0 13,3 4,2 -7,4 -15,3 -4,2 7,1 8,1 5 -1 3,4 11 -3 18,1 24,4 1 -5 12,1 8,0 9,3 3,4 -3,2 7,4 8,3 6 -6 9,2 9 -1 11,2 4 -2 9,1 -4 -5 7 -3 51,4 4,3 15,4 22 -1 11,1 5,3 -1,4 7,1 8 -1 9,0 11,1 10 -1 10,5 7 -1 -5 -4 21 -1 11,0 16,2zM497 114l0,6 7 -5 7,4 -2,4 6,4 6 -4 4 -5 0 -6 8,0 8,1 7,3 -3,5 4,3 -12,7 -8,1 -5 -2 -8,8 -8,6 -8,0 -4,3 -7,4 -7,4 -6,7 -2,4 0,7 8,0 3,6 2,4 8 -1 10,2 6,2 4,3 7,1 6,3 9,0 6,1 -1,4 2,6 4,6 8,6 4 -2 3 -6 -3 -9 -3 -3 8 -2 7 -4 3 -4 -4 -9 -7 -4 6 -6 -2 -5 -2 -8 4 -2 9,2 6,1 5 -2 5,2 7,3 11,3 0,4 2,7 5,1 4,4 8 -3 6 -7 3 -2 5,5 7,7 6,7 -2,3 7,3 5,3 9,2 6,6 4,1 3,8 -4,2 -4,2 -10,2 -7,5 -9,1 -12 -1 -8,0 -6,0 -5,4 -7,2 -8,8 -6,5 5 -1 9 -7 11 -5 9 -1 4,3 -5,4 2,6 2,4 7,3 9 -1 6 -6 0,4 4,2 -7,4 -12,3 -6,2 -6,4 -4,0 -1 -5 10 -5 -9,1 -6,0 -5,5 -6,2 -6,1 -3,4 1,7 -7,2 -6,1 -4,2 8 -1 -6,2 -6,1 1,4 -4,5 -4 -3 3,4 -2,4 -3,4 1 -4 -3 -6 0,5 0,7 3,7 -3,5 -6,1 -4,4 -5,2 -7,5 -3,3 -3,3 -1,4 3,9 3,4 2,9 0,6 -3,4 -4 -3 -5 -6 -2 -5 0 -6 -6 -7 -8,1 -4 -3 -9,0 -5 -1 -4,1 -2,4 -4,2 -4,0 -4 -3 -5,1 -4 -1 -8,1 -5,4 -6,3 -3,2 -1,7 1,4 -2,5 -1,4 0,8 0,5 3,7 4,4 3,6 6,2 7,1 5 -1 4 -1 7 -3 1 -8 5 -3 6 -1 5,0 5,0 -3,6 -1,5 -2,7 -2,3 -1,6 -3,4 4,1 5 -1 5,0 4 -1 6,1 5,2 3,3 -1,5 -1,5 -1,5 -1,5 3,5 4,5 5,3 4,1 6 -3 5 -1 5,2 4,3 7 -4 4 -7 3 -3 4 -1 4,1 5 -3 4 -4 3,4 -2,4 -2,6 2,5 3 -5 -2 -6 7 -2 1 -5 2,4 8,4 5,1 6,0 3,2 5,1 3 -3 7,0 6 -1 -4,2 6,3 4,3 1,4 5,2 4,2 3,3 5,6 9,3 5 -1 6,1 6,2 6,5 4,5 3,9 4,5 -5,5 12,2 0,6 4 -4 7,2 10,4 2,3 6,1 11,3 8,0 8,5 7,6 4,1 5,1 4,8 -1,13 -3,4 -8,7 -3,7 -4,4 -3,5 0,10 -2,9 -2,5 -1,8 -6,7 0,6 -5,2 -7,4 -9,2 -4,2 -6,2 -7,4 -4,6 -1,4 0,9 -5,5 -7,10 -5,5 -3,2 -3,5 -4,4 -2,3 -6,3 -4 -1 -8 -2 -8 -3 7,8 3,6 -6,10 -8,3 -11,1 -6,0 0,7 -3,5 -5,1 -6 -2 -1,7 4,1 4,1 -5,2 -4,4 -1,5 -6,3 -5,3 -1,4 5,4 5,1 -2,5 -6,4 -4,6 -5,2 0,9 3,3 -7,0 -8,3 0,5 -9 -2 -6 -3 -7 -4 -1 -6 -2 -4 -1 -10 2 -5 6 -4 -8 -2 5 -5 2 -9 6,2 3 -12 -4 -1 -1,7 -2 -9 2 -10 2 -4 -1 -5 -1 -7 6 -9 4 -9 2 -8 -1 -8 2 -5 -1 -7 3 -6 1 -11 2 -12 2 -12 -1 -9 -1 -8 -6 -3 -11 -8 -10 -6 -4 -4 -3 -4 -3 -9 -6 -10 -5 -11 -4 -7 -4 -4 -4 -2 -1 -8 1 -4 5 -3 3 -4 -7 -3 0 -6 3 -4 2 -4 3 -3 4 -3 1 -5 4 -2 2 -3 0 -5 0 -8 1 -6 -5 -5 1 -4 -6 -4 -3,2 -4,3 3,3 -5,2 -4 -3 -3 -2 -4,0 -4 -2 -2 -5 -4 -1 -4 -2 -3 -3 -1 -5 -4 -4 -5 -5 -5 -1 -4 -2 -5 -1 -6 -1 -5 -4 -7 -6 -7 -3 -8,2 -6,0 -5 -1 -5 -3 -4 -1 -6 -2 -5 -3 -4 -2 -6 -2 -8 -5 -3 -4 0 -5 -1 -6 -2 -5 -5 -5 -6 -4 -2 -4 -5 -2 0 -5 -6 -4 -2 -4 -6 -3 -3 -5 -3 -4 -2 -4 -4 -4 -5 -2 0,5 1,4 6,7 2,3 3,4 2,3 4,3 2,5 3,5 3,3 4,5 -3,3 -5 -6 -4 -3 -3 -6 -4 -4 -3 -3 -6 -2 -3 -3 5 -2 -5 -7 -5 -5 -2 -3 -2 -5 -3 -5 -4 -6 -7 -2 -7 -2 -2 -4 -5 -6 -5 -8 -6 -7 -1 -5 -3 -3 1 -5 0 -4 -2 -5 2 -5 2 -10 -1 -7 -2 -5 7 -2 3,5 0 -6 -1 -4 -12 -6 -4 -2 -10 -2 -3 -5 -6 -6 -1 -5 -7 -4 -3 -5 -5 -1 -2 -5 -7 -5 -3 -5 -5,0 -9,0 -7 -2 -11 -6 -5 -1 -10 -2 -8,1 -11 -3 -6 -2 -6,1 1,4 -10,1 -5,2 -6,1 2 -8 6 -2 -9,2 -4,3 -8,4 4,3 -5,4 -6,2 -5,2 -10,5 -9,5 -9,1 -5,2 -5,2 -9,2 5 -4 5 -1 6 -4 7,0 10 -6 6 -3 1 -4 3 -3 -7,1 -5,1 -3 -2 -9,1 -4 -3 -3 -4 -7,1 -5 -3 -4 -1 -4 -6 7 -6 6 -3 9 -2 4,0 4 -1 -4 -4 4 -2 -10,1 -6,0 -7,1 -9 -1 -9 -6 8 -2 12 -3 5,0 11,3 -5 -4 -7 -2 -3 -3 -6 -2 -7 -2 3 -3 10,0 7 -2 7 -6 5,0 10 -3 6,1 8 -3 9,1 4,2 11 -1 9,3 5 -1 12,2 11,0 4,1 7 -1 9,2 6,1 10,1 9,3 6,0 5 -2 6 -2 9,1 8 -3 9 -1 4,2 4 -1 5 -2 9,5 8 -4 1,4 6,0 9 -2 9,3 13,2 7,1 6 -1 7,3 -8,3 10,1 15 -1 5 -1 6,4 6 -3 -6 -3 4 -1 7 -1 4,0 5,1 5,3 7,0 9,2 9 -1 8,0 4 -4 9,2 0,5 4 -4 4,0 2 -6 -5 -3 -7 -2 0 -7 7 -4 7,1 6,3 8,6 -5,3 10,1zM1798 576l2,5 3 -2 5,4 0,7 2,4 2,5 1,6 6,3 4,3 4,2 2,5 3,6 4,1 2,5 4,4 7,6 2,5 0,6 2,5 0,5 -3,8 -1,7 -2,5 -4,3 -2,4 -4,7 -3,7 -1,6 -9,2 -5,2 -6,5 -5 -3 -2 -3 -8,5 -5 -2 -6 -1 -6 -2 -3 -3 -1 -4 -4 -5 -6 -1 1 -7 -3,4 -5,1 3 -3 3 -6 0 -4 -5,5 -6,6 -4 -2 -3 -7 -9 -7 -9 -3 -10,1 -8,1 -6,2 -5,0 -6,3 -5,1 -3,5 -5,0 -8,0 -4,1 -7,3 -5,1 -6,2 -10 -4 -3 -4 4 -2 0 -6 -3 -9 -1 -6 -2 -4 -3 -4 0 -4 -4 -5 0 -5 5,4 -3 -7 -1 -7 1 -4 2 -7 1,4 2 -4 4 -2 7 -4 4,0 5 -2 4 -2 5,0 5 -2 5 -5 3 -3 1 -5 3 -5 3,5 2 -6 3 -4 3 -2 4 -3 5 -3 7,1 3,4 7,0 2 -7 4 -6 6 -2 5 -1 -5 -4 7,0 8,4 5,1 5 -1 4,2 -4,5 -3,5 -1,4 4,3 4,2 7,5 5,2 6,3 4 -2 2 -5 2 -7 0 -5 0 -7 1 -6 2 -5 4,4 3,6 1,5zM849 36l35,4 -10,3 -21,0 -30,0 22,1 17,2 11 -2 4,2 -6,3 14 -2 27 -2 17,1 -19,6 -21,3 12,0 -6,4 -4,3 0,7 6,3 -8,1 -9,1 10,3 1,5 -6,0 7,5 -12,1 6,2 -9,3 -8,0 7,4 -11,0 5,3 7,3 2,4 -10,1 -4 -2 -7 -3 2,4 -6,3 14,0 8,0 -15,5 -15,5 -16,2 -7,0 -5,2 -8,6 -12,3 -11,2 -8,1 -5,4 -3,7 -9,5 2,4 -2,5 -3,5 -8,0 -8 -4 -11,0 -6 -3 -3 -6 -10 -6 -3 -4 0 -5 -8 -5 2 -4 -4 -2 6 -7 8 -2 3 -6 -6,1 -8,2 -7 -2 2 -6 5 -1 12,2 -10 -4 -5 -1 -6,0 -4 -1 6 -5 -8 -6 -6 -6 -8 -2 -14 -6 -12,0 -15,0 -14,0 -6 -1 -10 -4 15 -2 11,0 -24 -1 -12 -3 22 -4 20 -3 -13 -4 5 -2 19 -4 8 -1 11 -4 17 -1 17,0 6,2 15 -3 13,2 8,1 12,1 -14 -3 20 -5 19,0 7 -2 20 -1 44,1zM519 94l4,3 6 -4 14 -3 9,6 10,2 6 -2 12,3 8,2 11,1 5,4 14,2 5,2 5,6 -10,2 13,4 9,1 8,5 8,1 -1,3 -10,7 -7 -2 -9 -6 -7,1 5,6 8,3 6,7 -2,4 -7 -2 -14 -4 8,5 6,3 -15,0 -12 -4 -6 -2 -7 -5 -8 -2 -16,2 -4 -2 3 -4 11,0 11 -1 0 -4 7 -6 -3 -4 -9 -3 -11 -2 -2 -5 -5,0 -5 -2 -13,3 -20 -2 -12 -1 -9 -1 -4 -2 6 -3 -8,0 -2 -5 4 -5 6 -3 14 -1 -4,4zM619 38l15,1 12,0 10,2 -13,4 -14,1 -5,1 12,0 -13,4 -9,1 -9,5 -12,1 -20,1 7,1 -4,6 -9,1 -10,4 10,1 -15,5 -14 -2 -16,1 -9 -1 -10,0 9 -4 -2 -4 18,2 -8 -3 -9 -1 5 -3 10 -1 -7 -4 13 -3 5,1 8 -2 -12 -1 -20,1 -9 -2 -5 -2 -7 -2 7 -3 7,0 11 -1 8 -2 7,0 6,2 4 -3 7 -1 10 -1 17,0 19,0 12,0 12,0zM1745 506l2,9 6,4 4 -6 7 -4 4,0 5,2 4,2 6,1 10,4 10,3 4,3 3,3 10,7 -4,3 7,8 3,6 8,3 4,3 -5,2 -6 -2 -5 -1 -5 -3 -3 -3 -3 -5 -7 -3 -5,2 -2,6 -5,2 -8 -1 -5 -5 -6 -1 -8,2 2 -5 2 -7 -3 -5 -11 -5 -4,0 -8 -5 -4,3 -1 -5 -5 -2 6 -2 -4 -2 -8 -4 6 -4 11,0zM1655 490l6,5 -6,1 -2,3 0,5 -5,4 -1,6 -2,8 -7,1 -2 -4 -7 -2 -6,2 -6 -2 -5 -1 -1 -7 -5 -6 -1 -5 1 -5 3 -4 4,2 5 -1 1 -5 9 -2 4 -5 2 -3 7 -5 5 -4 2 -4 6,2 3,4 5,2 -4,2 -3,5 -3,5 4,5zM366 94l9,1 8,2 6 -2 5,1 5,6 -1 -8 5 -1 5,1 6,2 4,6 2,4 9,2 10,3 -10,3 4,2 -12,1 -10 -1 -6,0 -11,2 -16,1 -8,0 -3 -2 -7 -2 -5,1 -7 -5 12 -1 8,0 7 -1 -10 -1 -12,0 -8,0 10 -4 -9,0 -9 -2 4 -4 4 -2 15 -3 6,1zM1278 575l1,7 1,5 -3,4 -2,4 0,5 -3,6 -2,8 -4,10 -2,8 -2,7 -5,1 -5,2 -7 -3 -2 -8 -2 -4 -1 -4 1 -4 6 -7 -1 -7 -2 -8 3 -7 6 -1 4 -1 3 -3 5 -4 1 -5 5 -3 2 -6 4,5zM1273 271l3,4 4,1 -5,1 -1,4 -3,3 2,7 6,1 3,3 8,1 9 -1 0 -6 0 -5 -4 -2 1 -4 -2 -5 5,1 5 -2 -4 -3 -6 -2 -1,4 -2 -4 1 -5 -7 -2 -2 -5 -4 -3 6,1 0 -4 5 -1 5,1 1 -6 -7 -3 -5 -1 -6,2 -5,1 -3,4 -5,0 -6,6 5,5 6,11 3,3zM1588 533l-6,0 -5 -5 -7 -5 -2 -3 -5 -4 -2 -5 -5 -7 -5 -5 -1 -5 -2 -4 -5 -4 -3 -4 -4 -3 -6 -7 3 -2 9,1 4,5 5,4 8,8 6,0 4,4 4,5 4,2 -2,5 5,2 3,7 4,0 2,4 -1,7 0,9zM983 174l-6,6 6,0 6,0 -1,4 -5,5 5,0 6,8 7,7 8,3 -3,5 -3,6 -7,0 -10,1 -6,2 -5 -1 -4,2 5 -7 5 -1 -9 -1 5 -4 -3 -3 9 -3 -3 -6 -7 -1 1 -4 -5,1 0 -6 -1 -8 4 -5 5,1 6 -1zM1783 294l-2,4 -2,7 -7,2 -10,1 -8,6 -3 -2 -1 -4 -9,1 -7,3 -6,0 5,4 -3,9 -4,3 -1 -8 -6 -5 5 -2 3 -3 6 -3 4 -4 11 -2 6,2 6 -10 3,2 8 -5 7 -9 -1 -6 2 -4 6 -1 3,8 0,4 -5,6 0,6zM1320 107l-22,0 -11 -4 5 -4 10 -8 -5 -1 14 -5 10 -5 19 -4 18 -1 10 -2 11,0 4,2 -4,1 -20,3 -17,3 -17,5 -8,6 -9,5 1,5 11,4zM0 117l14,4 14,6 3,4 -1 -4 15,1 11,5 -5,3 -9,0 -1,6 -7,1 -4 -2 -8 -2 -7 -3 -6,1 -2 -4 -6,1 -1,5 0 -22zM919 131l5,7 -7,4 -16,4 -5,1 -7 -1 -15 -1 5 -3 -12 -3 10 -1 -12 -3 4 -3 8 -1 9,4 8 -3 7,1 9 -3 9,1zM331 103l-15,3 -16 -5 7 -7 4 -3 -5 -4 19 -1 8,2 14,0 5,1 6,3 -7,1 -13,4 -7,4zM517 57l6,2 -7,2 -11,4 -9,0 -12,0 -6 -3 5 -3 -11,0 -6 -2 -3 -2 4 -3 3 -1 6 -1 11 -1 7,3 9,1 9,1 5,3zM474 72l6,1 11,0 5,2 5,4 11,1 8,1 9 -2 11,0 9,0 6,2 -2,4 -8,1 -7,0 -16,1 -12,0 -9 -1 -14 -2 -3 -6 -6 -2 -11 -1 -7 -1 14 -2zM1101 57l19,4 -14,3 -3,4 -5,1 -3,4 -7,1 -12 -4 5 -2 -8 -1 -11 -5 -4 -5 15 -2 11,2 10 -2 7,2zM1961 727l5,0 2,5 -6,7 0,5 -5,0 -4,2 -5,9 -5,3 -7,1 -4 -2 -6,0 2 -6 7 -6 8 -3 4 -3 4 -3 2 -4 3 -4 4 -3zM1696 492l-5,6 -4,1 -5 -1 -9,0 -5,1 -1,4 5,5 13 -5 -5,5 -5,3 5,7 4,8 -3,5 1 -6 -6,2 -4 -7 0 -5 -4,1 1,7 0,8 -6 -1 2 -5 -1 -6 -4 -3 2 -4 1 -4 3 -9 6 -6 4,1 7,1 6,0 6 -4zM688 218l-4,5 4 -2 7,5 8,0 -2,4 5,2 -1,9 -6 -1 1 -5 -8,5 -5 -5 -5,1 -11,0 2 -4 3 -5 5 -9 4 -3 5 -2 -2,5zM399 77l7,1 6,0 -3,5 -18,1 -14,3 -9,0 11 -5 -25,1 -8 -1 8 -5 5 -2 16,2 9,3 10,1 -8 -6 5 -2 6,1zM1555 62l-12,0 -15 -1 -10 -2 -4 -4 -7 -1 14 -4 12 -1 11,2 13,6 -2,5zM624 799l7,4 8,1 -8,3 -5,0 -5,2 -6 -1 -4 -1 -5 -1 -7 -3 -6 -3 -8 -6 5,1 8,3 7,2 5 -6 5 -2 4,0 5,7zM1970 701l4,6 8,3 7 -1 1,5 -6,3 0,5 -3,4 -3,3 -4,3 -1 -7 -7 -6 4 -3 1 -5 -3 -7 -2 -3 -5 -5 -2 -4 5,2 4,2 2,5zM1603 538l11,0 12,1 2,3 8,1 7,4 -7,2 -6 -3 -5,1 -5 -1 -6 -1 -6 -2 -4 -1 -13 -1 -6 -3 4 -5 7,0 4,2zM1674 397l5,0 2,8 -2,5 -4,6 1,4 6,0 7,3 1,5 -5,0 -7 -5 -5,1 -3 -3 -3 -4 -1 -8 3 -7 2 -5zM557 374l8,1 6,5 4,2 5,1 4,2 4,2 -4,2 -8,0 -8,1 4 -3 -6 -2 -3 -5 -9 -1 -9 -2 -5 -3 -4,3 -6,2 2 -4 5 -3 5,0 6,0 4,0 5,2zM1799 255l4,1 4 -3 2,7 -9,1 -5,6 -8 -4 -3,6 -6,0 -1 -5 3 -5 5,0 2 -8 2 -4 6,6 4,2zM1798 218l6,10 -9 -2 -3,8 5,6 -4,0 -4,5 -1 -5 1 -5 -1 -6 2 -5 0 -7 -3 -6 0 -7 5 -3 4,6 0,5 2,6zM962 210l-10,3 -7 -1 4 -6 -3 -5 8 -5 4 -2 5 -1 6,4 -3,4 0,4 -4,5zM527 135l4,2 9,3 6,2 5,2 4,2 -5,2 -9 -2 -8,1 -8,3 -10 -3 5 -3 1 -4 2 -5 4,0zM442 90l7,1 10 -1 -4,4 9,3 -1,5 -9,2 -6,0 -4 -3 -13 -4 11 -1 -6 -4 6 -2zM1806 80l-4,4 -21,0 -9,1 -11 -3 3 -4 7 -1 15,0 20,3zM1702 453l1,7 -2,5 -2 -6 -1,7 -8,0 -1 -4 -2 -6 -5,3 -4,3 2 -7 6 -3 6,1 5 -3 0 -4 4,2 1,5zM1141 53l11,2 -8,3 -16,1 -16 -1 -9 -2 -7 -2 18 -2 8,2 5 -2 14,1zM1808 727l5,2 7 -2 4,7 -2,6 -6,2 -5,0 -3 -5 -4 -8 4 -2zM482 96l-6,4 -6,0 -4 -5 3 -5 6 -2 12,0 10,2 -8,5 -7,1zM453 74l4,2 -2,7 -9,1 -6 -1 -9 -3 -1 -4 6,0 9 -2 7,1zM597 390l5,0 5,0 4,1 4,2 5,4 -4,1 -5,0 -5,0 -3,4 -5 -3 -6,0 -6 -1 6 -1 4,1 0 -6zM354 69l0,4 -5,2 -5,0 -10,2 -9,1 -8 -1 10 -4 11 -4 9,0 7,0zM1451 466l-5,1 -2 -5 -1 -8 2 -9 4,4 3,3 2,6 0,6zM1584 65l-32,2 11 -7 4 -1 4,1 14,3zM314 231l-12 -2 -7 -4 -6 -3 -2 -4 6,1 8,2 5,4 6,2zM444 65l-7,2 -9 -2 -12,0 5 -2 -7 -1 11 -2 15,2 4,3zM1844 530l-3,2 -6,3 -8 -2 -3 -3 5,1 4 -3 5,2 4 -4 3 -3 1,4zM1673 373l-2,5 -3 -5 -1 -4 4 -5 4 -5 2,5 -4,9zM1284 53l-7,0 -5,1 -8,2 -6 -2 -9 -2 11 -1 8,0 5,0 5 -1 8,2zM1613 396l-5,3 -4 -2 -1 -5 9 -4 5,3 -4,5zM469 116l-11,0 -5,1 -7 -3 4 -1 4 -3 6,2 5,2zM1086 288l-2,4 0,5 -4 -3 -11 -3 7 -2 6 -1 4,0zM576 94l-6,1 -6,0 -6,1 -7 -3 15 -2 10,3zM1051 271l3,4 0,7 -5,2 -2 -8 4 -5zM1691 556l-4,2 2 -6 5 -3 6 -2 5 -1 -5,5 -5,1 -4,4zM468 66l-9,2 -4 -2 -3 -4 7,0 10,2zM1137 67l-12,3 -10 -2 4 -1 8 -3 10,3zM1715 494l0,5 -4,2 -3 -7 1 -4 5,1zM675 784l4,2 -9,4 -7,1 4 -6 4,1 4 -2zM1748 310l-2,6 -6 -1 -5,2 3 -6 6 -2 4,1zM1837 83l-6,2 -9,0 -10 -3 11 -1 14,2zM388 68l-11,2 -8 -2 5 -2 8,0 8,1zM1928 623l-5,0 -4 -3 -3 -3 -4 -3 5,0 4,3 5,4zM480 83l-11,2 -7 -1 11 -4 5,2zM1697 432l2,7 -4 -2 1,5 -5 -3 3 -5 -4 -4 6,0zM1798 93l-9,0 -11,0 4 -3 7,0 8,2zM579 127l-7,0 1 -6 5,0 5,1 -4,5zM263 200l5 -1 -2,7 5,4 -5 -2 -5 -5 -1 -4zM1689 443l-4,5 -5 -2 3 -6 2,3 4 -5 0,5zM150 183l-6,2 -3 -4 5 -2 6 -1 -2,5zM1390 776l-8,1 1 -6 4,1 5,1zM0 103l5 -1 8,2 -6,2 -7,0zM46 146l7,0 4,2 6,0 -5,2 -4 -1 -7 -1zM1658 448l-7,6 3 -4 4 -4 3 -4 3 -5 1,4 -4,3 -3,4zM1725 517l2,4 -5 -2 -4,0 -7,0 8 -3 6,1zM419 92l-4,4 -9 -4 9 -1 4,1zM1070 191l-3,5 -6 -4 8 -4zM545 152l-6,3 -6 -2 5 -3 7,1zM1683 545l-9,5 -8 -1 5 -3 7,1 5 -2zM1132 302l7,1 4,1 -6,2 -6 -2z"/></svg>
+        <button type="button" class="gp-pin" data-id="th" style="--x:77.922%;--y:49.431%" aria-describedby="gp-detail" aria-label="Thailand — 18 partner organisations, Asia"><span class="gp-pin-dot"><span class="gp-pin-num">18</span></span><span class="gp-pin-label">Thailand</span></button><button type="button" class="gp-pin" data-id="kr" style="--x:85.272%;--y:32.29%" aria-describedby="gp-detail" aria-label="South Korea — 1 partner organisation, Asia"><span class="gp-pin-dot"><span class="gp-pin-num">1</span></span><span class="gp-pin-label">South Korea</span></button><button type="button" class="gp-pin" data-id="jp" style="--x:88.803%;--y:33.643%" aria-describedby="gp-detail" aria-label="Japan — 1 partner organisation, Asia"><span class="gp-pin-dot"><span class="gp-pin-num">1</span></span><span class="gp-pin-label">Japan</span></button><button type="button" class="gp-pin" data-id="ph" style="--x:84.892%;--y:54.239%" aria-describedby="gp-detail" aria-label="Philippines — 1 partner organisation, Asia"><span class="gp-pin-dot"><span class="gp-pin-num">1</span></span><span class="gp-pin-label">Philippines</span></button><button type="button" class="gp-pin" data-id="de" style="--x:52.411%;--y:23.266%" aria-describedby="gp-detail" aria-label="Germany — 1 partner organisation, Europe"><span class="gp-pin-dot"><span class="gp-pin-num">1</span></span><span class="gp-pin-label">Germany</span></button><button type="button" class="gp-pin" data-id="gb" style="--x:49.7%;--y:20.495%" aria-describedby="gp-detail" aria-label="United Kingdom — 1 partner organisation, Europe"><span class="gp-pin-dot"><span class="gp-pin-num">1</span></span><span class="gp-pin-label">United Kingdom</span></button>
+        </div>
+      </div>
+      <p class="gp-map-note th-body">Markers show the number of partner organisations in each country. Use Tab and Enter to move between markers; on small screens, swipe the map sideways.</p>
+    </div>
+
+    <aside class="gp-side reveal" aria-label="Partner details">
+      <div class="gp-detail" id="gp-detail" role="region" aria-live="polite" aria-atomic="true"></div>
+      <div class="gp-plist">
+        <h3 class="gp-plist-head">Partner Universities</h3>
+        <ul class="gp-plist-list" id="gp-plist"><li class="gp-plist-item"><span class="gp-plist-name">King Mongkut&#x27;s Institute of Technology Ladkrabang</span><span class="gp-plist-meta">Thailand <span aria-hidden="true">·</span> Education</span></li><li class="gp-plist-item"><span class="gp-plist-name">Faculty of Social Sciences, Srinakharinwirot University</span><span class="gp-plist-meta">Thailand <span aria-hidden="true">·</span> Education</span></li><li class="gp-plist-item"><span class="gp-plist-name">Rajinibon School</span><span class="gp-plist-meta">Thailand <span aria-hidden="true">·</span> Education</span></li><li class="gp-plist-item"><span class="gp-plist-name">Sarasas Witaed Nakhon Pathom School</span><span class="gp-plist-meta">Thailand <span aria-hidden="true">·</span> Education</span></li><li class="gp-plist-item"><span class="gp-plist-name">Sungkyunkwan University (SKKU)</span><span class="gp-plist-meta">South Korea <span aria-hidden="true">·</span> Academic MOU</span></li><li class="gp-plist-item"><span class="gp-plist-name">Meiji University</span><span class="gp-plist-meta">Japan <span aria-hidden="true">·</span> Academic MOU</span></li><li class="gp-plist-item" hidden><span class="gp-plist-name">Brokenshire College</span><span class="gp-plist-meta">Philippines <span aria-hidden="true">·</span> MOU signed with SWU</span></li><li class="gp-plist-item" hidden><span class="gp-plist-name">Frankfurt School of Finance &amp; Management</span><span class="gp-plist-meta">Germany <span aria-hidden="true">·</span> Exchange &amp; 3+1 double degree</span></li><li class="gp-plist-item" hidden><span class="gp-plist-name">University of York</span><span class="gp-plist-meta">United Kingdom <span aria-hidden="true">·</span> Academic visit &amp; collaboration talks</span></li></ul>
+        <button type="button" class="btn btn-secondary btn-sm gp-plist-more" id="gp-plist-more" aria-controls="gp-plist" aria-expanded="false">View all partners</button>
+        <p class="card-meta th-body mt-3"><a class="link-arrow" href="mou.html#directory">Full partner directory, including government and industry partners <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a></p>
+      </div>
+    </aside>
+  </div>
+  
+</div></section>
+
+
+<div class="dean-direct-wrap">
+  <a class="dean-direct" id="dean-direct" href="leadership.html#dean-direct">
+    <i class="fa-solid fa-comment" aria-hidden="true"></i>
+    <span class="label th-body">สายตรงคณบดี</span>
+    <button type="button" class="dean-direct-close" id="dean-direct-close" aria-label="ปิดปุ่มสายตรงคณบดี">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+  </a>
+</div>
+</main>
+
+<div data-include="partials/footer.html"></div>
+
+
+<script src="assets/data.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/include.js"></script>
+</body>
+</html>

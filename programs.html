@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — BAS SWU</title>
+<meta name="description" content="All 9 BAS SWU degree programs, undergraduate through doctoral.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-nav="academic">
+
+<<<<<<< HEAD:public/programs.html
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+
+<div class="admin-modal" id="admin-modal" aria-hidden="true">
+  <div class="admin-modal-scrim" data-admin-close></div>
+  <div class="admin-modal-panel" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <button class="icon-btn admin-modal-close" data-admin-close aria-label="ปิดหน้าต่างเข้าสู่ระบบ"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <div class="admin-modal-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+    <h2 id="admin-modal-title">เข้าสู่ระบบผู้ดูแลระบบ</h2>
+    <p class="admin-modal-lede">สำหรับเจ้าหน้าที่คณะ ใช้จัดการเนื้อหาเว็บไซต์</p>
+    <form id="admin-login-form">
+      <label class="admin-field">
+        <span>ชื่อผู้ใช้</span>
+        <input type="text" name="username" placeholder="เช่น admin@bas.swu.ac.th" autocomplete="username" required>
+      </label>
+      <label class="admin-field">
+        <span>รหัสผ่าน</span>
+        <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+      </label>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">เข้าสู่ระบบ (โหมดสาธิต)</button>
+    </form>
+    <p class="admin-modal-note">* ต้นแบบนี้จำลองหน้าจอเข้าสู่ระบบเพื่อสาธิตเท่านั้น ไม่ได้เชื่อมต่อฐานข้อมูลผู้ใช้จริง กรอกข้อมูลใดก็ได้เพื่อทดลองใช้งานโหมดผู้ดูแลระบบ</p>
+  </div>
+</div>
+<div class="admin-bar" id="admin-bar" hidden>
+  <div class="wrap admin-bar-inner">
+    <span class="admin-bar-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> โหมดผู้ดูแลระบบ</span>
+    <span class="admin-bar-note">แสดงไอคอน “แก้ไข” บนเนื้อหาหลักของเว็บไซต์ (ต้นแบบสาธิต)</span>
+    <button class="btn btn-sm btn-secondary" id="admin-logout" style="background:transparent;border-color:rgba(255,255,255,.5);color:#fff;">ออกจากระบบ</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="กลับหน้าแรก BAS SWU">
+      <img class="brand-logo" src="assets/media/footer-logo.png" alt="" width="169" height="44">
+    </a>
+    <nav class="primary-nav" aria-label="เมนูหลัก">
+      <ul class="nav-list">
+<li class="nav-item" data-key="home"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item" data-key="about"><a class="nav-link" href="about.html" aria-haspopup="true">About Us<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
+<li class="nav-item current" data-key="academic"><a class="nav-link" href="academic.html" aria-haspopup="true">Academics<span class="chev" aria-hidden="true"></span></a><div class="mega mega--wide"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="mega-head" role="presentation">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management<span class="en">English-taught</span></a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
+<li class="nav-item" data-key="student-life"><a class="nav-link" href="student-life.html" aria-haspopup="true">Student Life<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
+<li class="nav-item" data-key="global"><a class="nav-link" href="mou.html" aria-haspopup="true">Global Partnerships<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
+<li class="nav-item" data-key="sustainability"><a class="nav-link" href="sustainability.html" aria-haspopup="true">Sustainability<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
+<li class="nav-item" data-key="news"><a class="nav-link" href="news.html">News &amp; Events</a></li>
+<li class="nav-item" data-key="contact"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+    </nav>
+    <div class="header-actions">
+      <a href="admissions.html" class="btn btn-primary btn-sm header-apply">Apply Now</a>
+      <button class="icon-btn search-toggle search-only" aria-label="ค้นหาในเว็บไซต์" aria-haspopup="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+      <button class="icon-btn admin-toggle" id="admin-open" aria-label="เข้าสู่ระบบผู้ดูแลระบบ" title="ผู้ดูแลระบบ"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></button>
+      <button class="icon-btn menu-toggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="search-panel" role="search">
+    <div class="wrap">
+      <form>
+        <label class="visually-hidden" for="site-search">ค้นหาหลักสูตร ข่าวสาร และหน้าเว็บไซต์</label>
+        <input id="site-search" type="search" placeholder="ค้นหา เช่น “MBA”, “การรับสมัคร”, ชื่ออาจารย์…" autocomplete="off">
+        <button class="btn btn-primary" type="submit">ค้นหา</button>
+      </form>
+      <p class="search-hint">ลองค้นหา “MBA”, “การรับสมัคร”, “การจัดการธุรกิจโลก” หรือชื่อคณาจารย์</p>
+    </div>
+  </div>
+</header>
+<div class="mobile-drawer" aria-hidden="true">
+  <div class="drawer-scrim"></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <span class="th th-body" style="font-weight:600;">Menu</span>
+      <button class="icon-btn drawer-close" aria-label="ปิดเมนู"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <ul class="drawer-body">
+<li class="drawer-item"><a href="index.html">Home</a></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">About Us<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Academics<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="drawer-sub-head">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management</a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Student Life<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Global Partnerships<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
+<li class="drawer-item"><button type="button" aria-expanded="false">Sustainability<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
+<li class="drawer-item"><a href="news.html">News &amp; Events</a></li>
+<li class="drawer-item"><a href="contact.html">Contact</a></li>
+</ul>
+    <div class="drawer-foot">
+      <a class="btn btn-primary" style="flex:1;justify-content:center" href="admissions.html">Apply Now</a>
+      <a class="btn btn-secondary" style="flex:1;justify-content:center" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</div>
+=======
+<div data-include="partials/nav.html"></div>
+>>>>>>> fe224e0cf1c60ab34612c9a492c21bc41276785a:programs.html
+
+<main id="main">
+<nav class="breadcrumb wrap" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">Programmes</span></nav>
+<section class="page-hero page-hero--image"><img class="hero-bg" src="assets/media/banner-program.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high">
+  <div class="wrap">
+    <p class="eyebrow th-body">Academics</p>
+    <h1 class="bi-heading"><span class="bi-en">All Programs</span><span class="bi-th th-body">All Programmes</span></h1>
+    <p class="lede th-body">9 หลักสูตรจาก 3 ภาควิชา — ทั้งหลักสูตรภาษาไทยและภาษาอังกฤษ ตั้งแต่ปริญญาตรีถึงปริญญาเอก</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="filter-bar" data-filter-group data-filter-target=".program-card">
+      <button class="filter-chip th-body" aria-pressed="true" data-filter-value="all">All Programmes</button>
+      <button class="filter-chip th-body" aria-pressed="false" data-filter-value="undergraduate">Undergraduate</button>
+      <button class="filter-chip th-body" aria-pressed="false" data-filter-value="graduate">Master's &amp; Doctoral</button>
+    </div>
+    <div class="notice th-body" data-search-banner hidden style="margin-bottom:var(--space-5);"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>พบ <span data-search-count>0</span> รายการสำหรับ “<strong data-search-term></strong>” — <a href="programs.html" style="color:var(--teal-600);font-weight:600;">ล้างการค้นหา</a></span></div>
+    <div class="grid-3" data-programs-grid><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Accountancy บัญชีบัณฑิต ปูพื้นฐานการบัญชีอย่างเข้มข้น ครอบคลุมบัญชีการเงิน บัญชีบริหาร และบัญชีภาษีอากร ควบคู่กับการฝึกปฏิบัติงานสอบบัญชี A rigorous accounting foundation covering financial, managerial and tax accounting alongside auditing practice. หลักสูตรภาษาไทย ผู้สอบบัญชี นักวิเคราะห์การเงิน ที่ปรึกษาภาษี นักบัญชีองค์กร" href="program-detail.html?p=accountancy"><div class="card-media"><img class="media-img" src="assets/media/program-accountancy.jpg" alt="หลักสูตรบัญชีบัณฑิต" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรภาษาไทย</span></div><div class="card-body"><span class="degree-code">บช.บ. (Accountancy)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Accountancy</span><span class="bi-th th-body">บัญชีบัณฑิต</span></h3><p class="card-desc">ปูพื้นฐานการบัญชีอย่างเข้มข้น ครอบคลุมบัญชีการเงิน บัญชีบริหาร และบัญชีภาษีอากร ควบคู่กับการฝึกปฏิบัติงานสอบบัญชี</p><div class="career-list"><span>ผู้สอบบัญชี</span><span>นักวิเคราะห์การเงิน</span><span>ที่ปรึกษาภาษี</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Business Administration -- Marketing บริหารธุรกิจบัณฑิต (การตลาด) กลยุทธ์แบรนด์ การตลาดดิจิทัล และการเข้าใจผู้บริโภค สำหรับองค์กรที่ต้องการถูกเข้าใจ ไม่ใช่แค่ถูกมองเห็น Brand strategy, digital marketing and consumer insight for organisations that need to be understood, not just seen. หลักสูตรภาษาไทย ผู้จัดการฝ่ายการตลาด นักกลยุทธ์แบรนด์ นักวิจัยตลาด นักการตลาดดิจิทัล" href="program-detail.html?p=bba-marketing"><div class="card-media"><img class="media-img" src="assets/media/program-bba-marketing.jpg" alt="หลักสูตรบริหารธุรกิจบัณฑิต วิชาเอกการตลาด" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรภาษาไทย</span></div><div class="card-body"><span class="degree-code">บธ.บ. (การตลาด)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Business Administration -- Marketing</span><span class="bi-th th-body">บริหารธุรกิจบัณฑิต (การตลาด)</span></h3><p class="card-desc">กลยุทธ์แบรนด์ การตลาดดิจิทัล และการเข้าใจผู้บริโภค สำหรับองค์กรที่ต้องการถูกเข้าใจ ไม่ใช่แค่ถูกมองเห็น</p><div class="career-list"><span>ผู้จัดการฝ่ายการตลาด</span><span>นักกลยุทธ์แบรนด์</span><span>นักวิจัยตลาด</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Business Administration -- Finance บริหารธุรกิจบัณฑิต (การเงิน) การเงินธุรกิจ การวิเคราะห์การลงทุน และการธนาคาร บนพื้นฐานการปฏิบัติจริงในตลาดทุน Corporate finance, investment analysis and banking, grounded in real capital-markets practice. หลักสูตรภาษาไทย นักวิเคราะห์การลงทุน ผู้จัดการฝ่ายการเงิน เจ้าหน้าที่ธนาคาร นักวิเคราะห์ความเสี่ยง" href="program-detail.html?p=bba-finance"><div class="card-media"><img class="media-img" src="assets/media/program-bba-finance.jpg" alt="หลักสูตรบริหารธุรกิจบัณฑิต วิชาเอกการเงิน" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรภาษาไทย</span></div><div class="card-body"><span class="degree-code">บธ.บ. (การเงิน)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Business Administration -- Finance</span><span class="bi-th th-body">บริหารธุรกิจบัณฑิต (การเงิน)</span></h3><p class="card-desc">การเงินธุรกิจ การวิเคราะห์การลงทุน และการธนาคาร บนพื้นฐานการปฏิบัติจริงในตลาดทุน</p><div class="career-list"><span>นักวิเคราะห์การลงทุน</span><span>ผู้จัดการฝ่ายการเงิน</span><span>เจ้าหน้าที่ธนาคาร</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Business Administration -- Tourism & Hotel บริหารธุรกิจบัณฑิต (การท่องเที่ยวและการโรงแรม) การจัดการงานโรงแรมและการท่องเที่ยว สำหรับเศรษฐกิจภาคบริการที่ขับเคลื่อนด้วยผู้คน Hospitality operations and tourism management for a service economy built on people. หลักสูตรภาษาไทย ผู้จัดการโรงแรม ผู้ประกอบการท่องเที่ยว ที่ปรึกษาธุรกิจโรงแรม ผู้จัดการงานอีเวนต์" href="program-detail.html?p=bba-tourism-hotel"><div class="card-media"><img class="media-img" src="assets/media/program-bba-tourism-hotel.jpg" alt="หลักสูตรบริหารธุรกิจบัณฑิต สาขาวิชาการท่องเที่ยวและการโรงแรม" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรภาษาไทย</span></div><div class="card-body"><span class="degree-code">บธ.บ. (การท่องเที่ยวและการโรงแรม)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Business Administration -- Tourism & Hotel</span><span class="bi-th th-body">บริหารธุรกิจบัณฑิต (การท่องเที่ยวและการโรงแรม)</span></h3><p class="card-desc">การจัดการงานโรงแรมและการท่องเที่ยว สำหรับเศรษฐกิจภาคบริการที่ขับเคลื่อนด้วยผู้คน</p><div class="career-list"><span>ผู้จัดการโรงแรม</span><span>ผู้ประกอบการท่องเที่ยว</span><span>ที่ปรึกษาธุรกิจโรงแรม</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Business Administration -- International Business บริหารธุรกิจบัณฑิต (ธุรกิจระหว่างประเทศ) การค้าระหว่างประเทศ การดำเนินธุรกิจระดับโลก และการบริหารข้ามวัฒนธรรม สู่เส้นทางอาชีพระดับภูมิภาคและนานาชาติ Cross-border trade, global operations and cross-cultural management for regional and international careers. หลักสูตรภาษาไทย เจ้าหน้าที่การค้าระหว่างประเทศ ผู้จัดการฝ่ายปฏิบัติการโลก ผู้เชี่ยวชาญนำเข้า-ส่งออก" href="program-detail.html?p=bba-international-business"><div class="card-media"><img class="media-img" src="assets/media/program-bba-international-business.jpg" alt="หลักสูตรบริหารธุรกิจบัณฑิต วิชาเอกธุรกิจระหว่างประเทศ" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรภาษาไทย</span></div><div class="card-body"><span class="degree-code">บธ.บ. (ธุรกิจระหว่างประเทศ)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Business Administration -- International Business</span><span class="bi-th th-body">บริหารธุรกิจบัณฑิต (ธุรกิจระหว่างประเทศ)</span></h3><p class="card-desc">การค้าระหว่างประเทศ การดำเนินธุรกิจระดับโลก และการบริหารข้ามวัฒนธรรม สู่เส้นทางอาชีพระดับภูมิภาคและนานาชาติ</p><div class="career-list"><span>เจ้าหน้าที่การค้าระหว่างประเทศ</span><span>ผู้จัดการฝ่ายปฏิบัติการโลก</span><span>ผู้เชี่ยวชาญนำเข้า-ส่งออก</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Business Administration -- Social Enterprise บริหารธุรกิจบัณฑิต (ธุรกิจเพื่อสังคม) โมเดลธุรกิจที่สร้างผลกระทบทางสังคมอย่างวัดผลได้ ผสานการเป็นผู้ประกอบการและคุณค่าต่อชุมชน Business models built around measurable social impact, entrepreneurship and community value. หลักสูตรภาษาไทย ผู้ประกอบการเพื่อสังคม นักวิเคราะห์การลงทุนเพื่อสังคม ผู้จัดการองค์กรไม่แสวงหากำไร" href="program-detail.html?p=bba-social-enterprise"><div class="card-media"><img class="media-img" src="assets/media/program-bba-social-enterprise.jpg" alt="หลักสูตรบริหารธุรกิจบัณฑิต สาขาวิชาธุรกิจเพื่อสังคม" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรภาษาไทย</span></div><div class="card-body"><span class="degree-code">บธ.บ. (ธุรกิจเพื่อสังคม)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Business Administration -- Social Enterprise</span><span class="bi-th th-body">บริหารธุรกิจบัณฑิต (ธุรกิจเพื่อสังคม)</span></h3><p class="card-desc">โมเดลธุรกิจที่สร้างผลกระทบทางสังคมอย่างวัดผลได้ ผสานการเป็นผู้ประกอบการและคุณค่าต่อชุมชน</p><div class="career-list"><span>ผู้ประกอบการเพื่อสังคม</span><span>นักวิเคราะห์การลงทุนเพื่อสังคม</span><span>ผู้จัดการองค์กรไม่แสวงหากำไร</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="undergraduate" data-search="Bachelor of Business Administration -- Global Business Management บริหารธุรกิจบัณฑิต (การจัดการธุรกิจโลก) หลักสูตรที่สอนเป็นภาษาอังกฤษทั้งหมดของ BAS SWU มีพันธมิตรแลกเปลี่ยนที่เยอรมนีและฟิลิปปินส์ พร้อมเส้นทางปริญญาคู่ 3+1 BAS SWU's fully English-taught program, with exchange partners in Germany and the Philippines and a 3+1 dual-degree track. หลักสูตรนานาชาติ (สอนเป็นภาษาอังกฤษ) งานปฏิบัติการระดับโลก ที่ปรึกษาธุรกิจระหว่างประเทศ ผู้ฝึกงานสายบริหารข้ามชาติ" href="program-detail.html?p=global-business-management"><div class="card-media"><img class="media-img" src="assets/media/program-global-business-management.jpg" alt="หลักสูตรการจัดการธุรกิจโลก (นานาชาติ)" loading="lazy" decoding="async"><span class="level-badge">ปริญญาตรี · หลักสูตรนานาชาติ (สอนเป็นภาษาอังกฤษ)</span></div><div class="card-body"><span class="degree-code">บธ.บ. (การจัดการธุรกิจโลก)</span><h3 class="card-title bi-heading"><span class="bi-en">Bachelor of Business Administration -- Global Business Management</span><span class="bi-th th-body">บริหารธุรกิจบัณฑิต (การจัดการธุรกิจโลก)</span></h3><p class="card-desc">หลักสูตรที่สอนเป็นภาษาอังกฤษทั้งหมดของ BAS SWU มีพันธมิตรแลกเปลี่ยนที่เยอรมนีและฟิลิปปินส์ พร้อมเส้นทางปริญญาคู่ 3+1</p><div class="career-list"><span>งานปฏิบัติการระดับโลก</span><span>ที่ปรึกษาธุรกิจระหว่างประเทศ</span><span>ผู้ฝึกงานสายบริหารข้ามชาติ</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="graduate" data-search="Master of Business Administration บริหารธุรกิจมหาบัณฑิต หลักสูตร MBA สำหรับคนทำงาน มี 3 แขนงวิชาเลือก เน้นงานวิจัยประยุกต์และผลกระทบต่อสังคม A working-professional MBA with three specialisation tracks, built around applied research and social impact. ระดับปริญญาโท -- แขนงการตลาด การจัดการ ธุรกิจเพื่อสังคม ผู้บริหารระดับสูง งานกลยุทธ์และที่ปรึกษา การเป็นผู้ประกอบการ" href="program-detail.html?p=mba"><div class="card-media"><img class="media-img" src="assets/media/program-mba.jpg" alt="หลักสูตรบริหารธุรกิจมหาบัณฑิต" loading="lazy" decoding="async"><span class="level-badge">ปริญญาโท-เอก · ระดับปริญญาโท -- แขนงการตลาด การจัดการ ธุรกิจเพื่อสังคม</span></div><div class="card-body"><span class="degree-code">บธ.ม. (M.B.A.)</span><h3 class="card-title bi-heading"><span class="bi-en">Master of Business Administration</span><span class="bi-th th-body">บริหารธุรกิจมหาบัณฑิต</span></h3><p class="card-desc">หลักสูตร MBA สำหรับคนทำงาน มี 3 แขนงวิชาเลือก เน้นงานวิจัยประยุกต์และผลกระทบต่อสังคม</p><div class="career-list"><span>ผู้บริหารระดับสูง</span><span>งานกลยุทธ์และที่ปรึกษา</span><span>การเป็นผู้ประกอบการ</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a><a class="card program-card reveal" data-filter="graduate" data-search="Doctor of Philosophy in Business Administration for Society ปรัชญาดุษฎีบัณฑิต สาขาบริหารธุรกิจเพื่อสังคม หลักสูตรปริญญาเอกของ BAS SWU สำหรับนักวิชาการที่ต้องการสร้างองค์ความรู้ใหม่ด้านธุรกิจที่รับผิดชอบต่อสังคม BAS SWU's doctoral program for scholars building an original research contribution to socially-responsible business. ระดับปริญญาเอก -- เน้นงานวิจัย งานวิชาการ/วิจัย หน่วยงานนโยบายและคลังสมอง ตำแหน่งกลยุทธ์ระดับสูง" href="program-detail.html?p=phd"><div class="card-media"><img class="media-img" src="assets/media/program-phd.jpg" alt="หลักสูตรปรัชญาดุษฎีบัณฑิต สาขาบริหารธุรกิจเพื่อสังคม" loading="lazy" decoding="async"><span class="level-badge">ปริญญาโท-เอก · ระดับปริญญาเอก -- เน้นงานวิจัย</span></div><div class="card-body"><span class="degree-code">ปร.ด. (Ph.D.)</span><h3 class="card-title bi-heading"><span class="bi-en">Doctor of Philosophy in Business Administration for Society</span><span class="bi-th th-body">ปรัชญาดุษฎีบัณฑิต สาขาบริหารธุรกิจเพื่อสังคม</span></h3><p class="card-desc">หลักสูตรปริญญาเอกของ BAS SWU สำหรับนักวิชาการที่ต้องการสร้างองค์ความรู้ใหม่ด้านธุรกิจที่รับผิดชอบต่อสังคม</p><div class="career-list"><span>งานวิชาการ/วิจัย</span><span>หน่วยงานนโยบายและคลังสมอง</span><span>ตำแหน่งกลยุทธ์ระดับสูง</span></div><span class="card-cue">ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a></div>
+  </div>
+</section>
+
+
+<section class="section" id="graduate-entry" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Graduate Studies</p>
+        <h2 class="bi-heading"><span class="bi-en">Graduate Programmes</span><span class="bi-th th-body">หลักสูตรปริญญาโทและปริญญาเอก</span></h2>
+        <p class="lede th-body">หลักสูตรระดับบัณฑิตศึกษาของคณะดูแลโดยศูนย์การจัดการหลักสูตรระดับบัณฑิตศึกษา ครอบคลุมปริญญาโท 3 แขนง (การตลาด · การจัดการ · ธุรกิจเพื่อสังคม) และปริญญาเอกบริหารธุรกิจเพื่อสังคม</p>
+      </div>
+    </div>
+    <p class="th-body" style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--space-4);">
+      <a class="btn btn-primary" href="programs.html?level=graduate">View Graduate Programme Summary</a>
+      <a class="btn btn-secondary" href="https://mba.swu.ac.th/" target="_blank" rel="noopener"
+         aria-label="ไปเว็บไซต์หลักสูตรบัณฑิตศึกษา mba.swu.ac.th (เปิดในแท็บใหม่)">ไปเว็บไซต์หลักสูตรบัณฑิตศึกษา <i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    </p>
+    
+  </div>
+</section>
+
+<section class="section" id="plan41">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Study Pathways</p>
+        <h2 class="bi-heading"><span class="bi-en">Bachelor + Master (4+1)</span><span class="bi-th th-body">หลักสูตร 4+1</span></h2>
+        <p class="lede th-body">เส้นทางเรียนต่อเนื่องปริญญาตรีควบปริญญาโท สำหรับนิสิตที่ต้องการต่อยอดสู่ระดับปริญญาโท</p>
+      </div>
+    </div>
+    <div class="plan41 th-body mt-4">
+      <p>แนวคิดของเส้นทาง 4+1 คือให้นิสิตปริญญาตรีที่มีผลการเรียนตามเกณฑ์ ลงทะเบียนเรียนรายวิชาระดับปริญญาโทล่วงหน้าในช่วงปลายปริญญาตรี แล้วเรียนต่อจนจบปริญญาโทได้ในเวลาที่สั้นลง</p>
+      <ol>
+        <li>เรียนปริญญาตรีตามหลักสูตรปกติ และสะสมหน่วยกิตรายวิชาระดับบัณฑิตศึกษาตามเงื่อนไข</li>
+        <li>สำเร็จปริญญาตรี แล้วเข้าศึกษาต่อระดับปริญญาโท</li>
+        <li>ใช้เวลาระดับปริญญาโทสั้นลง เพราะเทียบโอนหน่วยกิตที่สะสมไว้</li>
+      </ol>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section" id="advisors" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Programme Enquiries</p>
+        <h2 class="bi-heading"><span class="bi-en">Programme Advisors</span><span class="bi-th th-body">ติดต่อที่ปรึกษาหลักสูตร</span></h2>
+        <p class="lede th-body">ติดต่ออาจารย์ที่ปรึกษาของแต่ละหลักสูตรได้จากหน้านี้โดยตรง</p>
+      </div>
+    </div>
+    <div class="advisor-grid mt-5"><div class="advisor-card reveal"><h3 class="th-body bi-heading"><span class="bi-en">Department of Accounting &amp; Finance</span><span class="bi-th th-body">ภาควิชาบัญชีและการเงิน</span></h3><p class="who th-body">หัวหน้าภาควิชา · <a href="leader-rasita-sangboonnak.html">ดร.รสิตา สังข์บุญนาค</a></p><p style="margin-top:.5rem;"><a href="mailto:supaporns@g.swu.ac.th">supaporns@g.swu.ac.th</a></p></div><div class="advisor-card reveal"><h3 class="th-body bi-heading"><span class="bi-en">Department of Marketing &amp; Management</span><span class="bi-th th-body">ภาควิชาการตลาดและการจัดการ</span></h3><p class="who th-body">หัวหน้าภาควิชา · <a href="leader-kangwan-yodwisitsak.html">ผู้ช่วยศาสตราจารย์ ดร.กังวาน ยอดวิศิษฎ์ศักดิ์</a></p><p style="margin-top:.5rem;"><a href="mailto:kangwan@g.swu.ac.th">kangwan@g.swu.ac.th</a></p></div><div class="advisor-card reveal"><h3 class="th-body bi-heading"><span class="bi-en">Department of Business Administration</span><span class="bi-th th-body">ภาควิชาบริหารธุรกิจ</span></h3><p class="who th-body">หัวหน้าภาควิชา · <a href="leader-wasan-sakulkijkarn.html">รองศาสตราจารย์ ดร.วสันต์ สกุลกิจกาญจน์</a></p><p style="margin-top:.5rem;"><a href="mailto:wasan@g.swu.ac.th">wasan@g.swu.ac.th</a></p></div></div>
+    
+    <p style="margin-top:var(--space-4);"><a class="link-arrow" href="contact.html">ติดต่อสำนักงานคณะ (เรื่องทั่วไป / ธุรการ)</a></p>
+  </div>
+</section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+
+
+<script src="assets/data.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/include.js"></script>
+</body>
+</html>
