@@ -452,13 +452,10 @@ h1 + .thai-translation, h2 + .thai-translation, h3 + .thai-translation{font-size
 }
 .site-header.is-scrolled{box-shadow:var(--shadow-s); background:rgba(251,252,253,.98);}
 .header-inner{display:flex; align-items:center; justify-content:space-between; height:76px; gap:var(--space-4);}
-.brand{display:flex; align-items:center; gap:.7rem; min-width:0;}
-.brand-mark{width:44px; height:44px; object-fit:contain; flex:none;}
-.brand-text{display:flex; flex-direction:column; line-height:1.2; min-width:0;}
-.brand-text .th{font-size:1rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:420px;}
-.brand-text .en{font-size:.72rem; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:420px;}
-@media (max-width:560px){ .brand-text .th, .brand-text .en{max-width:190px;} }
-@media (max-width:380px){ .brand-text .en{display:none;} }
+/* brand: full faculty logo (dark artwork for the light header, no plate) */
+.brand{display:flex; align-items:center; flex:none; min-width:0;}
+.brand-logo{display:block; height:48px; width:auto; max-width:100%; object-fit:contain;}
+@media (max-width:560px){ .brand-logo{height:38px;} }
 
 .primary-nav{display:flex; align-items:center; gap:var(--space-2);}
 .nav-list{display:flex; align-items:stretch;}
@@ -2188,14 +2185,10 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
   .header-inner{gap:var(--space-2);}
   .nav-link{padding:0 .45rem; font-size:.8rem;}
   .header-apply{padding-left:.75rem; padding-right:.75rem;}
-  /* eight English labels need the room: the brand keeps the Thai line only */
-  .brand-text .en{display:none;}
-  .brand-text .th{font-size:.92rem; max-width:190px;}
 }
 @media (min-width:1600px){
   .header-inner{gap:var(--space-3);}
   .nav-link{padding:0 .55rem; font-size:.84rem;}
-  .brand-text .th{max-width:230px;}
 }
 /* labels are single-line: the nav bar never shrinks, the brand ellipsises */
 .nav-list, .nav-item{flex:none;}
