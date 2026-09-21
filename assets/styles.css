@@ -2128,9 +2128,9 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .site-footer .footer-bottom{ color:rgba(255,255,255,.78); border-top-color:rgba(255,255,255,.28); }
 
 /* ---- วงกลม B · A · S (อัตลักษณ์คณะ) ---------------------------------- */
-.id-letter{ background:#37CBCB; background-image:linear-gradient(140deg, #22b7e4 0%, #0e647e 100%); box-shadow:0 4px 14px rgba(55,203,203,.38); }
+.id-letter{ background:#37CBCB; background-image:linear-gradient(140deg, #22b7e4 0%, #1692b8 100%); box-shadow:0 4px 14px rgba(55,203,203,.38); }
 .id-card:hover .id-letter,
-.id-card:focus-within .id-letter{ background-image:linear-gradient(140deg, #1994b9 0%, #0e6d8a 100%); }
+.id-card:focus-within .id-letter{ background-image:linear-gradient(140deg, #1994b9 0%, #1383a5 100%); }
 
 /* ---- ปุ่มลอย "สายตรงคณบดี" ------------------------------------------- */
 .dean-direct{ background:#37CBCB; background-image:linear-gradient(135deg, #22b7e4 0%, #1288ac 100%); box-shadow:0 6px 18px rgba(55,203,203,.45); }
@@ -2165,7 +2165,7 @@ a:not(.btn):not(.nav-link):not(.dean-direct):hover{color:var(--brand-ink);}
 .admin-modal-icon{ color:#1484a7; }
 
 /* ---- การ์ด Academic 4 ใบ — แบรนด์เข้ม · แบรนด์ปกติ · เทาเข้ม · เทาอ่อน -- */
-.programme-card--tone-1{ background:#1284a7; background-image:linear-gradient(160deg, #117ea0 0%, #107696 100%); }
+.programme-card--tone-1{ background:#0c99c4; background-image:linear-gradient(160deg, #1196be 0%, #1089ad 100%); }
 .programme-card--tone-2{ background:#22b7e4; background-image:linear-gradient(160deg, #22b7e4 0%, #22b7e4 100%); }
 .programme-card--tone-3{ background:#1F2A30; background-image:linear-gradient(160deg, #2A3942 0%, #1B252B 100%); }
 .programme-card--tone-4{ background:#66757C; background-image:linear-gradient(160deg, #78868E 0%, #5D6C73 100%); }
