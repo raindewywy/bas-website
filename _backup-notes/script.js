@@ -341,7 +341,7 @@
         return '<a class="card" href="news-detail.html?n='+n.slug+'">'+
           '<div class="card-media"><span class="ph-label">ภาพข่าว (ตัวอย่าง)</span></div>'+
           '<div class="card-body"><span class="card-tag'+(n.category_en==="News"?"":" crimson")+'">'+(n.category_en||n.category)+'</span>'+
-          ((n.date_en||n.date)?'<span class="card-meta">'+(n.date_en||n.date)+'</span>':'')+
+          '<span class="card-meta">'+(n.date_en||n.date)+'</span>'+
           '<h3 class="card-title bi-heading"><span class="bi-en">'+(n.title_en||n.title)+'</span><span class="bi-th th-body">'+n.title+'</span></h3></div></a>';
       }).join("");
     }
