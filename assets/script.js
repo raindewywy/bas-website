@@ -278,7 +278,7 @@
     var root = document.querySelector("[data-program-detail]");
     if(!root || typeof BAS_PROGRAMS === "undefined") return;
     var slug = qs("p");
-    if(slug === "phd"){ window.location.replace("https://mba.swu.ac.th/"); return; }
+    if(slug === "phd"){ window.location.replace("https://mba.swu.ac.th/phd"); return; }
     var program = BAS_PROGRAMS.find(function(p){ return p.slug === slug; }) || BAS_PROGRAMS[0];
     var dept = (typeof BAS_DEPARTMENTS !== "undefined") ? BAS_DEPARTMENTS.find(function(d){ return d.slug === program.dept; }) : null;
 
