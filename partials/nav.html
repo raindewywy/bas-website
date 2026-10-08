@@ -1,4 +1,4 @@
-<a class="skip-link" href="#main">ข้ามไปยังเนื้อหาหลัก</a>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหาหลัก</a>
 
 <div class="admin-modal" id="admin-modal" aria-hidden="true">
   <div class="admin-modal-scrim" data-admin-close></div>
@@ -29,62 +29,276 @@
   </div>
 </div>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="กลับหน้าแรก BAS SWU">
-      <img class="brand-logo" src="assets/media/brand-logo.png" alt="" width="169" height="44">
+<header class="site-header hd">
+  <div class="hd-bar">
+    <a class="hd-brand" href="index.html" aria-label="กลับหน้าแรก BAS SWU">
+      <img src="assets/media/brand-logo.png" alt="" width="169" height="44">
     </a>
-    <nav class="primary-nav" aria-label="เมนูหลัก">
-      <ul class="nav-list">
-<li class="nav-item" data-key="home"><a class="nav-link" href="index.html">Home</a></li>
-<li class="nav-item" data-key="about"><a class="nav-link" href="about.html" aria-haspopup="true">About Us<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
-<li class="nav-item" data-key="academic"><a class="nav-link" href="academic.html" aria-haspopup="true">Academics<span class="chev" aria-hidden="true"></span></a><div class="mega mega--wide"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="mega-head" role="presentation">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management<span class="en">English-taught</span></a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="en">External site</span><i class="ext-ico fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
-<li class="nav-item" data-key="student-life"><a class="nav-link" href="student-life.html" aria-haspopup="true">Student Life<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
-<li class="nav-item" data-key="global"><a class="nav-link" href="mou.html" aria-haspopup="true">Global Partnerships<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
-<li class="nav-item" data-key="sustainability"><a class="nav-link" href="sustainability.html" aria-haspopup="true">Sustainability<span class="chev" aria-hidden="true"></span></a><div class="mega"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
-<li class="nav-item" data-key="news"><a class="nav-link" href="news.html">News &amp; Events</a></li>
-<li class="nav-item" data-key="contact"><a class="nav-link" href="contact.html">Contact</a></li>
-</ul>
+
+    <nav class="hd-nav" aria-label="เมนูหลัก">
+      <ul class="hd-nav-list">
+        <li class="nav-item" data-key="about">
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="mega-about">About<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="hd-mega" id="mega-about">
+            <div class="hd-mega-inner">
+              <div class="hd-mega-intro">
+                <p class="hd-mega-en">About</p>
+                <h3 class="th-body">เกี่ยวกับคณะ</h3>
+                <p class="th-body">ประวัติ วิสัยทัศน์ ผู้บริหาร และบุคลากรของคณะ</p>
+              </div>
+              <div class="hd-mega-cols">
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">คณะ</p>
+                  <a href="about.html">About the Faculty</a>
+                  <a href="about.html#vision">Vision &amp; Mission</a>
+                  <a href="about.html#history">History</a>
+                  <a href="about.html#values">Core Values &amp; Competencies</a>
+                  <a href="about.html#org">Organisation Structure</a>
+                  <a href="honours.html">Hall of Fame</a>
+                </div>
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">บุคลากร</p>
+                  <a href="leadership.html">Leadership</a>
+                  <a href="faculty.html">Faculty &amp; Staff</a>
+                  <a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a>
+                </div>
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">ความโปร่งใส</p>
+                  <a href="contact.html#ita">ITA &amp; Work Manual</a>
+                  <a href="qa.html">Quality Assurance</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item" data-key="academic">
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="mega-prog">Programmes<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="hd-mega" id="mega-prog">
+            <div class="hd-mega-inner">
+              <div class="hd-mega-intro">
+                <p class="hd-mega-en">Programmes</p>
+                <h3 class="th-body">หลักสูตร</h3>
+                <p class="th-body">ปริญญาตรี โท เอก และหลักสูตรนานาชาติ</p>
+              </div>
+              <div class="hd-mega-cols">
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">หลักสูตร</p>
+                  <a href="programs.html">All Programmes</a>
+                  <a href="programs.html?level=undergraduate">Undergraduate</a>
+                  <a href="program-detail.html?p=global-business-management">Global Business Management</a>
+                  <a href="https://mba.swu.ac.th/" target="_blank" rel="noopener noreferrer">MBA<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+                  <a href="program-detail.html?p=phd">PhD in Business Administration for Society</a>
+                  <a href="programs.html#plan41">Bachelor + Master (4+1)</a>
+                </div>
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">วิชาการและวิจัย</p>
+                  <a href="academic.html">Academic &amp; Research Overview</a>
+                  <a href="academic.html#ukpsf">UKPSF Recognition</a>
+                  <a href="academic-calendar.html">Academic Calendar</a>
+                  <a href="https://academic.swu.ac.th/tuition" target="_blank" rel="noopener noreferrer">Tuition Fees<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+                  <a href="https://so17.tci-thaijo.org/index.php/BASSBJ" target="_blank" rel="noopener noreferrer">BASSBJ Journal<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item" data-key="admissions">
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="mega-adm">Admissions<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="hd-mega" id="mega-adm">
+            <div class="hd-mega-inner">
+              <div class="hd-mega-intro">
+                <p class="hd-mega-en">Admissions</p>
+                <h3 class="th-body">รับสมัคร</h3>
+                <p class="th-body">ขั้นตอน คุณสมบัติ และกำหนดการรับสมัคร</p>
+              </div>
+              <div class="hd-mega-cols">
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">การรับสมัคร</p>
+                  <a class="th-body" href="admissions.html">ข้อมูลการรับสมัคร</a>
+                  <a class="th-body" href="admissions.html">TCAS โควตา</a>
+                  <a class="th-body" href="news.html?cat=scholarship">ทุนการศึกษา</a>
+                  <a class="th-body" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener noreferrer">สมัครเรียนออนไลน์<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item" data-key="student-life">
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="mega-life">Student Life<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="hd-mega" id="mega-life">
+            <div class="hd-mega-inner">
+              <div class="hd-mega-intro">
+                <p class="hd-mega-en">Student Life</p>
+                <h3 class="th-body">ชีวิตนิสิต</h3>
+                <p class="th-body">กิจกรรม สิ่งอำนวยความสะดวก และบริการสำหรับนิสิต</p>
+              </div>
+              <div class="hd-mega-cols">
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">ชีวิตนิสิต</p>
+                  <a href="student-life.html">Student Life Overview</a>
+                  <a href="student-life.html#activities">Student Activities</a>
+                  <a href="student-life.html#facilities">Campus Facilities</a>
+                  <a href="student-services.html">Student Services</a>
+                </div>
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head th-body">ต่างประเทศ</p>
+                  <a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a>
+                  <a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item" data-key="global sustainability">
+          <button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="mega-global">Global &amp; Sustainability<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="hd-mega" id="mega-global">
+            <div class="hd-mega-inner">
+              <div class="hd-mega-intro">
+                <p class="hd-mega-en">Global &amp; Sustainability</p>
+                <h3 class="th-body">นานาชาติและความยั่งยืน</h3>
+                <p class="th-body">เครือข่ายพันธมิตร 23 องค์กร และงานด้านความยั่งยืน</p>
+              </div>
+              <div class="hd-mega-cols">
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head">Global Partnerships</p>
+                  <a href="mou.html">Global Partnerships Overview</a>
+                  <a href="mou.html#directory">Partner Directory</a>
+                  <a href="international.html">International Overview</a>
+                  <a href="international.html#collaboration">Academic Collaboration &amp; MOU</a>
+                </div>
+                <div class="hd-mega-col">
+                  <p class="hd-mega-head">Sustainability</p>
+                  <a href="sustainability.html">Sustainability Overview</a>
+                  <a href="green-award.html">Green Office</a>
+                  <a href="sustainability.html#environmental">Sustainable Campus</a>
+                  <a href="sustainability.html#social">Sustainability Initiatives</a>
+                  <a href="sustainability.html#governance">Governance &amp; Transparency</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item" data-key="news">
+          <a class="nav-link" href="news.html">News &amp; Events</a>
+        </li>
+      </ul>
     </nav>
-    <div class="header-actions">
-      <a href="admissions.html" class="btn btn-primary btn-sm header-apply">Apply Now</a>
-      <button class="icon-btn search-toggle search-only" aria-label="ค้นหาในเว็บไซต์" aria-haspopup="true"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
-      <button class="icon-btn admin-toggle" id="admin-open" aria-label="เข้าสู่ระบบผู้ดูแลระบบ" title="ผู้ดูแลระบบ"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></button>
-      <button class="icon-btn menu-toggle" aria-label="เปิดเมนู" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+
+    <div class="hd-actions">
+      <button type="button" class="hd-icon search-toggle" aria-label="ค้นหา" aria-expanded="false" aria-controls="hd-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+      <button type="button" class="hd-icon admin-toggle" id="admin-open" aria-label="Admin" title="Admin"><i class="fa-solid fa-user-lock" aria-hidden="true"></i></button>
+      <a class="hd-contact" href="contact.html"><i class="fa-solid fa-phone" aria-hidden="true"></i>Contact</a>
+      <button type="button" class="hd-burger menu-toggle" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mobile-drawer"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </div>
-  <div class="search-panel" role="search">
-    <div class="wrap">
-      <form>
-        <label class="visually-hidden" for="site-search">ค้นหาหลักสูตร ข่าวสาร และหน้าเว็บไซต์</label>
-        <input id="site-search" type="search" placeholder="ค้นหา เช่น “MBA”, “การรับสมัคร”, ชื่ออาจารย์…" autocomplete="off">
-        <button class="btn btn-primary" type="submit">ค้นหา</button>
+
+  <div class="search-panel hd-search" id="hd-search" role="search" hidden>
+    <div class="hd-search-inner">
+      <form class="hd-search-form">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" aria-label="ค้นหาในเว็บไซต์" placeholder="ค้นหา เช่น “MBA”, “การรับสมัคร”, ชื่ออาจารย์…" autocomplete="off">
+        <button type="submit">ค้นหา</button>
       </form>
-      <p class="search-hint">ลองค้นหา “MBA”, “การรับสมัคร”, “การจัดการธุรกิจโลก” หรือชื่อคณาจารย์</p>
+      <div class="hd-search-hints">
+        <span class="th-body">ลองค้นหา</span>
+        <a href="programs.html?search=MBA">MBA</a>
+        <a class="th-body" href="programs.html?search=%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%84%E0%B8%A3">การรับสมัคร</a>
+        <a class="th-body" href="programs.html?search=%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%82%E0%B8%A5%E0%B8%81">การจัดการธุรกิจโลก</a>
+      </div>
     </div>
   </div>
 </header>
-<div class="mobile-drawer" aria-hidden="true">
-  <div class="drawer-scrim"></div>
-  <div class="drawer-panel">
-    <div class="drawer-head">
-      <span class="th th-body" style="font-weight:600;">Menu</span>
-      <button class="icon-btn drawer-close" aria-label="ปิดเมนู"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+
+<div class="mobile-drawer dr" id="mobile-drawer" hidden>
+  <div class="dr-scrim drawer-scrim"></div>
+  <div class="dr-panel" role="dialog" aria-modal="true" aria-label="เมนูหลัก">
+    <div class="dr-head">
+      <img src="assets/media/brand-logo.png" alt="BAS SWU" width="138" height="36">
+      <button type="button" class="hd-icon drawer-close" aria-label="ปิดเมนู"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     </div>
-    <ul class="drawer-body">
-<li class="drawer-item"><a href="index.html">Home</a></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">About Us<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="about.html">About the Faculty</a><a href="about.html#vision">Vision &amp; Mission</a><a href="about.html#history">History</a><a href="about.html#values">Core Values &amp; Competencies</a><a href="about.html#org">Organisation Structure</a><a href="leadership.html">Leadership</a><a href="departments.html">Departments</a><a href="faculty.html">Faculty &amp; Staff</a><a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a><a href="honours.html">Hall of Fame</a><a href="contact.html#ita">ITA &amp; Work Manual</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Academics<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="academic.html">Academic &amp; Research Overview</a><a href="academic.html#ukpsf">UKPSF Recognition</a><a href="qa.html">Quality Assurance</a><a href="academic-calendar.html">Academic Calendar</a><a href="https://academic.swu.ac.th/tuition" class="is-ext" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="https://so17.tci-thaijo.org/index.php/BASSBJ" class="is-ext" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="visually-hidden"> (opens an external site in a new tab)</span></a><p class="drawer-sub-head">Programmes</p><a href="programs.html" class="is-sub">All Programmes</a><a href="programs.html?level=undergraduate" class="is-sub">Undergraduate</a><a href="program-detail.html?p=global-business-management" class="is-sub">Global Business Management</a><a href="https://mba.swu.ac.th/" class="is-sub is-ext" target="_blank" rel="noopener noreferrer">MBA<span class="visually-hidden"> (opens an external site in a new tab)</span></a><a href="program-detail.html?p=phd" class="is-sub">PhD in Business Administration for Society</a><a href="programs.html#plan41" class="is-sub">Bachelor + Master (4+1)</a><a href="programs.html#advisors" class="is-sub">Programme Advisors</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Student Life<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="student-life.html">Student Life Overview</a><a href="student-life.html#activities">Student Activities</a><a href="student-life.html#facilities">Campus Facilities</a><a href="student-services.html">Student Services</a><a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Global Partnerships<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="mou.html">Global Partnerships Overview</a><a href="mou.html#directory">Partner Directory</a><a href="international.html">International Overview</a><a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a><a href="international.html#collaboration">Academic Collaboration &amp; MOU</a></div></li>
-<li class="drawer-item"><button type="button" aria-expanded="false">Sustainability<span class="chev" aria-hidden="true"></span></button><div class="drawer-sub"><a href="sustainability.html">Sustainability Overview</a><a href="green-award.html">Green Office</a><a href="sustainability.html#environmental">Sustainable Campus</a><a href="sustainability.html#social">Sustainability Initiatives</a><a href="sustainability.html#governance">Governance &amp; Transparency</a></div></li>
-<li class="drawer-item"><a href="news.html">News &amp; Events</a></li>
-<li class="drawer-item"><a href="contact.html">Contact</a></li>
-</ul>
-    <div class="drawer-foot">
-      <a class="btn btn-primary" style="flex:1;justify-content:center" href="admissions.html">Apply Now</a>
-      <a class="btn btn-secondary" style="flex:1;justify-content:center" href="contact.html">Contact Us</a>
+    <ul class="dr-body">
+      <li class="dr-item">
+        <button type="button" class="dr-toggle" aria-expanded="false" aria-controls="dr-about"><span class="dr-label"><span class="dr-en">About</span><span class="dr-th">เกี่ยวกับคณะ</span></span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+        <div class="dr-sub" id="dr-about" hidden>
+          <p class="dr-sub-head">คณะ</p>
+          <a href="about.html">About the Faculty</a>
+          <a href="about.html#vision">Vision &amp; Mission</a>
+          <a href="about.html#history">History</a>
+          <a href="about.html#values">Core Values &amp; Competencies</a>
+          <a href="about.html#org">Organisation Structure</a>
+          <a href="honours.html">Hall of Fame</a>
+          <p class="dr-sub-head">บุคลากร</p>
+          <a href="leadership.html">Leadership</a>
+          <a href="faculty.html">Faculty &amp; Staff</a>
+          <a href="staff-deans-office.html">Dean&rsquo;s Office Staff</a>
+          <p class="dr-sub-head">ความโปร่งใส</p>
+          <a href="contact.html#ita">ITA &amp; Work Manual</a>
+          <a href="qa.html">Quality Assurance</a>
+        </div>
+      </li>
+      <li class="dr-item">
+        <button type="button" class="dr-toggle" aria-expanded="false" aria-controls="dr-prog"><span class="dr-label"><span class="dr-en">Programmes</span><span class="dr-th">หลักสูตร</span></span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+        <div class="dr-sub" id="dr-prog" hidden>
+          <p class="dr-sub-head">หลักสูตร</p>
+          <a href="programs.html">All Programmes</a>
+          <a href="programs.html?level=undergraduate">Undergraduate</a>
+          <a href="program-detail.html?p=global-business-management">Global Business Management</a>
+          <a href="https://mba.swu.ac.th/" target="_blank" rel="noopener noreferrer">MBA<span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+          <a href="program-detail.html?p=phd">PhD in Business Administration for Society</a>
+          <a href="programs.html#plan41">Bachelor + Master (4+1)</a>
+          <p class="dr-sub-head">วิชาการและวิจัย</p>
+          <a href="academic.html">Academic &amp; Research Overview</a>
+          <a href="academic.html#ukpsf">UKPSF Recognition</a>
+          <a href="academic-calendar.html">Academic Calendar</a>
+          <a href="https://academic.swu.ac.th/tuition" target="_blank" rel="noopener noreferrer">Tuition Fees<span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+          <a href="https://so17.tci-thaijo.org/index.php/BASSBJ" target="_blank" rel="noopener noreferrer">BASSBJ Journal<span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+        </div>
+      </li>
+      <li class="dr-item">
+        <button type="button" class="dr-toggle" aria-expanded="false" aria-controls="dr-adm"><span class="dr-label"><span class="dr-en">Admissions</span><span class="dr-th">รับสมัคร</span></span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+        <div class="dr-sub" id="dr-adm" hidden>
+          <p class="dr-sub-head">การรับสมัคร</p>
+          <a href="admissions.html">ข้อมูลการรับสมัคร</a>
+          <a href="admissions.html">TCAS โควตา</a>
+          <a href="news.html?cat=scholarship">ทุนการศึกษา</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener noreferrer">สมัครเรียนออนไลน์<span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+        </div>
+      </li>
+      <li class="dr-item">
+        <button type="button" class="dr-toggle" aria-expanded="false" aria-controls="dr-life"><span class="dr-label"><span class="dr-en">Student Life</span><span class="dr-th">ชีวิตนิสิต</span></span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+        <div class="dr-sub" id="dr-life" hidden>
+          <p class="dr-sub-head">ชีวิตนิสิต</p>
+          <a href="student-life.html">Student Life Overview</a>
+          <a href="student-life.html#activities">Student Activities</a>
+          <a href="student-life.html#facilities">Campus Facilities</a>
+          <a href="student-services.html">Student Services</a>
+          <p class="dr-sub-head">ต่างประเทศ</p>
+          <a href="student-life.html#exchange">Exchange &amp; Global Opportunities</a>
+          <a href="international.html#exchange">Exchange 3+1 &amp; Double Degree</a>
+        </div>
+      </li>
+      <li class="dr-item">
+        <button type="button" class="dr-toggle" aria-expanded="false" aria-controls="dr-global"><span class="dr-label"><span class="dr-en">Global &amp; Sustainability</span><span class="dr-th">นานาชาติและความยั่งยืน</span></span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+        <div class="dr-sub" id="dr-global" hidden>
+          <p class="dr-sub-head">Global Partnerships</p>
+          <a href="mou.html">Global Partnerships Overview</a>
+          <a href="mou.html#directory">Partner Directory</a>
+          <a href="international.html">International Overview</a>
+          <a href="international.html#collaboration">Academic Collaboration &amp; MOU</a>
+          <p class="dr-sub-head">Sustainability</p>
+          <a href="sustainability.html">Sustainability Overview</a>
+          <a href="green-award.html">Green Office</a>
+          <a href="sustainability.html#environmental">Sustainable Campus</a>
+          <a href="sustainability.html#social">Sustainability Initiatives</a>
+          <a href="sustainability.html#governance">Governance &amp; Transparency</a>
+        </div>
+      </li>
+      <li class="dr-item">
+        <a class="dr-toggle" href="news.html"><span class="dr-label"><span class="dr-en">News &amp; Events</span><span class="dr-th">ข่าวสาร</span></span></a>
+      </li>
+    </ul>
+    <div class="dr-foot">
+      <a class="dr-contact" href="contact.html"><i class="fa-solid fa-phone" aria-hidden="true"></i>Contact · ติดต่อ</a>
     </div>
   </div>
 </div>
-

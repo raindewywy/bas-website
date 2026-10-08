@@ -13,7 +13,8 @@
   function markCurrentNav() {
     var key = document.body.getAttribute("data-nav");
     if (!key) return;
-    var item = document.querySelector('.nav-item[data-key="' + key + '"]');
+    // data-key อาจมีหลายค่าคั่นด้วยช่องว่าง เช่น "global sustainability"
+    var item = document.querySelector('.nav-item[data-key~="' + key + '"]');
     if (item) item.classList.add("current");
   }
 

@@ -17,55 +17,81 @@
 
 <div data-include="partials/nav.html"></div>
 
-<main id="main">
-<nav class="breadcrumb wrap" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="programs.html">Programmes</a><span class="sep">/</span><span aria-current="page" data-p-breadcrumb>Programme</span></nav>
-<section class="page-hero" data-program-detail>
-  <div class="wrap">
-    <p class="eyebrow th-body" data-p-level>ปริญญาตรี</p>
-    <h1 class="bi-heading"><span class="bi-en" data-p-name-en>Program name (English)</span><span class="bi-th th-body" data-p-name-th>ชื่อหลักสูตร</span></h1>
-    <p class="lede th-body" data-p-summary>คำอธิบายหลักสูตร</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="admissions.html">ข้อมูลการรับสมัคร</a>
-      <a class="btn btn-secondary" href="#curriculum">View Programme Structure</a>
+<main id="main" class="pd" data-program-detail>
+<nav class="pd-crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="programs.html">Programmes</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span aria-current="page" data-p-abbr>Programme</span></li>
+  </ol>
+</nav>
+
+<section class="pd-hero">
+  <img class="pd-hero-img" src="assets/media/program-accountancy.jpg" alt="" data-p-img>
+  <div class="pd-wrap">
+    <p class="pd-pill" data-p-level>ปริญญาตรี</p>
+    <h1 class="pd-h1" data-p-name-en>Programme</h1>
+    <p class="pd-hero-th" data-p-name-th></p>
+    <p class="pd-hero-sum" data-p-summary></p>
+    <div class="pd-actions">
+      <a class="pd-btn pd-btn-primary" href="admissions.html">ข้อมูลการรับสมัคร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="pd-btn pd-btn-outline" href="#overview">Programme Overview</a>
     </div>
   </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="split" id="curriculum">
-      <div class="split-media reveal"><img class="media-img" src="assets/media/banner-program.jpg" alt="ภาพประกอบหลักสูตร" loading="lazy" decoding="async"></div>
-      <div class="split-copy reveal">
-        <p class="eyebrow th-body">Programmes</p>
-        <h2 class="th-body bi-heading"><span class="bi-en">Programme Type</span><span class="bi-th th-body">ประเภทหลักสูตร</span></h2>
-        <p class="th-body" data-p-curriculum>—</p>
-        <p class="th-body"><strong>ภาควิชา:</strong> <span data-p-dept>—</span> <span style="color:var(--muted);" data-p-dept-th></span></p>
-        
-      </div>
-    </div>
-    <div class="mt-6">
-      <h3 class="th-body bi-heading"><span class="bi-en">Career Opportunities</span><span class="bi-th th-body">โอกาสในการประกอบอาชีพ</span></h3>
-      <div class="career-list mt-3 th-body" data-p-careers style="gap:.6rem;"></div>
-    </div>
-  </div>
-</section>
-<section class="section" style="background:var(--paper-dim);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">Explore Further</p>
-        <h2 class="bi-heading"><span class="bi-en">Related Programs</span><span class="bi-th th-body">หลักสูตรที่เกี่ยวข้อง</span></h2>
-        
-      </div>
-      
-    </div>
-    <div class="grid-3 mt-5" data-p-related></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="cta-band reveal"><div class="cta-copy"><p class="eyebrow th-body">Admissions</p><h2 class="th-body bi-heading"><span class="bi-en">Questions About This Programme?</span><span class="bi-th th-body">มีคำถามเกี่ยวกับหลักสูตรนี้?</span></h2><p class="th-body">พูดคุยกับอาจารย์ประจำหลักสูตร หรือดูขั้นตอนการสมัครแบบละเอียดก่อนตัดสินใจ</p></div><div class="cta-actions"><a class="btn btn-on-deep" href="admissions.html">คู่มือการรับสมัคร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost-invert" href="programs.html#advisors">Talk to a Programme Advisor</a><a class="btn btn-ghost-invert" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Apply Online</a></div></div></div>
 </section>
 
+<section id="overview" class="pd-sec">
+  <div class="pd-wrap">
+    <dl class="pd-facts" data-p-facts></dl>
+
+    <div class="pd-cols pd-cols--overview">
+      <div>
+        <p class="pd-eyebrow">About the Programme</p>
+        <h2 class="pd-h2">Programme Overview</h2><p class="pd-sub">ภาพรวมหลักสูตร</p>
+        <p class="pd-body" data-p-summary></p>
+        <p class="pd-body-en" lang="en" data-p-summary-en></p>
+        <div class="pd-note">
+          <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+          <p>โครงสร้างหลักสูตร จำนวนหน่วยกิต และค่าเล่าเรียน — ข้อมูลอยู่ระหว่างปรับปรุง</p>
+        </div>
+      </div>
+      <div>
+        <p class="pd-eyebrow">Career Paths</p>
+        <h2 class="pd-h2">Career Opportunities</h2><p class="pd-sub">โอกาสในการประกอบอาชีพ</p>
+        <ul class="pd-careers" data-p-careers></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pd-sec">
+  <div class="pd-wrap">
+    <div class="pd-related-head">
+      <div>
+        <p class="pd-eyebrow">Explore Further</p>
+        <h2 class="pd-h2">Related Programmes</h2><p class="pd-sub">หลักสูตรที่เกี่ยวข้อง</p>
+      </div>
+      <a class="pd-all" href="programs.html">หลักสูตรทั้งหมด <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="pd-related" data-p-related></div>
+  </div>
+</section>
+
+<section class="pd-cta-sec">
+  <div class="pd-cta">
+    <div class="pd-cta-copy">
+      <p class="pd-eyebrow">Admissions</p>
+      <h2 class="pd-h2">Questions About This Programme?</h2>
+      <p class="pd-sub">มีคำถามเกี่ยวกับหลักสูตรนี้?</p>
+      <p class="pd-cta-body">พูดคุยกับอาจารย์ประจำหลักสูตร หรือดูขั้นตอนการสมัครแบบละเอียดก่อนตัดสินใจ</p>
+    </div>
+    <div class="pd-actions">
+      <a class="pd-btn pd-btn-white" href="admissions.html">คู่มือการรับสมัคร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="pd-btn pd-btn-outline" href="contact.html">Talk to an Advisor</a>
+      <a class="pd-btn pd-btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Apply Online <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
 </main>
 
 <div data-include="partials/footer.html"></div>
