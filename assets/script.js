@@ -495,6 +495,7 @@
     var root = document.querySelector("[data-program-detail]");
     if(!root || typeof BAS_PROGRAMS === "undefined") return;
     var slug = qs("p");
+    if(slug === "phd"){ window.location.replace("https://mba.swu.ac.th/phd"); return; }
     var program = BAS_PROGRAMS.find(function(p){ return p.slug === slug; }) || BAS_PROGRAMS[0];
     function esc(v){
       return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){
@@ -727,7 +728,7 @@
         return '<a class="card" href="news-detail.html?n='+n.slug+'">'+
           '<div class="card-media"><span class="ph-label">ภาพข่าว (ตัวอย่าง)</span></div>'+
           '<div class="card-body"><span class="card-tag'+(n.category_en==="News"?"":" crimson")+'">'+(n.category_en||n.category)+'</span>'+
-          '<span class="card-meta">'+(n.date_en||n.date)+'</span>'+
+          ((n.date_en||n.date)?'<span class="card-meta">'+(n.date_en||n.date)+'</span>':'')+
           '<h3 class="card-title bi-heading"><span class="bi-en">'+(n.title_en||n.title)+'</span><span class="bi-th th-body">'+n.title+'</span></h3></div></a>';
       }).join("");
     }
