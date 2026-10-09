@@ -530,7 +530,6 @@ h1 + .thai-translation, h2 + .thai-translation, h3 + .thai-translation{font-size
   border-radius:var(--radius-s); background:var(--paper);
 }
 .admin-field input:focus-visible{border-color:var(--teal-600);}
-.admin-modal-note{margin-top:var(--space-4); font-size:.78rem; color:var(--muted); line-height:1.55; text-align:left; padding:.8em 1em; background:var(--paper-dim); border-radius:var(--radius-s);}
 
 .admin-bar{background:var(--ink); color:#fff;}
 .admin-bar-inner{display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap; padding:.6rem 0; font-size:.85rem;}
@@ -1613,8 +1612,13 @@ a:not(.btn):not(.nav-link):not(.dean-direct):not(.ldr-btn):not(.dn-link):not(.hd
 
 .home-hero.hero-full {
   position: relative;
-  height: clamp(380px, 42vw, 560px);
+  /* สัดส่วนเดียวกับวิดีโอ (16:9) — เห็นวิดีโอเต็มเฟรม ไม่ถูกตัดบน/ล่าง */
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: none;
   min-height: 0;
+  width: 100%;
+  min-width: 0; /* กัน aspect-ratio + min-height ดันความกว้างล้นจอบนมือถือ */
   overflow: hidden;
 }
 
@@ -1716,14 +1720,15 @@ a:not(.btn):not(.nav-link):not(.dean-direct):not(.ldr-btn):not(.dn-link):not(.hd
 
 .home-hero .hero-video video,
 .home-hero .hero-video .hero-fallback {
-  object-fit: cover;
+  /* contain: ถ้ากล่องสูงกว่า 16:9 (มือถือ) จะเว้นขอบบน/ล่างแทนการตัดภาพ */
+  object-fit: contain;
   object-position: center center;
 }
 
 /* Tablet */
 @media (max-width: 768px) {
   .home-hero.hero-full {
-    height: 360px;
+    min-height: 300px;
   }
 
   .home-hero .hero-inner {
@@ -1744,7 +1749,7 @@ a:not(.btn):not(.nav-link):not(.dean-direct):not(.ldr-btn):not(.dn-link):not(.hd
 /* Mobile */
 @media (max-width: 480px) {
   .home-hero.hero-full {
-    height: 300px;
+    min-height: 260px;
   }
 
   .home-hero.hero-full > .wrap {
@@ -2908,6 +2913,7 @@ main.hp{display:block; outline:none;}
 .dr .dr-sub-head{font-size:12px; font-weight:600; color:var(--muted); margin:10px 0 2px;}
 .dr-sub a{display:block; padding:9px 0; font-size:15px; color:var(--ink-soft);}
 .dr-sub a:hover{color:var(--brand-700);}
+.dr-sub a i{font-size:10px; margin-left:6px; color:var(--muted);}
 .dr-foot{padding:16px 20px 24px; border-top:1px solid var(--line-soft); display:flex; gap:10px; flex:none;}
 .dr-contact{flex:1; height:48px; border-radius:999px; background:var(--cyan); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px;}
 .dr-contact i{font-size:13px;}
@@ -3095,6 +3101,13 @@ main.hp{display:block; outline:none;}
 .hp-stay-head{margin-top:clamp(48px,6vw,72px); padding-top:40px; border-top:1px solid var(--line); display:flex; align-items:flex-end; justify-content:space-between; gap:16px 40px; flex-wrap:wrap;}
 .hp .hp-stay-title{font:700 clamp(1.4rem, 1.2rem + 1vw, 1.9rem)/1.2 var(--font-en); margin-top:8px; color:var(--brand-900); letter-spacing:0;}
 .hp-stay-lede{font-size:15px; line-height:1.7; color:var(--muted); max-width:52ch; text-wrap:pretty;}
+/* Stay Connected: both columns share one height; the 3 row cards split it evenly */
+.hp-stay-head + .hp-news{align-items:stretch;}
+.hp-stay-head + .hp-news .hp-news-feature{display:flex;}
+.hp-stay-head + .hp-news .hp-ncard.is-feature{flex:1;}
+.hp-stay-head + .hp-news .hp-news-rows .hp-ncard{flex:1; grid-template-columns:128px minmax(0,1fr); align-items:stretch;}
+.hp-stay-head + .hp-news .hp-news-rows .hp-ncard-media{width:auto; height:auto; min-height:96px;}
+.hp-stay-head + .hp-news .hp-news-rows .hp-ncard-body{justify-content:center;}
 
 /* ---- 9 · ITA ---------------------------------------------------------------- */
 .hp .hp-ita-lede{font-size:15px; line-height:1.7; color:var(--muted); margin-top:14px; max-width:72ch; text-wrap:pretty;}
