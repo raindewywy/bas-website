@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<script>
+// 404.html ถูกเสิร์ฟแทน URL ที่ไม่มีอยู่ทุกระดับ (เช่น /bas-website/programs/foo) — path แบบ relative
+// (assets/ · partials/ · ลิงก์ในหน้า) จะเพี้ยน จึงตั้ง <base> ชี้รากเว็บก่อน แล้วค่อยเขียน stylesheet/script ของเว็บ
+// ผ่าน document.write — ถ้าใส่เป็นแท็กปกติ preload scanner จะยิง request ด้วย path ผิดก่อน <base> มีผล
+// GitHub Pages แบบ project site อยู่ใต้ /<repo>/ · dev server / โดเมนอื่นอยู่ที่ /
+(function(){
+  var seg = location.pathname.split("/")[1];
+  var root = /\.github\.io$/.test(location.hostname) && seg ? "/" + seg + "/" : "/";
+  document.write('<base href="' + root + '"><link rel="stylesheet" href="assets/styles.css">');
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ไม่พบหน้า (404) — BAS SWU</title>
+<meta name="description" content="ไม่พบหน้าที่คุณต้องการ — กลับหน้าแรกหรือเลือกจากหน้ายอดนิยมของคณะบริหารธุรกิจเพื่อสังคม มศว">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<div data-include="partials/nav.html"></div>
+
+<main id="main" class="pd ip-page">
+<section class="nf">
+  <div class="nf-in">
+    <div>
+      <p class="pd-eyebrow">Error 404 · Page not found</p>
+      <p class="nf-code" aria-hidden="true">4<span>0</span>4</p>
+      <h1 class="nf-h1">ไม่พบหน้าที่คุณต้องการ</h1>
+      <p class="nf-lede">หน้านี้อาจถูกย้าย เปลี่ยนชื่อ หรือไม่มีอยู่แล้ว ลองค้นหา หรือเลือกจากหน้ายอดนิยมด้านข้าง</p>
+      <div class="pd-actions nf-actions">
+        <a class="pd-btn pd-btn-primary" href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i>กลับหน้าแรก</a>
+        <button type="button" class="pd-btn ip-btn-ghost nf-back" data-history-back><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>ย้อนกลับ</button>
+      </div>
+    </div>
+    <div class="nf-pop">
+      <p class="nf-pop-h">หน้ายอดนิยม</p>
+      <ul>
+        <li><a href="programs.html"><span class="nf-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><span class="nf-txt"><b>หลักสูตรทั้งหมด</b><small lang="en">Programmes</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a href="admissions.html"><span class="nf-ico"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></span><span class="nf-txt"><b>การรับสมัคร</b><small lang="en">Admissions</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a href="faculty.html"><span class="nf-ico"><i class="fa-solid fa-users" aria-hidden="true"></i></span><span class="nf-txt"><b>คณาจารย์และบุคลากร</b><small lang="en">Faculty &amp; Staff</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a href="news.html"><span class="nf-ico"><i class="fa-solid fa-newspaper" aria-hidden="true"></i></span><span class="nf-txt"><b>ข่าวสารและกิจกรรม</b><small lang="en">News &amp; Events</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a href="contact.html"><span class="nf-ico"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span class="nf-txt"><b>ติดต่อคณะ</b><small lang="en">Contact</small></span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+      </ul>
+      <a class="nf-report" href="contact.html">แจ้งลิงก์เสีย / ติดต่อคณะ <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+
+
+<script>document.write('<script src="assets/data.js"><\/script><script src="assets/script.js"><\/script><script src="assets/include.js"><\/script>');</script>
+<script>
+// มี <base> แล้ว ลิงก์ "#main" (skip link) จะชี้ไปหน้าแรก — เลื่อนไปยัง element ในหน้านี้แทน
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  var t = a && document.getElementById(a.getAttribute("href").slice(1));
+  if(!t) return;
+  e.preventDefault();
+  if(!t.hasAttribute("tabindex")) t.setAttribute("tabindex", "-1");
+  t.focus(); t.scrollIntoView();
+});
+</script>
+</body>
+</html>

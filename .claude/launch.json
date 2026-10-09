@@ -5,13 +5,23 @@
       "name": "site",
       "runtimeExecutable": "python",
       "runtimeArgs": [
-        "-m",
-        "http.server",
+        "C:/bas-website/.claude/serve.py",
         "8080",
-        "--directory",
         "C:/bas-website"
       ],
       "port": 8080
+    },
+    {
+      "name": "handoff",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8090",
+        "--directory",
+        "C:/Users/Raindew/Downloads/University website redesign4/design_handoff_bas_website"
+      ],
+      "port": 8090
     }
   ]
 }

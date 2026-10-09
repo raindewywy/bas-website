@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admissions — BAS SWU</title>
-<meta name="description" content="How to apply to BAS SWU -- TCAS, direct admission and graduate admission.">
+<title>การรับสมัคร — BAS SWU</title>
+<meta name="description" content="เส้นทางการสมัครเข้าศึกษา BAS SWU — TCAS70 (990 ที่นั่ง) รับตรงของคณะ และบัณฑิตศึกษา พร้อมขั้นตอน ค่าเล่าเรียน ทุน และคำถามที่พบบ่อย">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,85 +13,182 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body>
+<body data-nav="admissions">
 
 <div data-include="partials/nav.html"></div>
 
-<main id="main">
-<nav class="breadcrumb wrap" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span aria-current="page">Admissions</span></nav>
-<section class="page-hero page-hero--image"><img class="hero-bg" src="assets/media/banner-admissions.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high">
-  <div class="wrap">
-    <p class="eyebrow th-body">Join BAS SWU</p>
-    <h1 class="bi-heading"><span class="bi-en">Admissions</span><span class="bi-th th-body">การรับสมัคร</span></h1>
-    <p class="lede th-body">3 เส้นทางสู่ BAS SWU ขึ้นอยู่กับหลักสูตรและประเภทผู้สมัคร</p>
-  </div>
-</section>
+<main id="main" class="pd ip-page">
+<nav class="pd-crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span aria-current="page">Admissions</span></li>
+  </ol>
+</nav>
 
-<section class="section">
-  <div class="wrap">
-    <div class="grid-3">
-      <div class="route-card reveal">
-        <span class="card-tag th-body">เส้นทางที่ 1</span>
-        <h3 class="mt-2 th-body bi-heading"><span class="bi-en">TCAS (Thai University Central Admission System)</span><span class="bi-th th-body">TCAS (ระบบคัดเลือกกลางบุคคลเข้าศึกษาต่อ)</span></h3>
-        <p class="card-desc mt-2 th-body">เส้นทางมาตรฐานระดับประเทศสำหรับผู้จบมัธยมปลายที่สมัครหลักสูตรปริญญาตรี</p>
-        <ul class="th-body"><li>สำหรับหลักสูตรปริญญาตรีภาษาไทยทุกหลักสูตร</li><li>เป็นไปตามรอบและปฏิทิน TCAS ของประเทศ</li><li>ต้องใช้ GPAX / คะแนนสอบระดับชาติ ตามเกณฑ์ของแต่ละรอบ</li></ul>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Start Your Application</a>
-      </div>
-      <div class="route-card reveal">
-        <span class="card-tag th-body">เส้นทางที่ 2</span>
-        <h3 class="mt-2 th-body bi-heading"><span class="bi-en">Faculty Direct Undergraduate Admission</span><span class="bi-th th-body">การรับสมัครตรงระดับปริญญาตรีของคณะ</span></h3>
-        <p class="card-desc mt-2 th-body">สมัครตรงกับ BAS SWU รวมถึงหลักสูตรการจัดการธุรกิจโลกที่สอนเป็นภาษาอังกฤษ</p>
-        <ul class="th-body"><li>สำหรับหลักสูตรการจัดการธุรกิจโลกและที่นั่งรับตรงบางส่วน</li><li>อาจมีการพิจารณาแฟ้มสะสมผลงาน/สัมภาษณ์</li><li>เปิดรับทั้งผู้สมัครไทยและนานาชาติ</li></ul>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Start Your Application</a>
-      </div>
-      <div class="route-card reveal">
-        <span class="card-tag th-body">เส้นทางที่ 3</span>
-        <h3 class="mt-2 th-body bi-heading"><span class="bi-en">Graduate Admission (MBA / PhD)</span><span class="bi-th th-body">การรับสมัครระดับบัณฑิตศึกษา (MBA / ปริญญาเอก)</span></h3>
-        <p class="card-desc mt-2 th-body">สำหรับหลักสูตรบริหารธุรกิจมหาบัณฑิต และปรัชญาดุษฎีบัณฑิต สาขาบริหารธุรกิจเพื่อสังคม</p>
-        <ul class="th-body"><li>ต้องจบปริญญาตรีสำหรับ MBA และปริญญาโทสำหรับปริญญาเอก</li><li>เลือกแขนงวิชาตอนสมัคร (MBA)</li><li>ต้องมีข้อเสนอโครงร่างงานวิจัยสำหรับผู้สมัครปริญญาเอก</li></ul>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Start Your Application</a>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<section class="section" style="background:var(--paper-dim);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">How to Apply</p>
-        <h2 class="bi-heading"><span class="bi-en">How to Apply</span><span class="bi-th th-body">ขั้นตอนการสมัคร</span></h2>
-        
-      </div>
-      
-    </div>
-    <div class="step-list mt-5">
-      <div class="step-item reveal"><div class="step-num">01</div><h4 class="th-body bi-heading"><span class="bi-en">Choose a Programme</span><span class="bi-th th-body">เลือกหลักสูตร</span></h4><p class="th-body">สำรวจหลักสูตรทั้ง 9 หลักสูตร และคัดเลือกหลักสูตรที่ตรงกับเป้าหมายของคุณ</p></div>
-      <div class="step-item reveal"><div class="step-num">02</div><h4 class="th-body bi-heading"><span class="bi-en">Check Your Pathway</span><span class="bi-th th-body">ตรวจสอบเส้นทางของคุณ</span></h4><p class="th-body">ยืนยันว่า TCAS การรับสมัครตรงของคณะ หรือการรับสมัครบัณฑิตศึกษา เหมาะกับคุณ</p></div>
-      <div class="step-item reveal"><div class="step-num">03</div><h4 class="th-body bi-heading"><span class="bi-en">Submit Your Application</span><span class="bi-th th-body">ส่งใบสมัคร</span></h4><p class="th-body">กรอกใบสมัครอย่างเป็นทางการพร้อมเอกสารที่กำหนด</p></div>
-      <div class="step-item reveal"><div class="step-num">04</div><h4 class="th-body bi-heading"><span class="bi-en">Interview &amp; Confirmation</span><span class="bi-th th-body">สัมภาษณ์และยืนยันสิทธิ์</span></h4><p class="th-body">เข้าร่วมสัมภาษณ์หากมีการกำหนด จากนั้นยืนยันสิทธิ์เมื่อได้รับการตอบรับ</p></div>
+<section class="pd-hero pg-hero">
+  <img class="pd-hero-img" src="assets/media/campus-classroom.jpg" alt="" loading="eager" decoding="async" fetchpriority="high">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">Join BAS SWU</p>
+    <h1 class="pd-h1 pg-h1">Admissions</h1>
+    <p class="pd-hero-th pg-hero-th">การรับสมัคร</p>
+    <p class="pd-hero-sum pg-hero-sum">3 เส้นทางสู่ BAS SWU ขึ้นอยู่กับหลักสูตรและประเภทผู้สมัคร</p>
+    <div class="pd-actions ad-hero-actions">
+      <a class="pd-btn pd-btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">สมัครเรียนออนไลน์ <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+      <a class="pd-btn pd-btn-outline" href="#tcas">TCAS70</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="faq">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">Frequently Asked Questions</p>
-        <h2 class="bi-heading"><span class="bi-en">Frequently Asked Questions</span><span class="bi-th th-body">คำถามที่พบบ่อย</span></h2>
-        
-      </div>
-      
-    </div>
-    <div class="grid-2 mt-5">
-      <div class="card reveal"><div class="card-body"><h3 class="card-title th-body bi-heading" style="font-size:1.05rem;"><span class="bi-en">Can International Students Apply?</span><span class="bi-th th-body">นิสิตนานาชาติสามารถสมัครได้หรือไม่?</span></h3><p class="card-desc th-body">ได้ — หลักสูตรการจัดการธุรกิจโลกสอนเป็นภาษาอังกฤษทั้งหมดและเปิดรับผู้สมัครนานาชาติ BAS SWU มีนิสิตนานาชาติศึกษาอยู่ในหลายหลักสูตรอยู่แล้ว</p></div></div>
-      <div class="card reveal"><div class="card-body"><h3 class="card-title th-body bi-heading" style="font-size:1.05rem;"><span class="bi-en">Are Scholarships or Financial Aid Available?</span><span class="bi-th th-body">มีทุนการศึกษาหรือความช่วยเหลือทางการเงินหรือไม่?</span></h3><p class="card-desc th-body">คณะมีหน้าทุนการศึกษาบนเว็บไซต์ทางการ [ต้องตรวจสอบเพิ่มเติม: ชื่อทุน จำนวนเงิน และเกณฑ์คุณสมบัติที่แน่นอน ควรยืนยันก่อนเผยแพร่จริง]</p></div></div>
+<nav class="ip-jump" aria-label="ในหน้านี้">
+  <ul>
+    <li><a href="#routes">เส้นทางการสมัคร</a></li>
+    <li><a href="#tcas">TCAS70</a></li>
+    <li><a href="#steps">ขั้นตอน</a></li>
+    <li><a href="#tuition">ค่าเล่าเรียน</a></li>
+    <li><a href="#scholarships">ทุนการศึกษา</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<section id="routes" class="ip-sec">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">Admission Pathways</p>
+    <h2 class="ip-h2">Choose Your Pathway</h2><p class="pd-sub">เส้นทางการสมัคร</p>
+    <div class="ip-grid" style="--min:320px">
+      <article class="ad-route">
+        <span class="ad-route-n">เส้นทางที่ 1</span>
+        <div><h3 lang="en">TCAS</h3><p class="ad-route-th">ระบบคัดเลือกกลางบุคคลเข้าศึกษาต่อ</p></div>
+        <p class="ad-route-desc">เส้นทางมาตรฐานระดับประเทศสำหรับผู้จบมัธยมปลายที่สมัครหลักสูตรปริญญาตรี</p>
+        <p class="ad-route-req">คุณสมบัติ / เงื่อนไข</p>
+        <ul class="ad-check"><li><i class="fa-solid fa-check" aria-hidden="true"></i>สำหรับหลักสูตรปริญญาตรีภาษาไทยทุกหลักสูตร</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>เป็นไปตามรอบและปฏิทิน TCAS ของประเทศ</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>ใช้ GPAX / คะแนนสอบระดับชาติ ตามเกณฑ์ของแต่ละรอบ</li></ul>
+        <a class="ip-btn-line ad-route-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Start Your Application <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+      </article>
+      <article class="ad-route">
+        <span class="ad-route-n">เส้นทางที่ 2</span>
+        <div><h3 lang="en">Faculty Direct Admission</h3><p class="ad-route-th">การรับสมัครตรงระดับปริญญาตรีของคณะ</p></div>
+        <p class="ad-route-desc">สมัครตรงกับ BAS SWU รวมถึงหลักสูตรการจัดการธุรกิจโลกที่สอนเป็นภาษาอังกฤษ</p>
+        <p class="ad-route-req">คุณสมบัติ / เงื่อนไข</p>
+        <ul class="ad-check"><li><i class="fa-solid fa-check" aria-hidden="true"></i>สำหรับหลักสูตรการจัดการธุรกิจโลกและที่นั่งรับตรงบางส่วน</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>อาจมีการพิจารณาแฟ้มสะสมผลงาน/สัมภาษณ์</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>เปิดรับทั้งผู้สมัครไทยและนานาชาติ</li></ul>
+        <a class="ip-btn-line ad-route-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Start Your Application <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+      </article>
+      <article class="ad-route">
+        <span class="ad-route-n">เส้นทางที่ 3</span>
+        <div><h3 lang="en">Graduate Admission</h3><p class="ad-route-th">บัณฑิตศึกษา (MBA / ปริญญาเอก)</p></div>
+        <p class="ad-route-desc">สำหรับหลักสูตรบริหารธุรกิจมหาบัณฑิต และปรัชญาดุษฎีบัณฑิต สาขาบริหารธุรกิจเพื่อสังคม</p>
+        <p class="ad-route-req">คุณสมบัติ / เงื่อนไข</p>
+        <ul class="ad-check"><li><i class="fa-solid fa-check" aria-hidden="true"></i>จบปริญญาตรีสำหรับ MBA และปริญญาโทสำหรับปริญญาเอก</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>เลือกแขนงวิชาตอนสมัคร (MBA)</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>ผู้สมัครปริญญาเอกต้องมีข้อเสนอโครงร่างงานวิจัย</li></ul>
+        <a class="ip-btn-line ad-route-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Start Your Application <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+      </article>
     </div>
   </div>
 </section>
 
+<section id="tcas" class="ip-band">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">BAS TCAS70 · ปีการศึกษา 2570</p>
+    <h2 class="ip-h2">TCAS Rounds &amp; Timeline</h2><p class="pd-sub">รอบการรับสมัครและไทม์ไลน์</p>
+    <p class="ad-seats"><b>990</b><span>ที่นั่งรวมทุกรอบ</span></p>
+    <ol class="ip-ol ip-grid" style="--min:260px; --gap:16px">
+      <li class="ip-band-card ad-round">
+        <div class="ad-round-top"><span class="ad-round-code">TCAS1.2</span><span class="ad-round-seats">340 ที่นั่ง</span></div>
+        <h3 lang="en">Portfolio</h3>
+        <p class="ad-round-desc">คัดเลือกด้วยแฟ้มสะสมผลงาน และการสัมภาษณ์</p>
+        <p class="ad-round-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i>กำหนดการ: ตามปฏิทิน TCAS (รอประกาศ)</p>
+      </li>
+      <li class="ip-band-card ad-round">
+        <div class="ad-round-top"><span class="ad-round-code">TCAS2</span><span class="ad-round-seats">233 ที่นั่ง</span></div>
+        <h3 lang="en">Quota</h3>
+        <p class="ad-round-desc">รับนักเรียนตามโควตาและเงื่อนไขพื้นที่/โครงการ</p>
+        <p class="ad-round-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i>กำหนดการ: ตามปฏิทิน TCAS (รอประกาศ)</p>
+      </li>
+      <li class="ip-band-card ad-round">
+        <div class="ad-round-top"><span class="ad-round-code">TCAS3</span><span class="ad-round-seats">417 ที่นั่ง</span></div>
+        <h3 lang="en">Admission</h3>
+        <p class="ad-round-desc">คัดเลือกด้วยคะแนนสอบระดับชาติตามสัดส่วนที่กำหนด</p>
+        <p class="ad-round-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i>กำหนดการ: ตามปฏิทิน TCAS (รอประกาศ)</p>
+      </li>
+    </ol>
+    <div class="pd-actions ad-tcas-actions">
+      <a class="pd-btn pd-btn-gold" href="assets/media/tcas70-overview.png" target="_blank" rel="noopener">ดูภาพรวมจำนวนรับ <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+      <a class="pd-btn pd-btn-outline" href="assets/media/tcas70-poster.png" target="_blank" rel="noopener">โปสเตอร์ TCAS70<span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="steps" class="ip-sec">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">How to Apply</p>
+    <h2 class="ip-h2">How to Apply</h2><p class="pd-sub">ขั้นตอนการสมัคร</p>
+    <ol class="ip-ol ip-grid" style="--min:240px; --gap:16px">
+      <li class="ad-step"><span>01</span><h3 lang="en">Choose a Programme</h3><p class="ad-step-th">เลือกหลักสูตร</p><p class="ad-step-d">สำรวจหลักสูตรทั้ง 9 หลักสูตร และเลือกหลักสูตรที่ตรงกับเป้าหมาย</p></li>
+      <li class="ad-step"><span>02</span><h3 lang="en">Check Your Pathway</h3><p class="ad-step-th">ตรวจสอบเส้นทาง</p><p class="ad-step-d">ยืนยันว่า TCAS รับตรงของคณะ หรือบัณฑิตศึกษา เหมาะกับคุณ</p></li>
+      <li class="ad-step"><span>03</span><h3 lang="en">Submit Application</h3><p class="ad-step-th">ส่งใบสมัคร</p><p class="ad-step-d">กรอกใบสมัครอย่างเป็นทางการพร้อมเอกสารที่กำหนด</p></li>
+      <li class="ad-step"><span>04</span><h3 lang="en">Interview &amp; Confirm</h3><p class="ad-step-th">สัมภาษณ์และยืนยันสิทธิ์</p><p class="ad-step-d">เข้าสัมภาษณ์หากมีการกำหนด แล้วยืนยันสิทธิ์เมื่อได้รับการตอบรับ</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="ip-sec ip-sec--alt">
+  <div class="pd-wrap ad-money">
+    <div id="tuition">
+      <p class="pd-eyebrow">Tuition Fees</p>
+    <h2 class="ip-h2">Tuition Fees</h2><p class="pd-sub">ค่าเล่าเรียน</p>
+      <div class="ad-fees">
+        <div class="ad-fee"><span>ปริญญาตรี (หลักสูตรภาษาไทย)</span><span class="ad-fee-tbc">รอข้อมูล</span></div>
+        <div class="ad-fee"><span>ปริญญาตรี (Global Business Management)</span><span class="ad-fee-tbc">รอข้อมูล</span></div>
+        <div class="ad-fee"><span>ปริญญาโท (M.B.A.)</span><span class="ad-fee-tbc">รอข้อมูล</span></div>
+        <div class="ad-fee"><span>ปริญญาเอก (Ph.D.)</span><span class="ad-fee-tbc">รอข้อมูล</span></div>
+      </div>
+      <div class="pd-note ad-note ad-note--fees"><i class="fa-regular fa-clock" aria-hidden="true"></i><p>อัตราค่าเล่าเรียนต่อภาคการศึกษาอยู่ระหว่างปรับปรุง — โปรดตรวจสอบกับงานบริการการศึกษา</p></div>
+    </div>
+    <div id="scholarships">
+      <p class="pd-eyebrow">Scholarships</p>
+    <h2 class="ip-h2">Scholarships &amp; Financial Aid</h2><p class="pd-sub">ทุนการศึกษา</p>
+      <p class="ip-lede ad-sch-lede">คณะมีทุนการศึกษาสำหรับนิสิตทุกระดับ ทั้งทุนเรียนดี ทุนขาดแคลนทุนทรัพย์ และทุนแลกเปลี่ยนต่างประเทศ</p>
+      <div class="pd-note ad-note"><i class="fa-regular fa-clock" aria-hidden="true"></i><p>ชื่อทุน จำนวนเงิน และเกณฑ์คุณสมบัติ อยู่ระหว่างยืนยันข้อมูลก่อนเผยแพร่</p></div>
+      <a class="pd-all ad-sch-link" href="contact.html#topics">ติดต่องานกิจการนิสิต <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="ip-sec">
+  <div class="ad-faq-wrap">
+    <p class="pd-eyebrow">FAQ</p>
+    <h2 class="ip-h2">Frequently Asked Questions</h2><p class="pd-sub">คำถามที่พบบ่อย</p>
+    <div class="ip-faq" data-faq>
+      <div class="ip-faq-item">
+        <h3><button type="button" class="ip-faq-btn" id="faq-q-0" aria-expanded="true" aria-controls="faq-a-0"><span><b lang="en">Can international students apply?</b><small>นิสิตนานาชาติสามารถสมัครได้หรือไม่?</small></span><span class="ip-faq-ico" aria-hidden="true"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></span></button></h3>
+        <div class="ip-faq-a" id="faq-a-0" role="region" aria-labelledby="faq-q-0">ได้ — หลักสูตรการจัดการธุรกิจโลกสอนเป็นภาษาอังกฤษทั้งหมดและเปิดรับผู้สมัครนานาชาติ BAS SWU มีนิสิตนานาชาติศึกษาอยู่ในหลายหลักสูตรอยู่แล้ว</div>
+      </div>
+      <div class="ip-faq-item">
+        <h3><button type="button" class="ip-faq-btn" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1"><span><b lang="en">Are scholarships available?</b><small>มีทุนการศึกษาหรือความช่วยเหลือทางการเงินหรือไม่?</small></span><span class="ip-faq-ico" aria-hidden="true"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></span></button></h3>
+        <div class="ip-faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1" hidden>มี — รายละเอียดชื่อทุน จำนวนเงิน และเกณฑ์คุณสมบัติอยู่ระหว่างยืนยันข้อมูล โปรดติดต่องานกิจการนิสิตของคณะ</div>
+      </div>
+      <div class="ip-faq-item">
+        <h3><button type="button" class="ip-faq-btn" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2"><span><b lang="en">Which pathway should I choose?</b><small>ควรเลือกสมัครเส้นทางไหน?</small></span><span class="ip-faq-ico" aria-hidden="true"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></span></button></h3>
+        <div class="ip-faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" hidden>หลักสูตรปริญญาตรีภาษาไทยรับผ่าน TCAS เป็นหลัก หลักสูตรการจัดการธุรกิจโลกเปิดรับตรงผ่านคณะ ส่วน MBA และปริญญาเอกสมัครผ่านการรับสมัครบัณฑิตศึกษา</div>
+      </div>
+      <div class="ip-faq-item">
+        <h3><button type="button" class="ip-faq-btn" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3"><span><b lang="en">How many seats are available in TCAS70?</b><small>TCAS70 รับนิสิตกี่ที่นั่ง?</small></span><span class="ip-faq-ico" aria-hidden="true"><i class="fa-solid fa-plus"></i><i class="fa-solid fa-minus"></i></span></button></h3>
+        <div class="ip-faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" hidden>รวม 990 ที่นั่ง แบ่งเป็น TCAS1.2 Portfolio 340 ที่นั่ง, TCAS2 Quota 233 ที่นั่ง และ TCAS3 Admission 417 ที่นั่ง</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pd-cta-sec">
+  <div class="pd-cta">
+    <div class="pd-cta-copy">
+      <p class="pd-eyebrow">Ready to Apply?</p>
+      <h2 class="pd-h2">พร้อมเริ่มต้นที่ BAS SWU</h2>
+      <p class="pd-cta-body">กรอกใบสมัครออนไลน์ หรือปรึกษาอาจารย์ประจำหลักสูตรก่อนตัดสินใจ</p>
+    </div>
+    <div class="pd-actions">
+      <a class="pd-btn pd-btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSczu8q5LQoaCWA3oLExVLoBTjLdo3XY9BMP3PT9XfZRPRxSug/viewform" target="_blank" rel="noopener">Apply Online <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+      <a class="pd-btn pd-btn-outline" href="programs.html#advisors">Talk to an Advisor</a>
+    </div>
+  </div>
+</section>
 </main>
 
 <div data-include="partials/footer.html"></div>

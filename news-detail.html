@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>News — BAS SWU</title>
-<meta name="description" content="News and event detail.">
+<title>ข่าว — BAS SWU</title>
+<meta name="description" content="รายละเอียดข่าวและกิจกรรม คณะบริหารธุรกิจเพื่อสังคม มศว">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,38 +17,48 @@
 
 <div data-include="partials/nav.html"></div>
 
-<main id="main">
-<nav class="breadcrumb wrap" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="news.html">News & Events</a><span class="sep">/</span><span aria-current="page" data-n-breadcrumb>Article</span></nav>
-<article data-news-detail>
-<section class="page-hero">
-  <div class="wrap wrap-narrow">
-    <p class="eyebrow th-body">News · Date</p>
-    <h1 data-n-title>News headline</h1>
-        <p class="thai-translation th-body" data-n-title-th></p>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap wrap-narrow">
-    <div class="split-media reveal" style="aspect-ratio:16/9;margin-bottom:var(--space-6);"><img class="media-img" src="assets/media/news-detail-default.jpg" alt="ภาพประกอบข่าว" loading="lazy" decoding="async"></div>
-    <p class="th-body" data-n-summary style="font-size:1.15rem;color:var(--ink-soft);">สรุปข่าว</p>
-    
-  </div>
-</section>
-</article>
-<section class="section" style="background:var(--paper-dim);">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <p class="eyebrow">More News</p>
-        <h2 class="bi-heading"><span class="bi-en">More News &amp; Events</span><span class="bi-th th-body">ข่าวอื่น ๆ</span></h2>
-        
-      </div>
-      
+<main id="main" class="pd ip-page" data-news-detail>
+<nav class="pd-crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="news.html">News &amp; Events</a></li>
+    <li class="nd-crumb-cur"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span aria-current="page" data-n-short>ข่าว</span></li>
+  </ol>
+</nav>
+<article data-n-article>
+  <header class="nd-head">
+    <div class="nd-narrow">
+      <div class="nd-meta"><span class="nd-tag" data-n-tag></span><time><i class="fa-regular fa-calendar" aria-hidden="true"></i><span data-n-date></span></time></div>
+      <h1 class="nd-h1" data-n-title></h1>
     </div>
-    <div class="grid-3 mt-5" data-n-related></div>
+  </header>
+  <div class="nd-pad">
+    <div class="nd-media"><img src="" alt="" data-n-img></div>
+  </div>
+  <div class="nd-pad">
+    <div class="nd-foot">
+      <a class="nd-back" href="news.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับไปหน้าข่าวทั้งหมด</a>
+      <a class="nd-src" href="#" target="_blank" rel="noopener" data-n-url hidden>อ่านข่าวฉบับเต็มบนเว็บไซต์คณะ <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (เปิดในแท็บใหม่)</span></a>
+    </div>
+  </div>
+</article>
+<div class="nd-pad" data-n-missing hidden>
+  <div class="nd-narrow">
+    <div class="pg-empty nd-missing">
+      <h1 class="nd-h1">ไม่พบข่าวที่คุณต้องการ</h1>
+      <p>ข่าวนี้อาจถูกย้ายหรือลบไปแล้ว ลองดูข่าวล่าสุดด้านล่าง หรือกลับไปหน้าข่าวทั้งหมด</p>
+      <a class="nd-back" href="news.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i>กลับไปหน้าข่าวทั้งหมด</a>
+    </div>
+  </div>
+</div>
+
+<section class="ip-sec">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">More News</p>
+    <h2 class="ip-h2">Related News</h2><p class="pd-sub">ข่าวที่เกี่ยวข้อง</p>
+    <div class="nw-grid nd-related" data-n-related></div>
   </div>
 </section>
-
 </main>
 
 <div data-include="partials/footer.html"></div>

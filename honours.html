@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hall of Fame — BAS SWU</title>
-<meta name="description" content="รางวัล ผลงาน และความสำเร็จของคณะ นิสิต และศิษย์เก่า คณะบริหารธุรกิจเพื่อสังคม มศว">
+<meta name="description" content="รางวัลระดับคณะและมหาวิทยาลัย ความสำเร็จของนิสิต และศิษย์เก่าที่โดดเด่น คณะบริหารธุรกิจเพื่อสังคม มศว">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +17,57 @@
 
 <div data-include="partials/nav.html"></div>
 
-<main id="main">
-<nav class="breadcrumb wrap" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep" aria-hidden="true">/</span><a href="about.html">About the Faculty</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Hall of Fame</span></nav>
-<section class="page-hero page-hero--image"><img class="hero-bg" src="assets/media/banner-ukpsf.jpg" alt="" aria-hidden="true" loading="eager" decoding="async" fetchpriority="high"><div class="wrap"><p class="eyebrow th-body">About the Faculty</p><h1 class="bi-heading"><span class="bi-en">Faculty Awards &amp; Achievements</span><span class="bi-th th-body">Hall of Fame</span></h1><p class="lede th-body">รางวัล ผลงาน และความสำเร็จที่สะท้อนคุณภาพการศึกษาและพันธกิจเพื่อสังคมของคณะ</p></div></section>
-<section class="section"><div class="wrap">
-<div class="honour-grid mt-5"><div class="honour-card reveal"><h3 class="th-body bi-heading"><span class="bi-en">Faculty &amp; University Awards</span><span class="bi-th th-body">รางวัลระดับคณะและมหาวิทยาลัย</span></h3><p class="en" style="color:var(--muted);font-size:.8rem;margin-bottom:.5rem;">Faculty &amp; University Awards</p><p>รางวัลและการรับรองคุณภาพที่คณะได้รับ ทั้งในระดับมหาวิทยาลัย ระดับชาติ และระดับนานาชาติ</p></div><div class="honour-card reveal"><h3 class="th-body bi-heading"><span class="bi-en">Student Achievements</span><span class="bi-th th-body">ความสำเร็จของนิสิต</span></h3><p>ผลงานการแข่งขัน โครงการที่ได้รับรางวัล และความสำเร็จของนิสิตปัจจุบัน</p></div><div class="honour-card reveal"><h3 class="th-body bi-heading"><span class="bi-en">Distinguished Alumni</span><span class="bi-th th-body">ศิษย์เก่าที่โดดเด่น</span></h3><p>เส้นทางอาชีพของศิษย์เก่าที่สร้างผลกระทบทางธุรกิจและสังคม</p></div></div>
-<div class="profile-section" id="awards"><h2 class="th-body bi-heading"><span class="bi-en">Faculty &amp; University Awards</span><span class="bi-th th-body">รางวัลระดับคณะและมหาวิทยาลัย</span></h2><p class="th-body" style="color:var(--muted);margin-bottom:var(--space-3);">รางวัลและการรับรองคุณภาพที่คณะได้รับ ทั้งในระดับมหาวิทยาลัย ระดับชาติ และระดับนานาชาติ</p></div>
-<div class="profile-section" id="students"><h2 class="th-body bi-heading"><span class="bi-en">Student Achievements</span><span class="bi-th th-body">ความสำเร็จของนิสิต</span></h2><p class="th-body" style="color:var(--muted);margin-bottom:var(--space-3);">ผลงานการแข่งขัน โครงการที่ได้รับรางวัล และความสำเร็จของนิสิตปัจจุบัน</p></div>
-<div class="profile-section" id="alumni"><h2 class="th-body bi-heading"><span class="bi-en">Distinguished Alumni</span><span class="bi-th th-body">ศิษย์เก่าที่โดดเด่น</span></h2><p class="th-body" style="color:var(--muted);margin-bottom:var(--space-3);">เส้นทางอาชีพของศิษย์เก่าที่สร้างผลกระทบทางธุรกิจและสังคม</p></div>
-</div></section>
+<main id="main" class="pd ip-page">
+<nav class="pd-crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="about.html">About</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span aria-current="page">Hall of Fame</span></li>
+  </ol>
+</nav>
+
+<section class="pd-hero pg-hero">
+  <img class="pd-hero-img" src="assets/media/activity-business-cup.jpg" alt="" loading="eager" decoding="async" fetchpriority="high">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">About the Faculty</p>
+    <h1 class="pd-h1 pg-h1">Hall of Fame</h1>
+    <p class="pd-hero-th pg-hero-th">รางวัลและความสำเร็จ</p>
+    <p class="pd-hero-sum pg-hero-sum">รางวัล ผลงาน และความสำเร็จที่สะท้อนคุณภาพการศึกษาและพันธกิจเพื่อสังคมของคณะ</p>
+  </div>
+</section>
+
+<section class="ip-sec">
+  <div class="pd-wrap hf-list">
+    <article id="awards" class="hf-row">
+      <div class="hf-copy">
+        <span class="hf-ico"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+        <div><p class="hf-k" lang="en">Faculty &amp; University</p><h2 lang="en">Faculty &amp; University Awards</h2><p class="hf-th">รางวัลระดับคณะและมหาวิทยาลัย</p><p class="hf-d">รางวัลและการรับรองคุณภาพที่คณะได้รับ ทั้งในระดับมหาวิทยาลัย ระดับชาติ และระดับนานาชาติ</p></div>
+      </div>
+      <div class="pd-note ad-note hf-note"><i class="fa-regular fa-clock" aria-hidden="true"></i><p>รายการรางวัลและผลงานอยู่ระหว่างรวบรวมข้อมูลจากคณะ</p></div>
+    </article>
+    <article id="students" class="hf-row hf-row--alt">
+      <div class="hf-copy">
+        <span class="hf-ico"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
+        <div><p class="hf-k" lang="en">Students</p><h2 lang="en">Student Achievements</h2><p class="hf-th">ความสำเร็จของนิสิต</p><p class="hf-d">ผลงานการแข่งขัน โครงการที่ได้รับรางวัล และความสำเร็จของนิสิตปัจจุบัน</p></div>
+      </div>
+      <div class="pd-note ad-note hf-note"><i class="fa-regular fa-clock" aria-hidden="true"></i><p>รายการรางวัลและผลงานอยู่ระหว่างรวบรวมข้อมูลจากคณะ</p></div>
+    </article>
+    <article id="alumni" class="hf-row">
+      <div class="hf-copy">
+        <span class="hf-ico"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></span>
+        <div><p class="hf-k" lang="en">Alumni</p><h2 lang="en">Distinguished Alumni</h2><p class="hf-th">ศิษย์เก่าที่โดดเด่น</p><p class="hf-d">เส้นทางอาชีพของศิษย์เก่าที่สร้างผลกระทบทางธุรกิจและสังคม</p></div>
+      </div>
+      <div class="pd-note ad-note hf-note"><i class="fa-regular fa-clock" aria-hidden="true"></i><p>รายการรางวัลและผลงานอยู่ระหว่างรวบรวมข้อมูลจากคณะ</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="ip-sec--tail">
+  <div class="cal-help">
+    <div><p class="pd-eyebrow">Teaching Excellence</p><h2>บุคลากรได้รับการรับรอง UKPSF แล้ว 18 คน</h2></div>
+    <a class="pd-btn pd-btn-gold" href="academic.html#ukpsf">ดูรายละเอียด UKPSF <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</section>
 </main>
 
 <div data-include="partials/footer.html"></div>
