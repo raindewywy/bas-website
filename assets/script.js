@@ -62,44 +62,63 @@
     });
   }
 
-  /* ---- Dean's Office Staff: ชิปงาน + ค้นหาชื่อ/หน้าที่ ---------------------- */
+  // staff-deans-office.html — หน้าตาเดียวกับ faculty.html: ค้นหาชื่อ/หน้าที่ + ชิปงาน, การ์ดแบ่งตามงาน (data: BAS_STAFF)
   function initStaffDirectory(){
-    var root = document.querySelector("[data-dir]");
-    if(!root) return;
-    var chips = root.querySelectorAll("[data-dir-chips] [data-value]");
-    var input = root.querySelector("[data-dir-q]");
-    var groups = Array.prototype.slice.call(root.querySelectorAll("[data-cat]"));
-    var count = root.querySelector("[data-dir-count]");
-    var empty = root.querySelector("[data-dir-empty]");
-    var echo = root.querySelector("[data-dir-qecho]");
-    var clear = root.querySelector("[data-dir-clear]");
-    var cat = "all";
-    function render(){
-      var raw = input ? input.value.trim() : "", q = raw.toLowerCase(), n = 0;
-      groups.forEach(function(g){
-        var shown = 0;
-        g.querySelectorAll("[data-person]").forEach(function(p){
-          var ok = (cat === "all" || g.getAttribute("data-cat") === cat) &&
-            (!q || (p.getAttribute("data-search") || p.textContent).toLowerCase().indexOf(q) !== -1);
-          p.hidden = !ok;
-          if(ok) shown++;
-        });
-        g.hidden = !shown;
-        n += shown;
-      });
-      pressChips(chips, cat);
-      if(count) count.textContent = "แสดง " + n + " คน";
-      if(empty) empty.hidden = n > 0;
-      if(echo) echo.textContent = raw;
+    var root = document.querySelector("[data-so-root]");
+    if(!root || typeof BAS_STAFF === "undefined") return;
+    var input = root.querySelector("[data-so-q]");
+    var unitBox = root.querySelector("[data-so-units]");
+    var list = root.querySelector("[data-so-list]");
+    var empty = root.querySelector("[data-so-empty]");
+    var clearTop = root.querySelector(".fd-clear");
+    var state = { q: "", unit: "all" };
+
+    function byQuery(){
+      var q = state.q.trim().toLowerCase();
+      return BAS_STAFF.filter(function(p){ return !q || (p.th + " " + p.en + " " + p.role).toLowerCase().indexOf(q) !== -1; });
     }
-    Array.prototype.forEach.call(chips, function(c){
-      c.addEventListener("click", function(){ cat = c.getAttribute("data-value"); render(); });
+    function card(p){
+      return '<article class="fd-card">' +
+        '<div class="fd-card-photo"><img src="' + escHtml(p.img) + '" alt="' + escHtml(p.th) + '" loading="lazy" decoding="async"><span class="fd-card-role">' + escHtml(p.role) + '</span></div>' +
+        '<div class="fd-card-body">' +
+          '<h4 lang="en">' + escHtml(p.en) + '</h4>' +
+          '<p>' + escHtml(p.th) + '</p>' +
+          '<span class="fd-contact fd-contact--tel"><i class="fa-solid fa-phone" aria-hidden="true"></i>' + escHtml(p.tel) + '</span>' +
+          '<a class="fd-contact fd-contact--sub" href="mailto:' + escHtml(p.mail) + '"><i class="fa-solid fa-envelope" aria-hidden="true"></i>' + escHtml(p.mail) + '</a>' +
+        '</div></article>';
+    }
+    function render(){
+      var byQ = byQuery();
+      var shown = byQ.filter(function(p){ return state.unit === "all" || p.u === state.unit; });
+
+      unitBox.innerHTML = [{ key:"all", short:"ทั้งหมด" }].concat(BAS_STAFF_UNITS).map(function(u){
+        var n = byQ.filter(function(p){ return u.key === "all" || p.u === u.key; }).length;
+        return '<button type="button" class="pg-chip fd-chip" data-so-unit="' + escHtml(u.key) + '" aria-pressed="' + (state.unit === u.key) + '">' +
+          escHtml(u.short) + '<span class="pg-count">' + n + '</span></button>';
+      }).join("");
+
+      list.innerHTML = BAS_STAFF_UNITS.map(function(u){
+        var ps = shown.filter(function(p){ return p.u === u.key; });
+        if(!ps.length) return "";
+        return '<div class="fd-dept">' +
+          '<div class="fd-dept-head"><div><h2 lang="en">' + escHtml(u.en) + '</h2><p>' + escHtml(u.th) + '</p></div><span>' + ps.length + ' คน</span></div>' +
+          '<div class="fd-grid">' + ps.map(card).join("") + '</div></div>';
+      }).join("");
+
+      var filtered = !!state.q.trim() || state.unit !== "all";
+      empty.hidden = !!shown.length;
+      clearTop.hidden = !filtered;
+      setText("[data-so-result]", "แสดง " + shown.length + " จาก " + BAS_STAFF.length + " รายชื่อ");
+    }
+    root.addEventListener("click", function(e){
+      var b = e.target.closest("[data-so-unit],[data-so-clear]");
+      if(!b) return;
+      if(b.hasAttribute("data-so-unit")){ state.unit = b.getAttribute("data-so-unit"); }
+      else { state.q = ""; state.unit = "all"; input.value = ""; input.focus(); }
+      render();
     });
-    if(input) input.addEventListener("input", render);
-    if(clear) clear.addEventListener("click", function(){
-      if(input) input.value = "";
-      cat = "all"; render();
-    });
+    input.addEventListener("input", function(){ state.q = input.value; render(); });
+    render();
   }
 
   /* ---- ปุ่มย้อนกลับ (404) ------------------------------------------------- */
@@ -570,6 +589,7 @@
     if(!root || typeof BAS_PROGRAMS === "undefined") return;
     var slug = qs("p");
     if(slug === "phd"){ window.location.replace("https://mba.swu.ac.th/phd"); return; }
+    if(slug === "bba-tourism-hotel") slug = "bba-tourism"; // ลิงก์เก่าก่อนแยกท่องเที่ยว/โรงแรม
     var program = BAS_PROGRAMS.find(function(p){ return p.slug === slug; }) || BAS_PROGRAMS[0];
     function imgFor(p){ return "assets/media/program-" + p.slug + ".jpg"; }
 
@@ -592,6 +612,20 @@
       ].map(function(f){
         return '<div><dt><i class="fa-solid ' + f[1] + '" aria-hidden="true"></i>' + f[0] + '</dt><dd>' + escHtml(f[2]) + '</dd></div>';
       }).join("");
+    }
+
+    // เอกสารหลักสูตร (PDF บน bas2.swu.ac.th) — ไม่มีเอกสาร → คงป้าย "อยู่ระหว่างปรับปรุง"
+    var docsBox = root.querySelector("[data-p-docs]");
+    if(docsBox && program.docs && program.docs.length){
+      root.querySelector("[data-p-docs-list]").innerHTML = program.docs.map(function(d){
+        return '<li><a class="pd-doc" href="' + escHtml(d.href) + '" target="_blank" rel="noopener">' +
+          '<i class="fa-regular fa-file-pdf" aria-hidden="true"></i><span><span class="pd-doc-t">' + escHtml(d.t) + '</span>' +
+          '<span class="pd-doc-en" lang="en">' + escHtml(d.en) + '</span></span>' +
+          '<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only"> (PDF เปิดในแท็บใหม่)</span></a></li>';
+      }).join("");
+      docsBox.hidden = false;
+      var docsNote = root.querySelector("[data-p-docs-note]");
+      if(docsNote) docsNote.hidden = true;
     }
 
     var careerList = root.querySelector("[data-p-careers]");

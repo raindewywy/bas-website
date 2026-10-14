@@ -1,7 +1,7 @@
 {
- "anthika": {
-  "file": "assets/media/people/anthika.webp",
-  "source": "https://bas2.swu.ac.th/Portals/64/BlockBuilderImages/20882/DSC03844.JPG",
+ "anuphat": {
+  "file": "assets/media/people/anuphat.webp",
+  "source": "https://bas.swu.ac.th/Portals/4/BlockBuilderImages/2528/D1d1-(1).png",
   "size": [
    600,
    900
@@ -311,14 +311,6 @@
    900
   ]
  },
- "putthaisong": {
-  "file": "assets/media/people/putthaisong.webp",
-  "source": "https://bas2.swu.ac.th/Portals/64/BlockBuilderImages/20882/S__66756666.jpg",
-  "size": [
-   601,
-   900
-  ]
- },
  "santit": {
   "file": "assets/media/people/santit.webp",
   "source": "https://bas2.swu.ac.th/Portals/64/BlockBuilderImages/20704/santit.jpg",
@@ -378,6 +370,14 @@
  "supinyad": {
   "file": "assets/media/people/supinyad.webp",
   "source": "https://bas2.swu.ac.th/Portals/64/BlockBuilderImages/20858/supinyad.jpg",
+  "size": [
+   600,
+   900
+  ]
+ },
+ "sureerat": {
+  "file": "assets/media/people/sureerat.webp",
+  "source": "https://bas.swu.ac.th/Portals/4/BlockBuilderImages/2528/B04.jpg",
   "size": [
    600,
    900
