@@ -507,30 +507,6 @@ h1 + .thai-translation, h2 + .thai-translation, h3 + .thai-translation{font-size
 }
 
 /* ---- Admin mode (demo / non-functional login) ---------------------------- */
-.admin-modal{position:fixed; inset:0; z-index:500; visibility:hidden; opacity:0; transition:opacity var(--dur), visibility var(--dur);}
-.admin-modal[aria-hidden="false"]{visibility:visible; opacity:1;}
-.admin-modal-scrim{position:absolute; inset:0; background:rgba(20,22,23,.55);}
-.admin-modal-panel{
-  position:relative; z-index:1; margin:8vh auto 0; width:min(400px,90vw);
-  background:var(--surface); border-radius:var(--radius-l); box-shadow:var(--shadow-m);
-  padding:var(--space-6) var(--space-5) var(--space-5); text-align:center;
-  transform:translateY(-10px); transition:transform var(--dur);
-}
-.admin-modal[aria-hidden="false"] .admin-modal-panel{transform:translateY(0);}
-.admin-modal-close{position:absolute; top:var(--space-3); right:var(--space-3);}
-.admin-modal-icon{width:52px; height:52px; margin:0 auto var(--space-3); border-radius:50%; background:var(--paper-dim); color:var(--teal-600); display:flex; align-items:center; justify-content:center;}
-.admin-modal-icon svg{width:26px; height:26px;}
-.admin-modal-icon i{font-size:26px;}
-.admin-modal-panel h2{font-size:1.3rem;}
-.admin-modal-lede{color:var(--muted); font-size:.92rem; margin-top:.5rem;}
-.admin-modal-panel form{display:grid; gap:var(--space-3); margin-top:var(--space-5); text-align:left;}
-.admin-field{display:grid; gap:.4rem; font-size:.85rem; font-weight:600; color:var(--ink-soft);}
-.admin-field input{
-  font:inherit; font-weight:400; padding:.8em 1em; border:1.5px solid var(--line-strong);
-  border-radius:var(--radius-s); background:var(--paper);
-}
-.admin-field input:focus-visible{border-color:var(--teal-600);}
-
 .admin-bar{background:var(--ink); color:#fff;}
 .admin-bar-inner{display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap; padding:.6rem 0; font-size:.85rem;}
 .admin-bar-badge{display:inline-flex; align-items:center; gap:.4em; font-weight:700; color:#fff;}
@@ -2178,7 +2154,6 @@ a:not(.btn):not(.nav-link):not(.dean-direct):not(.ldr-btn):not(.dn-link):not(.hd
 /* ---- ไอคอนใน modal เข้าสู่ระบบ ---------------------------------------
    ไอคอน "ค้นหา" กับ "ผู้ดูแลระบบ" บนหัวเว็บคงเป็นสีเทาตามเดิม
    (ไม่ override .icon-btn) — เปลี่ยนเฉพาะไอคอนโล่ในหน้าต่างเข้าสู่ระบบ */
-.admin-modal-icon{ color:#1484a7; }
 
 /* ---- การ์ด Academic 4 ใบ — แบรนด์เข้ม · แบรนด์ปกติ · เทาเข้ม · เทาอ่อน -- */
 .programme-card--tone-1{ background:#0c99c4; background-image:linear-gradient(160deg, #1196be 0%, #1089ad 100%); }
@@ -2491,7 +2466,6 @@ body[data-nav="home"] .site-footer{margin-top:0;}
 .mega a.is-sub:focus-visible{ border-left-color:var(--brand-650); }
 .drawer-sub a:hover,
 .drawer-sub a:focus-visible{ background:var(--brand-650); color:#fff; }
-.admin-modal-icon{ color:var(--brand-700); }
 
 /* ---- ป้าย / ชิป -------------------------------------------------------- */
 .card-tag:not(.cat):not(.crimson){ background:var(--brand-50); color:var(--brand-700); }
@@ -4350,3 +4324,78 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 /* รูปจริงของเจ้าหน้าที่ (assets/media/people) แทนอักษรย่อ */
 .qa-photo{width:44px; height:44px; border-radius:50%; object-fit:cover; object-position:center 12%; background:#EFF9FB; flex:none;}
 .qa-photo{width:52px; height:52px;}
+
+/* ==========================================================================
+   ADMIN LOGIN PAGE (admin.html) — standalone, no nav/footer partials
+   ========================================================================== */
+.adm-body{margin:0; background:#FBFCFD; color:#0F1719; font-family:'IBM Plex Sans Thai','IBM Plex Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased;}
+.adm-body :focus-visible{outline:3px solid #063047; outline-offset:2px; box-shadow:0 0 0 2px #fff;}
+.adm, .adm *{box-sizing:border-box;}
+.adm h1, .adm h2, .adm p{margin:0; padding:0;}
+.adm{min-height:100vh; display:flex; flex-wrap:wrap; background:#FBFCFD;}
+
+.adm-brand{flex:1 1 480px; min-height:340px; position:relative; overflow:hidden; background:#063047; color:#fff; display:flex; flex-direction:column; justify-content:space-between; gap:40px; padding:clamp(28px,4vw,56px);}
+.adm-brand-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.28;}
+.adm-brand-scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,48,71,.55) 0%, rgba(6,48,71,.92) 100%);}
+.adm-brand-logo{position:relative; display:inline-flex; align-self:flex-start;}
+.adm-brand-logo img{height:48px; width:auto;}
+.adm-brand-copy{position:relative; display:flex; flex-direction:column; gap:18px; max-width:460px;}
+.adm-eyebrow{font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.16em; text-transform:uppercase; color:#58C9E4;}
+.adm-brand-copy h2{font-size:clamp(1.7rem,1.3rem + 1.4vw,2.5rem); line-height:1.25; font-weight:700; color:#fff; text-wrap:pretty;}
+.adm-brand-copy p{font-size:16px; line-height:1.7; color:rgba(255,255,255,.82); text-wrap:pretty;}
+.adm-brand-foot{position:relative; font-size:13px; color:rgba(255,255,255,.6);}
+
+.adm-main{flex:1 1 440px; display:flex; flex-direction:column; padding:clamp(24px,4vw,48px);}
+.adm-main:focus{outline:none;}
+.adm-back{align-self:flex-start; flex:none; display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 16px; white-space:nowrap; border-radius:999px; border:1px solid #D6DEE1; background:#fff; color:#2A3639; font-size:14px; font-weight:600; text-decoration:none; transition:border-color .15s, color .15s;}
+.adm-back i{font-size:12px;}
+.adm-back:hover{border-color:#00738F; color:#00738F;}
+.adm-center{flex:1; display:flex; align-items:center; justify-content:center; padding:40px 0;}
+.adm-col{width:100%; max-width:400px; display:flex; flex-direction:column; gap:28px;}
+.adm-col[hidden], .adm-done[hidden], .adm-alert[hidden]{display:none;}
+
+.adm-head{display:flex; flex-direction:column; gap:12px;}
+.adm-tile{display:grid; place-items:center; width:56px; height:56px; border-radius:16px; background:#EFF9FB; color:#00738F; font-size:22px;}
+.adm-head h1{font-size:clamp(1.6rem,1.4rem + .8vw,2rem); line-height:1.3; font-weight:700; color:#063047;}
+.adm-head p{font-size:15px; line-height:1.6; color:#51636A;}
+
+.adm-form{display:flex; flex-direction:column; gap:18px;}
+.adm-field{display:flex; flex-direction:column; gap:8px;}
+.adm-label{font-size:14px; font-weight:600; color:#2A3639;}
+.adm-label-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px;}
+.adm-forgot{font-size:13px; font-weight:600; color:#00738F; text-decoration:none;}
+.adm-forgot:hover{color:#063047;}
+.adm-input{width:100%; min-width:0; height:52px; padding:0 16px; border-radius:12px; border:1.5px solid #D6DEE1; background:#fff; font:inherit; font-size:16px; color:#0F1719; outline:none; transition:border-color .15s, box-shadow .15s;}
+.adm-input::placeholder{color:#8A9A9F;}
+.adm-input:focus, .adm-input:focus-visible{border-color:#00738F; box-shadow:0 0 0 4px #DFF3F8; outline:none;}
+.adm-input.is-invalid{border-color:#C0392B;}
+.adm-pw{position:relative; display:flex;}
+.adm-pw .adm-input{padding-right:52px;}
+.adm-pw-toggle{position:absolute; right:4px; top:4px; width:44px; height:44px; border:0; border-radius:10px; background:transparent; color:#51636A; font-size:15px; cursor:pointer; transition:background .15s, color .15s;}
+.adm-pw-toggle:hover{background:#EFF9FB; color:#00738F;}
+.adm-check{display:flex; align-items:center; gap:10px; min-height:44px; font-size:14px; color:#2A3639; cursor:pointer;}
+.adm-check input{width:18px; height:18px; margin:0; accent-color:#00738F;}
+.adm-alert{display:flex; gap:10px; align-items:flex-start; padding:12px 14px; border-radius:12px; background:#FDEEEE; color:#9B1C1C; font-size:14px; line-height:1.5;}
+.adm-alert i{margin-top:3px;}
+.adm-submit{display:flex; align-items:center; justify-content:center; gap:10px; width:100%; height:52px; border:0; border-radius:999px; background:#00738F; color:#fff; font:inherit; font-size:16px; font-weight:700; cursor:pointer; transition:background .15s;}
+.adm-submit i{font-size:13px;}
+.adm-submit:hover{background:#063047;}
+.adm-note{display:flex; gap:10px; padding-top:20px; border-top:1px solid #E3E9EB; font-size:13px; line-height:1.6; color:#51636A;}
+.adm-note i{margin-top:3px; color:#00738F;}
+
+.adm-done{display:flex; flex-direction:column; gap:16px; align-items:flex-start;}
+.adm-done-ico{display:grid; place-items:center; width:56px; height:56px; border-radius:999px; background:#00B3C9; color:#fff; font-size:22px;}
+.adm-done h1{font-size:1.8rem; line-height:1.3; font-weight:700; color:#063047;}
+.adm-done h1:focus{outline:none;}
+.adm-done p{font-size:15px; line-height:1.6; color:#51636A;}
+.adm-done-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+.adm-btn{display:inline-flex; align-items:center; gap:10px; height:48px; padding:0 22px; white-space:nowrap; border-radius:999px; font:inherit; font-size:15px; text-decoration:none; cursor:pointer; transition:background .15s, border-color .15s, color .15s;}
+.adm-btn i{font-size:12px;}
+.adm-btn-primary{border:0; background:#00738F; color:#fff; font-weight:700;}
+.adm-btn-primary:hover{background:#063047; color:#fff;}
+.adm-btn-secondary{border:1px solid #D6DEE1; background:#fff; color:#2A3639; font-weight:600;}
+.adm-btn-secondary:hover{border-color:#00738F; color:#00738F;}
+
+@media (prefers-reduced-motion: reduce){
+  .adm *, .adm *::before, .adm *::after{transition:none !important; animation:none !important;}
+}

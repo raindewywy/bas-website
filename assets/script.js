@@ -19,6 +19,7 @@
     initChipFilter();
     initStaffDirectory();
     initHistoryBack();
+    initAdminLogin();
   });
 
   // header/drawer/search/admin ต้องรอ nav+footer ถูก inject โดย assets/include.js ก่อน
@@ -973,51 +974,98 @@
   }
 
   // ------------------------------------------------------------- admin mode (demo only, no real auth)
-  function initAdmin(){
-    var openBtn = document.getElementById("admin-open");
-    var modal = document.getElementById("admin-modal");
-    var bar = document.getElementById("admin-bar");
-    var form = document.getElementById("admin-login-form");
-    var logoutBtn = document.getElementById("admin-logout");
-    if(!openBtn || !modal) return;
+  // ล็อกอินที่ admin.html → ตั้ง flag ใน localStorage แล้วทุกหน้าอ่าน flag นี้เพื่อแสดง admin-bar
+  var ADMIN_KEY = "bas-admin";
+  function getAdminFlag(){
+    try { return window.localStorage.getItem(ADMIN_KEY) === "1"; } catch(e){ return false; }
+  }
+  function setAdminFlag(active){
+    try {
+      if(active) window.localStorage.setItem(ADMIN_KEY, "1");
+      else window.localStorage.removeItem(ADMIN_KEY);
+    } catch(e){}
+  }
+  // ------------------------------------------------------------- admin.html login form (demo only, no real auth)
+  function initAdminLogin(){
+    var form = document.getElementById("adm-form");
+    if(!form) return;
+    var view = document.getElementById("adm-login");
+    var done = document.getElementById("adm-done");
+    var user = form.elements.username;
+    var pw = form.elements.password;
+    var err = document.getElementById("adm-error");
+    var errText = document.getElementById("adm-error-text");
+    var toggle = document.getElementById("adm-pw-toggle");
+    var tried = false;
 
-    function openModal(){
-      modal.setAttribute("aria-hidden","false");
-      document.body.style.overflow = "hidden";
-      var firstField = modal.querySelector("input");
-      if(firstField) window.setTimeout(function(){ firstField.focus(); }, 60);
+    function markInvalid(){
+      [user, pw].forEach(function(f){
+        var bad = tried && !f.value.trim();
+        f.classList.toggle("is-invalid", bad);
+        f.setAttribute("aria-invalid", bad ? "true" : "false");
+      });
     }
-    function closeModal(){
-      modal.setAttribute("aria-hidden","true");
-      document.body.style.overflow = "";
-      openBtn.focus();
+    function showError(msg){
+      errText.textContent = msg;
+      err.hidden = !msg;
     }
-    openBtn.addEventListener("click", openModal);
-    modal.querySelectorAll("[data-admin-close]").forEach(function(el){
-      el.addEventListener("click", closeModal);
+    function showDone(active){
+      view.hidden = active;
+      done.hidden = !active;
+      (active ? done.querySelector("h1") : user).focus();
+    }
+
+    [user, pw].forEach(function(f){
+      f.addEventListener("input", function(){ showError(""); markInvalid(); });
     });
-    document.addEventListener("keydown", function(e){
-      if(e.key === "Escape" && modal.getAttribute("aria-hidden") === "false"){ closeModal(); }
+
+    toggle.addEventListener("click", function(){
+      var show = pw.type === "password";
+      pw.type = show ? "text" : "password";
+      toggle.setAttribute("aria-label", show ? "ซ่อนรหัสผ่าน" : "แสดงรหัสผ่าน");
+      toggle.querySelector("i").className = show ? "fa-solid fa-eye-slash" : "fa-solid fa-eye";
     });
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      tried = true;
+      markInvalid();
+      if(!user.value.trim() || !pw.value.trim()){
+        showError("กรุณากรอกชื่อผู้ใช้และรหัสผ่าน");
+        (user.value.trim() ? pw : user).focus();
+        return;
+      }
+      showError("");
+      setAdminFlag(true);
+      showDone(true);
+    });
+
+    document.getElementById("adm-logout").addEventListener("click", function(){
+      setAdminFlag(false);
+      form.reset();
+      tried = false;
+      markInvalid();
+      showDone(false);
+    });
+
+    if(getAdminFlag()){ view.hidden = true; done.hidden = false; }
+  }
+
+  function initAdmin(){
+    var adminLink = document.getElementById("admin-open");
+    var bar = document.getElementById("admin-bar");
+    var logoutBtn = document.getElementById("admin-logout");
 
     function setAdminActive(active){
       document.body.classList.toggle("is-admin", active);
-      openBtn.classList.toggle("is-active", active);
-      openBtn.setAttribute("aria-pressed", active ? "true" : "false");
+      if(adminLink) adminLink.classList.toggle("is-active", active);
       if(bar) bar.hidden = !active;
     }
+    setAdminActive(getAdminFlag());
 
-    if(form){
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        closeModal();
-        setAdminActive(true);
-        showToast("เข้าสู่โหมดผู้ดูแลระบบแล้ว (ต้นแบบสาธิต — ไม่มีการยืนยันตัวตนจริง)");
-        form.reset();
-      });
-    }
     if(logoutBtn){
       logoutBtn.addEventListener("click", function(){
+        setAdminFlag(false);
         setAdminActive(false);
         showToast("ออกจากโหมดผู้ดูแลระบบแล้ว");
       });
