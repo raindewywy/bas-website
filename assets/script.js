@@ -546,9 +546,6 @@
           '<h3 class="pg-card-abbr" lang="en">' + escHtml(p.abbr) + '</h3>' +
           '<p class="pg-card-th">' + escHtml(p.name_th) + '</p>' +
           '<p class="pg-card-desc">' + escHtml(p.summary) + '</p>' +
-          '<div class="pg-card-careers"><p>เส้นทางอาชีพ</p><div class="pg-tags">' +
-            p.careers.map(function(c){ return '<span>' + escHtml(c) + '</span>'; }).join("") +
-          '</div></div>' +
           '<div class="pg-card-foot">' +
             '<span class="pg-card-cue">' + (ext ? 'ไปเว็บไซต์หลักสูตร <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>' : 'ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>') + '</span>' +
             '<span class="pg-card-lang"><i class="fa-solid fa-language" aria-hidden="true"></i>' + escHtml(p.language) + '</span>' +
@@ -593,6 +590,8 @@
     if(slug === "bba-tourism-hotel") slug = "bba-tourism"; // ลิงก์เก่าก่อนแยกท่องเที่ยว/โรงแรม
     var program = BAS_PROGRAMS.find(function(p){ return p.slug === slug; }) || BAS_PROGRAMS[0];
     function imgFor(p){ return "assets/media/program-" + p.slug + ".jpg"; }
+    function deptKeyOf(p){ return window.BAS_PROGRAM_DEPT && BAS_PROGRAM_DEPT[p.slug]; }
+    function deptOf(p){ var k = deptKeyOf(p); return k ? findBy(window.BAS_DEPTS, "key", k) : null; }
 
     document.title = program.abbr + " — BAS SWU";
     setText("[data-p-abbr]", program.abbr);
@@ -609,8 +608,10 @@
       facts.innerHTML = [
         ["Level", "fa-graduation-cap", program.level_label],
         ["Language", "fa-language", program.language],
+        ["Department", "fa-building-columns", deptOf(program) ? deptOf(program).th : ""],
         ["Curriculum", "fa-book-open", program.curriculum_label]
-      ].map(function(f){
+      ].filter(function(f){ return f[2]; })
+      .map(function(f){
         return '<div><dt><i class="fa-solid ' + f[1] + '" aria-hidden="true"></i>' + f[0] + '</dt><dd>' + escHtml(f[2]) + '</dd></div>';
       }).join("");
     }
@@ -636,6 +637,41 @@
       }).join("");
     }
 
+    // ค่าเล่าเรียน — program.fee { amount, unit, note, src } · ป.ตรีเก็บรายภาค (8 ภาค), บัณฑิตศึกษาเหมาจ่ายตลอดหลักสูตร
+    var feeSec = root.querySelector("#tuition");
+    if(feeSec){
+      var fee = program.fee || {};
+      var feeNum = fee.amount ? Number(String(fee.amount).replace(/,/g, "")) : null;
+      var perTerm = !fee.unit || /ภาค/.test(fee.unit);
+      var feeTerms = perTerm && program.level === "undergraduate" ? 8 : null;
+      var feeYear = (String(fee.src || "").match(/25\d\d/) || [])[0];
+      var baht = function(n){ return n == null || isNaN(n) ? "—" : "฿" + n.toLocaleString("en-US"); };
+      setText("[data-f-label]", perTerm ? "ต่อภาคการศึกษา · เหมาจ่าย" : "ตลอดหลักสูตร · เหมาจ่าย");
+      setText("[data-f-amount]", feeNum ? feeNum.toLocaleString("en-US") : "—");
+      setText("[data-f-unit]", perTerm ? "บาท / ภาคการศึกษา" : "บาท / ตลอดหลักสูตร");
+      setText("[data-f-intro]", (perTerm ? "อัตราค่าเล่าเรียนแบบเหมาจ่ายรายภาคการศึกษา" : "อัตราค่าเล่าเรียนแบบเหมาจ่ายตลอดหลักสูตร") +
+        (feeYear ? " สำหรับนิสิตที่เข้าศึกษาปีการศึกษา " + feeYear : ""));
+      if(fee.src) setText("[data-f-src]", "อ้างอิง" + fee.src + " — อัตราอาจเปลี่ยนแปลงตามประกาศของมหาวิทยาลัย");
+      var feeNote = feeSec.querySelector("[data-f-note]");
+      if(feeNote && fee.note){ feeNote.textContent = fee.note; feeNote.hidden = false; }
+      var feePending = feeSec.querySelector("[data-f-pending]");
+      if(feePending){
+        feePending.hidden = !!feeNum;
+        setText("[data-f-pending-t]", "อยู่ระหว่างยืนยันอัตรา" + (feeYear ? "ปีการศึกษา " + feeYear : "ค่าเล่าเรียน"));
+      }
+      var feeRows = feeSec.querySelector("[data-f-rows]");
+      if(feeRows){
+        feeRows.innerHTML = [
+          ["จำนวนภาคการศึกษา", feeTerms ? feeTerms + " ภาค" : "—"],
+          ["ตลอดหลักสูตร (ประมาณ)", baht(feeNum && (feeTerms ? feeNum * feeTerms : (perTerm ? null : feeNum)))],
+          fee.entry != null && ["ค่าธรรมเนียมแรกเข้า", baht(fee.entry)],
+          fee.summer != null && ["ภาคฤดูร้อน", baht(fee.summer)]
+        ].filter(Boolean).map(function(r){
+          return '<div><dt>' + r[0] + '</dt><dd>' + escHtml(r[1]) + '</dd></div>';
+        }).join("");
+      }
+    }
+
     // department contact — BAS_DEPT_HEADS เก็บแค่ pid + focus, ที่เหลือดึงจากข้อมูลบุคลากร/ภาควิชา
     var deptSec = root.querySelector("[data-p-dept]");
     var deptKey = window.BAS_PROGRAM_DEPT && BAS_PROGRAM_DEPT[program.slug];
@@ -658,10 +694,11 @@
       deptSec.hidden = false;
     }
 
-    // related: same level first, then the rest, excluding current
+    // related: same department first, then other departments at the same level (max 3)
     var rest = BAS_PROGRAMS.filter(function(p){ return p.slug !== program.slug; });
-    var related = rest.filter(function(p){ return p.level === program.level; })
-      .concat(rest.filter(function(p){ return p.level !== program.level; }))
+    var myDept = deptKeyOf(program);
+    var related = rest.filter(function(p){ return myDept && deptKeyOf(p) === myDept; })
+      .concat(rest.filter(function(p){ return deptKeyOf(p) !== myDept && p.level === program.level; }))
       .slice(0, 3);
     var relatedWrap = root.querySelector("[data-p-related]");
     if(relatedWrap){
