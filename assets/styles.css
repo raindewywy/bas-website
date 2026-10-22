@@ -4440,3 +4440,57 @@ html:has(.ip-jump){scroll-padding-top:136px;}
   .ab-story{grid-template-columns:1fr;}
   .ab-story-aside{position:static;}
 }
+
+/* Program detail — ปุ่มสมัครใหญ่ (แสดงเมื่อหลักสูตรมี apply_url) */
+.pd-apply-sec{padding:clamp(28px,4vw,48px) 24px 0;}
+.pd-apply{max-width:1280px; margin:0 auto; padding:clamp(24px,3.5vw,44px); border-radius:20px; background:#FFF6D6; border:1.5px solid #FAC315; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px 40px;}
+.pd-apply-copy{flex:1 1 380px;}
+.pd-apply .pd-eyebrow{color:#8A6500;}
+.pd-apply-h{font:700 clamp(1.4rem,1.2rem + 1vw,2rem)/1.25 'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; color:#063047; margin-top:8px;}
+.pd-apply-th{font-size:15.5px; line-height:1.6; color:#2A3639; margin-top:8px;}
+.pd-apply-btn{display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:64px; padding:0 40px; border-radius:999px; background:#FAC315; color:#0F1719; font:700 clamp(1.05rem,1rem + .4vw,1.3rem) 'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; box-shadow:0 14px 28px -14px rgba(138,101,0,.6); transition:background-color .2s, transform .2s;}
+.pd-apply-btn:hover{background:#FFD54A; color:#0F1719; transform:translateY(-2px);}
+.pd-apply-btn i{font-size:.75em;}
+@media (max-width:560px){ .pd-apply-btn{width:100%; padding:0 24px;} }
+@media (prefers-reduced-motion: reduce){ .pd-apply-btn{transition:none;} .pd-apply-btn:hover{transform:none;} }
+
+/* =========================================================================
+   Forms (forms.html) — .fm-*
+   ========================================================================= */
+.fm-tools{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px; margin-bottom:18px;}
+.fm-search{flex:1 1 320px; max-width:560px; display:flex; align-items:center; gap:10px; height:50px; padding:0 18px; border-radius:999px; border:1px solid #D6DEE1; background:#fff; color:#51636A; transition:border-color .2s, box-shadow .2s;}
+.fm-search:focus-within{border-color:#00A8D0; box-shadow:0 0 0 3px rgba(0,168,208,.15);}
+.fm-search input{flex:1; min-width:0; border:0; outline:0; background:transparent; font:inherit; font-size:15px; color:#0F1719;}
+.fm-count{font-size:14px; font-weight:600; color:#51636A;}
+.fm-groups{display:grid; gap:28px; margin-top:28px;}
+.fm-group{padding:clamp(20px,2.6vw,32px); border-radius:20px; background:#fff; border:1px solid #E3E9EB;}
+.fm-group-head{display:flex; align-items:center; gap:14px; flex-wrap:wrap;}
+.fm-group-head h2{font:700 22px/1.25 'IBM Plex Sans Thai',sans-serif; letter-spacing:normal; color:#063047;}
+.fm-group-head p{font-size:14px; font-weight:600; color:#51636A; margin-top:2px;}
+.fm-group-head > div{flex:1 1 200px;}
+.fm-group-n{font:600 13px 'IBM Plex Mono',monospace; color:#00738F; background:#E6F6F9; border-radius:8px; padding:4px 10px;}
+.fm-sub{font:700 15.5px/1.4 'IBM Plex Sans Thai',sans-serif; color:#063047; margin-top:22px; padding-top:18px; border-top:1px dashed #D6DEE1;}
+.fm-list{list-style:none; margin:14px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr)); gap:8px 16px;}
+.fm-link{display:flex; align-items:flex-start; gap:12px; padding:12px 14px; border-radius:12px; border:1px solid transparent; color:#0F1719; height:100%; transition:background-color .2s, border-color .2s;}
+.fm-link:hover{background:#EFF9FB; border-color:#B9E3EC; color:#0F1719;}
+.fm-ico{width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:16px; flex:none; background:#F1F5F6; color:#51636A;}
+.fm-ico--pdf{background:#FDECEC; color:#B42318;}
+.fm-ico--doc{background:#E8F0FD; color:#1D4ED8;}
+.fm-ico--xls{background:#E7F6EC; color:#15803D;}
+.fm-ico--form{background:#F1E9FB; color:#6D28D9;}
+.fm-ico--img{background:#FFF6D6; color:#8A6500;}
+.fm-ico--web{background:#E6F6F9; color:#00738F;}
+.fm-text{flex:1; min-width:0; display:flex; flex-direction:column; gap:2px;}
+.fm-code{font:600 12.5px 'IBM Plex Mono',monospace; color:#00738F; letter-spacing:.02em;}
+.fm-t{font-size:15px; line-height:1.55; font-weight:500; text-wrap:pretty;}
+.fm-note{font-size:13px; line-height:1.5; color:#51636A;}
+.fm-item--step .fm-t{color:#2A3639;}
+.fm-type{flex:none; font-size:12px; font-weight:600; color:#51636A; background:#F1F5F6; border-radius:999px; padding:3px 10px; margin-top:7px; white-space:nowrap;}
+.fm-go{flex:none; font-size:11px; color:#00738F; margin-top:12px;}
+.fm-empty{margin-top:28px; padding:28px; border-radius:16px; background:#F1F5F6; text-align:center; color:#51636A;}
+.ss-hint a{color:#00738F; text-decoration:underline; text-underline-offset:2px;}
+@media (max-width:560px){
+  .fm-type{display:none;}
+  .fm-link{padding:12px 8px;}
+}
+@media (prefers-reduced-motion: reduce){ .fm-link, .fm-search{transition:none;} }

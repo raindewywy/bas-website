@@ -18,6 +18,7 @@
     initFaq();
     initChipFilter();
     initStaffDirectory();
+    initForms();
     initHistoryBack();
     initAdminLogin();
   });
@@ -61,6 +62,50 @@
         });
       });
     });
+  }
+
+  // forms.html — ค้นหาแบบฟอร์ม (ชื่อ/รหัส/ประเภทไฟล์ ใน data-q) + ชิปหมวด, ซ่อนหมวดที่ไม่มีผลลัพธ์
+  function initForms(){
+    var root = document.querySelector("[data-fm-root]");
+    if(!root) return;
+    var input = root.querySelector("[data-fm-q]");
+    var chips = root.querySelectorAll("[data-fm-chips] [data-value]");
+    var groups = root.querySelectorAll(".fm-group");
+    var count = root.querySelector("[data-fm-count]");
+    var empty = root.querySelector("[data-fm-empty]");
+    var state = { q: "", cat: "all" };
+
+    function apply(){
+      var q = state.q.trim().toLowerCase(), shown = 0;
+      Array.prototype.forEach.call(groups, function(g){
+        var n = 0;
+        var inCat = state.cat === "all" || g.getAttribute("data-cat") === state.cat;
+        g.querySelectorAll(".fm-item").forEach(function(it){
+          var hit = inCat && (!q || it.getAttribute("data-q").indexOf(q) !== -1);
+          it.hidden = !hit;
+          if(hit) n++;
+        });
+        g.querySelectorAll(".fm-list").forEach(function(ul){
+          var any = ul.querySelector(".fm-item:not([hidden])");
+          ul.hidden = !any;
+          var sub = ul.previousElementSibling;
+          if(sub && sub.classList.contains("fm-sub")) sub.hidden = !any;
+        });
+        g.hidden = n === 0;
+        shown += n;
+      });
+      if(count) count.textContent = "แสดง " + shown + " รายการ";
+      if(empty) empty.hidden = shown !== 0;
+    }
+
+    Array.prototype.forEach.call(chips, function(chip){
+      chip.addEventListener("click", function(){
+        state.cat = chip.getAttribute("data-value");
+        pressChips(chips, state.cat);
+        apply();
+      });
+    });
+    if(input) input.addEventListener("input", function(){ state.q = input.value; apply(); });
   }
 
   // staff-deans-office.html — หน้าตาเดียวกับ faculty.html: ค้นหาชื่อ/หน้าที่ + ชิปงาน, การ์ดแบ่งตามงาน (data: BAS_STAFF)
@@ -602,6 +647,14 @@
     setText("[data-p-summary-en]", program.summary_en);
     var heroImg = root.querySelector("[data-p-img]");
     if(heroImg) heroImg.src = imgFor(program);
+
+    // ปุ่มสมัครใหญ่ใต้ hero — แสดงเฉพาะหลักสูตรที่มี apply_url (ตอนนี้: GBM)
+    var applyBox = root.querySelector("[data-p-apply]");
+    if(applyBox && program.apply_url){
+      root.querySelector("[data-p-apply-link]").href = program.apply_url;
+      setText("[data-p-apply-name]", program.abbr);
+      applyBox.hidden = false;
+    }
 
     var facts = root.querySelector("[data-p-facts]");
     if(facts){
