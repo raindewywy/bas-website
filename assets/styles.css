@@ -4494,3 +4494,6 @@ html:has(.ip-jump){scroll-padding-top:136px;}
   .fm-link{padding:12px 8px;}
 }
 @media (prefers-reduced-motion: reduce){ .fm-link, .fm-search{transition:none;} }
+.ab-story-fig{margin:28px 0 0;}
+.ab-story-fig img{width:100%; aspect-ratio:800/368; object-fit:cover; border-radius:20px; display:block;}
+.ab-story-fig figcaption{margin-top:10px; font-size:13.5px; color:#51636A;}
