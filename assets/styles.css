@@ -4427,3 +4427,16 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 @media (prefers-reduced-motion: reduce){
   .adm *, .adm *::before, .adm *::after{transition:none !important; animation:none !important;}
 }
+
+/* About — Our Story (เรื่องราวของเรา) */
+.ab-story{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:40px 64px; align-items:start;}
+.ab-story-aside{position:sticky; top:156px;}
+.ab-story-tag{margin-top:22px; padding-left:18px; border-left:3px solid #FAC315; font:600 clamp(1.15rem,1.05rem + .5vw,1.4rem)/1.55 'IBM Plex Sans Thai',sans-serif; color:#063047; text-wrap:pretty;}
+.ab-story-body{display:grid; gap:36px;}
+.ab-story-ch h3{font:700 21px/1.4 'IBM Plex Sans Thai',sans-serif; letter-spacing:normal; color:#063047; padding-top:20px; border-top:1px solid #E3E9EB;}
+.ab-story-ch p{margin-top:14px; font-size:15.5px; line-height:1.85; color:#2A3639; text-wrap:pretty;}
+.ab-story-close{padding:clamp(22px,3vw,32px); border-radius:18px; background:#063047; color:#fff; font:600 clamp(1.05rem,1rem + .4vw,1.3rem)/1.65 'IBM Plex Sans Thai',sans-serif; text-wrap:pretty;}
+@media (max-width:900px){
+  .ab-story{grid-template-columns:1fr;}
+  .ab-story-aside{position:static;}
+}
