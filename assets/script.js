@@ -792,6 +792,11 @@
       var q = state.q.trim().toLowerCase();
       return BAS_DIRECTORY.filter(function(p){ return !q || (p.en + " " + p.th).toLowerCase().indexOf(q) !== -1; });
     }
+    // คนเดียวอาจอยู่หลายภาควิชา (เช่นผู้ประสานงาน) → นับจำนวนคนตาม id ไม่ใช่จำนวนรายการ
+    function uniqCount(ps){
+      var seen = {};
+      return ps.filter(function(p){ return seen[p.id] ? false : (seen[p.id] = true); }).length;
+    }
     function chip(attr, key, label, count, on){
       return '<button type="button" class="pg-chip fd-chip" ' + attr + '="' + escHtml(key) + '" aria-pressed="' + on + '">' +
         escHtml(label) + '<span class="pg-count">' + count + '</span></button>';
@@ -813,7 +818,7 @@
       var shown = inDept.filter(function(p){ return state.grp === "all" || p.ge === state.grp; });
 
       deptBox.innerHTML = [{ key:"all", short:"ทุกภาควิชา" }].concat(BAS_DEPTS).map(function(d){
-        return chip("data-fd-dept", d.key, d.short, byQ.filter(function(p){ return d.key === "all" || p.d === d.key; }).length, state.dept === d.key);
+        return chip("data-fd-dept", d.key, d.short, uniqCount(byQ.filter(function(p){ return d.key === "all" || p.d === d.key; })), state.dept === d.key);
       }).join("");
 
       groupBox.hidden = state.dept === "all";
@@ -846,7 +851,7 @@
       var filtered = !!state.q.trim() || state.dept !== "all" || state.grp !== "all";
       empty.hidden = !!shown.length;
       clearTop.hidden = !filtered;
-      setText("[data-fd-result]", "แสดง " + shown.length + " จาก " + BAS_DIRECTORY.length + " รายชื่อ");
+      setText("[data-fd-result]", "แสดง " + uniqCount(shown) + " จาก " + uniqCount(BAS_DIRECTORY) + " รายชื่อ");
     }
     root.addEventListener("click", function(e){
       var b = e.target.closest("[data-fd-dept],[data-fd-grp],[data-fd-clear]");
