@@ -2837,6 +2837,8 @@ main.hp{display:block; outline:none;}
   display:flex; align-items:center; justify-content:center; font-size:15px; transition:border-color var(--dur), color var(--dur);
 }
 .hd-icon:hover{border-color:var(--brand-700); color:var(--brand-700);}
+.hd-lang{font:700 13px var(--font-en); letter-spacing:.02em;}
+@media (max-width:479px){ .hd-lang{display:none;} } /* จอแคบ: ปุ่มเมนูหลุดขอบ — ใช้ลิงก์ English website ใน footer แทน */
 .hd .admin-toggle.is-active{border-color:var(--brand-700); color:var(--brand-700); background:var(--brand-50);}
 .hd-contact{
   display:none; align-items:center; gap:8px; height:42px; padding:0 18px; border-radius:999px;
