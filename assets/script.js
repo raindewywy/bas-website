@@ -123,7 +123,7 @@
 
     function byQuery(){
       var q = state.q.trim().toLowerCase();
-      return BAS_STAFF.filter(function(p){ return !q || (p.th + " " + p.en + " " + p.role).toLowerCase().indexOf(q) !== -1; });
+      return BAS_STAFF.filter(function(p){ return !q || (p.th + " " + p.en + " " + p.role + " " + (p.pos || "")).toLowerCase().indexOf(q) !== -1; });
     }
     function card(p){
       return '<article class="fd-card">' +
@@ -131,6 +131,7 @@
         '<div class="fd-card-body">' +
           '<h4 lang="en">' + escHtml(p.en) + '</h4>' +
           '<p>' + escHtml(p.th) + '</p>' +
+          (p.pos ? '<p class="fd-card-pos">' + escHtml(p.pos) + '</p>' : '') +
           '<span class="fd-contact fd-contact--tel"><i class="fa-solid fa-phone" aria-hidden="true"></i>' + escHtml(p.tel) + '</span>' +
           '<a class="fd-contact fd-contact--sub" href="mailto:' + escHtml(p.mail) + '"><i class="fa-solid fa-envelope" aria-hidden="true"></i>' + escHtml(p.mail) + '</a>' +
         '</div></article>';

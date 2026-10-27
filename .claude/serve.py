@@ -16,5 +16,6 @@ class H(http.server.SimpleHTTPRequestHandler):
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
         self.wfile.write(body)
-port, root = int(sys.argv[1]), sys.argv[2]
+# PORT (ถ้ามี) มาก่อน argv — preview ย้ายพอร์ตให้เองเมื่อ 8080 ถูกใช้อยู่
+port, root = int(os.environ.get("PORT") or sys.argv[1]), sys.argv[2]
 http.server.ThreadingHTTPServer(("", port), functools.partial(H, directory=root)).serve_forever()
