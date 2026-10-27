@@ -2965,7 +2965,6 @@ main.hp{display:block; outline:none;}
 .ab-accr-facts li{display:flex; flex-direction:column; gap:4px; padding:16px 18px; border-radius:14px; background:#F6F9FA; border:1px solid #E3E9EB;}
 .ab-accr-facts b{font:700 18px/1.3 'IBM Plex Sans',sans-serif; color:#063047;}
 .ab-accr-facts span{font-size:13.5px; line-height:1.5; color:#51636A;}
-#accreditation + .ip-sec--tail{padding-top:clamp(40px,5vw,64px);}
 @media (max-width:767px){
   .ab-accr{grid-template-columns:1fr;}
   .ab-accr-media{padding:36px 24px;}
@@ -3651,6 +3650,16 @@ a.fd-stat b{font-size:20px;}
 .pg-adv-head-name a:hover{color:#063047;}
 .pg-adv-mail{display:flex; align-items:center; gap:10px; height:44px; padding:0 16px; border-radius:12px; background:#EFF9FB; color:#00738F; font-size:14px; font-weight:600; transition:background-color .2s, color .2s;}
 .pg-adv-mail:hover{background:#DDF2F7; color:#063047;}
+/* ที่ปรึกษานิสิตชั้นปี 1 แยกตามหลักสูตร ในการ์ดภาควิชา */
+.pg-adv-y1{margin:0; padding-top:14px; border-top:1px dashed #D6DEE1;}
+.pg-adv-y1-h{font-size:13px; font-weight:700; color:#063047;}
+.pg-adv-y1 dl{margin:8px 0 0; display:grid; gap:8px;}
+.pg-adv-y1 dl > div{display:grid; grid-template-columns:52px 1fr; gap:10px; align-items:baseline;}
+.pg-adv-y1 dt{font:600 12.5px 'IBM Plex Mono',monospace; color:#00738F; letter-spacing:.04em;}
+.pg-adv-y1 dd{margin:0; font-size:14px; line-height:1.55; color:#2A3639;}
+.pg-adv-y1 dd small{display:block; font-size:12.5px; color:#51636A;}
+.pg-adv-y1 dd a{font-weight:600; color:#063047;}
+.pg-adv-y1 dd a:hover{color:#00738F;}
 
 /* ---- Program detail · Department contact ---- */
 .pd-dept-focus{font-size:15.5px; line-height:1.75; color:#51636A; margin-top:14px;}
@@ -3673,6 +3682,7 @@ a.fd-stat b{font-size:20px;}
 .ip-sec{padding:clamp(56px,7vw,96px) 24px;}
 .ip-sec--alt{background:#F1F5F6;}
 .ip-sec--tail{padding:0 24px clamp(56px,7vw,96px);}
+.ip-sec--join{padding-bottom:24px;} /* section ที่ตามด้วย .ip-sec--tail พื้นเดียวกัน → ให้ติดกัน */
 .ip-h2{font:700 clamp(1.6rem,1.35rem + 1.4vw,2.35rem)/1.2 'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; letter-spacing:normal; margin-top:12px; color:#063047;}
 .ip-lede{font-size:15.5px; line-height:1.75; color:#51636A; margin-top:14px; max-width:64ch; text-wrap:pretty;}
 .ip-grid{margin-top:32px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,var(--min,300px)),1fr)); gap:var(--gap,20px);}
@@ -3738,18 +3748,22 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 /* =========================================================================
    About (about.html) — .ab-*
    ========================================================================= */
-.ab-vm{padding:clamp(28px,3vw,40px); border-radius:20px; position:relative; overflow:hidden; isolation:isolate;}
-.ab-vm--vision{background:#063047; color:#fff;}
-.ab-vm--vision::before{content:""; position:absolute; width:360px; height:360px; border-radius:50%; border:1px solid rgba(88,201,228,.2); top:-180px; right:-120px; z-index:-1;}
+/* R1 · Philosophy (เต็มแถว) + Vision/Mission — ภาษาอังกฤษเป็นบรรทัดหลัก ไทยเป็นบรรทัดรอง */
+.ab-pvm{display:grid; gap:20px; margin-top:32px;}
+.ab-pvm-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:20px;}
+.ab-vm{padding:clamp(28px,3vw,40px); border-radius:20px; display:flex; flex-direction:column;}
+.ab-vm--philo{background:#063047; color:#fff; padding:clamp(32px,4vw,56px); position:relative; overflow:hidden; isolation:isolate;}
+.ab-vm--philo::before, .ab-vm--philo::after{content:""; position:absolute; border-radius:50%; z-index:-1; pointer-events:none;}
+.ab-vm--philo::before{width:420px; height:420px; border:1px solid rgba(88,201,228,.2); top:-200px; right:-120px;}
+.ab-vm--philo::after{width:260px; height:260px; border:1px solid rgba(88,201,228,.14); bottom:-160px; right:120px;}
+.ab-vm--vision{background:#fff; border:1px solid #E3E9EB;}
 .ab-vm--mission{background:#EFF9FB; border:1px solid #D4EDF3;}
 .ab-vm-k{display:flex; align-items:center; gap:10px; font:600 13px 'IBM Plex Mono',monospace; letter-spacing:.12em; text-transform:uppercase; color:#00738F;}
-.ab-vm--vision .ab-vm-k{color:#58C9E4;}
-.ab-vm-q{font:600 clamp(1.25rem,1.1rem + .6vw,1.6rem)/1.5 'IBM Plex Sans Thai',sans-serif; margin-top:18px; color:#063047; text-wrap:pretty;}
-.ab-vm--vision .ab-vm-q{color:#fff;}
-.ab-vm-en{font-size:14.5px; line-height:1.7; color:#51636A; margin-top:14px;}
-.ab-vm--vision .ab-vm-en{color:rgba(255,255,255,.8);}
-.ab-vm-q[lang="en"]{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; letter-spacing:-.005em;}
-.ab-vm-th{font-size:15px;}
+.ab-vm--philo .ab-vm-k{color:#58C9E4;}
+.ab-vm-q{font:700 clamp(1.35rem,1.15rem + .8vw,1.8rem)/1.3 'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; letter-spacing:-.01em; margin-top:18px; color:#063047; text-wrap:pretty;}
+.ab-vm--philo .ab-vm-q{font-size:clamp(1.8rem,1.3rem + 2.2vw,3.2rem); line-height:1.15; letter-spacing:-.02em; max-width:22ch; text-wrap:balance; margin-top:20px; color:#fff;}
+.ab-vm-th{font-size:15px; line-height:1.7; color:#51636A; margin-top:12px;}
+.ab-vm--philo .ab-vm-th{font-size:clamp(1rem,.95rem + .25vw,1.15rem); line-height:1.6; color:rgba(255,255,255,.82); margin-top:16px;}
 
 .ab-value{display:flex; flex-direction:column; gap:10px;}
 .ab-value-l{font:700 72px/1 'IBM Plex Sans',sans-serif; color:#00B3C9; letter-spacing:-.03em;}
@@ -3758,58 +3772,6 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .ab-comp{margin-top:20px; padding:clamp(24px,3vw,36px); border-radius:16px; background:#063047; color:#fff; display:flex; flex-wrap:wrap; align-items:center; gap:16px 32px;}
 .ab-comp .pd-eyebrow{color:#FAC315; flex:none;}
 .ab-comp-q{font:600 clamp(1.1rem,1rem + .5vw,1.4rem)/1.5 'IBM Plex Sans Thai',sans-serif; flex:1 1 360px;}
-
-.ab-history{display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:40px 64px; align-items:start;}
-.ab-history-aside{position:sticky; top:156px;}
-.ab-history-fig{position:relative; margin:28px 0 0;}
-.ab-history-img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:20px; display:block;}
-.ab-history-badge{position:absolute; left:16px; bottom:16px; display:flex; align-items:center; gap:12px; padding:12px 18px 12px 16px; border-radius:14px; background:#063047; color:#fff; box-shadow:0 12px 28px -12px rgba(6,48,71,.6);}
-.ab-history-badge b{font:700 36px/1 'IBM Plex Sans',sans-serif; color:#FAC315; letter-spacing:-.02em;}
-.ab-history-badge sup{font-size:.55em; vertical-align:top; margin-left:1px;}
-.ab-history-badge span{font-size:13px; line-height:1.4; color:rgba(255,255,255,.85);}
-.ab-history-facts{display:grid; grid-template-columns:repeat(3,1fr); margin:20px 0 0; padding:0; list-style:none; border:1px solid #E3E9EB; border-radius:14px; background:#fff;}
-.ab-history-facts li{padding:14px 16px; display:flex; flex-direction:column; gap:2px;}
-.ab-history-facts li + li{border-left:1px solid #E3E9EB;}
-.ab-history-facts b{font:700 22px/1.1 'IBM Plex Sans',sans-serif; color:#063047;}
-.ab-history-facts span{font-size:13px; color:#51636A;}
-
-.ab-timeline{position:relative; display:grid; gap:20px; padding:0 0 0 44px; margin:0; list-style:none;}
-.ab-timeline::before{content:""; position:absolute; left:11px; top:28px; bottom:28px; width:2px; background:linear-gradient(#00B3C9,#58C9E4 70%,#FAC315);}
-.ab-era{position:relative; padding:24px 26px; background:#fff; border:1px solid #E3E9EB; border-radius:18px; transition:border-color .25s, box-shadow .25s, transform .25s;}
-.ab-era::before{content:""; position:absolute; left:-44px; top:28px; width:24px; height:24px; border-radius:50%; background:#00B3C9; border:2px solid #00B3C9; box-sizing:border-box; box-shadow:inset 0 0 0 4px #fff;}
-.ab-era::after{content:""; position:absolute; left:-21px; top:39px; width:21px; height:2px; background:#D4EDF3;}
-.ab-era:hover{border-color:#B9E3EC; box-shadow:0 18px 36px -24px rgba(6,48,71,.35); transform:translateY(-2px);}
-.ab-era--now{background:#063047; border-color:#063047; color:#fff;}
-.ab-era--now::before{border-color:#FAC315; background:#FAC315; box-shadow:inset 0 0 0 4px #fff, 0 0 0 6px rgba(250,195,21,.25);}
-.ab-era-head{display:flex; align-items:center; gap:12px;}
-.ab-era-no{font:700 13px 'IBM Plex Mono',monospace; color:#00738F; background:#E6F6F9; border-radius:8px; padding:4px 8px;}
-.ab-era--now .ab-era-no{color:#063047; background:#FAC315;}
-.ab-timeline .ab-tl-k{font:600 13px 'IBM Plex Mono',monospace; letter-spacing:.12em; text-transform:uppercase; color:#00738F;}
-.ab-era--now .ab-tl-k{color:#58C9E4;}
-.ab-timeline h3{font:700 21px/1.4 'IBM Plex Sans Thai',sans-serif; letter-spacing:normal; color:#063047; margin-top:12px;}
-.ab-era--now h3{color:#fff;}
-.ab-ms{list-style:none; margin:14px 0 0; padding:0; display:grid;}
-.ab-ms li{display:grid; grid-template-columns:64px 1fr; gap:14px; padding:10px 0; border-top:1px dashed #E3E9EB; font-size:15px; line-height:1.65; color:#2A3639;}
-.ab-ms li:first-child{border-top:0; padding-top:4px;}
-.ab-ms b{font:600 14px/1.65 'IBM Plex Mono',monospace; color:#00738F;}
-.ab-ms li.is-key b{color:#063047;}
-.ab-ms li.is-key span{font-weight:600; color:#063047;}
-.ab-era--now .ab-ms li{border-top-color:rgba(255,255,255,.14); color:rgba(255,255,255,.85);}
-.ab-era--now .ab-ms b, .ab-era--now .ab-ms li.is-key b{color:#FAC315;}
-.ab-era--now .ab-ms li.is-key span{color:#fff;}
-@media (max-width:900px){
-  .ab-history{grid-template-columns:1fr;}
-  .ab-history-aside{position:static;}
-}
-@media (max-width:560px){
-  .ab-timeline{padding-left:32px;}
-  .ab-timeline::before{left:7px;}
-  .ab-era{padding:20px 18px;}
-  .ab-era::before{left:-32px; width:18px; height:18px; top:26px;}
-  .ab-era::after{left:-14px; top:34px; width:14px;}
-  .ab-ms li{grid-template-columns:52px 1fr; gap:10px;}
-}
-@media (prefers-reduced-motion: reduce){ .ab-era{transition:none;} .ab-era:hover{transform:none;} }
 
 /* =========================================================================
    Admissions (admissions.html) — .ad-*
@@ -4496,28 +4458,47 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .ab-story-fig img{width:100%; aspect-ratio:800/368; object-fit:cover; border-radius:20px; display:block;}
 .ab-story-fig figcaption{margin-top:10px; font-size:13.5px; color:#51636A;}
 
-/* International — แถบโลโก้พันธมิตรเลื่อนอัตโนมัติ (ต่อยอด .marquee-*) */
-/* ใช้ margin แทน gap ให้ระยะท้ายชุดเท่ากับระหว่างการ์ด → เลื่อน -50% แล้วต่อเนื่องไม่สะดุด */
-.it-marquee{margin-top:28px; padding:6px 0;}
-.it-mq-track{gap:0; list-style:none; margin:0; padding:0; animation-duration:80s;}
-.it-mq-item{flex:none; width:300px; margin-right:16px; display:flex; align-items:center; gap:14px; padding:16px; border-radius:14px; background:#fff; border:1px solid #E3E9EB; white-space:normal;}
-.it-mq-item .it-org b{font-size:14.5px;}
-@media (max-width:600px){
-  .it-mq-track{animation-duration:60s;}
-  .it-mq-item{width:250px; margin-right:12px; padding:12px; gap:10px;}
-  .it-mq-item .it-logo{width:84px; height:52px;}
-  .it-mq-item .it-logo img{max-width:72px; max-height:38px;}
-}
-/* ลดการเคลื่อนไหว: หยุดเลื่อน แสดงเป็นกริด และไม่แสดงชุดที่โคลน */
-@media (prefers-reduced-motion: reduce){
-  .marquee-track > [aria-hidden="true"]{display:none;}
-  .it-marquee{-webkit-mask-image:none; mask-image:none;}
-  .it-mq-track{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr)); gap:12px; width:auto;}
-  .it-mq-item{width:auto; margin:0;}
-}
+/* R2 · International — แถบโลโก้พันธมิตร 2 แถวเลื่อนสวนทาง (script.js: initPartnerMarquee)
+   ไม่มี JS หรือผู้ใช้ลดการเคลื่อนไหว = .it-mq-list แบบนิ่ง ตัดบรรทัดได้ ไม่มีชุดซ้ำ */
+.it-mq{margin:36px -24px 0; overflow:hidden; padding:6px 0 14px;}
+.it-mq.is-moving{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);}
+.it-mq-list{list-style:none; margin:0 auto; padding:0 24px; max-width:1328px; display:flex; flex-wrap:wrap; gap:12px;}
+.it-mq-row{list-style:none; margin:0; padding:0; display:flex; width:max-content; will-change:transform;}
+.it-mq-row + .it-mq-row{margin-top:16px;}
+.it-mq-item{flex:none; height:88px; padding:0 24px 0 14px; border-radius:18px; background:#fff; border:1px solid #E3E9EB; box-shadow:0 6px 18px -14px rgba(6,48,71,.4); display:flex; align-items:center; gap:14px;}
+.it-mq-row .it-mq-item{margin-right:16px;}
+.it-mq-list .it-mq-item{flex:1 1 280px;}
+.it-mq-item .it-logo{width:60px; height:60px; border-radius:14px;}
+.it-mq-item .it-logo img{max-width:46px; max-height:46px;}
+.it-mq-item .it-ini{font:700 16px 'IBM Plex Sans',sans-serif; letter-spacing:.02em;}
+.it-mq-item .it-org{width:max-content; max-width:240px;}
+.it-mq-list .it-org{width:auto;}
+.it-mq-item .it-org b{font-size:15px; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+.it-mq-item .it-org small{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 
-/* Student Life — การ์ดองค์กรและชมรมนิสิต (รายละเอียด/รูป/ลิงก์รอข้อมูลจากคณะ) */
-.sl-orgs-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px;}
-.sl-org-grid{margin-top:32px; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); list-style:none; padding:0;}
-.sl-org{align-items:flex-start;}
-.sl-org .sl-org-th{font-weight:600; color:#FAC315; margin-top:2px;}
+/* R4 · Student Life — การ์ดองค์กรและชมรมนิสิต (script.js: initClubs จาก BAS_CLUBS ใน data.js) */
+.sl-orgs-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 48px;}
+.sl-orgs-head > div{max-width:62ch;}
+.ip-band .sl-clubs-lede{margin-top:16px; max-width:none; color:rgba(255,255,255,.85);}
+.sl-fb{margin-top:0; white-space:nowrap;}
+.sl-orgs{list-style:none; margin:36px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr)); gap:16px;}
+.sl-orgc{position:relative; display:flex; flex-direction:column; gap:18px; min-height:220px; padding:24px; border-radius:18px; background:rgba(255,255,255,.06); border:1px solid rgba(88,201,228,.3); transition:background-color .2s, border-color .2s;}
+.sl-orgc:hover{background:rgba(255,255,255,.1); border-color:rgba(88,201,228,.6);}
+.sl-orgc-img{margin:-6px -6px 0; aspect-ratio:16/9; object-fit:cover; border-radius:12px; display:block; width:calc(100% + 12px);}
+.sl-orgc-top{display:flex; align-items:center; justify-content:space-between;}
+.sl-orgc-ico{width:52px; height:52px; border-radius:14px; background:#FAC315; color:#063047; font-size:19px; display:flex; align-items:center; justify-content:center;}
+.sl-orgc-no{font:600 12px 'IBM Plex Sans',sans-serif; color:rgba(255,255,255,.6);}
+.sl-orgc-name{font:700 21px/1.25 'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; letter-spacing:normal; color:#fff;}
+.sl-orgc-name a{color:inherit;}
+.sl-orgc-name a::after{content:""; position:absolute; inset:0; border-radius:18px;}
+.sl-orgc-th{font-size:14px; font-weight:600; color:#58C9E4; margin-top:4px;}
+.sl-orgc-foot{margin-top:auto; padding-top:14px; border-top:1px dashed rgba(255,255,255,.22); font-size:13px; line-height:1.6; color:rgba(255,255,255,.75); display:flex; gap:8px; align-items:baseline;}
+@media (prefers-reduced-motion: reduce){ .sl-orgc{transition:none;} }
+
+/* R5 · ปุ่ม CTA ป้ายยาว ตัดบรรทัดชิดซ้ายบนจอแคบ */
+.pd-btn-wrap{text-align:left; height:auto; min-height:48px;}
+.pd-btn-wrap > i{font-size:11px;}
+
+/* R6 · ชื่อช่อง YouTube ข้างป้าย BAS Podcast */
+.hp-yt-handle{display:inline-flex; align-items:center; gap:6px; font:500 13px 'IBM Plex Sans',sans-serif; color:#51636A;}
+.hp-yt-handle i{font-size:10px;}

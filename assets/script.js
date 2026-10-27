@@ -4,6 +4,8 @@
 
   document.addEventListener("DOMContentLoaded", function(){
     initMarqueeClone();
+    initPartnerMarquee();
+    initClubs();
     initScrollReveal();
     initStaffToggle();
     initProgramsFinder();
@@ -518,6 +520,80 @@
       });
       track.dataset.cloned = "true";
     });
+  }
+
+  // R2 · International: แบ่งโลโก้พันธมิตรเป็น 2 แถว (ซ้าย ~40px/s, ขวา ~32px/s) แต่ละแถวมีชุดซ้ำ aria-hidden
+  // ใช้ margin-right ต่อการ์ดแทน gap → ครึ่งหนึ่งของ scrollWidth = 1 รอบพอดี จึงวนต่อได้ไม่สะดุด
+  function initPartnerMarquee(){
+    var box = document.querySelector("[data-partner-marquee]");
+    if(!box) return;
+    var list = box.querySelector(".it-mq-list");
+    if(!list || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+
+    var items = Array.prototype.slice.call(list.children);
+    var cut = Math.ceil(items.length / 2);
+    var rows = [items.slice(0, cut), items.slice(cut)].map(function(group, i){
+      var ul = document.createElement("ul");
+      ul.className = "it-mq-row";
+      group.forEach(function(li){ ul.appendChild(li); });
+      group.forEach(function(li){
+        var copy = li.cloneNode(true);
+        copy.setAttribute("aria-hidden", "true");
+        copy.querySelectorAll("a, button").forEach(function(el){ el.tabIndex = -1; });
+        ul.appendChild(copy);
+      });
+      return { el: ul, dir: i === 0 ? -1 : 1, speed: i === 0 ? 40 : 32, x: 0, half: 0 };
+    });
+    list.replaceWith(rows[0].el, rows[1].el);
+    box.classList.add("is-moving");
+
+    function measure(){
+      rows.forEach(function(r){ r.half = r.el.scrollWidth / 2; });
+      if(!rows[1].x) rows[1].x = -rows[1].half; // แถว 2 เริ่มที่ -half แล้วเลื่อนไปทางขวา
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    window.addEventListener("load", measure);
+
+    var last = 0, raf = 0;
+    function frame(t){
+      var dt = last ? Math.min(t - last, 64) / 1000 : 0;
+      last = t;
+      rows.forEach(function(r){
+        if(!r.half) return;
+        r.x += r.dir * r.speed * dt;
+        // แถว 1: 0 → -half · แถว 2: -half → 0 แล้ววนกลับ
+        if(r.x <= -r.half) r.x += r.half;
+        if(r.x > 0) r.x -= r.half;
+        r.el.style.transform = "translate3d(" + r.x + "px,0,0)";
+      });
+      raf = requestAnimationFrame(frame);
+    }
+    raf = requestAnimationFrame(frame);
+    window.addEventListener("pagehide", function(){ cancelAnimationFrame(raf); });
+  }
+
+  // R4 · Student Life: การ์ดองค์กรและชมรมนิสิตจาก BAS_CLUBS (data.js)
+  // เมื่อคณะส่งข้อมูล: desc แทนบรรทัดรอข้อมูล · href ทำให้ทั้งการ์ดเป็นลิงก์ · img แสดงด้านบน 16:9
+  function initClubs(){
+    var grid = document.querySelector("[data-clubs]");
+    if(!grid || !window.BAS_CLUBS) return;
+    grid.innerHTML = window.BAS_CLUBS.map(function(c, i){
+      var ext = c.href && /^https?:/.test(c.href);
+      var name = c.href
+        ? '<a href="' + escHtml(c.href) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + escHtml(c.en) + (ext ? '<span class="sr-only"> (เปิดในแท็บใหม่)</span>' : '') + '</a>'
+        : escHtml(c.en);
+      var foot = c.desc
+        ? '<p class="sl-orgc-foot">' + escHtml(c.desc) + '</p>'
+        : '<p class="sl-orgc-foot"><i class="fa-regular fa-clock" aria-hidden="true"></i>รายละเอียด รูป และลิงก์ รอข้อมูลจากคณะ</p>';
+      return '<li class="sl-orgc">' +
+        (c.img ? '<img class="sl-orgc-img" src="' + escHtml(c.img) + '" alt="" loading="lazy" decoding="async">' : '') +
+        '<div class="sl-orgc-top"><span class="sl-orgc-ico"><i class="fa-solid ' + escHtml(c.icon) + '" aria-hidden="true"></i></span>' +
+        '<span class="sl-orgc-no" aria-hidden="true">' + String(i + 1).padStart(2, "0") + '</span></div>' +
+        '<div><h3 class="sl-orgc-name" lang="en">' + name + '</h3>' +
+        (c.th ? '<p class="sl-orgc-th">' + escHtml(c.th) + '</p>' : '') + '</div>' +
+        foot + '</li>';
+    }).join("");
   }
 
   function initScrollReveal(){
