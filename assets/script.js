@@ -509,7 +509,13 @@
   function initMarqueeClone(){
     document.querySelectorAll(".marquee-track").forEach(function(track){
       if(track.dataset.cloned) return;
-      track.innerHTML += track.innerHTML;
+      // ชุดที่ 2 ไว้ให้เลื่อนวนต่อเนื่อง — ซ่อนจาก screen reader และซ่อนเมื่อผู้ใช้ลดการเคลื่อนไหว (ดู CSS)
+      Array.prototype.slice.call(track.children).forEach(function(item){
+        var copy = item.cloneNode(true);
+        copy.setAttribute("aria-hidden", "true");
+        copy.querySelectorAll("a, button").forEach(function(el){ el.tabIndex = -1; });
+        track.appendChild(copy);
+      });
       track.dataset.cloned = "true";
     });
   }

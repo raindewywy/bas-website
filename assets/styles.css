@@ -3748,6 +3748,8 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .ab-vm--vision .ab-vm-q{color:#fff;}
 .ab-vm-en{font-size:14.5px; line-height:1.7; color:#51636A; margin-top:14px;}
 .ab-vm--vision .ab-vm-en{color:rgba(255,255,255,.8);}
+.ab-vm-q[lang="en"]{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif; letter-spacing:-.005em;}
+.ab-vm-th{font-size:15px;}
 
 .ab-value{display:flex; flex-direction:column; gap:10px;}
 .ab-value-l{font:700 72px/1 'IBM Plex Sans',sans-serif; color:#00B3C9; letter-spacing:-.03em;}
@@ -3982,7 +3984,6 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .sl-act-th{font-size:14px; font-weight:600; color:#2A3639;}
 .sl-act-d{font-size:14.5px; line-height:1.7; color:#51636A;}
 
-.sl-clubs{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:40px 64px; align-items:center;}
 .ip-band .sl-clubs-lede{margin-top:16px; max-width:60ch; color:rgba(255,255,255,.85);}
 .sl-fb{margin-top:28px; font-size:15px;}
 .sl-club-list{display:grid; gap:12px;}
@@ -4056,14 +4057,6 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .it-region-list small{font-size:12.5px; color:rgba(255,255,255,.75);}
 .it-region-k{font:700 26px/1 'IBM Plex Sans',sans-serif; color:#FAC315;}
 
-.it-chips{margin-top:24px;}
-.it-chip-n{font:600 12px 'IBM Plex Sans',sans-serif; opacity:.8;}
-.it-sectors{margin-top:28px; display:grid; gap:40px;}
-.it-sector[hidden]{display:none;}
-.it-sector h3{display:flex; align-items:baseline; gap:10px; font:700 19px 'IBM Plex Sans',sans-serif; letter-spacing:normal; color:#063047; padding-bottom:12px; border-bottom:1px solid #E3E9EB;}
-.it-sector h3 small{font-size:14px; font-weight:600; color:#51636A;}
-.it-orgs{margin-top:16px; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr)); gap:12px;}
-.it-orgs li{display:flex; align-items:center; gap:14px; padding:16px; border-radius:14px; background:#fff; border:1px solid #E3E9EB;}
 .it-logo{width:104px; height:60px; border-radius:12px; background:#F1F5F6; display:flex; align-items:center; justify-content:center; flex:none; overflow:hidden;}
 .it-logo img{max-width:88px; max-height:44px; object-fit:contain; display:block;}
 .it-ini{font:700 14px 'IBM Plex Mono',monospace; color:#00738F;}
@@ -4502,3 +4495,29 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .ab-story-fig{margin:28px 0 0;}
 .ab-story-fig img{width:100%; aspect-ratio:800/368; object-fit:cover; border-radius:20px; display:block;}
 .ab-story-fig figcaption{margin-top:10px; font-size:13.5px; color:#51636A;}
+
+/* International — แถบโลโก้พันธมิตรเลื่อนอัตโนมัติ (ต่อยอด .marquee-*) */
+/* ใช้ margin แทน gap ให้ระยะท้ายชุดเท่ากับระหว่างการ์ด → เลื่อน -50% แล้วต่อเนื่องไม่สะดุด */
+.it-marquee{margin-top:28px; padding:6px 0;}
+.it-mq-track{gap:0; list-style:none; margin:0; padding:0; animation-duration:80s;}
+.it-mq-item{flex:none; width:300px; margin-right:16px; display:flex; align-items:center; gap:14px; padding:16px; border-radius:14px; background:#fff; border:1px solid #E3E9EB; white-space:normal;}
+.it-mq-item .it-org b{font-size:14.5px;}
+@media (max-width:600px){
+  .it-mq-track{animation-duration:60s;}
+  .it-mq-item{width:250px; margin-right:12px; padding:12px; gap:10px;}
+  .it-mq-item .it-logo{width:84px; height:52px;}
+  .it-mq-item .it-logo img{max-width:72px; max-height:38px;}
+}
+/* ลดการเคลื่อนไหว: หยุดเลื่อน แสดงเป็นกริด และไม่แสดงชุดที่โคลน */
+@media (prefers-reduced-motion: reduce){
+  .marquee-track > [aria-hidden="true"]{display:none;}
+  .it-marquee{-webkit-mask-image:none; mask-image:none;}
+  .it-mq-track{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr)); gap:12px; width:auto;}
+  .it-mq-item{width:auto; margin:0;}
+}
+
+/* Student Life — การ์ดองค์กรและชมรมนิสิต (รายละเอียด/รูป/ลิงก์รอข้อมูลจากคณะ) */
+.sl-orgs-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px 40px;}
+.sl-org-grid{margin-top:32px; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); list-style:none; padding:0;}
+.sl-org{align-items:flex-start;}
+.sl-org .sl-org-th{font-weight:600; color:#FAC315; margin-top:2px;}
