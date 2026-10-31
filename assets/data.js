@@ -27,7 +27,7 @@ window.BAS_STAFF = [{"id": "praneem", "u": "adm", "img": "assets/media/people/pr
 window.BAS_CLUBS = [
   {"icon": "fa-people-group", "en": "Student Union", "th": "", "desc": "", "img": "", "href": ""},
   {"icon": "fa-flask", "en": "Business Lab (BIZLAB)", "th": "", "desc": "", "img": "", "href": ""},
-  {"icon": "fa-user-graduate", "en": "Alumni", "th": "ศิษย์เก่า", "desc": "", "img": "", "href": ""},
+  {"icon": "fa-user-graduate", "en": "Alumni", "th": "ศิษย์เก่า", "desc": "Distinguished Alumni — วิดีโอ Inspiring Alumni By SWUBAS", "img": "", "href": "#alumni"},
   {"icon": "fa-microphone", "en": "MC of BAS SWU", "th": "", "desc": "", "img": "", "href": ""},
   {"icon": "fa-futbol", "en": "Football Club", "th": "", "desc": "", "img": "", "href": ""},
   {"icon": "fa-sitemap", "en": "SWBC", "th": "องค์กรที่จัดตั้งขึ้นภายใต้คณะบริหารธุรกิจเพื่อสังคม", "desc": "", "img": "", "href": ""}
