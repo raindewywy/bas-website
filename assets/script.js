@@ -857,7 +857,7 @@
     });
   }
 
-  // faculty.html — ค้นหาชื่อ + กรองภาควิชา/ความเชี่ยวชาญ, การ์ดทุกใบลิงก์ไป profile.html?p=<id>
+  // faculty.html — ค้นหาชื่อ + กรองภาควิชา/ความเชี่ยวชาญ, การ์ดลิงก์ไป profile.html?p=<id> (ยกเว้นผู้ประสานงาน: hover ได้แต่กดไม่ได้)
   function initFacultyDirectory(){
     var root = document.querySelector("[data-fd-root]");
     if(!root || typeof BAS_DIRECTORY === "undefined") return;
@@ -891,7 +891,8 @@
       return '<article class="fd-card">' +
         '<div class="fd-card-photo"><img src="' + escHtml(p.img) + '" alt="' + escHtml(p.th) + '" loading="lazy" decoding="async"><span class="fd-card-role">' + escHtml(p.role) + '</span></div>' +
         '<div class="fd-card-body">' +
-          '<h4 lang="en"><a class="fd-card-link" href="profile.html?p=' + encodeURIComponent(p.id) + '">' + escHtml(p.en) + '</a></h4>' +
+          '<h4 lang="en">' + (p.ge === "Coordinators" ? escHtml(p.en)
+            : '<a class="fd-card-link" href="profile.html?p=' + encodeURIComponent(p.id) + '">' + escHtml(p.en) + '</a>') + '</h4>' +
           '<p>' + escHtml(p.th) + '</p>' + contact +
         '</div></article>';
     }
