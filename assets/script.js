@@ -1351,6 +1351,34 @@ window.BASSite.initDeanFab = function(){
   }
 };
 
+/* ==========================================================================
+   #dean-direct (leadership.html) — เลื่อนกล่องคณบดีมาไว้กลางจอ
+   ใต้ header แบบ sticky; ถ้ากล่องสูงกว่าจอให้ชิดบนแทน
+   ========================================================================== */
+(function(){
+  var el = document.getElementById("dean-direct");
+  if(!el) return;
+  function centerDean(smooth){
+    var hd = document.querySelector(".site-header");
+    var hdH = hd ? hd.offsetHeight : 0;
+    var avail = window.innerHeight - hdH;
+    var r = el.getBoundingClientRect();
+    var top = window.pageYOffset + r.top - hdH - Math.max(0, (avail - r.height) / 2);
+    window.scrollTo({top: Math.max(0, top), behavior: smooth ? "smooth" : "auto"});
+  }
+  if(location.hash === "#dean-direct"){
+    window.addEventListener("load", function(){ requestAnimationFrame(function(){ centerDean(false); }); });
+  }
+  // กดลิงก์ #dean-direct จากหน้านี้เอง (เช่นปุ่มลอย) — ไม่ให้เบราว์เซอร์กระโดดไปชิดบน
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href$="#dean-direct"]');
+    if(!a || a.pathname !== location.pathname) return;
+    e.preventDefault();
+    if(location.hash !== "#dean-direct") history.pushState(null, "", "#dean-direct");
+    centerDean(true);
+  });
+})();
+
 /* == v4 interactive ======================================================
    Activity rail (carousel) + B·A·S tablist
    progressive enhancement: ถ้า JS ไม่ทำงาน rail ยังเลื่อนด้วยนิ้ว/เทรกแพดได้
