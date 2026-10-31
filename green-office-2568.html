@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green Office 2568 — BAS SWU</title>
+<meta name="description" content="เอกสารหลักฐานสำนักงานสีเขียว (Green Office) ปีงบประมาณ 2568 ตามเกณฑ์ประเมิน 6 หมวด ของคณะบริหารธุรกิจเพื่อสังคม มศว">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body data-nav="sustainability">
+
+<div data-include="partials/nav.html"></div>
+
+<main id="main" class="pd ip-page">
+<nav class="pd-crumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><a href="sustainability.html#green-office">Green Office</a></li>
+    <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span aria-current="page" data-go-crumb>ปีงบประมาณ 2568</span></li>
+  </ol>
+</nav>
+
+<section class="ip-band go-head">
+  <div class="pd-wrap">
+    <p class="pd-eyebrow">Green Office · ปีงบประมาณ 2568</p>
+    <div class="go-head-row">
+      <span class="go-head-n" data-go-num aria-hidden="true">01</span>
+      <div>
+        <h1 class="go-h1" data-go-title>หมวดที่ 1</h1>
+        <p class="go-head-meta" data-go-meta></p>
+      </div>
+    </div>
+    <nav class="go-switch" aria-label="เลือกหมวด">
+      <ul data-go-switch></ul>
+    </nav>
+  </div>
+</section>
+
+<section class="ip-sec go-body">
+  <div class="pd-wrap">
+    <div data-go-groups></div>
+    <div class="go-gal-wrap" data-go-gal-wrap hidden>
+      <h2 class="go-gh"><span class="go-gh-k" lang="en">Gallery</span>ภาพกิจกรรมและสื่อรณรงค์</h2>
+      <ul class="go-gal" data-go-gal></ul>
+    </div>
+    <nav class="go-pager" aria-label="หมวดก่อนหน้าและถัดไป" data-go-pager></nav>
+  </div>
+</section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+
+
+<script src="assets/data.js"></script>
+<script src="assets/greenoffice-data.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/include.js"></script>
+<script>
+(function () {
+  'use strict';
+  var data = window.GREEN_OFFICE_2568 || [];
+  if (!data.length) return;
+  var n = parseInt(new URLSearchParams(location.search).get('c'), 10);
+  var cat = data.filter(function (c) { return c.n === n; })[0] || data[0];
+  n = cat.n;
+
+  var ICON = { pdf: 'fa-file-pdf', docx: 'fa-file-word', doc: 'fa-file-word', xlsx: 'fa-file-excel', xls: 'fa-file-excel', jpg: 'fa-file-image', jpeg: 'fa-file-image', png: 'fa-file-image' };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function size(b) { return b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
+  function pad(x) { return (x < 10 ? '0' : '') + x; }
+  function short(t) { return t.replace(/^หมวดที่\s*\d+\s*/, ''); }
+  function href(f) { return encodeURI(f); }
+
+  var docs = cat.groups.reduce(function (s, g) { return s + g.docs.length; }, 0);
+  document.title = 'Green Office 2568 · หมวด ' + n + ' — BAS SWU';
+  document.querySelector('[data-go-crumb]').textContent = '2568 · หมวด ' + n;
+  document.querySelector('[data-go-num]').textContent = pad(n);
+  document.querySelector('[data-go-title]').innerHTML = '<span class="go-h1-k">หมวดที่ ' + n + '</span>' + esc(short(cat.title));
+  document.querySelector('[data-go-meta]').textContent = docs + ' เอกสาร · ' + cat.groups.length + ' ข้อ' + (cat.gallery.length ? ' · ' + cat.gallery.length + ' ภาพ' : '');
+
+  document.querySelector('[data-go-switch]').innerHTML = data.map(function (c) {
+    var on = c.n === n;
+    return '<li><a href="green-office-2568.html?c=' + c.n + '"' + (on ? ' aria-current="page"' : '') + ' title="' + esc(c.title) + '">' + pad(c.n) + '</a></li>';
+  }).join('');
+
+  document.querySelector('[data-go-groups]').innerHTML = cat.groups.map(function (g) {
+    var m = g.h.match(/^(\d+\.\d+)\s*(.*)$/);
+    return '<section class="go-group">' +
+      '<h2 class="go-gh"><span class="go-gh-k">ข้อ ' + esc(m ? m[1] : '') + '</span>' + esc(m ? m[2] : g.h) + '<span class="go-gh-c">' + g.docs.length + ' เอกสาร</span></h2>' +
+      '<ul class="go-docs">' + g.docs.map(function (d) {
+        var viewable = d.x === 'pdf' || ICON[d.x] === 'fa-file-image';
+        return '<li><a class="go-doc" href="' + href(d.f) + '"' + (viewable ? ' target="_blank" rel="noopener"' : ' download="' + esc(d.t + '.' + d.x) + '"') + '>' +
+          '<span class="go-doc-ico go-doc-ico--' + esc(d.x) + '" aria-hidden="true"><i class="fa-solid ' + (ICON[d.x] || 'fa-file') + '"></i></span>' +
+          '<span class="go-doc-t">' + esc(d.t) + '</span>' +
+          '<span class="go-doc-m"><span class="go-doc-x">' + esc(d.x.toUpperCase()) + '</span>' + size(d.s) + '</span>' +
+          '<span class="go-doc-go" aria-hidden="true"><i class="fa-solid ' + (viewable ? 'fa-arrow-up-right-from-square' : 'fa-download') + '"></i></span>' +
+          '<span class="sr-only">' + (viewable ? ' (เปิดในแท็บใหม่)' : ' (ดาวน์โหลดไฟล์)') + '</span></a></li>';
+      }).join('') + '</ul></section>';
+  }).join('');
+
+  if (cat.gallery.length) {
+    document.querySelector('[data-go-gal-wrap]').hidden = false;
+    document.querySelector('[data-go-gal]').innerHTML = cat.gallery.map(function (src, i) {
+      return '<li><a href="' + href(src) + '" target="_blank" rel="noopener"><img src="' + href(src) + '" alt="ภาพกิจกรรม Green Office หมวด ' + n + ' ภาพที่ ' + (i + 1) + '" loading="lazy" decoding="async"><span class="sr-only"> (เปิดภาพขนาดเต็มในแท็บใหม่)</span></a></li>';
+    }).join('');
+  }
+
+  var prev = data.filter(function (c) { return c.n === n - 1; })[0];
+  var next = data.filter(function (c) { return c.n === n + 1; })[0];
+  document.querySelector('[data-go-pager]').innerHTML =
+    (prev ? '<a class="go-pg go-pg--prev" href="green-office-2568.html?c=' + prev.n + '"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span><small>หมวดก่อนหน้า</small>' + esc(short(prev.title)) + '</span></a>' : '<span></span>') +
+    (next ? '<a class="go-pg go-pg--next" href="green-office-2568.html?c=' + next.n + '"><span><small>หมวดถัดไป</small>' + esc(short(next.title)) + '</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>' : '<a class="go-pg go-pg--next" href="sustainability.html#green-office"><span><small>กลับสู่</small>ภาพรวม Green Office</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>');
+})();
+</script>
+</body>
+</html>

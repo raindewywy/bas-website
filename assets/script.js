@@ -1427,8 +1427,40 @@ window.BASSite.initDeanFab = function(){
     sync();
   });
 
-  /* ---------- B · A · S tablist --------------------------------------- */
-  document.querySelectorAll('[data-identity]').forEach(function (root) {
+  /* ---------- Facebook feed (Page Plugin, ไม่ต้องใช้ token) ------------ */
+  document.querySelectorAll('[data-fb-feed]').forEach(function (root) {
+    var frame = root.querySelector('.hp-fb-frame');
+    var page = root.getAttribute('data-fb-page');
+    var loaded = false;
+    function load() {
+      if (loaded || !frame) return;
+      loaded = true;
+      // Page Plugin รองรับความกว้าง 180–500px และ render ตามขนาดตอนโหลด
+      var w = Math.max(180, Math.min(500, Math.floor(frame.clientWidth)));
+      var h = Math.max(500, Math.floor(frame.clientHeight));
+      var src = 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent(page) +
+        '&tabs=timeline&width=' + w + '&height=' + h +
+        '&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&locale=th_TH';
+      var f = document.createElement('iframe');
+      f.src = src;
+      f.width = w;
+      f.height = h;
+      f.title = 'โพสต์ล่าสุดจากเพจ Facebook SWU Business School';
+      f.allow = 'encrypted-media; clipboard-write; web-share';
+      frame.appendChild(f);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); load(); }
+      }, { rootMargin: '400px 0px' });
+      io.observe(root);
+    } else {
+      load();
+    }
+  });
+
+  /* ---------- B · A · S tablist (+ Green Office year tabs) ------------- */
+  document.querySelectorAll('[data-identity], [data-tabs]').forEach(function (root) {
     var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
     function select(tab) {
       tabs.forEach(function (t) {
