@@ -110,6 +110,56 @@
     if(input) input.addEventListener("input", function(){ state.q = input.value; apply(); });
   }
 
+  // ชื่อตำแหน่งภาษาอังกฤษ — ใช้กับการ์ดบุคลากรใน faculty.html และ staff-deans-office.html
+  var POS_EN = {
+    "อาจารย์": "Lecturer",
+    "รองศาสตราจารย์": "Associate Professor",
+    "ผู้ช่วยศาสตราจารย์": "Assistant Professor",
+    "นักจัดการงานทั่วไปชำนาญการพิเศษ": "General Administration Officer (Senior Professional Level)",
+    "นักจัดการงานทั่วไปชำนาญการ": "General Administration Officer (Professional Level)",
+    "นักจัดการงานทั่วไป": "General Administration Officer",
+    "นักทรัพยากรบุคคลชำนาญการ": "Human Resources Officer (Professional Level)",
+    "ผู้ปฏิบัติงานทั่วไปชำนาญงาน": "General Service Worker (Skilled Level)",
+    "นักวิชาการโสตทัศนศึกษาชำนาญการ": "Audio-Visual Education Specialist (Professional Level)",
+    "นักสื่อสารองค์กร": "Corporate Communications Officer",
+    "พนักงานบริการ": "Service Staff",
+    "นักวิชาการศึกษาชำนาญการพิเศษ": "Educational Officer (Senior Professional Level)",
+    "นักวิชาการศึกษาชำนาญการ": "Educational Officer (Professional Level)",
+    "นักวิชาการศึกษา": "Educational Officer",
+    "นักวิชาการเงินและบัญชีชำนาญการ": "Finance & Accounting Officer (Professional Level)",
+    "นักวิชาการพัสดุชำนาญการ": "Procurement Officer (Professional Level)",
+    "นักวิชาการพัสดุ": "Procurement Officer",
+    "นักวิเคราะห์นโยบายและแผนชำนาญการ": "Policy & Planning Analyst (Professional Level)",
+    "นักวิเคราะห์นโยบายและแผน": "Policy & Planning Analyst"
+  };
+  var STAFF_ROLE_EN = {
+    "ผู้อำนวยการสำนักงานคณบดี": "Director, Dean's Office",
+    "ทรัพยากรบุคคล": "Human Resources",
+    "อาคารและสถานที่": "Buildings & Facilities",
+    "โสตทัศนูปกรณ์": "Audio-Visual",
+    "ประชาสัมพันธ์": "Public Relations",
+    "ยานพาหนะ": "Transportation",
+    "กิจการนิสิต": "Student Affairs",
+    "วิจัย": "Research",
+    "การตลาด · ธุรกิจระหว่างประเทศ": "Marketing · International Business",
+    "ท่องเที่ยวและการโรงแรม · ธุรกิจเพื่อสังคม": "Tourism & Hospitality · Social Business",
+    "บัญชี · การเงิน": "Accounting · Finance",
+    "การจัดการธุรกิจโลก (GBM)": "Global Business Management (GBM)",
+    "บริหารธุรกิจมหาบัณฑิต (MBA)": "Master of Business Administration (MBA)",
+    "ปรัชญาดุษฎีบัณฑิต (PhD)": "Doctor of Philosophy (PhD)",
+    "การเงินและบัญชี": "Finance & Accounting",
+    "พัสดุ": "Procurement",
+    "บริการวิชาการและประกันคุณภาพ": "Academic Services & Quality Assurance",
+    "นโยบายและแผน": "Policy & Planning"
+  };
+  function staffTitleEn(p){
+    var role = p.role === "หัวหน้างาน"
+      ? "Head, " + ((window.BAS_STAFF_UNITS || []).filter(function(u){ return u.key === p.u; })[0] || { en: "Unit" }).en
+      : (STAFF_ROLE_EN[p.role] || "");
+    var pos = POS_EN[p.pos] || "";
+    return [role, pos].filter(Boolean).join(" · ");
+  }
+
   // staff-deans-office.html — หน้าตาเดียวกับ faculty.html: ค้นหาชื่อ/หน้าที่ + ชิปงาน, การ์ดแบ่งตามงาน (data: BAS_STAFF)
   function initStaffDirectory(){
     var root = document.querySelector("[data-so-root]");
@@ -123,7 +173,7 @@
 
     function byQuery(){
       var q = state.q.trim().toLowerCase();
-      return BAS_STAFF.filter(function(p){ return !q || (p.th + " " + p.en + " " + p.role + " " + (p.pos || "")).toLowerCase().indexOf(q) !== -1; });
+      return BAS_STAFF.filter(function(p){ return !q || (p.th + " " + p.en + " " + p.role + " " + (p.pos || "") + " " + staffTitleEn(p)).toLowerCase().indexOf(q) !== -1; });
     }
     function card(p){
       return '<article class="fd-card">' +
@@ -132,6 +182,7 @@
           '<h4 lang="en">' + escHtml(p.en) + '</h4>' +
           '<p>' + escHtml(p.th) + '</p>' +
           (p.pos ? '<p class="fd-card-pos">' + escHtml(p.pos) + '</p>' : '') +
+          (staffTitleEn(p) ? '<p class="fd-card-pos fd-card-en" lang="en">' + escHtml(staffTitleEn(p)) + '</p>' : '') +
           '<span class="fd-contact fd-contact--tel"><i class="fa-solid fa-phone" aria-hidden="true"></i>' + escHtml(p.tel) + '</span>' +
           '<a class="fd-contact fd-contact--sub" href="mailto:' + escHtml(p.mail) + '"><i class="fa-solid fa-envelope" aria-hidden="true"></i>' + escHtml(p.mail) + '</a>' +
         '</div></article>';
@@ -575,7 +626,7 @@
   }
 
   // R4 · Student Life: การ์ดองค์กรและชมรมนิสิตจาก BAS_CLUBS (data.js)
-  // เมื่อคณะส่งข้อมูล: desc แทนบรรทัดรอข้อมูล · href ทำให้ทั้งการ์ดเป็นลิงก์ · img แสดงด้านบน 16:9
+  // เมื่อคณะส่งข้อมูล: desc แทนบรรทัดรอข้อมูล · href ทำให้ทั้งการ์ดเป็นลิงก์ · img แสดงด้านบน 16:9 · logo แทนไอคอน
   function initClubs(){
     var grid = document.querySelector("[data-clubs]");
     if(!grid || !window.BAS_CLUBS) return;
@@ -589,7 +640,9 @@
         : '<p class="sl-orgc-foot"><i class="fa-regular fa-clock" aria-hidden="true"></i>รายละเอียด รูป และลิงก์ รอข้อมูลจากคณะ</p>';
       return '<li class="sl-orgc">' +
         (c.img ? '<img class="sl-orgc-img" src="' + escHtml(c.img) + '" alt="" loading="lazy" decoding="async">' : '') +
-        '<div class="sl-orgc-top"><span class="sl-orgc-ico"><i class="fa-solid ' + escHtml(c.icon) + '" aria-hidden="true"></i></span>' +
+        '<div class="sl-orgc-top">' + (c.logo
+          ? '<img class="sl-orgc-logo" src="' + escHtml(c.logo) + '" alt="" loading="lazy" decoding="async">'
+          : '<span class="sl-orgc-ico"><i class="fa-solid ' + escHtml(c.icon) + '" aria-hidden="true"></i></span>') +
         '<span class="sl-orgc-no" aria-hidden="true">' + String(i + 1).padStart(2, "0") + '</span></div>' +
         '<div><h3 class="sl-orgc-name" lang="en">' + name + '</h3>' +
         (c.th ? '<p class="sl-orgc-th">' + escHtml(c.th) + '</p>' : '') + '</div>' +
@@ -893,7 +946,9 @@
         '<div class="fd-card-body">' +
           '<h4 lang="en">' + (p.ge === "Coordinators" ? escHtml(p.en)
             : '<a class="fd-card-link" href="profile.html?p=' + encodeURIComponent(p.id) + '">' + escHtml(p.en) + '</a>') + '</h4>' +
-          '<p>' + escHtml(p.th) + '</p>' + contact +
+          '<p>' + escHtml(p.th) + '</p>' +
+          (POS_EN[p.role] ? '<p class="fd-card-pos fd-card-en" lang="en">' + escHtml(POS_EN[p.role]) + '</p>' : '') +
+          contact +
         '</div></article>';
     }
     function render(){
