@@ -626,7 +626,7 @@
   }
 
   // R4 · Student Life: การ์ดองค์กรและชมรมนิสิตจาก BAS_CLUBS (data.js)
-  // เมื่อคณะส่งข้อมูล: desc แทนบรรทัดรอข้อมูล · href ทำให้ทั้งการ์ดเป็นลิงก์ · img แสดงด้านบน 16:9 · logo แทนไอคอน
+  // เมื่อคณะส่งข้อมูล: desc แสดงใต้ชื่อ (ว่าง = ไม่แสดงบรรทัดนี้) · href ทำให้ทั้งการ์ดเป็นลิงก์ · img แสดงด้านบน 16:9 · logo แทนไอคอน
   function initClubs(){
     var grid = document.querySelector("[data-clubs]");
     if(!grid || !window.BAS_CLUBS) return;
@@ -637,7 +637,7 @@
         : escHtml(c.en);
       var foot = c.desc
         ? '<p class="sl-orgc-foot">' + escHtml(c.desc) + '</p>'
-        : '<p class="sl-orgc-foot"><i class="fa-regular fa-clock" aria-hidden="true"></i>รายละเอียด รูป และลิงก์ รอข้อมูลจากคณะ</p>';
+        : '';
       return '<li class="sl-orgc">' +
         (c.img ? '<img class="sl-orgc-img" src="' + escHtml(c.img) + '" alt="" loading="lazy" decoding="async">' : '') +
         '<div class="sl-orgc-top">' + (c.logo

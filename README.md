@@ -54,7 +54,7 @@ requirement.docx/.pdf     ข้อกำหนดรอบปรับปรุ
 | `BAS_DEPT_HEADS`, `BAS_LEADERSHIP` | program-detail | กล่องหัวหน้าภาควิชา (จับคู่ด้วยอีเมล) |
 | `BAS_STAFF`, `BAS_STAFF_UNITS` | staff-deans-office | |
 | `BAS_PARTNERS` | index | แผนที่พันธมิตรหน้าแรก |
-| `BAS_CLUBS` | student-life `#clubs` | `desc`/`img`/`href` ว่าง = แสดง "รอข้อมูลจากคณะ" |
+| `BAS_CLUBS` | student-life `#clubs` | `desc`/`img`/`href` ว่าง = ไม่แสดงส่วนนั้น |
 
 หน้า dynamic อ่านรายการจาก query string: `program-detail.html?p=<slug>` · `profile.html?p=<id>` · `news-detail.html?n=<slug>`
 
