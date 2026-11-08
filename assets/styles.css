@@ -4619,3 +4619,11 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 /* R6 · ชื่อช่อง YouTube ข้างป้าย BAS Podcast */
 .hp-yt-handle{display:inline-flex; align-items:center; gap:6px; font:500 13px 'IBM Plex Sans',sans-serif; color:#51636A;}
 .hp-yt-handle i{font-size:10px;}
+
+/* Student Life: แผนที่ที่พัก */
+.sl-map{margin:28px 0 0; border-radius:16px; overflow:hidden; border:1px solid #E3E9EB; background:#fff;}
+.sl-map img{display:block; width:100%; height:auto;}
+.sl-fac-d b{color:#063047;}
+.sl-act-d b{color:#063047;}
+.ct-travel-price{display:flex; align-items:center; gap:8px; font-weight:700; color:#00738F !important; margin-top:auto;}
+.ct-travel-price i{font-size:13px;}
