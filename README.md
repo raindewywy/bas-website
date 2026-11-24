@@ -56,6 +56,11 @@ requirement.docx/.pdf     ข้อกำหนดรอบปรับปรุ
 | `BAS_PARTNERS` | index | แผนที่พันธมิตรหน้าแรก |
 | `BAS_CLUBS` | student-life `#clubs` | `desc`/`img`/`href` ว่าง = ไม่แสดงส่วนนั้น |
 
+**ฟิลด์อังกฤษ (`*_en`)** — เพิ่มข้างฟิลด์ไทยเดิม ไม่ใส่ก็ได้ (ถอยกลับไปแสดงไทยอย่างเดียว) · `script.js` แสดงอังกฤษนำ ไทยเป็นบรรทัดรอง (`bi()`)
+ข่าว: `title_en` `desc_en` `tag_en` `date_en` · หมวดข่าว: สมาชิกตัวที่ 3 ของ `BAS_NEWS_CATS` ·
+หลักสูตร: `level_label_en` `language_en` `curriculum_label_en` `careers_en[]` `fee.note_en` `fee.unit_en` ·
+อาจารย์: `edu_en[]` (คู่กับ `edu` ตามลำดับ) `facts[].ven` `dept_en` `office_en` · หัวหน้าภาค: `focus_en`
+
 หน้า dynamic อ่านรายการจาก query string: `program-detail.html?p=<slug>` · `profile.html?p=<id>` · `news-detail.html?n=<slug>`
 
 ---

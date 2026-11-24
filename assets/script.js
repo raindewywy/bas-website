@@ -709,8 +709,8 @@
     input.value = state.q;
     function matches(p, q){
       if(!q) return true;
-      return [p.abbr, p.name_th, p.name_en, p.summary, p.summary_en, p.level_label, p.language]
-        .concat(p.careers).join(" ").toLowerCase().indexOf(q) !== -1;
+      return [p.abbr, p.name_th, p.name_en, p.summary, p.summary_en, p.level_label, p.level_label_en, p.language, p.language_en]
+        .concat(p.careers, p.careers_en || []).join(" ").toLowerCase().indexOf(q) !== -1;
     }
     function filtered(level){
       var q = state.q.trim().toLowerCase();
@@ -722,14 +722,14 @@
         ? 'href="' + escHtml(p.external_url) + '" target="_blank" rel="noopener" aria-label="' + escHtml(p.abbr + " " + p.name_th) + ' (เว็บไซต์ภายนอก เปิดในแท็บใหม่)"'
         : 'href="program-detail.html?p=' + p.slug + '"';
       return '<a class="pg-card" ' + attrs + '>' +
-        '<div class="pg-card-media"><img src="assets/media/program-' + p.slug + '.jpg" alt="" loading="lazy" decoding="async"><span class="pg-card-level">' + escHtml(p.level_label) + '</span></div>' +
+        '<div class="pg-card-media"><img src="assets/media/program-' + p.slug + '.jpg" alt="" loading="lazy" decoding="async"><span class="pg-card-level">' + escHtml(enOr(p.level_label, p.level_label_en)) + '</span></div>' +
         '<div class="pg-card-body">' +
           '<h3 class="pg-card-abbr" lang="en">' + escHtml(p.abbr) + '</h3>' +
           '<p class="pg-card-th">' + escHtml(p.name_th) + '</p>' +
           '<p class="pg-card-desc">' + escHtml(p.summary) + '</p>' +
           '<div class="pg-card-foot">' +
             '<span class="pg-card-cue">' + (ext ? 'ไปเว็บไซต์หลักสูตร <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>' : 'ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>') + '</span>' +
-            '<span class="pg-card-lang"><i class="fa-solid fa-language" aria-hidden="true"></i>' + escHtml(p.language) + '</span>' +
+            '<span class="pg-card-lang"><i class="fa-solid fa-language" aria-hidden="true"></i>' + escHtml(enOr(p.language, p.language_en)) + '</span>' +
           '</div>' +
         '</div></a>';
     }
@@ -776,7 +776,7 @@
 
     document.title = program.abbr + " — BAS SWU";
     setText("[data-p-abbr]", program.abbr);
-    setText("[data-p-level]", program.level_label);
+    setText("[data-p-level]", enOr(program.level_label, program.level_label_en));
     setText("[data-p-name-en]", program.name_en.replace(" -- ", " — "));
     setText("[data-p-name-th]", program.name_th);
     setText("[data-p-summary]", program.summary);
@@ -795,13 +795,13 @@
     var facts = root.querySelector("[data-p-facts]");
     if(facts){
       facts.innerHTML = [
-        ["Level", "fa-graduation-cap", program.level_label],
-        ["Language", "fa-language", program.language],
-        ["Department", "fa-building-columns", deptOf(program) ? deptOf(program).th : ""],
-        ["Curriculum", "fa-book-open", program.curriculum_label]
+        ["Level", "fa-graduation-cap", program.level_label, program.level_label_en],
+        ["Language", "fa-language", program.language, program.language_en],
+        ["Department", "fa-building-columns", deptOf(program) ? deptOf(program).th : "", deptOf(program) ? deptOf(program).en : ""],
+        ["Curriculum", "fa-book-open", program.curriculum_label, program.curriculum_label_en]
       ].filter(function(f){ return f[2]; })
       .map(function(f){
-        return '<div><dt><i class="fa-solid ' + f[1] + '" aria-hidden="true"></i>' + f[0] + '</dt><dd>' + escHtml(f[2]) + '</dd></div>';
+        return '<div><dt><i class="fa-solid ' + f[1] + '" aria-hidden="true"></i>' + f[0] + '</dt><dd>' + bi(f[2], f[3]) + '</dd></div>';
       }).join("");
     }
 
@@ -821,8 +821,8 @@
 
     var careerList = root.querySelector("[data-p-careers]");
     if(careerList){
-      careerList.innerHTML = program.careers.map(function(c){
-        return '<li><span class="pd-career-ico"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>' + escHtml(c) + '</li>';
+      careerList.innerHTML = program.careers.map(function(c, i){
+        return '<li><span class="pd-career-ico"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span><span>' + bi(c, (program.careers_en || [])[i]) + '</span></li>';
       }).join("");
     }
 
@@ -842,7 +842,7 @@
         (feeYear ? " สำหรับนิสิตที่เข้าศึกษาปีการศึกษา " + feeYear : ""));
       if(fee.src) setText("[data-f-src]", "อ้างอิง" + fee.src + " — อัตราอาจเปลี่ยนแปลงตามประกาศของมหาวิทยาลัย");
       var feeNote = feeSec.querySelector("[data-f-note]");
-      if(feeNote && fee.note){ feeNote.textContent = fee.note; feeNote.hidden = false; }
+      if(feeNote && fee.note){ feeNote.innerHTML = bi(fee.note, fee.note_en); feeNote.hidden = false; }
       var feePending = feeSec.querySelector("[data-f-pending]");
       if(feePending){
         feePending.hidden = !!feeNum;
@@ -874,7 +874,7 @@
       var mailto = deptSec.querySelector("[data-d-mailto]");
       setText("[data-d-en]", dept.en);
       setText("[data-d-th]", dept.th);
-      setText("[data-d-focus]", deptInfo.focus);
+      setBi("[data-d-focus]", deptInfo.focus, deptInfo.focus_en);
       setText("[data-d-head]", leader ? leader.name : head.th);
       setText("[data-d-mail]", head.mail);
       if(img) img.src = head.img;
@@ -897,7 +897,7 @@
           : 'program-detail.html?p=' + p.slug;
         return '<a class="pd-card" href="' + href + '">' +
           '<div class="pd-card-media"><img src="' + imgFor(p) + '" alt="" loading="lazy" decoding="async"></div>' +
-          '<div class="pd-card-body"><span class="pd-card-level">' + escHtml(p.level_label) + '</span>' +
+          '<div class="pd-card-body"><span class="pd-card-level">' + escHtml(enOr(p.level_label, p.level_label_en)) + '</span>' +
           '<h3 class="pd-card-abbr">' + escHtml(p.abbr) + (p.external_url ? ' <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>' : '') + '</h3>' +
           '<p class="pd-card-th">' + escHtml(p.name_th) + '</p></div></a>';
       }).join("");
@@ -908,6 +908,17 @@
     return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){
       return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c];
     });
+  }
+  // ข้อมูลสองภาษา — อังกฤษนำ ไทยตามเป็นบรรทัดรอง · ไม่มี *_en หรือเหมือนไทย → แสดงไทยอย่างเดียว
+  function bi(th, en){
+    return en && en !== th
+      ? escHtml(en) + '<span class="bi-sub" lang="th">' + escHtml(th) + '</span>'
+      : escHtml(th);
+  }
+  // ป้ายสั้น/แชร์พื้นที่แคบ — ใช้อังกฤษอย่างเดียว ถ้ายังไม่มีก็ถอยกลับเป็นไทย
+  function enOr(th, en){ return en || th; }
+  function setBi(sel, th, en){
+    document.querySelectorAll(sel).forEach(function(el){ el.innerHTML = bi(th, en); });
   }
 
   // faculty.html — ค้นหาชื่อ + กรองภาควิชา/ความเชี่ยวชาญ, การ์ดลิงก์ไป profile.html?p=<id> (ยกเว้นผู้ประสานงาน: hover ได้แต่กดไม่ได้)
@@ -1028,11 +1039,11 @@
 
     setText("[data-pf-crumb]", P.en);
     document.title = P.th + " — " + (P.leader ? "ผู้บริหาร" : "คณาจารย์") + " BAS SWU";
-    var meta = [["fa-solid fa-building-columns", P.dept], ["fa-solid fa-envelope", P.mail, P.mail && "mailto:" + P.mail], ["fa-solid fa-building", P.office]]
+    var meta = [["fa-solid fa-building-columns", P.dept, "", P.dept_en], ["fa-solid fa-envelope", P.mail, P.mail && "mailto:" + P.mail], ["fa-solid fa-building", P.office, "", P.office_en]]
       .filter(function(m){ return m[1]; })
       .map(function(m){
         return '<li><span class="pf-ico" aria-hidden="true"><i class="' + m[0] + '"></i></span>' +
-          (m[2] ? '<a href="' + escHtml(m[2]) + '">' + escHtml(m[1]) + '</a>' : '<span>' + escHtml(m[1]) + '</span>') + '</li>';
+          (m[2] ? '<a href="' + escHtml(m[2]) + '">' + escHtml(m[1]) + '</a>' : '<span>' + bi(m[1], m[3]) + '</span>') + '</li>';
       }).join("");
     var icons = { "การรับรองวิชาชีพ":"fa-solid fa-award", "ความเชี่ยวชาญ":"fa-solid fa-lightbulb", "ประวัติย่อ":"fa-solid fa-file-lines" };
     var facts = [["การรับรองวิชาชีพ","Certification"], ["ความเชี่ยวชาญ","Expertise"], ["ประวัติย่อ","CV"]].map(function(k){
@@ -1040,13 +1051,29 @@
       if(!f || !(f.v || f.href)) return "";
       var v = f.href
         ? '<a class="pf-cv" href="' + escHtml(f.href) + '" target="_blank" rel="noopener" aria-label="ดาวน์โหลด CV ของ' + escHtml(P.th) + ' (ไฟล์ PDF เปิดในแท็บใหม่)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i>ดาวน์โหลด CV<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>'
-        : '<p>' + escHtml(f.v) + '</p>';
+        : '<p>' + bi(f.v, f.ven) + '</p>';
       return '<div class="pf-fact"><div class="pf-fact-k"><span class="pf-ico" aria-hidden="true"><i class="' + icons[k[0]] + '"></i></span>' +
         '<h3><span>' + k[0] + '</span><span class="pf-fact-en" lang="en">' + k[1] + '</span></h3></div><div class="pf-fact-v">' + v + '</div></div>';
     }).join("");
     var edu = P.edu.length
-      ? P.edu.map(function(e){ return '<li><span class="pf-edu-dot" aria-hidden="true"></span><span><span class="pf-edu-deg">' + escHtml(e[0]) + '</span><span class="pf-edu-inst">' + escHtml(e[1]) + '</span></span></li>'; }).join("")
+      ? P.edu.map(function(e, i){
+          var en = (P.edu_en || [])[i] || [];
+          return '<li><span class="pf-edu-dot" aria-hidden="true"></span><span><span class="pf-edu-deg">' + bi(e[0], en[0]) + '</span><span class="pf-edu-inst">' + bi(e[1], en[1]) + '</span></span></li>';
+        }).join("")
       : '<li class="pf-edu-pending"><span class="pf-edu-dot" aria-hidden="true"></span><span>ข้อมูลอยู่ระหว่างปรับปรุง</span></li>';
+    // ผลงานตีพิมพ์ (optional) — P.pubs [{type:"journal"|"conf", authors, year, title, venue, doi, note, note_en}] · ไม่มี = ไม่แสดงส่วนนี้
+    var pubTypes = { journal:["บทความวิจัยในวารสารวิชาการ","Journal article"], conf:["บทความฉบับเต็มในการประชุมวิชาการ","Conference proceedings"] };
+    var pubs = (P.pubs || []).map(function(p){
+      var t = pubTypes[p.type] || ["", ""];
+      var doi = p.doi ? '<a href="https://doi.org/' + escHtml(p.doi) + '" target="_blank" rel="noopener">doi:' + escHtml(p.doi) + '<span class="sr-only"> (เปิดในแท็บใหม่)</span></a>' : '';
+      return '<li><span class="pf-edu-dot" aria-hidden="true"></span><span>' +
+        '<span class="pf-edu-deg" lang="en">' + escHtml(p.title) + '</span>' +
+        '<span class="pf-edu-inst" lang="en">' + escHtml(p.authors) + ' (' + escHtml(p.year) + '). <i>' + escHtml(p.venue) + '</i>.</span>' +
+        (t[0] ? '<span class="pf-edu-inst">' + bi(t[0], t[1]) + '</span>' : '') +
+        (doi ? '<span class="pf-edu-inst">' + doi + '</span>' : '') +
+        (p.note ? '<span class="pf-edu-inst"><i class="fa-solid fa-award" aria-hidden="true"></i> ' + bi(p.note, p.note_en) + '</span>' : '') +
+        '</span></li>';
+    }).join("");
 
     body.innerHTML =
       '<div class="pf-card">' +
@@ -1060,6 +1087,7 @@
         '</div>' +
       '</div>' +
       '<div class="pf-edu"><h2>ประวัติการศึกษา</h2><p class="pf-h2-en" lang="en">Academic background</p><ul>' + edu + '</ul></div>' +
+      (pubs ? '<div class="pf-edu pf-pubs"><h2>ผลงานตีพิมพ์</h2><p class="pf-h2-en" lang="en">Publications</p><ul>' + pubs + '</ul></div>' : '') +
       (facts ? '<div class="pf-facts">' + facts + '</div>' : '') +
       backLink;
   }
@@ -1067,8 +1095,8 @@
   function newsCard(n){
     return '<a class="nw-card" href="news-detail.html?n=' + encodeURIComponent(n.slug) + '">' +
       '<div class="nw-card-media"><img src="' + escHtml(n.img) + '" alt="" loading="lazy" decoding="async"></div>' +
-      '<div class="nw-card-body"><div class="nw-card-meta"><span>' + escHtml(n.tag) + '</span><time>' + escHtml(n.date) + '</time></div>' +
-      '<h3>' + escHtml(n.title) + '</h3></div></a>';
+      '<div class="nw-card-body"><div class="nw-card-meta"><span>' + escHtml(enOr(n.tag, n.tag_en)) + '</span><time>' + escHtml(enOr(n.date, n.date_en)) + '</time></div>' +
+      '<h3>' + bi(n.title, n.title_en) + '</h3></div></a>';
   }
 
   /* ---- News list: ข่าวเด่น + ชิปหมวด + ค้นหา ------------------------------ */
@@ -1097,7 +1125,7 @@
 
     if(catWrap){
       catWrap.innerHTML = cats.map(function(c){
-        return '<button type="button" class="pg-chip" data-value="' + escHtml(c[0]) + '" aria-pressed="false">' + escHtml(c[1]) + '</button>';
+        return '<button type="button" class="pg-chip" data-value="' + escHtml(c[0]) + '" aria-pressed="false">' + escHtml(c[2] || c[1]) + '</button>';
       }).join("");
       catWrap.addEventListener("click", function(e){
         var b = e.target.closest("[data-value]");
@@ -1110,8 +1138,8 @@
     if(featWrap){
       featWrap.innerHTML = '<a class="nw-feat" href="news-detail.html?n=' + encodeURIComponent(f.slug) + '">' +
         '<div class="nw-feat-media"><img src="' + escHtml(f.img) + '" alt=""></div>' +
-        '<div class="nw-feat-body"><div class="nw-feat-meta"><span class="nw-feat-new">ล่าสุด</span><span class="nw-feat-tag">' + escHtml(f.tag) + '</span><time>' + escHtml(f.date) + '</time></div>' +
-        '<h2>' + escHtml(f.title) + '</h2>' + (f.desc ? '<p class="nw-feat-desc">' + escHtml(f.desc) + '</p>' : '') +
+        '<div class="nw-feat-body"><div class="nw-feat-meta"><span class="nw-feat-new">ล่าสุด</span><span class="nw-feat-tag">' + escHtml(enOr(f.tag, f.tag_en)) + '</span><time>' + escHtml(enOr(f.date, f.date_en)) + '</time></div>' +
+        '<h2>' + bi(f.title, f.title_en) + '</h2>' + (f.desc ? '<p class="nw-feat-desc">' + bi(f.desc, f.desc_en) + '</p>' : '') +
         '<span class="nw-feat-cue">อ่านต่อ <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></div></a>';
     }
 
@@ -1119,7 +1147,7 @@
       var q = state.q.trim().toLowerCase();
       var list = news.filter(function(n){
         return (state.cat === "all" || n.cat === state.cat) &&
-          (!q || [n.title, n.desc, n.tag].join(" ").toLowerCase().indexOf(q) !== -1);
+          (!q || [n.title, n.desc, n.tag, n.title_en, n.desc_en, n.tag_en].join(" ").toLowerCase().indexOf(q) !== -1);
       });
       var showFeat = !!featWrap && state.cat === "all" && !q;
       if(featWrap) featWrap.hidden = !showFeat;
@@ -1171,13 +1199,14 @@
       return;
     }
 
-    document.title = a.title + " — BAS SWU";
-    setText("[data-n-short]", a.title.length > 48 ? a.title.slice(0, 46) + "…" : a.title);
-    setText("[data-n-tag]", a.tag);
-    setText("[data-n-date]", a.date);
-    setText("[data-n-title]", a.title);
+    var aTitle = enOr(a.title, a.title_en);
+    document.title = aTitle + " — BAS SWU";
+    setText("[data-n-short]", aTitle.length > 48 ? aTitle.slice(0, 46) + "…" : aTitle);
+    setText("[data-n-tag]", enOr(a.tag, a.tag_en));
+    setText("[data-n-date]", enOr(a.date, a.date_en));
+    setBi("[data-n-title]", a.title, a.title_en);
     var img = root.querySelector("[data-n-img]");
-    if(img){ img.src = a.img; img.alt = a.title; }
+    if(img){ img.src = a.img; img.alt = aTitle; }
     var src = root.querySelector("[data-n-url]");
     if(src && a.url){ src.href = a.url; src.hidden = false; }
     var rest = news.filter(function(n){ return n !== a; });
