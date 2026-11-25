@@ -712,7 +712,7 @@
     function matches(p, q){
       if(!q) return true;
       return [p.abbr, p.name_th, p.name_en, p.summary, p.summary_en, p.level_label, p.level_label_en, p.language, p.language_en]
-        .concat(p.careers, p.careers_en || []).join(" ").toLowerCase().indexOf(q) !== -1;
+        .concat(p.majors || [], p.majors_en || [], p.careers, p.careers_en || []).join(" ").toLowerCase().indexOf(q) !== -1;
     }
     function filtered(level){
       var q = state.q.trim().toLowerCase();
@@ -729,6 +729,7 @@
           '<h3 class="pg-card-abbr" lang="en">' + escHtml(p.abbr) + '</h3>' +
           '<p class="pg-card-th">' + escHtml(p.name_th) + '</p>' +
           '<p class="pg-card-desc">' + escHtml(p.summary) + '</p>' +
+          (p.majors ? '<p class="pg-card-desc"><b>' + p.majors.length + ' วิชาเอก:</b> ' + escHtml(p.majors.join(" / ")) + '</p>' : '') +
           '<div class="pg-card-foot">' +
             '<span class="pg-card-cue">' + (ext ? 'ไปเว็บไซต์หลักสูตร <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>' : 'ดูรายละเอียดหลักสูตร <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>') + '</span>' +
             '<span class="pg-card-lang"><i class="fa-solid fa-language" aria-hidden="true"></i>' + escHtml(enOr(p.language, p.language_en)) + '</span>' +
@@ -770,7 +771,7 @@
     if(!root || typeof BAS_PROGRAMS === "undefined") return;
     var slug = qs("p");
     if(slug === "phd"){ window.location.replace("https://mba.swu.ac.th/phd"); return; }
-    if(slug === "bba-tourism-hotel") slug = "bba-tourism"; // ลิงก์เก่าก่อนแยกท่องเที่ยว/โรงแรม
+    if(slug === "bba-tourism-hotel" || slug === "bba-tourism" || slug === "bba-hotel") slug = "bba-hospitality"; // ลิงก์เก่าก่อนรวมเป็นการจัดการธุรกิจบริการ
     var program = BAS_PROGRAMS.find(function(p){ return p.slug === slug; }) || BAS_PROGRAMS[0];
     function imgFor(p){ return "assets/media/program-" + p.slug + ".jpg"; }
     function deptKeyOf(p){ return window.BAS_PROGRAM_DEPT && BAS_PROGRAM_DEPT[p.slug]; }
@@ -800,7 +801,9 @@
         ["Level", "fa-graduation-cap", program.level_label, program.level_label_en],
         ["Language", "fa-language", program.language, program.language_en],
         ["Department", "fa-building-columns", deptOf(program) ? deptOf(program).th : "", deptOf(program) ? deptOf(program).en : ""],
-        ["Curriculum", "fa-book-open", program.curriculum_label, program.curriculum_label_en]
+        ["Curriculum", "fa-book-open", program.curriculum_label, program.curriculum_label_en],
+        ["Majors", "fa-layer-group", (program.majors || []).join(" · "), (program.majors_en || []).join(" · ")],
+        ["Credits", "fa-list-check", program.credits ? "ไม่น้อยกว่า " + program.credits + " หน่วยกิต" : "", program.credits ? "At least " + program.credits + " credits" : ""]
       ].filter(function(f){ return f[2]; })
       .map(function(f){
         return '<div><dt><i class="fa-solid ' + f[1] + '" aria-hidden="true"></i>' + f[0] + '</dt><dd>' + bi(f[2], f[3]) + '</dd></div>';
