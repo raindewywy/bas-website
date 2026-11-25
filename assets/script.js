@@ -638,6 +638,8 @@
       var foot = c.desc
         ? '<p class="sl-orgc-foot">' + escHtml(c.desc) + '</p>'
         : '';
+      var ig = /^https:\/\/www\.instagram\.com\/([^\/]+)/.exec(c.href || "");
+      if(ig) foot += '<p class="sl-orgc-foot" aria-hidden="true"><i class="fa-brands fa-instagram"></i>@' + escHtml(ig[1]) + '</p>';
       return '<li class="sl-orgc">' +
         (c.img ? '<img class="sl-orgc-img" src="' + escHtml(c.img) + '" alt="" loading="lazy" decoding="async">' : '') +
         '<div class="sl-orgc-top">' + (c.logo
