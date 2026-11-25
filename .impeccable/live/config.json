@@ -1,0 +1,7 @@
+{
+  "files": ["*.html"],
+  "exclude": ["404.html", "admin.html", "leader-*.html", "mou.html", "green-award.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

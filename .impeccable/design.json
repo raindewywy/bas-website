@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T12:50:08.303369+00:00",
+  "title": "Design System: BAS SWU",
+  "extensions": {
+    "colorMeta": {
+      "campus-sky": {
+        "role": "primary",
+        "displayName": "Campus Sky",
+        "canonical": "#00A8D0",
+        "tonalRamp": [
+          "#063047",
+          "#054966",
+          "#00738F",
+          "#0090B3",
+          "#00A8D0",
+          "#58C9E4",
+          "#D6EFF5",
+          "#EFF9FB"
+        ]
+      },
+      "campus-cyan": {
+        "role": "primary",
+        "displayName": "Campus Cyan",
+        "canonical": "#00B3C9",
+        "tonalRamp": [
+          "#0A3D43",
+          "#007887",
+          "#00ACC1",
+          "#00E0FB",
+          "#37E9FF",
+          "#71EFFF",
+          "#ABF6FF",
+          "#E9FAFC"
+        ]
+      },
+      "campus-link": {
+        "role": "primary",
+        "displayName": "Campus Link",
+        "canonical": "#00738F",
+        "tonalRamp": [
+          "#063047",
+          "#054966",
+          "#00738F",
+          "#0090B3",
+          "#00A8D0",
+          "#58C9E4",
+          "#D6EFF5",
+          "#EFF9FB"
+        ]
+      },
+      "prasarnmit-navy": {
+        "role": "secondary",
+        "displayName": "Prasarnmit Navy",
+        "canonical": "#063047",
+        "tonalRamp": [
+          "#063047",
+          "#054966",
+          "#00738F",
+          "#0090B3",
+          "#00A8D0",
+          "#58C9E4",
+          "#D6EFF5",
+          "#EFF9FB"
+        ]
+      },
+      "deep-campus": {
+        "role": "secondary",
+        "displayName": "Deep Campus",
+        "canonical": "#054966",
+        "tonalRamp": [
+          "#063047",
+          "#054966",
+          "#00738F",
+          "#0090B3",
+          "#00A8D0",
+          "#58C9E4",
+          "#D6EFF5",
+          "#EFF9FB"
+        ]
+      },
+      "open-sky": {
+        "role": "primary",
+        "displayName": "Open Sky",
+        "canonical": "#58C9E4",
+        "tonalRamp": [
+          "#063047",
+          "#054966",
+          "#00738F",
+          "#0090B3",
+          "#00A8D0",
+          "#58C9E4",
+          "#D6EFF5",
+          "#EFF9FB"
+        ]
+      },
+      "sky-wash": {
+        "role": "primary",
+        "displayName": "Sky Wash",
+        "canonical": "#EFF9FB",
+        "tonalRamp": [
+          "#063047",
+          "#054966",
+          "#00738F",
+          "#0090B3",
+          "#00A8D0",
+          "#58C9E4",
+          "#D6EFF5",
+          "#EFF9FB"
+        ]
+      },
+      "apply-yellow": {
+        "role": "tertiary",
+        "displayName": "Apply Yellow",
+        "canonical": "#FAC315",
+        "tonalRamp": [
+          "#42350B",
+          "#846503",
+          "#BD9104",
+          "#F6BC05",
+          "#FBCD3B",
+          "#FCDB74",
+          "#FDEAAD",
+          "#FBF7E9"
+        ]
+      },
+      "apply-yellow-light": {
+        "role": "tertiary",
+        "displayName": "Apply Yellow Light",
+        "canonical": "#FFD54A",
+        "tonalRamp": [
+          "#43360A",
+          "#876800",
+          "#C19400",
+          "#FBC100",
+          "#FFD137",
+          "#FFDE71",
+          "#FFECAB",
+          "#FCF7E9"
+        ]
+      },
+      "graduate-purple": {
+        "role": "tertiary",
+        "displayName": "Graduate Purple",
+        "canonical": "#493B97",
+        "tonalRamp": [
+          "#1E1A33",
+          "#2F2661",
+          "#43368B",
+          "#5747B5",
+          "#7C6FC7",
+          "#A299D7",
+          "#C8C3E7",
+          "#EFEEF6"
+        ]
+      },
+      "news-red": {
+        "role": "tertiary",
+        "displayName": "News Red",
+        "canonical": "#EF402C",
+        "tonalRamp": [
+          "#3F130E",
+          "#7D150A",
+          "#B31F0E",
+          "#EA2812",
+          "#F15645",
+          "#F5877B",
+          "#F9B9B1",
+          "#FAECEA"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#FBFCFD",
+        "tonalRamp": [
+          "#1D2630",
+          "#2D435A",
+          "#406181",
+          "#547EA8",
+          "#799BBC",
+          "#A0B8D0",
+          "#C7D5E3",
+          "#EFF2F5"
+        ]
+      },
+      "paper-dim": {
+        "role": "neutral",
+        "displayName": "Paper Dim",
+        "canonical": "#F1F5F6",
+        "tonalRamp": [
+          "#202A2C",
+          "#354C52",
+          "#4C6D76",
+          "#628E99",
+          "#85A8B1",
+          "#A9C1C7",
+          "#CCDBDE",
+          "#F0F3F4"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#262626",
+          "#434343",
+          "#616161",
+          "#7E7E7E",
+          "#9B9B9B",
+          "#B8B8B8",
+          "#D5D5D5",
+          "#F2F2F2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0F1719",
+        "tonalRamp": [
+          "#1F2B2D",
+          "#334E54",
+          "#486F79",
+          "#5E919D",
+          "#82AAB4",
+          "#A6C3CA",
+          "#CBDBE0",
+          "#F0F4F5"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#2A3639",
+        "tonalRamp": [
+          "#22292B",
+          "#394A4E",
+          "#52696F",
+          "#6B8991",
+          "#8CA4AA",
+          "#ADBEC3",
+          "#CFD9DB",
+          "#F1F3F4"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#51636A",
+        "tonalRamp": [
+          "#22282A",
+          "#3A474C",
+          "#54666D",
+          "#6D858E",
+          "#8DA1A8",
+          "#AEBCC1",
+          "#D0D8DB",
+          "#F1F3F4"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#D6DEE1",
+        "tonalRamp": [
+          "#22282B",
+          "#39484E",
+          "#52676F",
+          "#6A8791",
+          "#8BA2AA",
+          "#ADBDC3",
+          "#CFD8DC",
+          "#F1F3F4"
+        ]
+      },
+      "line-soft": {
+        "role": "neutral",
+        "displayName": "Line Soft",
+        "canonical": "#E3E9EB",
+        "tonalRamp": [
+          "#21292B",
+          "#38494F",
+          "#506971",
+          "#698893",
+          "#8AA3AC",
+          "#ACBEC4",
+          "#CED9DC",
+          "#F1F3F4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Interior page titles."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Links and compact cards."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "English labels and data accents."
+      }
+    },
+    "shadows": [
+      {
+        "name": "small",
+        "value": "0 1px 2px rgba(15,23,25,.06), 0 1px 1px rgba(15,23,25,.04)",
+        "purpose": "Legacy surface separation."
+      },
+      {
+        "name": "medium",
+        "value": "0 10px 28px rgba(15,23,25,.10)",
+        "purpose": "Floating surfaces."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 20px 40px rgba(6,48,71,.12)",
+        "purpose": "Linked card hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "standard",
+        "value": "cubic-bezier(.2,.6,.25,1)",
+        "purpose": "State changes, 200ms."
+      },
+      {
+        "name": "card-lift",
+        "value": "cubic-bezier(.22,1,.36,1)",
+        "purpose": "Card lift, 300ms."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "560px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Apply Button",
+      "kind": "button",
+      "refersTo": "button-apply",
+      "description": "Primary application action.",
+      "html": "<button class=\"ds-apply\">Apply · สมัครเรียน</button>",
+      "css": ".ds-apply{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;display:inline-flex;align-items:center;height:48px;padding:0 24px;border:0;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;transition:background 200ms,color 200ms;background:#FAC315;color:#0F1719}.ds-apply:hover{background:#FFD54A}.ds-apply:focus-visible{outline:3px solid #063047;outline-offset:2px;box-shadow:0 0 0 2px #fff}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action on light surfaces.",
+      "html": "<button class=\"ds-outline\">View all · ดูทั้งหมด</button>",
+      "css": ".ds-outline{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;display:inline-flex;align-items:center;height:48px;padding:0 24px;border:0;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;transition:background 200ms,color 200ms;height:44px;padding:0 20px;background:transparent;border:1.5px solid #00738F;color:#00738F;font-size:14px;font-weight:600}.ds-outline:hover{background:#00738F;color:#fff}.ds-outline:focus-visible{outline:3px solid #063047;outline-offset:2px;box-shadow:0 0 0 2px #fff}"
+    },
+    {
+      "name": "White Button",
+      "kind": "button",
+      "refersTo": "button-white",
+      "description": "Action on dark imagery.",
+      "html": "<button class=\"ds-white\">Programmes · หลักสูตร</button>",
+      "css": ".ds-white{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;display:inline-flex;align-items:center;height:48px;padding:0 24px;border:0;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;transition:background 200ms,color 200ms;padding:0 22px;background:#fff;color:#063047}.ds-white:hover{background:#EFF9FB}.ds-white:focus-visible{outline:3px solid #063047;outline-offset:2px;box-shadow:0 0 0 2px #fff}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Programme level filter.",
+      "html": "<button class=\"ds-chip\" aria-pressed=\"true\">Undergraduate · ปริญญาตรี</button><button class=\"ds-chip\" aria-pressed=\"false\">Graduate · บัณฑิตศึกษา</button>",
+      "css": ".ds-chip{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;height:44px;padding:0 18px;margin:4px;border-radius:999px;border:1px solid #D6DEE1;background:#fff;color:#2A3639;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}.ds-chip:hover{border-color:#00A8D0}.ds-chip[aria-pressed=true]{background:#063047;border-color:#063047;color:#fff}.ds-chip:focus-visible{outline:3px solid #063047;outline-offset:2px;box-shadow:0 0 0 2px #fff}"
+    },
+    {
+      "name": "Programme Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Linked card, flat until hover.",
+      "html": "<a class=\"ds-card\" href=\"#\"><b>B.B.A. Hospitality Management</b><span>การจัดการธุรกิจบริการ</span></a>",
+      "css": ".ds-card{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;display:flex;flex-direction:column;gap:8px;max-width:320px;padding:24px;border:1px solid #E3E9EB;border-radius:16px;background:#fff;color:#0F1719;text-decoration:none;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s}.ds-card span{color:#51636A}.ds-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(6,48,71,.12);border-color:#00A8D0}@media(prefers-reduced-motion:reduce){.ds-card{transition:none}}.ds-card:focus-visible{outline:3px solid #063047;outline-offset:2px;box-shadow:0 0 0 2px #fff}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Programme search.",
+      "html": "<input class=\"ds-search\" type=\"search\" aria-label=\"Search programmes\" placeholder=\"Search · ค้นหาหลักสูตร\">",
+      "css": ".ds-search{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;height:46px;width:320px;max-width:100%;padding:0 16px;border:1.5px solid #D6DEE1;border-radius:999px;background:#fff;color:#51636A;font-size:15px}.ds-search:focus-visible{border-color:#00738F;outline:2px solid #00738F}"
+    },
+    {
+      "name": "Bilingual Navigation",
+      "kind": "nav",
+      "refersTo": "card",
+      "description": "English over Thai, as in the drawer.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">About<small>เกี่ยวกับคณะ</small></a><a href=\"#\">Programmes<small>หลักสูตร</small></a></nav>",
+      "css": ".ds-nav{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;display:flex;gap:8px;background:#FBFCFD;border-bottom:1px solid #E3E9EB}.ds-nav a{display:flex;flex-direction:column;padding:12px 16px;color:#2A3639;font-weight:600;text-decoration:none}.ds-nav small{font-weight:400;color:#51636A}.ds-nav a:hover{color:#00738F}.ds-nav a:focus-visible{outline:3px solid #063047}"
+    },
+    {
+      "name": "Document Disclosure",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Grouped PDF list.",
+      "html": "<details class=\"ds-doc\" open><summary>Annual Report · รายงานประจำปี</summary><a href=\"#\">Fiscal year 2569</a></details>",
+      "css": ".ds-doc{font-family:'IBM Plex Sans','IBM Plex Sans Thai',sans-serif;max-width:420px;border:1px solid #E3E9EB;border-radius:14px;background:#fff;overflow:hidden}.ds-doc summary{padding:14px 18px;font-weight:600;color:#063047;cursor:pointer}.ds-doc summary:hover,.ds-doc a:hover{background:#EFF9FB}.ds-doc a{display:block;padding:12px 18px;border-top:1px solid #E3E9EB;color:#0F1719;text-decoration:none}.ds-doc summary:focus-visible,.ds-doc a:focus-visible{outline:2px solid #00738F;outline-offset:-2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Open Campus",
+    "overview": "The system feels like a campus that welcomes everyone: airy surfaces, real photographs and clear paths. Its voice is clear, trustworthy and friendly, so applicants and parents can understand a page before they have to study it.\n\nEnglish and Thai share one interface without a language switcher. Sky tones carry wayfinding, navy gives authority, and yellow marks the step toward applying.",
+    "keyCharacteristics": [
+      "Light surfaces with authentic campus imagery.",
+      "English headings; Thai small text beneath them.",
+      "Rounded, easy-to-press controls.",
+      "Flat surfaces that lift when a visitor interacts."
+    ],
+    "rules": [
+      {
+        "name": "The White-on-Sky Rule",
+        "body": "Never add white text on Campus Cyan or Campus Sky. White on Campus Cyan measures 2.53:1; use Campus Link instead. Existing footer, contact, active-news-filter and primary detail-page button uses are debt to fix, not precedent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Yellow Invitation Rule",
+        "body": "Reserve Apply Yellow for action and pair it with dark ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The English-Lead Rule",
+        "body": "Headings and main labels are English. Small text is Thai: the subtitle under a heading, descriptions, notes and tags. Do not repeat a description in both languages. The Thai-led homepage hero is marked as a client lock and needs an owner decision before changing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-at-Rest Rule",
+        "body": "New surfaces are flat by default and lift only in response to interaction.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use real campus, student and faculty imagery.",
+      "Do use Campus Link (#00738F) behind white text.",
+      "Do write headings in English and small text in Thai.",
+      "Do reserve Apply Yellow (#FAC315) for action.",
+      "Do honor reduced-motion preferences."
+    ],
+    "donts": [
+      "Don't put new white text on Campus Cyan (#00B3C9) or Campus Sky (#00A8D0).",
+      "Don't introduce another icon library; the site uses Font Awesome.",
+      "Don't hardcode a new color when an existing token covers the role.",
+      "Don't treat legacy shadows or Thai-led labels as precedent for new work."
+    ]
+  }
+}

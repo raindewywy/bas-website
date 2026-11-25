@@ -44,6 +44,9 @@
           if (window.BASSite && typeof window.BASSite.initNav === "function") {
             window.BASSite.initNav();
           }
+          // nav ที่แทรกเข้ามาทำให้การเลื่อนไป #หัวข้อ ตอนเปิดหน้าถูกยกเลิก จึงเลื่อนซ้ำ
+          var target = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+          if (target) target.scrollIntoView({ behavior: "instant", block: "start" });
         }
       });
   });
