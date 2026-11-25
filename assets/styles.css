@@ -4650,57 +4650,11 @@ html:has(.ip-jump){scroll-padding-top:136px;}
 .pg-empty .pg-empty-help{max-width:60ch; margin:10px auto 0; font-size:15px; font-weight:400; line-height:1.7; color:var(--ink-soft);}
 .pg-empty-help a{color:var(--brand-700); font-weight:600; text-decoration:underline; text-underline-offset:3px;}
 
-/* หน้าแรก: ตารางจำนวนรับ TCAS70 และค่าเล่าเรียน */
-.hp-seats{margin-top:36px; padding:clamp(14px,2.4vw,28px); border-radius:20px; background:#fff; color:var(--ink);}
-.hp-seats table{width:100%; border-collapse:collapse; table-layout:fixed; font-variant-numeric:tabular-nums;}
-.hp-seats caption{padding-bottom:16px; text-align:left; font-size:20px; font-weight:700; line-height:1.4; color:var(--brand-900);}
-.hp-seats small{display:block; font-size:13px; font-weight:500; line-height:1.4; color:var(--muted);}
-.hp-seats th, .hp-seats td{padding:9px 6px; text-align:right; font-size:15px; line-height:1.4; border-top:1px solid var(--line-soft); overflow-wrap:anywhere;}
-.hp-seats th:first-child{width:32%; text-align:left; font-weight:500;}
-.hp-seats thead th{border-top:0; font-weight:600; color:var(--brand-900); vertical-align:bottom;}
-.hp-seats .hp-seat-prog th{width:auto; padding:14px 12px 10px; background:var(--brand-50);}
-.hp-seat-prog a{display:inline-block; font-size:16px; font-weight:700; color:var(--brand-700);}
-.hp-seat-prog a:hover{text-decoration:underline; text-underline-offset:3px;}
-.hp-seat-career{display:block; margin-top:4px; font-size:13px; color:var(--ink-soft);}
-.hp-seat-career > span{display:block;}
-.hp-seats tfoot th, .hp-seats tfoot td{font-weight:700; border-top:2px solid var(--brand-900);}
-.hp-seats-key{display:none; font-size:13px; line-height:1.6; color:var(--ink-soft);}
-.hp-seats-note{margin-top:16px !important; max-width:75ch; font-size:14px; line-height:1.6; color:var(--ink-soft);}
-@container seats (max-width:600px){
-  .hp-seats th, .hp-seats td{padding:8px 3px; font-size:13px;}
-  .hp-seats th:first-child{width:27%;}
-  .hp-seats .hp-seat-prog th{padding:12px 8px 8px;}
-}
-.hp-seats td{white-space:nowrap;}
 .hp .hp-acad-th{margin-top:0;}
 .hp .hp-ncard-title{-webkit-line-clamp:unset; max-height:none; display:block; overflow:visible;}
 .hp-svc-cue, .hp-acad-cue, .hp-link, .hp-link-line{flex-wrap:wrap; column-gap:6px;}
 .hp .hp-btn--block{height:auto; min-height:48px; padding:10px 18px; white-space:normal; flex-wrap:wrap; column-gap:6px;}
 html:not(:has(.ip-jump)) :where(section[id], #tuition, #scholarships){scroll-margin-top:76px;}
-@container seats (max-width:600px){
-  .hp-seats th, .hp-seats td{padding:8px 2px;}
-  .hp-seats th:first-child{width:20%;}
-  .hp-seats thead th{font-size:12px; overflow-wrap:normal;}
-  .hp-seats-key{display:block;}
-  .hp-seats thead small{display:none;}
-  .hp-seats thead th:last-child, .hp-seats thead th:nth-child(2){width:17%;}
-}
-
-/* TCAS70: 3 คอลัมน์ ตาราง | โปสเตอร์ | ภาพรวม — สัดส่วนทำให้ภาพสองใบสูงเท่ากัน */
-.hp-seats{container:seats / inline-size; margin-top:0;}
-.hp-seats:focus-visible{border-radius:20px !important;}
-@media (max-width:640px){ .hp-seats{padding:14px 8px;} }
-.hp-tcas .hp-tcas-inner{max-width:1280px;}
-@media (min-width:600px) and (max-width:1079.98px){
-  .hp-tcas .hp-tcas-cols{grid-template-columns:392fr 464fr;}
-  .hp-tcas-cols .hp-seats{grid-column:1 / -1;}
-}
-@media (min-width:1080px){
-  .hp-tcas .hp-tcas-cols{grid-template-columns:minmax(0,430fr) minmax(0,341fr) minmax(0,405fr); gap:24px; align-items:stretch;}
-  .hp-tcas-cols .hp-seats{height:0; min-height:100%; padding:0 14px 16px; overflow-y:auto; overscroll-behavior:auto; scrollbar-color:var(--brand-600) transparent;}
-  .hp-tcas-cols .hp-seats caption{padding-top:18px;}
-  .hp-tcas-cols .hp-seats thead th{position:sticky; top:0; z-index:1; background:#fff;}
-}
 
 /* ข่าวหน้าแรก: ปุ่มหมวดยืดเต็มความกว้าง ขอบขวาตรงกับกล่องข่าว */
 .hp-news-layout{margin-top:24px; display:grid; grid-template-columns:minmax(0,1fr); gap:24px;}
@@ -4713,4 +4667,15 @@ html:not(:has(.ip-jump)) :where(section[id], #tuition, #scholarships){scroll-mar
 @media (min-width:640px){
   .hp .hp-chips--full{display:flex; flex-wrap:wrap;}
   .hp-chips--full .hp-chip-btn{width:auto; flex:1 1 auto; white-space:nowrap;}
+}
+
+/* หน้าแรก: แผนที่ครอปเฉพาะเอเชีย · Stay Connected การ์ดเดียว */
+.hp-map--asia{max-width:820px; margin:0 auto; aspect-ratio:16/9;}
+.hp-map-crop{position:absolute; inset:0; overflow:hidden; border-radius:14px;}
+.hp-map--asia .hp-map-img{inset:auto; left:-223.33%; top:-50.4%; width:333.33%; height:228.9%; max-width:none;}
+.hp .hp-news--single{grid-template-columns:minmax(0,1fr);}
+@media (min-width:760px){
+  .hp .hp-news--single .hp-ncard.is-feature{flex-direction:row;}
+  .hp-news--single .hp-ncard.is-feature .hp-ncard-media{flex:0 0 48%; aspect-ratio:16/9;}
+  .hp-news--single .hp-ncard.is-feature .hp-ncard-body{justify-content:center; flex:1;}
 }

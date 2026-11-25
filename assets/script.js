@@ -353,7 +353,10 @@
       if(status) status.textContent = shown.length ? "แสดง " + shown.length + " ข่าว" : "ยังไม่มีข่าวในหมวดนี้";
     }
     buttons.forEach(function(b){
-      b.addEventListener("click", function(){ select(b.getAttribute("data-cat")); });
+      var cat = b.getAttribute("data-cat");
+      // หมวดที่ยังไม่มีข่าวบนหน้านี้ไม่แสดงปุ่ม
+      b.hidden = cat !== "all" && !cards.some(function(c){ return c.getAttribute("data-cat") === cat; });
+      b.addEventListener("click", function(){ select(cat); });
     });
   }
 
